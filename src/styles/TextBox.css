@@ -5,28 +5,43 @@
 	background-color: var(--bg);
 	position: relative;
 
-	.delete {
+	.buttons {
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 0;
 		left: 100%;
 		margin-left: -0.3em;
-		font: inherit;
-		font-size: 1rem;
-		color: var(--text-vivi);
-		background-color: var(--bg-vivi);
-		border: 0.1em solid;
-		padding: 0.5em 0.75em;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.2em;
+		text-wrap: nowrap;
+		
+		button {
+			color: white;
+			background-color: var(--bg);
+			font: inherit;
+			font-size: 1rem;
+			border: 0.1em solid var(--text);
+			padding: 0.5em 0.75em;
+			cursor: pointer;
 
-		&::before {
-			content: "x";
-			vertical-align: top;
-			line-height: 1.2;
-			margin-inline-end: 0.5em;
+			&:is(:hover, :focus) {
+				background-color: var(--text);
+			}
 		}
 	}
 
-	&:not(:hover, :focus-within) .delete {
+	.delete {
+		--text: var(--text-vivi);
+		--bg: var(--bg-vivi);
+	}
+	.move {
+		--text: var(--text-house);
+		--bg: var(--bg-house);
+	}
+
+	&:not(:hover, :focus-within) .buttons {
 		display: none;
 	}
 }
