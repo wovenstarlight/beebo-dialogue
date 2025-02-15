@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BaseForm from "./BaseForm";
+import sampleDialogues from "../assets/data/sampleDialogue";
 
 function AddForm({ setDialogues }) {
 	const [color, setColor] = useState("purple");
@@ -31,11 +32,12 @@ function AddForm({ setDialogues }) {
 	}
 
 	function fillSample(e) {
+		let sample = sampleDialogues[Math.floor(Math.random() * sampleDialogues.length)];
 		// Clear stored values
-		setColor("orange");
-		setSpeaker("Oliver Beebo");
-		setDialogue("Hello! I'm here for snacks.");
-		setPortrait("oliver/color/happy.png");
+		setColor(sample.color);
+		setSpeaker(sample.speaker);
+		setDialogue(sample.dialogue);
+		setPortrait(sample.portrait);
 	}
 
 	/* BREAKDOWN
@@ -64,7 +66,7 @@ function AddForm({ setDialogues }) {
 		>
 			<button className="submitbtn" type="submit">Add</button>
 			<button className="resetbtn" type="reset" onClick={clearForm}>Clear</button>
-			<button className="autofillbtn" type="button" onClick={fillSample}>Insert sample dialogue</button>
+			<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
 		</BaseForm>
 	)
 }
