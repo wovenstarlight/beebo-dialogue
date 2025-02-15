@@ -142,12 +142,21 @@ body {
 	text-align: center;
 }
 
+#sitehead h1 { color: white }
+
 #sitebody {
-	border-block: var(--border-width) solid;
+	border-block: 2em solid transparent;
+	border-image: url("../assets/images/curlyBorder.png") 35 0 space;
 	padding-block: 3em;
-	
 	width: 59.5em;
 	margin-inline: auto;
+
+	/* Disable anti-aliasing to get that pixel look on all images */
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
 
 	#dialogues { padding-block: 2em }
 
