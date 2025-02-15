@@ -1,5 +1,6 @@
 import "./styles/App.css";
 import TextBox from "./components/TextBox";
+import AddForm from "./components/AddForm";
 
 function App() {
 	return (<>
