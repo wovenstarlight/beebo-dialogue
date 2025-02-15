@@ -3,8 +3,35 @@
 	font-size: 1.5em;
 	color: var(--text);
 	background-color: var(--bg);
+	position: relative;
+
+	.delete {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 100%;
+		margin-left: -0.3em;
+		font: inherit;
+		font-size: 1rem;
+		color: var(--text-vivi);
+		background-color: var(--bg-vivi);
+		border: 0.1em solid;
+		padding: 0.5em 0.75em;
+
+		&::before {
+			content: "x";
+			vertical-align: top;
+			line-height: 1.2;
+			margin-inline-end: 0.5em;
+		}
+	}
+
+	&:not(:hover, :focus-within) .delete {
+		display: none;
+	}
 }
 
+/* Header: name of speaker */
 .dialogue .speaker {
 	font-family: "SqueezedPixels";
 
@@ -36,6 +63,7 @@
 	}
 }
 
+/* #region Body: portrait and actual text */
 .dialogue .body {
 	display: grid;
 	grid-template-columns: auto 1fr;
@@ -63,3 +91,4 @@
 	image-rendering: -webkit-optimize-contrast;
 	-ms-interpolation-mode: nearest-neighbor;
 }
+/* #endregion */
