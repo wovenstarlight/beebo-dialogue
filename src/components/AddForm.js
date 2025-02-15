@@ -32,6 +32,15 @@ function AddForm({ setDialogues }) {
 		e.target.closest("form").reset();
 	}
 
+	/* BREAKDOWN
+	Four inputs:
+		- one for the color palette used by the box.
+		- one for speaker. Has a datalist with suggestions from canon. (Pity that Ángel's accent means it doesn't automatically get suggested under "A"…)
+		- one for the portrait. Needs the full list of portraits so it's been banished to its own component.
+		- one for the actual text. Length limit set roughly at how much takes up the full box.
+	
+	Plus buttons to create the corresponding box and to reset the form.
+	*/
 	return (
 		<form id="addform" name="addform" onSubmit={handleSubmit} className={color}>
 			<label id="labelcolor">
