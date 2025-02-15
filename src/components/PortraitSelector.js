@@ -1,3 +1,4 @@
+import { memo } from "react";
 import allPortraits from "../assets/data/portraits";
 
 function PortraitSelector({ portrait, setPortrait }) {
@@ -21,4 +22,4 @@ function PortraitSelector({ portrait, setPortrait }) {
 	);
 }
 
-export default PortraitSelector;
+export default memo(PortraitSelector);
