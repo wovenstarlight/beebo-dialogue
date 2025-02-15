@@ -5,6 +5,10 @@ import { useState } from "react";
 
 function App() {
 	const [dialogues, setDialogues] = useState([]);
+	function clearAll() {
+		if (window.confirm("Do you really want to delete all currently-generated dialogue boxes?"))
+			setDialogues([]);
+	}
 
 	return (<>
 		<header id="sitehead">
@@ -13,7 +17,8 @@ function App() {
 			<p>(Inspired by <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html">kongkrog's dialogue GIF maker</a>)</p>
 		</header>
 		<main id="sitebody">
-			<p id="explainer">TODO</p>
+			{dialogues.length === 0 && <p id="explainer">Use the form below to get started!</p>}
+			{dialogues.length > 0 && <button id="clearall" onClick={clearAll}>Delete all</button>}
 
 			{dialogues.length > 0 && <div id="dialogues">
 				{dialogues.map((obj, index, array) => <TextBox key={obj.id} {...obj} allDialogues={dialogues} setDialogues={setDialogues} isFirst={index === 0} isLast={index === array.length - 1} />)}

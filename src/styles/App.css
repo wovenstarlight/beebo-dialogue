@@ -137,6 +137,21 @@ body {
 	
 	width: 59.5em;
 	margin-inline: auto;
+
+	#clearall {
+		display: block;
+		font: inherit;
+		padding: 0.5em 1em;
+		margin-inline: auto;
+		--text: var(--text-vivi);
+		--bg: var(--bg-vivi);
+		background-color: var(--bg);
+		color: white;
+		border: 0.1em solid var(--text);
+		cursor: pointer;
+
+		&:is(:hover, :focus) { background-color: var(--text) }
+	}
 }
 
 [hidden] { display: none !important }
