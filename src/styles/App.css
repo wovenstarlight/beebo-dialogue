@@ -10,6 +10,7 @@
 }
 
 :root {
+	--portrait-size: 4.25em;
 	--border-width: 3.5px;
 
 	--text-oliver: #a97844;

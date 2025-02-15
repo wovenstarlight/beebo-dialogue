@@ -7,15 +7,16 @@
 
 	.buttons {
 		position: absolute;
-		bottom: 0.5em;
+		bottom: 0.45em;
 		left: 100%;
 		margin-left: -0.3em;
-		padding-inline: 0.55em;
-		height: 3.9em;
+		padding-inline: 0.5em;
+		height: 100%;
 		display: grid;
 		grid-template-columns: auto auto;
 		align-items: center;
-		gap: 0.25em;
+		align-content: end;
+		gap: 0.2em;
 		text-wrap: nowrap;
 		
 		button {
@@ -103,15 +104,15 @@
 		border: var(--border-width) solid var(--text);
 		border-inline-start-width: 0;
 		margin: 0;
-		max-height: var(--portrait-size);
+		max-height: calc((31 / 34) * var(--portrait-size));
 		padding: 0.3em;
 		overflow: hidden;
-		text-overflow: ellipsis;
+		word-break: break-word;
 	}
 }
 
 .portrait {
-	width: 4.25em;
+	width: var(--portrait-size);
 	height: auto;
 	display: block;
 	/* Disable anti-aliasing to get that pixel look */
