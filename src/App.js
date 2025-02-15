@@ -11,9 +11,6 @@ function App() {
 		<main id="sitebody">
 			<p id="explainer">TODO</p>
 			<TextBox />
-			<TextBox color="blueypurple" name="Example">
-				My favorite part of the timeloop was when Beebo was like "it's beebin time" and beebed all over everyone. 
-			</TextBox>
 		</main>
 		<footer id="sitefoot">
 			<p>Made by <a href="https://github.com/wovenstarlight">wovenstarlight</a></p>
