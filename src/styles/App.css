@@ -133,10 +133,11 @@ body {
 
 #sitebody {
 	border-block: 0.15em solid;
-	margin-block: 1em;
-	padding-block: 1em;
+	padding-block: 3em;
 	
 	width: 59.5em;
 	margin-inline: auto;
 }
+
+[hidden] { display: none !important }
 /* #endregion */
