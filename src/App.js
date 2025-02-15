@@ -6,7 +6,7 @@ import { useState } from "react";
 function App() {
 	const [dialogues, setDialogues] = useState([]);
 	function clearAll() {
-		if (window.confirm("Do you really want to delete all currently-generated dialogue boxes?"))
+		if (window.confirm("Really delete all currently-generated dialogue boxes?\n\nThis is irreversible!"))
 			setDialogues([]);
 	}
 
