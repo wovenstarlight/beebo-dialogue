@@ -26,8 +26,13 @@
 			padding: 0.5em 0.75em;
 			cursor: pointer;
 
-			&:is(:hover, :focus) {
+			&:not([disabled]):is(:hover, :focus) {
 				background-color: var(--text);
+			}
+
+			&[disabled] {
+				opacity: 0.25;
+				cursor: not-allowed;
 			}
 		}
 	}

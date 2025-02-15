@@ -33,9 +33,9 @@ function TextBox({ id, color, speaker, portrait, dialogue, allDialogues, setDial
 		</div>
 
 		<div className="buttons">
-			{!isFirst && <button className="move" onClick={moveUp}>Move up</button>}
+			<button className="move" onClick={moveUp} disabled={isFirst}>Move up</button>
 			<button className="delete" onClick={deleteBox}>Delete</button>
-			{!isLast && <button className="move" onClick={moveDown}>Move down</button>}
+			<button className="move" onClick={moveDown} disabled={isLast}>Move down</button>
 		</div>
 	</article>
 }
