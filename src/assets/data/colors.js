@@ -4,7 +4,7 @@ const allColors = {
 	"Gray (Ángel Valdivia)": "gray",
 	"Red (Vivi Villalobos)": "red",
 	"Blue (Marigold Margulis)": "blue",
-	"Bluish purple (Nina Coli)": "blueypurple",
+	"Bluish purple (Nina Coli)": "bluishpurple",
 	"Pink (Nadia Margulis)": "pink",
 	"Green (Simon Margulis)": "green",
 	"Purplish blue (Owen)": "navy",
