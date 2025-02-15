@@ -73,7 +73,7 @@ function TextBox({ id, color, speaker, portrait, dialogue, allDialogues, setDial
 				<span className="name">{speaker ?? "Y/N"}</span>
 			</header>
 			<div className="body">
-				<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(portrait ?? "default.png")} />
+				<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(portrait ?? "default.png")} aria-hidden="true" />
 				<p className="text">{dialogue ?? "Lorem ipsum dolor sit amet."}</p>
 			</div>
 

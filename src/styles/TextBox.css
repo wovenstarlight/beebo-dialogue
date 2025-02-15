@@ -77,8 +77,9 @@
 		color: var(--bg);
 		position: relative;
 		z-index: 0;
-		padding-inline: 0.15em;
-		margin-inline: 0.15em;
+		padding-inline: 3.5px;
+		margin-inline: 3.5px;
+		user-select: none;
 		
 		&::before {
 			content: "";
@@ -88,7 +89,7 @@
 			background-color: var(--text);
 			position: absolute;
 			top: -25%;
-			left: 0.05em;
+			left: 1.5px;
 			z-index: -1;
 		}
 	}
