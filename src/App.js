@@ -1,8 +1,11 @@
 import "./styles/App.css";
 import TextBox from "./components/TextBox";
 import AddForm from "./components/AddForm";
+import { useState } from "react";
 
 function App() {
+	const [dialogues, setDialogues] = useState([]);
+
 	return (<>
 		<header id="sitehead">
 			<h1>Detective Beebo dialogue builder</h1>
@@ -11,8 +14,10 @@ function App() {
 		</header>
 		<main id="sitebody">
 			<p id="explainer">TODO</p>
+
 			<TextBox />
-			<AddForm />
+
+			<AddForm setDialogues={setDialogues} />
 		</main>
 		<footer id="sitefoot">
 			<p>Made by <a href="https://github.com/wovenstarlight">wovenstarlight</a></p>

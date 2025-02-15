@@ -3,6 +3,7 @@ import "../styles/AddForm.css";
 import PortraitSelector from "./PortraitSelector";
 import allColors from "../assets/data/colors";
 
+function AddForm({ setDialogues }) {
 	const [color, setColor] = useState("purple");
 	const [speaker, setSpeaker] = useState("");
 	const [dialogue, setDialogue] = useState("");
@@ -10,7 +11,18 @@ import allColors from "../assets/data/colors";
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		alert(`Trying to create dialogue box with "${speaker}" saying "${dialogue}"`);
+		const newDialogue = {
+			id: `${color.toLowerCase()}_${(new Date()).getTime()}`,
+			color: color,
+			portrait: portrait,
+			speaker: speaker,
+			dialogue: dialogue,
+		};
+		setDialogues(values => [...values, newDialogue]);
+		clearForm(e);
+	}
+
+	function clearForm(e) {
 		// Clear stored values
 		setColor("purple");
 		setSpeaker("");
@@ -83,7 +95,7 @@ import allColors from "../assets/data/colors";
 			</label>
 
 			<button id="addbtn" type="submit">Add</button>
-			<button id="clearbtn" type="reset">Clear</button>
+			<button id="clearbtn" type="reset" onClick={clearForm}>Clear</button>
 		</form>
 	)
 }
