@@ -98,6 +98,19 @@
 .dialogue .body {
 	display: grid;
 	grid-template-columns: auto 1fr;
+	position: relative;
+
+	/* Overwrite portrait borders */
+	&::before {
+		box-sizing: border-box;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: var(--portrait-size);
+		height: 100%;
+		border: var(--border-width) solid var(--text);
+	}
 	
 	.text {
 		line-height: 1.2;
