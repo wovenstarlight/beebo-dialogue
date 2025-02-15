@@ -1,0 +1,85 @@
+/* #region Fonts and colors */
+@font-face {
+	font-family: "Nokia";
+	src: url("../assets/fonts/nokiafc22.ttf");
+}
+
+@font-face {
+	font-family: "SqueezedPixels";
+	src: url("../assets/fonts/SqueezedPixels.ttf");
+}
+
+:root {
+	--text-oliver: #a97844;
+	--bg-oliver: #311a05;
+
+	--text-angel: #7f8a93;
+	--bg-angel: #32383e;
+
+	--text-vivi: #a24759;
+	--bg-vivi: #2e0b13;
+
+	--text-marigold: #739cb5;
+	--bg-marigold: #121b4f;
+
+	--text-nina: #8b6fb9;
+	--bg-nina: #25163e;
+
+	--text-nadia: #b273a1;
+	--bg-nadia: #3c193e;
+
+	--text-owen: #8089b2;
+	--bg-owen: #202a55;
+
+	--text-simon: #809b64;
+	--bg-simon: #30361f;
+
+	--text-house: #87588a;
+	--bg-house: #27002a;
+
+	--text-gallery: #ab9343;
+	--bg-gallery: #2c2305;
+
+	--text-police: #91ab81;
+	--bg-police: #282d30;
+}
+/* #endregion */
+
+/* #region General site */
+* {
+	box-sizing: border-box;
+	font-weight: normal;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	border: 3em solid transparent;
+	border-image: url("../assets/images/bigBorder.png") 34% repeat;
+	font-family: "Nokia";
+	color: var(--text-house);
+	background-color: var(--bg-house);
+	
+	a:link { color: #bc90bf }
+	a:visited { color: #a85cad }
+}
+
+#root {
+	display: contents;
+}
+
+#sitehead, #sitefoot, #explainer {
+	text-align: center;
+}
+
+#sitebody {
+	border-block: 0.15em solid;
+	margin-block: 1em;
+	padding-block: 1em;
+	
+	width: 59.25em;
+	margin-inline: auto;
+}
+/* #endregion */
