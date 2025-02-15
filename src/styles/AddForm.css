@@ -6,21 +6,22 @@
 	border-image: url("../assets/images/smallBorder.png") 34% repeat;
 	display: flex;
 	flex-direction: column;
-	gap: 0.3em;
+	gap: 0.5em;
+	--labelwidth: 7.5em;
 
 	label {
 		display: grid;
-		grid-template-columns: 1fr 5fr;
+		grid-template-columns: var(--labelwidth) 1fr;
 		align-items: start;
 		text-align: end;
-		gap: 1em;
+		gap: 0.5em;
 		padding-inline: 1em;
 	}
 	.labeltext {
 		padding-block-start: 0.5em;
 	}
 
-	input, textarea {
+	input, textarea, select {
 		background-color: var(--bg-house);
 		color: var(--text-house);
 		font-family: "Nokia", monospace;
@@ -32,6 +33,9 @@
 			box-shadow: 0 0 0.1em 0.1em var(--text-vivi);
 		}
 	}
+	select .labeltext { padding-block-start: 0.1em }
+	select { padding-block: 0.3em }
+
 
 	#inputspeaker {
 		font-family: "SqueezedPixels";
@@ -39,10 +43,19 @@
 		font-size: 1.1em;
 	}
 
+	#labelportrait {
+		grid-template-columns: var(--labelwidth) 1fr auto;
+		align-items: center;
+
+		
+		.portrait {
+			width: 6em;
+		}
+	}
+
 	#inputdialogue {
 		font-size: 0.8em;
 		padding-block: 0.5em;
-		margin-block-start: 0.2rem;
 		resize: vertical;
 	}
 
@@ -61,8 +74,11 @@
 
 		&#addbtn {
 			font-size: 1.5em;
-			margin-block-start: 0.5em;
+			margin-block-start: 0.5rem;
 		}
-		&#clearbtn { font-size: 1.2em }
+		&#clearbtn {
+			font-size: 1.2em;
+			margin-block-start: -0.2rem;
+		}
 	}
 }

@@ -95,19 +95,6 @@
 .dialogue .body {
 	display: grid;
 	grid-template-columns: auto 1fr;
-	--portrait-size: 4.25em;
-	
-	.portrait {
-		width: var(--portrait-size);
-		height: auto;
-		display: block;
-		/* Disable anti-aliasing to get that pixel look */
-		image-rendering: -moz-crisp-edges;
-		image-rendering: -moz-crisp-edges;
-		image-rendering: -o-crisp-edges;
-		image-rendering: -webkit-optimize-contrast;
-		-ms-interpolation-mode: nearest-neighbor;
-	}
 	
 	.text {
 		line-height: 1.2;
@@ -119,4 +106,16 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+}
+
+.portrait {
+	width: 4.25em;
+	height: auto;
+	display: block;
+	/* Disable anti-aliasing to get that pixel look */
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
 }

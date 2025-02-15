@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "../styles/AddForm.css";
+import PortraitSelector from "./PortraitSelector";
+import allColors from "../assets/data/colors";
 
 function AddForm() {
 	const [speaker, setSpeaker] = useState("");
 	const [dialogue, setDialogue] = useState("");
+	const [portrait, setPortrait] = useState("");
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -11,12 +14,19 @@ function AddForm() {
 		// Clear stored values
 		setSpeaker("");
 		setDialogue("");
-		// And remove the invalid markers for 
-		e.target.reset();
+		setPortrait("");
+		// And remove the invalid markers
+		e.target.closest("form").reset();
 	}
 
 	return (
 		<form id="addform" name="addform" onSubmit={handleSubmit}>
+			<label id="labelportrait">
+				<span className="labeltext">Portrait</span>
+				<PortraitSelector portrait={portrait} setPortrait={setPortrait} />
+				<img className="portrait" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(portrait.length ? portrait : "default.png")} />
+			</label>
+
 			<label id="labelspeaker">
 				<span className="labeltext">Speaker</span>
 				<input
@@ -55,6 +65,7 @@ function AddForm() {
 					onChange={(e) => setDialogue(e.target.value)}
 				/>
 			</label>
+
 			<button id="addbtn" type="submit">Add</button>
 			<button id="clearbtn" type="reset">Clear</button>
 		</form>
