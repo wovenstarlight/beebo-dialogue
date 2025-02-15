@@ -10,6 +10,7 @@ const allColors = {
 	"Purplish blue (Owen)": "navy",
 	"Yellow (Art gallery)": "yellow",
 	"Dim gray (City/Police)": "dimgray",
+	"Light blue (True ending)": "lightblue",
 }
 
 export default allColors;

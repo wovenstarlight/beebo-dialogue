@@ -44,7 +44,10 @@
 	--bg-gallery: #2c2305;
 
 	--text-police: #625565;
-	--bg-police: #231E23;
+	--bg-police: #231e23;
+
+	--text-trueending: #a6bec9;
+	--bg-trueending: #2f4b55;
 }
 
 .oliver,
@@ -102,6 +105,11 @@
 .dimgray {
 	--text: var(--text-police);
 	--bg: var(--bg-police);
+}
+.trueending,
+.lightblue {
+	--text: var(--text-trueending);
+	--bg: var(--bg-trueending);
 }
 /* #endregion */
 
