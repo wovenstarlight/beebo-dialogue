@@ -6,7 +6,7 @@ function App() {
 		<header id="sitehead">
 			<h1>Detective Beebo dialogue builder</h1>
 			<p>Based on the game <a href="https://bwobbers.itch.io/detective-beebo-night-at-the-mansion">Detective Beebo: Night at the Mansion</a> by Bwobbers</p>
-			<p>(Inspired by and built off <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html">GIF version</a>)</p>
+			<p>(Inspired by <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html">kongkrog's dialogue GIF maker</a>)</p>
 		</header>
 		<main id="sitebody">
 			<p id="explainer">TODO</p>
