@@ -36,6 +36,10 @@
 	select .labeltext { padding-block-start: 0.1em }
 	select { padding-block: 0.3em }
 
+	input, textarea, #inputcolor, #inputcolor option {
+		color: var(--text);
+		background-color: var(--bg);
+	}
 
 	#inputspeaker {
 		font-family: "SqueezedPixels";

@@ -3,7 +3,7 @@ import "../styles/AddForm.css";
 import PortraitSelector from "./PortraitSelector";
 import allColors from "../assets/data/colors";
 
-function AddForm() {
+	const [color, setColor] = useState("purple");
 	const [speaker, setSpeaker] = useState("");
 	const [dialogue, setDialogue] = useState("");
 	const [portrait, setPortrait] = useState("");
@@ -12,6 +12,7 @@ function AddForm() {
 		e.preventDefault();
 		alert(`Trying to create dialogue box with "${speaker}" saying "${dialogue}"`);
 		// Clear stored values
+		setColor("purple");
 		setSpeaker("");
 		setDialogue("");
 		setPortrait("");
@@ -20,7 +21,22 @@ function AddForm() {
 	}
 
 	return (
-		<form id="addform" name="addform" onSubmit={handleSubmit}>
+		<form id="addform" name="addform" onSubmit={handleSubmit} className={color}>
+			<label id="labelcolor">
+				<span className="labeltext">Palette</span>
+				<select
+					id="inputcolor"
+					name="inputcolor"
+					required
+					value={color}
+					onChange={(e) => setColor(e.target.value)}
+				>
+					{Object.entries(allColors).map(color => {
+						return <option className={color[1]} value={color[1]}>{color[0]}</option>
+					})}
+				</select>
+			</label>
+
 			<label id="labelportrait">
 				<span className="labeltext">Portrait</span>
 				<PortraitSelector portrait={portrait} setPortrait={setPortrait} />

@@ -43,6 +43,63 @@
 	--text-police: #625565;
 	--bg-police: #231E23;
 }
+
+.oliver,
+.orange {
+	--text: var(--text-oliver);
+	--bg: var(--bg-oliver);
+}
+.angel,
+.gray {
+	--text: var(--text-angel);
+	--bg: var(--bg-angel);
+}
+.vivi,
+.red {
+	--text: var(--text-vivi);
+	--bg: var(--bg-vivi);
+}
+.mari, .marigold,
+.blue, .darkblue {
+	--text: var(--text-marigold);
+	--bg: var(--bg-marigold);
+}
+.nina,
+.blueypurple {
+	--text: var(--text-nina);
+	--bg: var(--bg-nina);
+}
+.nadia,
+.pink {
+	--text: var(--text-nadia);
+	--bg: var(--bg-nadia);
+}
+.owen,
+.navy, .lightblue {
+	--text: var(--text-owen);
+	--bg: var(--bg-owen);
+}
+.simon,
+.green {
+	--text: var(--text-simon);
+	--bg: var(--bg-simon);
+}
+.eugene, .coli,
+.house,
+.purple {
+	--text: var(--text-house);
+	--bg: var(--bg-house);
+}
+.gallery,
+.yellow {
+	--text: var(--text-gallery);
+	--bg: var(--bg-gallery);
+}
+.police,
+.dimgray {
+	--text: var(--text-police);
+	--bg: var(--bg-police);
+}
 /* #endregion */
 
 /* #region General site */
