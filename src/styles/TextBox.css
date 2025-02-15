@@ -1,0 +1,122 @@
+.dialogue {
+	padding: 0.5em;
+	font-size: 1.5em;
+	color: var(--text);
+	background-color: var(--bg);
+
+	&.oliver,
+	&.orange {
+		--text: var(--text-oliver);
+		--bg: var(--bg-oliver);
+	}
+	&.angel,
+	&.gray {
+		--text: var(--text-angel);
+		--bg: var(--bg-angel);
+	}
+	&.vivi,
+	&.red {
+		--text: var(--text-vivi);
+		--bg: var(--bg-vivi);
+	}
+	&.mari, &.marigold,
+	&.blue, &.darkblue {
+		--text: var(--text-marigold);
+		--bg: var(--bg-marigold);
+	}
+	&.nina,
+	&.blueypurple {
+		--text: var(--text-nina);
+		--bg: var(--bg-nina);
+	}
+	&.nadia,
+	&.pink {
+		--text: var(--text-nadia);
+		--bg: var(--bg-nadia);
+	}
+	&.owen,
+	&.navy, &.lightblue {
+		--text: var(--text-owen);
+		--bg: var(--bg-owen);
+	}
+	&.simon,
+	&.darkgreen {
+		--text: var(--text-simon);
+		--bg: var(--bg-simon);
+	}
+	&.eugene, &.coli, &.house,
+	&.purple {
+		--text: var(--text-house);
+		--bg: var(--bg-house);
+	}
+	&.gallery,
+	&.yellow {
+		--text: var(--text-gallery);
+		--bg: var(--bg-gallery);
+	}
+	&.police,
+	&.mutedgreen {
+		--text: var(--text-police);
+		--bg: var(--bg-police);
+	}
+}
+
+.dialogue .speaker {
+	font-family: "SqueezedPixels";
+
+	span {
+		position: relative;
+		top: 0.25em;
+		display: inline-block;
+		line-height: 1;
+	}
+
+	.question {
+		color: var(--bg);
+		position: relative;
+		z-index: 0;
+		padding-inline: 0.15em;
+		margin-inline: 0.15em;
+		
+		&::before {
+			content: "";
+			display: block;
+			width: 75%;
+			height: 75%;
+			background-color: var(--text);
+			position: absolute;
+			top: -25%;
+			left: 0.05em;
+			z-index: -1;
+		}
+	}
+}
+
+.dialogue .body {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	--portrait-size: 4.25em;
+	
+	.portrait {
+		width: var(--portrait-size);
+		height: auto;
+		display: block;
+		/* Disable anti-aliasing to get that pixel look */
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -o-crisp-edges;
+		image-rendering: -webkit-optimize-contrast;
+		-ms-interpolation-mode: nearest-neighbor;
+	}
+	
+	.text {
+		line-height: 1.2;
+		border: 0.15em solid var(--text);
+		border-inline-start-width: 0;
+		margin: 0;
+		max-height: var(--portrait-size);
+		padding: 0.3em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
