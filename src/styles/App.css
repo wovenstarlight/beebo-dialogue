@@ -138,6 +138,8 @@ body {
 	width: 59.5em;
 	margin-inline: auto;
 
+	#dialogues { padding-block: 2em }
+
 	#clearall {
 		display: block;
 		font: inherit;

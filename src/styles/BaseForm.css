@@ -1,5 +1,4 @@
 .dialogueform {
-	margin-block-start: 2em;
 	margin-inline: 5em;
 	padding-block: 1em;
 	border: 1.25em solid transparent;
@@ -56,10 +55,7 @@
 		grid-template-columns: var(--labelwidth) 1fr auto;
 		align-items: center;
 
-		
-		.portrait {
-			width: 6em;
-		}
+		.portrait { width: 6em }
 	}
 
 	#inputdialogue {
@@ -75,19 +71,18 @@
 		border-inline: none;
 		font-family: inherit;
 		margin-inline: -0.75rem;
+		padding-block: 0.25rem;
 		cursor: pointer;
 
 		&:is(:hover, :focus) {
 			background-color: var(--text-house);
 		}
+		& + button { margin-block-start: -0.2rem }
 
 		&.submitbtn {
 			font-size: 1.5em;
 			margin-block-start: 0.5rem;
 		}
-		&.resetbtn {
-			font-size: 1.2em;
-			margin-block-start: -0.2rem;
-		}
+		&.resetbtn { font-size: 1.2em }
 	}
 }
