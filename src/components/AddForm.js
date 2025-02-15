@@ -26,12 +26,22 @@ function AddForm() {
 					minLength={1}
 					maxLength={50}
 					required
+					list="speakerslist"
 					value={speaker}
 					onChange={(e) => setSpeaker(e.target.value)}
 				/>
 			</label>
-
-			{/* Select for the portrait */}
+			<datalist id="speakerslist">
+				<option value="Oliver Beebo" />
+				<option value="Ángel" />
+				<option value="Vivi" />
+				<option value="Nina Coli" />
+				<option value="Marigold Margulis" />
+				<option value="Nadia" />
+				<option value="Simon" />
+				<option value="Owen" />
+				<option value="Eugene Coli" />
+			</datalist>
 
 			<label id="labeldialogue">
 				<span className="labeltext">Dialogue</span>
