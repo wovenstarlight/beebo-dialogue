@@ -1,0 +1,68 @@
+#addform {
+	margin-block-start: 2em;
+	margin-inline: 5em;
+	padding-block: 1em;
+	border: 1.25em solid transparent;
+	border-image: url("../assets/images/smallBorder.png") 34% repeat;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+
+	label {
+		display: grid;
+		grid-template-columns: 1fr 5fr;
+		align-items: start;
+		text-align: end;
+		gap: 1em;
+		padding-inline: 1em;
+	}
+	.labeltext {
+		padding-block-start: 0.5em;
+	}
+
+	input, textarea {
+		background-color: var(--bg-house);
+		color: var(--text-house);
+		font-family: "Nokia", monospace;
+		font-size: inherit;
+		border: 0.15rem solid currentColor;
+		padding-inline: 0.5em;
+		
+		&:user-invalid {
+			box-shadow: 0 0 0.1em 0.1em var(--text-vivi);
+		}
+	}
+
+	#inputspeaker {
+		font-family: "SqueezedPixels";
+		padding-block-start: 0.75em;
+		font-size: 1.1em;
+	}
+
+	#inputdialogue {
+		font-size: 0.8em;
+		padding-block: 0.5em;
+		margin-block-start: 0.2rem;
+		resize: vertical;
+	}
+
+	button {
+		background-color: inherit;
+		color: white;
+		border-block: 0.15rem solid var(--text-house);
+		border-inline: none;
+		font-family: inherit;
+		margin-inline: -0.75rem;
+		cursor: pointer;
+
+		&:is(:hover, :focus) {
+			background-color: var(--text-house);
+		}
+
+		&#addbtn {
+			font-size: 1.5em;
+			margin-block-start: 0.5em;
+		}
+		&#clearbtn { font-size: 1.2em }
+	}
+}

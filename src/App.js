@@ -11,6 +11,7 @@ function App() {
 		<main id="sitebody">
 			<p id="explainer">TODO</p>
 			<TextBox />
+			<AddForm />
 		</main>
 		<footer id="sitefoot">
 			<p>Made by <a href="https://github.com/wovenstarlight">wovenstarlight</a></p>
