@@ -23,7 +23,7 @@
 			background-color: var(--bg);
 			font: inherit;
 			font-size: 1rem;
-			border: 0.1em solid var(--text);
+			border: var(--border-width) solid var(--text);
 			padding: 0.5em 0.75em;
 			cursor: pointer;
 
@@ -100,7 +100,7 @@
 	
 	.text {
 		line-height: 1.2;
-		border: 0.15em solid var(--text);
+		border: var(--border-width) solid var(--text);
 		border-inline-start-width: 0;
 		margin: 0;
 		max-height: var(--portrait-size);

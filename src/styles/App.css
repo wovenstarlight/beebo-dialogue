@@ -10,6 +10,8 @@
 }
 
 :root {
+	--border-width: 3.5px;
+
 	--text-oliver: #a97844;
 	--bg-oliver: #311a05;
 
@@ -132,7 +134,7 @@ body {
 }
 
 #sitebody {
-	border-block: 0.15em solid;
+	border-block: var(--border-width) solid;
 	padding-block: 3em;
 	
 	width: 59.5em;
@@ -149,7 +151,7 @@ body {
 		--bg: var(--bg-vivi);
 		background-color: var(--bg);
 		color: white;
-		border: 0.1em solid var(--text);
+		border: var(--border-width) solid var(--text);
 		cursor: pointer;
 
 		&:is(:hover, :focus) { background-color: var(--text) }

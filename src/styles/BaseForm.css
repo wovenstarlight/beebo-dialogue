@@ -30,7 +30,7 @@
 		color: var(--text-house);
 		font-family: "Nokia", monospace;
 		font-size: inherit;
-		border: 0.15rem solid currentColor;
+		border: var(--border-width) solid currentColor;
 		padding-inline: 0.5em;
 		
 		&:user-invalid {
@@ -67,7 +67,7 @@
 	button {
 		background-color: inherit;
 		color: white;
-		border-block: 0.15rem solid var(--text-house);
+		border-block: var(--border-width) solid var(--text-house);
 		border-inline: none;
 		font-family: inherit;
 		margin-inline: -0.75rem;
