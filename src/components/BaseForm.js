@@ -58,6 +58,8 @@ function BaseForm({
 			<option value="Simon" />
 			<option value="Owen" />
 			<option value="Eugene Coli" />
+			<option value="Police Chief" />
+			<option value="Police Officer" />
 		</datalist>
 
 		<label id="labeldialogue">
@@ -66,7 +68,7 @@ function BaseForm({
 				id="inputdialogue"
 				name="inputdialogue"
 				minLength={1}
-				maxLength={110}
+				maxLength={150}
 				required
 				value={dialogue}
 				onChange={(e) => setDialogue(e.target.value)}
