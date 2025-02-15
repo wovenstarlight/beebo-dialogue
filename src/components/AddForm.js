@@ -32,6 +32,14 @@ function AddForm({ setDialogues }) {
 		e.target.closest("form").reset();
 	}
 
+	function fillSample(e) {
+		// Clear stored values
+		setColor("orange");
+		setSpeaker("Oliver Beebo");
+		setDialogue("Hello! I'm here for snacks.");
+		setPortrait("oliver/color/happy.png");
+	}
+
 	/* BREAKDOWN
 	Four inputs:
 		- one for the color palette used by the box.
@@ -40,6 +48,7 @@ function AddForm({ setDialogues }) {
 		- one for the actual text. Length limit set roughly at how much takes up the full box.
 	
 	Plus buttons to create the corresponding box and to reset the form.
+	And one for testing purposes that autofills the form with sample dialogue.
 	*/
 	return (
 		<form id="addform" name="addform" onSubmit={handleSubmit} className={color}>
@@ -105,6 +114,7 @@ function AddForm({ setDialogues }) {
 
 			<button id="addbtn" type="submit">Add</button>
 			<button id="clearbtn" type="reset" onClick={clearForm}>Clear</button>
+			<button id="sample" type="button" onClick={fillSample}>Insert sample dialogue</button>
 		</form>
 	)
 }
