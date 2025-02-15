@@ -15,9 +15,9 @@ function App() {
 		<main id="sitebody">
 			<p id="explainer">TODO</p>
 
-			<div id="dialogues">
+			{dialogues.length > 0 && <div id="dialogues">
 				{dialogues.map((obj, index, array) => <TextBox key={obj.id} {...obj} allDialogues={dialogues} setDialogues={setDialogues} isFirst={index === 0} isLast={index === array.length - 1} />)}
-			</div>
+			</div>}
 
 			<AddForm setDialogues={setDialogues} />
 		</main>

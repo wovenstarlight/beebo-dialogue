@@ -80,8 +80,11 @@ function TextBox({ id, color, speaker, portrait, dialogue, allDialogues, setDial
 			<div className="buttons">
 				<button className="edit" onClick={editBox}>Edit</button>
 				<button className="delete" onClick={deleteBox}>Delete</button>
+				{/* Don't render the move buttons at all if this is the only box i.e. both first and last */}
+				{!(isFirst && isLast) && <> 
 				<button className="move" onClick={moveUp} disabled={isFirst}>Move up</button>
 				<button className="move" onClick={moveDown} disabled={isLast}>Move down</button>
+				</>}
 			</div>
 		</article>
 		<BaseForm
