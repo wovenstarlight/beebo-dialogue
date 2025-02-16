@@ -33,6 +33,8 @@
 			}
 
 			&[disabled] {
+				--text: var(--text-marigold);
+				--bg: var(--bg-marigold);
 				opacity: 0.25;
 				cursor: not-allowed;
 			}
@@ -52,8 +54,8 @@
 		grid-row: 2;
 	}
 	.move {
-		--text: var(--text-house);
-		--bg: var(--bg-house);
+		--text: var(--text-nina);
+		--bg: var(--bg-nina);
 		grid-column: 2;
 	}
 
