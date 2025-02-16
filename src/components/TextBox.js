@@ -20,7 +20,7 @@ function TextBox({ id, color, speaker, portrait, dialogue, getNeighbors, setDial
 	//#endregion
 
 	return (
-		<article id={id} className={`dialogue ${color ?? "house"}`}>
+		<article id={id} className={`dialogue ${color ?? "purple"}`}>
 			<header className="speaker">
 				<span className="question">?</span>
 				<span className="name">{speaker ?? "Y/N"}</span>
