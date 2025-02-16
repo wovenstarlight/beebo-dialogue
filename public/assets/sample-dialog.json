@@ -1,0 +1,50 @@
+[
+	{
+		"color": "purple",
+		"speaker": "Scarf man",
+		"portrait": "angel/house/smile.png",
+		"dialogue": "Tell you what."
+	},
+	{
+		"color": "purple",
+		"speaker": "Scarf man",
+		"portrait": "angel/house/speak.png",
+		"dialogue": "It's really cold out here, and I'm thirsty now."
+	},
+	{
+		"color": "purple",
+		"speaker": "Scarf man",
+		"portrait": "angel/house/happy.png",
+		"dialogue": "Get a drink with me at the bar and you can interrogate me to your heart's desire."
+	},
+	{
+		"color": "purple",
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/confused.png",
+		"dialogue": "I... Alright."
+	},
+	{
+		"color": "purple",
+		"speaker": "Scarf man",
+		"portrait": "angel/house/smile.png",
+		"dialogue": "See you there."
+	},
+	{
+		"color": "purple",
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/speak.png",
+		"dialogue": "Wait! Uh... your name?"
+	},
+	{
+		"color": "purple",
+		"speaker": "Ángel",
+		"portrait": "angel/house/happy.png",
+		"dialogue": "Ángel, for any of your needs."
+	},
+	{
+		"color": "purple",
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/neutro.png",
+		"dialogue": "...Oliver, for only some of those needs."
+	}
+]

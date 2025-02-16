@@ -110,6 +110,8 @@ function JSONInput({ dialogues, setDialogues }) {
 			</label>
 			<p className="explainer" id="uploadexplainer">Upload a JSON file (this overwrites existing dialogue!)</p>
 		</div>
+		
+		<a id="samplefile" href={`${process.env.PUBLIC_URL}/assets/sampleFile.json`} download>Need a reference?</a>
 	</form>;
 }
 
