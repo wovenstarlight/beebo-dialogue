@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BaseForm from "./BaseForm";
 import sampleDialogues from "../assets/data/sampleDialogue";
+import validateDialogue from "../utils/validateDialogue";
 
 function AddForm({ setDialogues }) {
 	const [color, setColor] = useState("purple");
@@ -12,10 +13,12 @@ function AddForm({ setDialogues }) {
 		e.preventDefault();
 		const newDialogue = {
 			id: `${color.toLowerCase()}_${(new Date()).getTime()}`,
-			color: color,
-			portrait: portrait,
-			speaker: speaker,
-			dialogue: dialogue,
+			...validateDialogue({
+				color: color,
+				portrait: portrait,
+				speaker: speaker,
+				dialogue: dialogue,
+			})
 		};
 		setDialogues(values => [...values, newDialogue]);
 		clearForm(e);

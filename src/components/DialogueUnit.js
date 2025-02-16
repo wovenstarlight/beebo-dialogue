@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BaseForm from "./BaseForm";
 import TextBox from "./TextBox";
+import validateDialogue from "../utils/validateDialogue";
 
 function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, setDialogues, isFirst, isLast }) {
 	/** Finds the neighboring dialogue boxes. Helper for `moveUp`/`moveDown` and `edit`. */
@@ -26,10 +27,12 @@ function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, se
 		let [pre, , post] = getNeighbors();
 		setDialogues(pre.concat([{
 			id: id,
-			color: tempColor,
-			speaker: tempSpeaker,
-			portrait: tempPortrait,
-			dialogue: tempDialogue,
+			...validateDialogue({
+				color: tempColor,
+				speaker: tempSpeaker,
+				portrait: tempPortrait,
+				dialogue: tempDialogue,
+			})
 		}], post));
 		setEditing(false);
 	}
