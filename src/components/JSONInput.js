@@ -1,4 +1,5 @@
 import "../styles/JSONForm.css";
+import validateDialogue from "../utils/validateDialogue";
 
 function JSONInput({ dialogues, setDialogues }) {
 	function getJSON() {
@@ -11,7 +12,7 @@ function JSONInput({ dialogues, setDialogues }) {
 		)
 	}
 
-	// #region TODO: Handlers
+	// #region Handlers
 	/** Show a status message and unfocus from a clicked button. Helper for JSON form handlers. */
 	function showMessage(btn, message) {
 		let original = btn.innerText;
@@ -58,7 +59,43 @@ function JSONInput({ dialogues, setDialogues }) {
 	}
 
 	/** Upload a .json file to the editor. */
-	function uploadJSON(e) {}
+	function uploadJSON(e) {
+		let initialMessage = showMessage(e.target, "Uploading...");
+		let file = e.target.files[0];
+
+		if (file.type !== "application/json") {
+			window.alert("Wrong file type!\n\nYou must upload a .json file.");
+		}
+		else {
+			let contents;
+			try {
+				file.text().then(text => {
+					contents = JSON.parse(text);	// confirm it's proper JSON
+
+					if (!(contents.every(obj => {	// confirm that every array item…
+						return Object.prototype.toString.call(obj) === "[object Object]"	// is an object
+						&& Object.keys(obj).some(x => ["color", "portrait", "speaker", "dialogue"].includes(x))	// has at least one of the dialogue keys
+					}))) {
+						window.alert("Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", and \"dialogue\".");
+						return;
+					}
+
+					// Input validated! Now go through and make the dialogue
+					setDialogues(contents.map((obj, index) => {
+						return {
+							id: `upload_${(new Date()).getTime()}_${index}`,
+							...validateDialogue(obj),
+						}
+					}));
+	
+					clearTimeout(initialMessage);
+					showMessage(e.target, "Uploaded!");
+				});
+			} catch (error) {
+				window.alert(error.message);
+			}
+		}
+	}
 	// #endregion
 
 	return <form id="jsonform" name="jsonform" onSubmit={handleSubmit} className="menu">
