@@ -49,12 +49,12 @@
 	}
 }
 #copyjson {
-	--text: var(--text-marigold);
-	--bg: var(--bg-marigold);
-}
-#downloadjson {
 	--text: var(--text-nadia);
 	--bg: var(--bg-nadia);
+}
+#downloadjson {
+	--text: var(--text-owen);
+	--bg: var(--bg-owen);
 }
 #uploadlabel {
 	--text: var(--text-simon);
