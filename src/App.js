@@ -1,8 +1,8 @@
 import "./styles/App.css";
-import TextBox from "./components/TextBox";
-import AddForm from "./components/AddForm";
 import { useState } from "react";
 import DialogueUnit from "./components/DialogueUnit";
+import AddForm from "./components/AddForm";
+import JSONInput from "./components/JSONInput";
 
 function App() {
 	const [dialogues, setDialogues] = useState([]);
@@ -26,6 +26,8 @@ function App() {
 			</div>}
 
 			<AddForm setDialogues={setDialogues} />
+
+			<JSONInput dialogues={dialogues} setDialogues={setDialogues} />
 		</main>
 		<footer id="sitefoot">
 			<p>Made by <a href="https://github.com/wovenstarlight">wovenstarlight</a></p>

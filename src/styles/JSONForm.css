@@ -1,0 +1,67 @@
+#jsonform {
+	margin-block-start: 3em;
+
+	& > :first-child { margin-block: 0 }
+	.explainer { text-align: center }
+}
+
+#jsoninput {
+	width: 100%;
+	margin-block: 1em;
+	border: var(--border-width) solid;
+	padding: 0.5em;
+	font-size: 1.25em;
+	font-family: monospace;
+	height: 15em;
+	scrollbar-width: thin;
+}
+
+/* #region Buttons */
+#jsonform .buttons {
+	padding: 0 3em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+
+	&:not(:has(:hover, :focus-within)) {
+		padding-block-start: 2.4em;
+	}
+
+	.explainer {
+		grid-row: 1;
+		grid-column: 1 / span 3;
+		margin-block: 0;
+	}
+
+	.jsonbtn {
+		font: inherit;
+		text-align: center;
+		background-color: var(--bg);
+		color: white;
+		border: var(--border-width) solid var(--text);
+		padding: 0.5em 0.75em;
+		display: inline-block;
+		cursor: pointer;
+
+		&:is(:hover, :focus-within) { background-color: var(--text) }
+		&:not(:hover, :focus-within) + .explainer { display: none }
+	}
+}
+#copyjson {
+	--text: var(--text-marigold);
+	--bg: var(--bg-marigold);
+}
+#downloadjson {
+	--text: var(--text-nadia);
+	--bg: var(--bg-nadia);
+}
+#uploadlabel {
+	--text: var(--text-simon);
+	--bg: var(--bg-simon);
+}
+#uploadjson {
+	position: fixed;
+	left: 100%;
+	top: 100%;
+}
+/* #endregion */
