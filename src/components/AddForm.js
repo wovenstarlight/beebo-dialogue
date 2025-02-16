@@ -72,7 +72,7 @@ function AddForm({ setDialogues }) {
 			<span className="labeltext">
 				Reuse same palette for future dialogue
 				<br/>
-				<small>When off, palette will be reset after every submission</small>
+				<small>When off, palette will reset to purple after every submission</small>
 			</span>
 		</label>
 

@@ -77,37 +77,37 @@
 		}
 		&.resetbtn { font-size: 1.2em }
 	}
+}
 
-	#keepcolor {
-		grid-template-columns: auto 1fr;
-		width: fit-content;
-		margin-inline: auto;
-		text-align: start;
-		padding-block: 1em 0.5em;
+#keepcolor {
+	grid-template-columns: auto 1fr;
+	width: fit-content;
+	margin-inline: auto;
+	text-align: start;
+	padding-block: 1em 0.5em;
+	cursor: pointer;
 
-		.labeltext { padding-block-start: 0.2em }
+	.labeltext { padding-block-start: 0.2em }
 
-		.icon {
-			cursor: pointer;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 1.5em;
-			height: 1.5em;
-			border: var(--border-width) solid var(--text-house);
-			text-align: center;
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.5em;
+		height: 1.5em;
+		border: var(--border-width) solid var(--text-house);
+		text-align: center;
+	}
+
+	input {
+		position: fixed;
+		left: 100%;
+		top: 100%;
+
+		&:checked ~ .icon::before {
+			content: "x";
+			padding-inline-start: 0.1em;
 		}
-
-		input {
-			position: fixed;
-			left: 100%;
-			top: 100%;
-
-			&:checked ~ .icon::before {
-				content: "x";
-				padding-inline-start: 0.1em;
-			}
-			&:active ~ .icon { background-color: var(--text) }
-		}
+		&:active ~ .icon { background-color: var(--text) }
 	}
 }
