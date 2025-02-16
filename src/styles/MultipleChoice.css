@@ -1,0 +1,17 @@
+.mcq {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6em;
+	margin-block: 1em;
+}
+.mcq p {
+	margin-block: 0;
+	padding-block: 0.05em;
+	border: var(--border-width) solid var(--text);
+	background-color: var(--bg);
+	color: white;
+	text-align: center;
+	font-size: 1.4em;
+
+	&.selected { background-color: var(--text) }
+}
