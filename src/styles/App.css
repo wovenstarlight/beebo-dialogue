@@ -117,6 +117,16 @@
 * {
 	box-sizing: border-box;
 	font-weight: normal;
+
+	/* Disable anti-aliasing to get that pixel look on all images
+	Retrieved from https://forum.squarespace.com/topic/240034-how-to-disable-anti-aliasing-site-wide-for-pixel-art/ */
+	image-rendering: optimizeSpeed;				/* STOP SMOOTHING, GIVE ME SPEED	*/
+	image-rendering: -moz-crisp-edges;			/* Firefox							*/
+	image-rendering: -o-crisp-edges;			/* Opera							*/
+	image-rendering: -webkit-optimize-contrast;	/* Chrome (and eventually Safari)	*/
+	image-rendering: pixelated;					/* Universal support since 2021		*/
+	image-rendering: optimize-contrast;			/* CSS3 Proposed					*/
+	-ms-interpolation-mode: nearest-neighbor;	/* IE8+								*/
 }
 
 body {
@@ -124,8 +134,8 @@ body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-	border: 3em solid transparent;
-	border-image: url("../assets/images/bigBorder.png") 34% repeat;
+	border: 5em solid transparent;
+	border-image: url("../assets/images/pauseBorder.png") 19% repeat;
 	font-family: "Nokia";
 	color: var(--text-house);
 	background-color: var(--bg-house);
@@ -142,7 +152,10 @@ body {
 	text-align: center;
 }
 
-#sitehead h1 { color: white }
+#sitehead h1 {
+	color: white;
+	margin-block-start: 0;
+}
 
 #sitebody {
 	border-block: 2em solid transparent;
@@ -150,16 +163,6 @@ body {
 	padding-block: 3em;
 	width: 59.5em;
 	margin-inline: auto;
-
-	/* Disable anti-aliasing to get that pixel look on all images
-	Retrieved from https://forum.squarespace.com/topic/240034-how-to-disable-anti-aliasing-site-wide-for-pixel-art/ */
-	image-rendering: optimizeSpeed;				/* STOP SMOOTHING, GIVE ME SPEED	*/
-	image-rendering: -moz-crisp-edges;			/* Firefox							*/
-	image-rendering: -o-crisp-edges;			/* Opera							*/
-	image-rendering: -webkit-optimize-contrast;	/* Chrome (and eventually Safari)	*/
-	image-rendering: pixelated;					/* Universal support since 2021		*/
-	image-rendering: optimize-contrast;			/* CSS3 Proposed					*/
-	-ms-interpolation-mode: nearest-neighbor;	/* IE8+								*/
 
 	#topmenu {
 		margin-block-end: 2em;
@@ -206,7 +209,7 @@ textarea {
 	margin: 3em 5em 0;
 	padding-block: 1em;
 	border: 1.25em solid transparent;
-	border-image: url("../assets/images/smallBorder.png") 34% repeat;
+	border-image: url("../assets/images/prettyBorder.png") 35% repeat;
 
 	h2 {
 		margin-block: 0 0.5em;
