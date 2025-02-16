@@ -151,12 +151,15 @@ body {
 	width: 59.5em;
 	margin-inline: auto;
 
-	/* Disable anti-aliasing to get that pixel look on all images */
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -o-crisp-edges;
-	image-rendering: -webkit-optimize-contrast;
-	-ms-interpolation-mode: nearest-neighbor;
+	/* Disable anti-aliasing to get that pixel look on all images
+	Retrieved from https://forum.squarespace.com/topic/240034-how-to-disable-anti-aliasing-site-wide-for-pixel-art/ */
+	image-rendering: optimizeSpeed;				/* STOP SMOOTHING, GIVE ME SPEED	*/
+    image-rendering: -moz-crisp-edges;			/* Firefox							*/
+    image-rendering: -o-crisp-edges;			/* Opera							*/
+    image-rendering: -webkit-optimize-contrast;	/* Chrome (and eventually Safari)	*/
+    image-rendering: pixelated;					/* Universal support since 2021		*/
+    image-rendering: optimize-contrast;			/* CSS3 Proposed					*/
+    -ms-interpolation-mode: nearest-neighbor;	/* IE8+								*/
 
 	#dialogues { padding-block: 2em }
 
