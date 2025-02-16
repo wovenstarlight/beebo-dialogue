@@ -46,7 +46,7 @@ function App() {
 		<header id="sitehead">
 			<h1>Detective Beebo dialogue builder</h1>
 			<p>Based on the game <a href="https://bwobbers.itch.io/detective-beebo-night-at-the-mansion">Detective Beebo: Night at the Mansion</a> by Bwobbers</p>
-			<p>(Inspired by <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html">kongkrog's dialogue GIF maker</a>)</p>
+			<p>A static image version of <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html">kongkrog's dialogue GIF maker</a></p>
 		</header>
 		<main id="sitebody">
 			{dialogues.length === 0 && <p id="explainer">Use the form below to get started!</p>}
@@ -70,7 +70,7 @@ function App() {
 			</div>
 		</main>
 		<footer id="sitefoot">
-			<p>Made by <a href="https://github.com/wovenstarlight">wovenstarlight</a></p>
+			<p><a href="https://github.com/wovenstarlight">Made by wovenstarlight</a> | <a href="https://github.com/wovenstarlight/beebo-dialogue">Source code on Github</a></p>
 			<p>Font credits: <a href="https://www.dafont.com/nokia-cellphone.font">Nokia Cellphone FC</a> and SqueezedPixels by Bwobbers</p>
 		</footer>
 	</>);
