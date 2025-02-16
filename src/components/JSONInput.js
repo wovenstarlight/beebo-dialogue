@@ -12,11 +12,32 @@ function JSONInput({ dialogues, setDialogues }) {
 	}
 
 	// #region TODO: Handlers
+	/** Show a status message and unfocus from a clicked button. Helper for JSON form handlers. */
+	function showMessage(btn, message) {
+		let original = btn.innerText;
+		
+		btn.innerText = message;
+		let timeout = setTimeout(() => { btn.innerText = original }, 2000);
+
+		// And unfocus the element to stop showing the explainer
+		document.activeElement.blur();
+
+		return timeout;
+	}
+
 	/** Render the JSON as dialogues. */
 	function handleSubmit(e) {}
 	
 	/** Copy JSON to the user's clipboard. */
-	function copyJSON(e) {}
+	function copyJSON(e) {
+		let form = e.target.closest("form");
+		
+		// Copy text to clipboard
+		navigator.clipboard.writeText(form.querySelector("#jsoninput").value.trim());
+
+		// Let user know
+		showMessage(e.target, "Copied!");
+	}
 
 	/** Download JSON as a .json file. */
 	function downloadJSON(e) {}
