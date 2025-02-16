@@ -61,6 +61,7 @@
 
 	&:not(:hover, :focus-within) .buttons {
 		opacity: 0;
+		left: 0;
 	}
 }
 
@@ -139,5 +140,5 @@
 /* #endregion */
 
 /* Editing form */
-.dialogueform:not(:first-child)	{ margin-block-start: 0.75em }
-.dialogueform:not(:last-child)	{ margin-block-end: 0.75em }
+#dialogues .dialogueform:not(:first-child)	{ margin-block-start: 0.75em }
+#dialogues .dialogueform:not(:last-child)	{ margin-block-end: 0.75em }

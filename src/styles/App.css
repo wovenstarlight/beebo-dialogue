@@ -161,7 +161,7 @@ body {
 	image-rendering: optimize-contrast;			/* CSS3 Proposed					*/
 	-ms-interpolation-mode: nearest-neighbor;	/* IE8+								*/
 
-	#dialogues { padding-block: 2em }
+	#topmenu { margin-block-end: 2em }
 
 	#clearall {
 		display: block;
@@ -188,7 +188,7 @@ textarea {
 }
 
 .menu {
-	margin-inline: 5em;
+	margin: 3em 5em 0;
 	padding-block: 1em;
 	border: 1.25em solid transparent;
 	border-image: url("../assets/images/smallBorder.png") 34% repeat;

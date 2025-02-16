@@ -1,6 +1,4 @@
 #jsonform {
-	margin-block-start: 3em;
-
 	& > :first-child { margin-block: 0 }
 	.explainer { text-align: center }
 }
