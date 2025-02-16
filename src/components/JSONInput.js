@@ -40,7 +40,22 @@ function JSONInput({ dialogues, setDialogues }) {
 	}
 
 	/** Download JSON as a .json file. */
-	function downloadJSON(e) {}
+	function downloadJSON(e) {
+		// From https://www.geeksforgeeks.org/how-to-save-text-as-a-file-in-html-css-and-javascript/
+		let input = e.target.closest("form").querySelector("#jsoninput").value.trim();
+
+		// Create and click download link
+		let inputBlob =
+			new Blob([input], { type: "text/plain" });
+		let inputBlobURL = URL.createObjectURL(inputBlob);
+		let dlLink = document.createElement("a");
+		dlLink.setAttribute("download", "beebo_dialogue.json");
+		dlLink.href = inputBlobURL;
+		dlLink.click();
+
+		// Let user know
+		showMessage(e.target, "Downloading...");
+	}
 
 	/** Upload a .json file to the editor. */
 	function uploadJSON(e) {}
