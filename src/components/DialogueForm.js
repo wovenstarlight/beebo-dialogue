@@ -1,4 +1,4 @@
-import "../styles/DialogForm.css";
+import "../styles/DialogueForm.css";
 import PortraitSelector from "./PortraitSelector";
 import allColors from "../assets/data/colors";
 
