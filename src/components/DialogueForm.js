@@ -3,13 +3,10 @@ import PortraitSelector from "./PortraitSelector";
 import allColors from "../assets/data/colors";
 
 function DialogForm({
-	id, title, handleSubmit, hidden,
-	keepColor, setKeepColor,
 	color, setColor,
 	speaker, setSpeaker,
 	dialogue, setDialogue,
 	portrait, setPortrait,
-	children
 }) {
 	/* BREAKDOWN
 	Four inputs:
@@ -81,19 +78,7 @@ function DialogForm({
 				onChange={(e) => setDialogue(e.target.value)}
 			/>
 		</label>
-
-		{keepColor != null && <label id="keepcolor">
-			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} />
-			<span className="icon" />
-			<span className="labeltext">
-				Reuse same palette for future dialogue
-				<br/>
-				<small>When off, palette will be reset after every submission</small>
-			</span>
-		</label>}
-
-		{children}
-	</form>);
+	</>;
 }
 
 export default DialogForm;

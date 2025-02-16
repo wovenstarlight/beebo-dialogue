@@ -52,13 +52,10 @@ function AddForm({ setDialogues }) {
 		- buttons to create the corresponding box and to reset the form.
 		- button that autofills the form with sample dialogue.
 	*/
-	return (
+	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu dialogueform ${color}`}>
+		<h2>Add new dialogue</h2>
+
 		<DialogueForm
-			id="addform"
-			title="Add new dialogue"
-			handleSubmit={handleSubmit}
-			keepColor={keepColor}
-			setKeepColor={setKeepColor}
 			color={color}
 			setColor={setColor}
 			speaker={speaker}
@@ -67,12 +64,22 @@ function AddForm({ setDialogues }) {
 			setDialogue={setDialogue}
 			portrait={portrait}
 			setPortrait={setPortrait}
-		>
-			<button className="submitbtn" type="submit">Add</button>
-			<button className="resetbtn" type="reset" onClick={clearForm}>Clear</button>
-			<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
-		</DialogueForm>
-	)
+		/>
+
+		<label id="keepcolor">
+			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} />
+			<span className="icon" />
+			<span className="labeltext">
+				Reuse same palette for future dialogue
+				<br/>
+				<small>When off, palette will be reset after every submission</small>
+			</span>
+		</label>
+
+		<button className="submitbtn" type="submit">Add</button>
+		<button className="resetbtn" type="reset" onClick={clearForm}>Clear</button>
+		<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
+	</form>;
 }
 
 export default AddForm;

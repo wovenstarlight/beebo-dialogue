@@ -62,22 +62,23 @@ function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, se
 		getNeighbors={getNeighbors}
 	/>}
 	
-	{editing && <DialogueForm
-		id={`edit_${id}`}
-		title="Edit"
-		color={tempColor}
-		setColor={setTempColor}
-		speaker={tempSpeaker}
-		setSpeaker={setTempSpeaker}
-		dialogue={tempDialogue}
-		setDialogue={setTempDialogue}
-		portrait={tempPortrait}
-		setPortrait={setTempPortrait}
-		handleSubmit={handleSubmit}
-	>
+	{editing && <form id={`edit_${id}`} name={`edit_${id}`} onSubmit={handleSubmit} className={`menu dialogueform ${tempColor}`}>
+		<h2>Edit dialogue</h2>
+		<DialogueForm
+			color={tempColor}
+			setColor={setTempColor}
+			speaker={tempSpeaker}
+			setSpeaker={setTempSpeaker}
+			dialogue={tempDialogue}
+			setDialogue={setTempDialogue}
+			portrait={tempPortrait}
+			setPortrait={setTempPortrait}
+			handleSubmit={handleSubmit}
+		/>
+
 		<button className="submitbtn" type="submit">Update</button>
 		<button className="resetbtn" type="reset" onClick={cancelEdit}>Cancel</button>
-	</DialogueForm>}
+	</form>}
 	</>;
 }
 
