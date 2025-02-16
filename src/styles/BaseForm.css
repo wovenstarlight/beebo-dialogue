@@ -55,6 +55,8 @@
 		grid-template-columns: var(--labelwidth) 1fr auto;
 		align-items: center;
 
+		.labeltext { padding-block-start: 0 }
+
 		.portrait { width: 6em }
 	}
 
