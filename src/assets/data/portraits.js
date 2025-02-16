@@ -356,7 +356,7 @@ const allPortraits = {
 
 	// #region Eugene Coli
 	"Eugene Coli": {
-		"Coli > Angry": "eugene/angry.png",
+		"Coli > Angry": "eugene/angy.png",
 		"Coli > Very angry": "eugene/bigangy.png",
 		"Coli > Aw": "eugene/aw.png",
 		"Coli > Down": "eugene/down.png",
