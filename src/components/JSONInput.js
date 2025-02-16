@@ -68,7 +68,9 @@ function JSONInput({ dialogues, setDialogues }) {
 
 			if (!(contents.every(obj => {	// confirm that every array item…
 				return Object.prototype.toString.call(obj) === "[object Object]"	// is an object
-				&& Object.keys(obj).some(x => ["color", "portrait", "speaker", "dialogue"].includes(x))	// has at least one of the dialogue keys
+				&& Object.keys(obj).some(	// has at least one of the dialogue/MCQ keys
+					x => ["color", "portrait", "speaker", "dialogue", "options"].includes(x)
+				)
 			}))) {
 				window.alert("Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", and \"dialogue\".");
 				return;
