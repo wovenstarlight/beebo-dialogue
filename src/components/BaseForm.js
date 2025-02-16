@@ -41,7 +41,7 @@ function BaseForm({
 				name="inputspeaker"
 				type="text"
 				minLength={1}
-				maxLength={50}
+				maxLength={100}
 				required
 				list="speakerslist"
 				value={speaker}
@@ -68,7 +68,7 @@ function BaseForm({
 				id="inputdialogue"
 				name="inputdialogue"
 				minLength={1}
-				maxLength={150}
+				maxLength={250}
 				required
 				value={dialogue}
 				onChange={(e) => setDialogue(e.target.value)}
