@@ -1,8 +1,8 @@
-import "../styles/BaseForm.css";
+import "../styles/DialogForm.css";
 import PortraitSelector from "./PortraitSelector";
 import allColors from "../assets/data/colors";
 
-function BaseForm({
+function DialogForm({
 	id, title, handleSubmit, hidden,
 	color, setColor,
 	speaker, setSpeaker,
@@ -79,4 +79,4 @@ function BaseForm({
 	</form>);
 }
 
-export default BaseForm;
+export default DialogForm;

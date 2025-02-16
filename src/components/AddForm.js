@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BaseForm from "./BaseForm";
+import DialogForm from "./DialogForm";
 import sampleDialogues from "../assets/data/sampleDialogue";
 import validateDialogue from "../utils/validateDialogue";
 
@@ -54,7 +54,7 @@ function AddForm({ setDialogues }) {
 	And one for testing purposes that autofills the form with sample dialogue.
 	*/
 	return (
-		<BaseForm
+		<DialogForm
 			id="addform"
 			title="Add new dialogue"
 			handleSubmit={handleSubmit}
@@ -70,7 +70,7 @@ function AddForm({ setDialogues }) {
 			<button className="submitbtn" type="submit">Add</button>
 			<button className="resetbtn" type="reset" onClick={clearForm}>Clear</button>
 			<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
-		</BaseForm>
+		</DialogForm>
 	)
 }
 

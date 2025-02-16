@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BaseForm from "./BaseForm";
+import DialogForm from "./DialogForm";
 import TextBox from "./TextBox";
 import validateDialogue from "../utils/validateDialogue";
 
@@ -62,7 +62,7 @@ function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, se
 		getNeighbors={getNeighbors}
 	/>}
 	
-	{editing && <BaseForm
+	{editing && <DialogForm
 		id={`edit_${id}`}
 		title="Edit"
 		color={tempColor}
@@ -77,7 +77,7 @@ function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, se
 	>
 		<button className="submitbtn" type="submit">Update</button>
 		<button className="resetbtn" type="reset" onClick={cancelEdit}>Cancel</button>
-	</BaseForm>}
+	</DialogForm>}
 	</>;
 }
 
