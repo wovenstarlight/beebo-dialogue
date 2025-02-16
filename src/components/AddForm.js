@@ -47,16 +47,10 @@ function AddForm({ setDialogues }) {
 	}
 
 	/* BREAKDOWN
-	Four inputs:
-		- one for the color palette used by the box.
-		- one for speaker. Has a datalist with suggestions from canon. (Pity that Ángel's accent means it doesn't automatically get suggested under "A"…)
-		- one for the portrait. Needs the full list of portraits so it's been banished to its own component.
-		- one for the actual text. Length limit set roughly at how much takes up the full box.
-	
-	Plus:
-		- one to keep the color palette selected 
+		- main DialogueForm with the standard inputs
+		- checkbox to keep the color palette selected.
 		- buttons to create the corresponding box and to reset the form.
-		- one for testing purposes that autofills the form with sample dialogue.
+		- button that autofills the form with sample dialogue.
 	*/
 	return (
 		<DialogueForm

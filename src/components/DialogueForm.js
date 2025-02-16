@@ -11,10 +11,15 @@ function DialogForm({
 	portrait, setPortrait,
 	children
 }) {
-	return (
-	<form id={id} name={id} onSubmit={handleSubmit} className={`menu dialogueform ${color}`} hidden={hidden}>
-		<h2>{title}</h2>
+	/* BREAKDOWN
+	Four inputs:
+		- one for the color palette used by the box.
+		- one for speaker. Has a datalist with suggestions from canon. (Pity that Ángel's accent means it doesn't automatically get suggested under "A"…)
+		- one for the portrait. Needs the full list of portraits so it's been banished to its own component.
+		- one for the actual text. Length limit set roughly at how much takes up the full box.
+	*/
 
+	return <>
 		<label id="labelcolor">
 			<span className="labeltext">Palette</span>
 			<select
