@@ -178,6 +178,12 @@ body {
 
 [hidden] { display: none !important }
 
+textarea {
+	resize: vertical;
+	color: inherit;
+	background-color: inherit;
+}
+
 .menu {
 	margin-inline: 5em;
 	padding-block: 1em;
