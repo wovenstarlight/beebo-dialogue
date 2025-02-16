@@ -8,6 +8,7 @@ function AddForm({ setDialogues }) {
 	const [speaker, setSpeaker] = useState("");
 	const [dialogue, setDialogue] = useState("");
 	const [portrait, setPortrait] = useState("");
+	const [keepColor, setKeepColor] = useState(false);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -26,12 +27,14 @@ function AddForm({ setDialogues }) {
 
 	function clearForm(e) {
 		// Clear stored values
-		setColor("purple");
+		if (!keepColor) setColor("purple");
+		else var ogColor = color;
 		setSpeaker("");
 		setDialogue("");
 		setPortrait("");
 		// And remove the invalid markers
 		e.target.closest("form").reset();
+		if (keepColor) setColor(ogColor);
 	}
 
 	function fillSample(e) {
@@ -50,14 +53,18 @@ function AddForm({ setDialogues }) {
 		- one for the portrait. Needs the full list of portraits so it's been banished to its own component.
 		- one for the actual text. Length limit set roughly at how much takes up the full box.
 	
-	Plus buttons to create the corresponding box and to reset the form.
-	And one for testing purposes that autofills the form with sample dialogue.
+	Plus:
+		- one to keep the color palette selected 
+		- buttons to create the corresponding box and to reset the form.
+		- one for testing purposes that autofills the form with sample dialogue.
 	*/
 	return (
 		<DialogForm
 			id="addform"
 			title="Add new dialogue"
 			handleSubmit={handleSubmit}
+			keepColor={keepColor}
+			setKeepColor={setKeepColor}
 			color={color}
 			setColor={setColor}
 			speaker={speaker}

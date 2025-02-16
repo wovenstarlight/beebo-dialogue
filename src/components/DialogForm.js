@@ -4,6 +4,7 @@ import allColors from "../assets/data/colors";
 
 function DialogForm({
 	id, title, handleSubmit, hidden,
+	keepColor, setKeepColor,
 	color, setColor,
 	speaker, setSpeaker,
 	dialogue, setDialogue,
@@ -13,6 +14,7 @@ function DialogForm({
 	return (
 	<form id={id} name={id} onSubmit={handleSubmit} className={`menu dialogueform ${color}`} hidden={hidden}>
 		<h2>{title}</h2>
+
 		<label id="labelcolor">
 			<span className="labeltext">Palette</span>
 			<select
@@ -74,6 +76,16 @@ function DialogForm({
 				onChange={(e) => setDialogue(e.target.value)}
 			/>
 		</label>
+
+		{keepColor != null && <label id="keepcolor">
+			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} />
+			<span className="icon" />
+			<span className="labeltext">
+				Reuse same palette for future dialogue
+				<br/>
+				<small>When off, palette will be reset after every submission</small>
+			</span>
+		</label>}
 
 		{children}
 	</form>);
