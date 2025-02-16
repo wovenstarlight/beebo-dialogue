@@ -18,17 +18,12 @@ function JSONInput({ dialogues, setDialogues }) {
 		let original = btn.innerText;
 		
 		btn.innerText = message;
-		let timeout = setTimeout(() => { btn.innerText = original }, 2000);
+		setTimeout(() => { btn.innerText = original }, 2000);
 
 		// And unfocus the element to stop showing the explainer
 		document.activeElement.blur();
-
-		return timeout;
 	}
 
-	/** Render the JSON as dialogues. */
-	function handleSubmit(e) {}
-	
 	/** Copy JSON to the user's clipboard. */
 	function copyJSON(e) {
 		let form = e.target.closest("form");
@@ -59,46 +54,43 @@ function JSONInput({ dialogues, setDialogues }) {
 	}
 
 	/** Upload a .json file to the editor. */
-	function uploadJSON(e) {
-		let initialMessage = showMessage(e.target, "Uploading...");
-		let file = e.target.files[0];
+	async function uploadJSON(e) {
+		const file = e.target.files[0];
 
+		// confirm it's a JSON file
 		if (file.type !== "application/json") {
 			window.alert("Wrong file type!\n\nYou must upload a .json file.");
+			return;
 		}
-		else {
-			let contents;
-			try {
-				file.text().then(text => {
-					contents = JSON.parse(text);	// confirm it's proper JSON
 
-					if (!(contents.every(obj => {	// confirm that every array item…
-						return Object.prototype.toString.call(obj) === "[object Object]"	// is an object
-						&& Object.keys(obj).some(x => ["color", "portrait", "speaker", "dialogue"].includes(x))	// has at least one of the dialogue keys
-					}))) {
-						window.alert("Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", and \"dialogue\".");
-						return;
-					}
+		try {
+			let contents = JSON.parse(await file.text());	// confirm it's proper JSON
 
-					// Input validated! Now go through and make the dialogue
-					setDialogues(contents.map((obj, index) => {
-						return {
-							id: `upload_${(new Date()).getTime()}_${index}`,
-							...validateDialogue(obj),
-						}
-					}));
-	
-					clearTimeout(initialMessage);
-					showMessage(e.target, "Uploaded!");
-				});
-			} catch (error) {
-				window.alert(error.message);
+			if (!(contents.every(obj => {	// confirm that every array item…
+				return Object.prototype.toString.call(obj) === "[object Object]"	// is an object
+				&& Object.keys(obj).some(x => ["color", "portrait", "speaker", "dialogue"].includes(x))	// has at least one of the dialogue keys
+			}))) {
+				window.alert("Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", and \"dialogue\".");
+				return;
 			}
+
+			// Input validated! Now go through and make the dialogue
+			setDialogues(contents.map((obj, index) => {
+				return {
+					id: `upload_${(new Date()).getTime()}_${index}`,
+					...validateDialogue(obj),
+				}
+			}));
+
+			// Let user know it was successful
+			showMessage(e.target.previousElementSibling, "Uploaded!");
+		} catch (error) {
+			window.alert(error.message);
 		}
 	}
 	// #endregion
 
-	return <form id="jsonform" name="jsonform" onSubmit={handleSubmit} className="menu">
+	return <form id="jsonform" name="jsonform" className="menu">
 		<p className="explainer">...or,</p>
 		<h2>Edit via JSON</h2>
 		<p className="explainer">Save/create multiple dialogue boxes at once!</p>
@@ -113,7 +105,7 @@ function JSONInput({ dialogues, setDialogues }) {
 			<p className="explainer" id="downloadexplainer">Download as a JSON file to your device</p>
 
 			<label className="jsonbtn" id="uploadlabel" aria-describedby="uploadexplainer">
-				Upload
+				<span className="btnlabel">Upload</span>
 				<input id="uploadjson" name="uploadjson" onChange={uploadJSON} type="file" accept=".json" />
 			</label>
 			<p className="explainer" id="uploadexplainer">Upload a JSON file (this overwrites existing dialogue!)</p>
