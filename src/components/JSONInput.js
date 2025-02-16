@@ -45,7 +45,7 @@ function JSONInput({ dialogues, setDialogues }) {
 			new Blob([input], { type: "text/plain" });
 		let inputBlobURL = URL.createObjectURL(inputBlob);
 		let dlLink = document.createElement("a");
-		dlLink.setAttribute("download", "beebo_dialogue.json");
+		dlLink.setAttribute("download", "beebo-dialogue.json");
 		dlLink.href = inputBlobURL;
 		dlLink.click();
 
