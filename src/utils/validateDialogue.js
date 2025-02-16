@@ -12,7 +12,7 @@ import allPortraits from "../assets/data/portraits";
 function validateDialogue({ color, portrait, speaker, dialogue }) {
 	return {
 		color: typeof color === "string" && Object.values(allColors).includes(color) ? color : "purple",
-		portrait: typeof portrait === "string" && Object.values(allPortraits).some(el => Object.values(el).includes(portrait)) ? portrait : `default.png`,
+		portrait: typeof portrait === "string" && Object.values(allPortraits).some(el => Object.values(el).includes(portrait)) ? portrait : `misc/someone_shadow.png`,
 		speaker: typeof speaker === "string" ? speaker.slice(0, 100) : "Y/N",
 		dialogue: typeof dialogue === "string" ? dialogue.slice(0, 250) : "Lorem ipsum dolor sit amet.",
 	}

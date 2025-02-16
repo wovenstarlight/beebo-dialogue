@@ -394,6 +394,15 @@ const allPortraits = {
 		"Police Officer > Thinking": "police/officer3/think.png",
 	},
 	// #endregion
+
+	// #region Miscellaneous
+	"Other": {
+		"Bartender > Neutral": "misc/bartender_neutro.png",
+		"Shadow > Someone (House of Vera/Purple)": "misc/someone_shadow.png",
+		"Shadow > Worker (City/Police)": "misc/worker_shadow.png",
+		"Blank square (Tutorial)": "misc/tutorial_blank.png",
+	},
+	// #endregion
 }
 
 export default allPortraits;

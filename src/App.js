@@ -65,7 +65,7 @@ function App() {
 
 			<div id="downloadasimage" hidden>
 				{/* Placeholder URL to avoid a11ty warning */}
-				<a id="imgdownload" href="/default.png" download="beebo_dialogue.png">Download as image</a>
+				<a id="imgdownload" href="/misc/someone_shadow.png" download="beebo_dialogue.png">Download as image</a>
 				<canvas id="imgcanvas" />
 			</div>
 		</main>

@@ -31,7 +31,7 @@ function DialogForm({
 		<label id="labelportrait">
 			<span className="labeltext">Portrait</span>
 			<PortraitSelector portrait={portrait} setPortrait={setPortrait} />
-			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(portrait.length ? portrait : "default.png")} />
+			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(portrait.length ? portrait : "misc/someone_shadow.png")} />
 		</label>
 
 		<label id="labelspeaker">
