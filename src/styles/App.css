@@ -178,13 +178,15 @@ body {
 			border: var(--border-width) solid var(--text);
 			cursor: pointer;
 		
-			&:is(:hover, :focus) { background-color: var(--text) }
+			&:is(:hover, :focus) {
+				background-color: var(--text);
+				color: var(--bg);
+			}
 		}
 	}
 	#saveimage {
 		--text: var(--text-trueending);
 		--bg: var(--bg-trueending);
-		&:is(:hover, :focus) { color: var(--bg) }
 	}
 	#clearall {
 		--text: var(--text-vivi);

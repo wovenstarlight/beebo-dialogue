@@ -42,7 +42,10 @@
 		display: inline-block;
 		cursor: pointer;
 
-		&:is(:hover, :focus-within) { background-color: var(--text) }
+		&:is(:hover, :focus-within) {
+			background-color: var(--text);
+			color: var(--bg);
+		}
 		&:not(:hover, :focus-within) + .explainer { display: none }
 	}
 }

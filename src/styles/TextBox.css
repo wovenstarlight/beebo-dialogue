@@ -30,6 +30,7 @@
 
 			&:not([disabled]):is(:hover, :focus) {
 				background-color: var(--text);
+				color: var(--bg);
 			}
 
 			&[disabled] {
