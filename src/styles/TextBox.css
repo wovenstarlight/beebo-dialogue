@@ -139,7 +139,3 @@
 	display: block;
 }
 /* #endregion */
-
-/* Editing form */
-#dialogues .dialogueform:not(:first-child)	{ margin-block-start: 0.75em }
-#dialogues .dialogueform:not(:last-child)	{ margin-block-end: 0.75em }

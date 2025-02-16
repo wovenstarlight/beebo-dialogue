@@ -163,42 +163,54 @@ body {
 	padding-block: 3em;
 	width: 59.5em;
 	margin-inline: auto;
-
-	#topmenu {
-		margin-block-end: 2em;
-		display: flex;
-		width: fit-content;
-		gap: 1em;
-		margin-inline: auto;
-
-		button {
-			display: block;
-			font: inherit;
-			padding: 0.5em 1em;
-			margin-inline: auto;
-			color: white;
-			background-color: var(--bg);
-			border: var(--border-width) solid var(--text);
-			cursor: pointer;
-		
-			&:is(:hover, :focus) {
-				background-color: var(--text);
-				color: var(--bg);
-			}
-		}
-	}
-	#saveimage {
-		--text: var(--text-trueending);
-		--bg: var(--bg-trueending);
-	}
-	#clearall {
-		--text: var(--text-vivi);
-		--bg: var(--bg-vivi);
-	}
 }
 
 [hidden] { display: none !important }
+/* #endregion */
 
+/* #region Top menu */
+#topmenu {
+	margin-block-end: 2em;
+	display: flex;
+	width: fit-content;
+	gap: 1em;
+	margin-inline: auto;
+
+	button {
+		display: block;
+		font: inherit;
+		padding: 0.5em 1em;
+		margin-inline: auto;
+		color: white;
+		background-color: var(--bg);
+		border: var(--border-width) solid var(--text);
+		cursor: pointer;
+	
+		&:is(:hover, :focus) {
+			background-color: var(--text);
+			color: var(--bg);
+		}
+	}
+}
+#saveimage {
+	--text: var(--text-trueending);
+	--bg: var(--bg-trueending);
+}
+#clearall {
+	--text: var(--text-vivi);
+	--bg: var(--bg-vivi);
+}
+/* #endregion */
+
+/* #region Dialogues section */
+#dialogues {
+	& > :first-child { margin-block-start: 0 }
+	& > :last-child { margin-block-end: 0 }
+	& .dialogueform { margin-block: 0.75em }
+}
+/* #endregion */
+
+/* #region Reusable components */
 textarea {
 	resize: vertical;
 	color: inherit;
