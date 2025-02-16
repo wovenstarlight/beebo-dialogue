@@ -183,5 +183,10 @@ body {
 	padding-block: 1em;
 	border: 1.25em solid transparent;
 	border-image: url("../assets/images/smallBorder.png") 34% repeat;
+
+	h2 {
+		margin-block: 0 0.5em;
+		text-align: center;
+	}
 }
 /* #endregion */
