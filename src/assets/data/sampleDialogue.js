@@ -1,3 +1,5 @@
+// Dialogue retrieved from "Dialogue res/JSON/en"
+
 const sampleDialogues = [
 	{
 		color: "orange",

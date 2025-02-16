@@ -1,3 +1,5 @@
+// Portraits retrieved from "Dialogue res/Cuadros"
+
 const allPortraits = {
 	// #region Oliver Valdivia
 	"Oliver Beebo (House of Vera/Purple)": {
