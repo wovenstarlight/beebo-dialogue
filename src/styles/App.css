@@ -161,21 +161,34 @@ body {
 	image-rendering: optimize-contrast;			/* CSS3 Proposed					*/
 	-ms-interpolation-mode: nearest-neighbor;	/* IE8+								*/
 
-	#topmenu { margin-block-end: 2em }
-
-	#clearall {
-		display: block;
-		font: inherit;
-		padding: 0.5em 1em;
+	#topmenu {
+		margin-block-end: 2em;
+		display: flex;
+		width: fit-content;
+		gap: 1em;
 		margin-inline: auto;
+
+		button {
+			display: block;
+			font: inherit;
+			padding: 0.5em 1em;
+			margin-inline: auto;
+			color: white;
+			background-color: var(--bg);
+			border: var(--border-width) solid var(--text);
+			cursor: pointer;
+		
+			&:is(:hover, :focus) { background-color: var(--text) }
+		}
+	}
+	#saveimage {
+		--text: var(--text-trueending);
+		--bg: var(--bg-trueending);
+		&:is(:hover, :focus) { color: var(--bg) }
+	}
+	#clearall {
 		--text: var(--text-vivi);
 		--bg: var(--bg-vivi);
-		background-color: var(--bg);
-		color: white;
-		border: var(--border-width) solid var(--text);
-		cursor: pointer;
-
-		&:is(:hover, :focus) { background-color: var(--text) }
 	}
 }
 
