@@ -6,8 +6,9 @@
 }
 
 #jsoninput {
-	width: 100%;
-	margin-block: 1em;
+	display: block;
+	width: calc(100% - 2em);
+	margin: 1em auto;
 	border: var(--border-width) solid;
 	padding: 0.5em;
 	font-size: 1.25em;
