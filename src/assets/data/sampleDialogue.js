@@ -75,7 +75,7 @@ const sampleDialogues = [
 		color: "gray",
 		portrait: "angel/color/happy.png",
 		speaker: "Ángel",
-		dialogue: "The best part of the time loop was when Beebo said 'IT'S BEEBIN' TIME' and beebed all over that guy"
+		dialogue: "The best part of the time loop was when Beebo said \"IT'S BEEBIN' TIME\" and beebed all over that guy"
 	},
 ];
 
