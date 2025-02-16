@@ -12,6 +12,12 @@ const sampleDialogues = [
 		dialogue: "...Something feels... wrong.",
 	},
 	{
+		color: "orange",
+		portrait: "oliver/galleryout/shadow.png",
+		speaker: "Oliver Beebo",
+		dialogue: "...Something feels...Right.",
+	},
+	{
 		color: "purple",
 		portrait: "angel/house/happy.png",
 		speaker: "Ángel",
@@ -66,16 +72,10 @@ const sampleDialogues = [
 		dialogue: "It's always good to be cautious, you know.",
 	},
 	{
-		color: "dimgray",
-		portrait: "police/chief/think.png",
-		speaker: "Police Chief",
-		dialogue: "Be very perceptive, rookie. Be aware of any suspicious behaviors around you.",
-	},
-	{
-		color: "purple",
-		portrait: "police/officer1/happy.png",
-		speaker: "Police Officer",
-		dialogue: "Dominion? Really? Should we call the news?",
+		color: "gray",
+		portrait: "angel/color/happy.png",
+		speaker: "Ángel",
+		dialogue: "The best part of the time loop was when Beebo said 'IT'S BEEBIN' TIME' and beebed all over that guy"
 	},
 ];
 
