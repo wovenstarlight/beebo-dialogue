@@ -177,4 +177,11 @@ body {
 }
 
 [hidden] { display: none !important }
+
+.menu {
+	margin-inline: 5em;
+	padding-block: 1em;
+	border: 1.25em solid transparent;
+	border-image: url("../assets/images/smallBorder.png") 34% repeat;
+}
 /* #endregion */

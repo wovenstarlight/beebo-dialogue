@@ -1,8 +1,4 @@
 .dialogueform {
-	margin-inline: 5em;
-	padding-block: 1em;
-	border: 1.25em solid transparent;
-	border-image: url("../assets/images/smallBorder.png") 34% repeat;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;
@@ -63,7 +59,6 @@
 	#inputdialogue {
 		font-size: 0.8em;
 		padding-block: 0.5em;
-		resize: vertical;
 	}
 
 	button {

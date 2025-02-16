@@ -11,7 +11,7 @@ function BaseForm({
 	children
 }) {
 	return (
-	<form id={id} name={id} onSubmit={handleSubmit} className={`dialogueform ${color}`} hidden={hidden}>
+	<form id={id} name={id} onSubmit={handleSubmit} className={`menu dialogueform ${color}`} hidden={hidden}>
 		<h2>{title}</h2>
 		<label id="labelcolor">
 			<span className="labeltext">Palette</span>
