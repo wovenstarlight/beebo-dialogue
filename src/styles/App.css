@@ -102,12 +102,12 @@
 	--bg: var(--bg-gallery);
 }
 .police,
-.dimgray {
+.darkgray {
 	--text: var(--text-police);
 	--bg: var(--bg-police);
 }
 .trueending,
-.lightblue {
+.skyblue {
 	--text: var(--text-trueending);
 	--bg: var(--bg-trueending);
 }

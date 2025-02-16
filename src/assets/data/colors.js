@@ -9,8 +9,8 @@ const allColors = {
 	"Green (Simon Margulis)": "green",
 	"Cornflower blue (Owen)": "cornflower",
 	"Yellow (Art gallery)": "yellow",
-	"Dim gray (City/Police)": "dimgray",
-	"Light blue (True ending)": "lightblue",
+	"Dark gray (City/Police)": "darkgray",
+	"Sky blue (True ending)": "skyblue",
 }
 
 export default allColors;

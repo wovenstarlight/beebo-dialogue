@@ -24,7 +24,7 @@ const sampleDialogues = [
 		dialogue: "Ángel, for any of your needs.",
 	},
 	{
-		color: "dimgray",
+		color: "darkgray",
 		portrait: "angel/color/dominion_neutro.png",
 		speaker: "Dominion",
 		dialogue: "...",
@@ -48,13 +48,13 @@ const sampleDialogues = [
 		dialogue: "You deserve to live an idyllic life!",
 	},
 	{
-		color: "lightblue",
+		color: "skyblue",
 		portrait: "nadia/color/annoy.png",
 		speaker: "Nadia",
 		dialogue: "This is worse than being stabbed.",
 	},
 	{
-		color: "lightblue",
+		color: "skyblue",
 		portrait: "simon/color/neutro.png",
 		speaker: "Simon",
 		dialogue: "...Fatherless behaviour.",
