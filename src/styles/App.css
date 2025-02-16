@@ -66,12 +66,12 @@
 	--bg: var(--bg-vivi);
 }
 .mari, .marigold,
-.blue, .darkblue {
+.royalblue, .darkblue {
 	--text: var(--text-marigold);
 	--bg: var(--bg-marigold);
 }
 .nina,
-.bluishpurple {
+.violet, .blueypurple {
 	--text: var(--text-nina);
 	--bg: var(--bg-nina);
 }
@@ -81,7 +81,7 @@
 	--bg: var(--bg-nadia);
 }
 .owen,
-.navy, .lightblue {
+.cornflower, .lightblue {
 	--text: var(--text-owen);
 	--bg: var(--bg-owen);
 }

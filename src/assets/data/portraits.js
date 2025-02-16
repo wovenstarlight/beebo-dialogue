@@ -275,7 +275,7 @@ const allPortraits = {
 		"Nina > Thinking": "nina/house/think.png",
 		"Nina > Worried": "nina/house/worry.png",
 	},
-	"Nina Coli (Bluish purple)": {
+	"Nina Coli (Violet)": {
 		"Nina > Excited": "nina/color/excited.png",
 	},
 	// #endregion
