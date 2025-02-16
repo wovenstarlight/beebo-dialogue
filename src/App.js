@@ -2,6 +2,7 @@ import "./styles/App.css";
 import TextBox from "./components/TextBox";
 import AddForm from "./components/AddForm";
 import { useState } from "react";
+import DialogueUnit from "./components/DialogueUnit";
 
 function App() {
 	const [dialogues, setDialogues] = useState([]);
@@ -21,7 +22,7 @@ function App() {
 			{dialogues.length > 0 && <button id="clearall" onClick={clearAll}>Delete all</button>}
 
 			{dialogues.length > 0 && <div id="dialogues">
-				{dialogues.map((obj, index, array) => <TextBox key={obj.id} {...obj} allDialogues={dialogues} setDialogues={setDialogues} isFirst={index === 0} isLast={index === array.length - 1} />)}
+				{dialogues.map((obj, index, array) => <DialogueUnit key={obj.id} {...obj} allDialogues={dialogues} setDialogues={setDialogues} isFirst={index === 0} isLast={index === array.length - 1} />)}
 			</div>}
 
 			<AddForm setDialogues={setDialogues} />
