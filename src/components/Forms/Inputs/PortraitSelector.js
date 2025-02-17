@@ -4,7 +4,7 @@ import allPortraits from "../../../assets/data/portraits";
 function PortraitSelector({ portrait, setPortrait }) {
 	return (
 		<select
-			class="inputportrait"
+			className="inputportrait"
 			name="inputportrait"
 			required
 			value={portrait}
