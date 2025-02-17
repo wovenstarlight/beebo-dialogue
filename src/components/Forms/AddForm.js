@@ -3,10 +3,12 @@ import { BlockContext } from "../../context/BlockContext";
 import DialogueInputs from "./Inputs/DialogueInputs";
 import sampleDialogues from "../../assets/data/sampleDialogue";
 import validate from "../../utils/validateData";
+import ChoiceInputs from "./Inputs/ChoiceInputs";
 
 export default function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
 
+	const [activeTab, setActiveTab] = useState("dialogue");
 	const [dialogueOptions, setDialogueOptions] = useState({
 		color: "purple",
 		speaker: "",
@@ -68,10 +70,43 @@ export default function AddForm() {
 	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu blockform ${dialogueOptions.color}`}>
 		<h2>Add new element</h2>
 
-		<DialogueInputs
-			data={dialogueOptions}
-			setData={setDialogueOptions}
-		/>
+		<fieldset id="tabber">
+			<legend>Choose what you'd like to add:</legend>
+			<label>
+				<input
+					type="radio" name="currentTab" className="hidden"
+					onChange={(e) => setActiveTab(e.target.value)}
+					value="dialogue"
+					checked={activeTab === "dialogue"}
+				/>
+				<span className="icon" aria-hidden={true} />
+				<span className="labeltext">Dialogue</span>
+			</label>
+			<label>
+				<input
+					type="radio" name="currentTab" className="hidden"
+					onChange={(e) => setActiveTab(e.target.value)}
+					value="choice"
+					checked={activeTab === "choice"}
+				/>
+				<span className="icon" aria-hidden={true} />
+				<span className="labeltext">Choices</span>
+			</label>
+		</fieldset>
+
+		<fieldset id="adddialogue" className="inputsection" disabled={activeTab !== "dialogue"} hidden={activeTab !== "dialogue"}>
+			<DialogueInputs
+				data={dialogueOptions}
+				setData={setDialogueOptions}
+			/>
+		</fieldset>
+
+		<fieldset id="addchoice" className="inputsection" disabled={activeTab !== "choice"} hidden={activeTab !== "choice"}>
+			<ChoiceInputs
+				data={dialogueOptions}
+				setData={setDialogueOptions}
+			/>
+		</fieldset>
 
 		<label id="keepcolor">
 			<input type="checkbox" checked={dialogueOptions.keepColor} onChange={(e) => setDialogueOptions({ ...dialogueOptions, keepColor: e.target.checked })} className="hidden" />
