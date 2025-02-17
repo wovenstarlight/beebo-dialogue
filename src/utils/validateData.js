@@ -41,7 +41,6 @@ export function validateDialogue({ color, portrait, speaker, dialogue }) {
  * @param {object} data Raw data for a multiple choice menu.
  * @param {string} data.color The color palette for this block. Checked for type `string` and being a member of the corresponding enumerated list.
  * @param {object[]} data.options The individual options making up the menu. Checked for type `object`.
- * @param {?string} data.options.color The color palette for this option, if any. Checked for type `string` and being a member of the corresponding enumerated list.
  * @param {string} data.options.text The text label displayed for this option. Checked for type `string` and non-emptiness.
  * @param {?boolean} data.options.selected Whether this option should be highlighted as though being clicked. Checked for type `boolean`.
  * @returns A validated data object.
@@ -56,14 +55,10 @@ export function validateChoice({ color, options }) {
 		)
 			? options.map(opt => {
 				return {
-					color: typeof opt.color === "string" && Object.values(allColors).includes(opt.color) ? opt.color : undefined,
 					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text : "Lorem ipsum dolor sit amet",
 					selected: typeof opt.selected === "boolean" ? opt.selected : false,
 				}
 			})
-			: [{
-				color: "purple",
-				text: "Lorem ipsum dolor sit amet"
-			}],
+			: [{ text: "Lorem ipsum dolor sit amet" }],
 	};
 }

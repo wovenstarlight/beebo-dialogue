@@ -6,7 +6,7 @@ export default function Choice({ id, options }) {
 			<p
 				key={`${id}_${index}`}
 				id={`${id}_${index}`}
-				className={[opt.color, opt.selected && "selected"].filter(el => el != null).join(" ")}
+				className={opt.selected && "selected"}
 			>
 				{opt.text}
 			</p>
