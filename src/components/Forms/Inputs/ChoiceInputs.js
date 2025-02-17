@@ -1,6 +1,7 @@
 import "../../../styles/Forms.css";
 import allColors from "../../../constants/colors";
 import { DEFAULT_CHOICE_OPTION_BLANK } from "../../../constants/blockDefaults";
+import splitAround from "../../../utils/splitAround";
 
 export default function ChoiceInputs({ data, setData, includePalette = true }) {
 	/* BREAKDOWN
@@ -42,6 +43,23 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 		} });
 	}
 
+	function moveOptionUp(e) {
+		let id = e.target.closest(".optiongroup").id;
+		let [pre, curr, post] = splitAround(data.options, id);
+		setData(choiceData => { return {
+			...choiceData,
+			options: pre.slice(0, -1).concat(curr, pre.at(-1), post),
+		} });
+	}
+	function moveOptionDown(e) {
+		let id = e.target.closest(".optiongroup").id;
+		let [pre, curr, post] = splitAround(data.options, id);
+		setData(choiceData => { return {
+			...choiceData,
+			options: pre.concat(post.at(0), curr, post.slice(1)),
+		} });
+	}
+
 	/** Add a blank option field. */
 	function addOption() {
 		setData(choiceData => { return {
@@ -79,32 +97,50 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			</select>
 		</label>}
 
-		{data.options.map((obj, index) => <OptionInput
+		{data.options.map((obj, index, arr) => <OptionInput
 			key={obj.id}
 			index={index}
 			optionData={obj}
 			setOptionText={setOptionText}
+			setOptionSelected={setOptionSelected}
+			moveOptionUp={data.options.length > 1 && index !== 0 ? moveOptionUp : null}
+			moveOptionDown={data.options.length > 1 && index !== arr.length - 1 ? moveOptionDown : null}
+			deleteOption={data.options.length > 1 ? deleteOption : null}
 		/>)}
 
 		{data.options.length < 4 && <button type="button" className="addbtn" onClick={addOption}>Add an option</button>}
 	</>;
 }
 
-function OptionInput({ index, optionData, setOptionText }) {
+function OptionInput({
+	index, optionData,
+	setOptionText, setOptionSelected,
+	moveOptionUp, moveOptionDown, deleteOption,
+}) {
 	return <div className="optiongroup" id={optionData.id}>
-	<label className="labeloption">
-		<span className="labeltext">Option {index + 1}</span>
-		<input
-			className="inputoption"
-			name={`inputoption${index}`}
-			type="text"
-			minLength={1}
-			maxLength={160}
-			required
-			value={optionData.text}
-			onChange={setOptionText}
-		/>
-	</label>
-	{/* TODO: mark as selected toggle + delete button + move buttons */}
+		<label className="labeloption">
+			<span className="labeltext">Option {index + 1}</span>
+			<input
+				className="inputoption"
+				name={`inputoption${index}`}
+				type="text"
+				minLength={1}
+				maxLength={160}
+				required
+				value={optionData.text}
+				onChange={setOptionText}
+			/>
+		</label>
+		<div className="optionmods">
+			<label className="labelselected">
+				<input type="checkbox" name={`inputselect${index}`} checked={optionData.selected} onChange={setOptionSelected} className="visuallyhidden" />
+				<span className="icon" aria-hidden={true} />
+				<span className="labeltext">Mark<span className="visuallyhidden"> option {index + 1}</span> as selected</span>
+			</label>
+			
+			{moveOptionUp && <button type="button" className="movebtn" onClick={moveOptionUp}>Move up</button>}
+			{moveOptionDown && <button type="button" className="movebtn" onClick={moveOptionDown}>Move down</button>}
+			{deleteOption && <button type="button" className="deletebtn" onClick={deleteOption}>Delete</button>}
+		</div>
 	</div>;
 }
