@@ -60,14 +60,24 @@ function App() {
 			{blocks.length > 0 && <section id="dialogues">
 				{blocks.map((obj, index, array) => {
 					return "options" in obj
-						? <ChoiceBlock key={obj.id} {...obj} />
-						: <DialogueBlock key={obj.id} {...obj} allDialogues={blocks} setDialogues={setBlocks} isFirst={index === 0} isLast={index === array.length - 1} />
+						? <ChoiceBlock
+							key={obj.id}
+							{...obj}
+						/>
+						: <DialogueBlock
+							key={obj.id}
+							{...obj}
+							allBlocks={blocks}
+							setBlocks={setBlocks}
+							isFirst={index === 0}
+							isLast={index === array.length - 1}
+						/>
 				})}
 			</section>}
 
-			<AddForm setDialogues={setBlocks} />
+			<AddForm setBlocks={setBlocks} />
 
-			<JSONForm dialogues={blocks} setDialogues={setBlocks} />
+			<JSONForm blocks={blocks} setBlocks={setBlocks} />
 
 			<section id="downloadasimage" hidden>
 				{/* Placeholder URL to avoid a11ty warning */}

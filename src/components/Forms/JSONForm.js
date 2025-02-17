@@ -1,10 +1,10 @@
 import "../../styles/JSONForm.css";
 import validateDialogue from "../../utils/validateDialogue";
 
-function JSONForm({ dialogues, setDialogues }) {
+function JSONForm({ blocks, setBlocks }) {
 	function getJSON() {
 		return JSON.stringify(
-			dialogues.map(el => {
+			blocks.map(el => {
 				return {...el, id: undefined};
 			}),
 			null,
@@ -77,7 +77,7 @@ function JSONForm({ dialogues, setDialogues }) {
 			}
 
 			// Input validated! Now go through and make the dialogue
-			setDialogues(contents.map((obj, index) => {
+			setBlocks(contents.map((obj, index) => {
 				return {
 					id: `upload_${(new Date()).getTime()}_${index}`,
 					...validateDialogue(obj),

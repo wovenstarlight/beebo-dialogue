@@ -3,7 +3,7 @@ import DialogueInputs from "./Inputs/DialogueInputs";
 import sampleDialogues from "../../assets/data/sampleDialogue";
 import validateDialogue from "../../utils/validateDialogue";
 
-function AddForm({ setDialogues }) {
+function AddForm({ setBlocks }) {
 	const [color, setColor] = useState("purple");
 	const [speaker, setSpeaker] = useState("");
 	const [dialogue, setDialogue] = useState("");
@@ -21,7 +21,7 @@ function AddForm({ setDialogues }) {
 				dialogue: dialogue,
 			})
 		};
-		setDialogues(values => [...values, newDialogue]);
+		setBlocks(values => [...values, newDialogue]);
 		clearForm(e);
 	}
 

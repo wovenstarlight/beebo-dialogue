@@ -1,21 +1,21 @@
 import "../styles/TextBox.css";
 
-function TextBox({ id, color, speaker, portrait, dialogue, getNeighbors, setDialogues, editHandler, isFirst, isLast }) {
+function TextBox({ id, color, speaker, portrait, dialogue, getNeighbors, setBlocks, editHandler, isFirst, isLast }) {
 	/** Deletes the current dialogue box. */
 	function deleteBox() {
-		setDialogues(dialogues => dialogues.filter(el => el.id !== id));
+		setBlocks(dialogues => dialogues.filter(el => el.id !== id));
 	}
 
 	// #region Move this box
 	/** Swaps the current dialogue box with its predecessor. */
 	function moveUp() {
 		let [pre, curr, post] = getNeighbors();
-		setDialogues(pre.slice(0, -1).concat([curr, pre.at(-1)], post));
+		setBlocks(pre.slice(0, -1).concat([curr, pre.at(-1)], post));
 	}
 	/** Swaps the current dialogue box with its successor. */
 	function moveDown() {
 		let [pre, curr, post] = getNeighbors();
-		setDialogues(pre.concat([post.at(0), curr], post.slice(1)));
+		setBlocks(pre.concat([post.at(0), curr], post.slice(1)));
 	}
 	//#endregion
 

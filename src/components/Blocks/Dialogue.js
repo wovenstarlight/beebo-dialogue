@@ -3,11 +3,11 @@ import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import TextBox from "../TextBox";
 import validateDialogue from "../../utils/validateDialogue";
 
-function DialogueBlock({ id, color, speaker, portrait, dialogue, allDialogues, setDialogues, isFirst, isLast }) {
+function DialogueBlock({ id, color, speaker, portrait, dialogue, allBlocks, setBlocks, isFirst, isLast }) {
 	/** Finds the neighboring dialogue boxes. Helper for `moveUp`/`moveDown` and `edit`. */
 	function getNeighbors() {
-		let index = allDialogues.findIndex(el => el.id === id);
-		return [allDialogues.slice(0, index), allDialogues[index], allDialogues.slice(index + 1)];
+		let index = allBlocks.findIndex(el => el.id === id);
+		return [allBlocks.slice(0, index), allBlocks[index], allBlocks.slice(index + 1)];
 	}
 
 	// #region Edit this box
@@ -25,7 +25,7 @@ function DialogueBlock({ id, color, speaker, portrait, dialogue, allDialogues, s
 	function handleSubmit(e) {
 		e.preventDefault();
 		let [pre, , post] = getNeighbors();
-		setDialogues(pre.concat([{
+		setBlocks(pre.concat([{
 			id: id,
 			...validateDialogue({
 				color: tempColor,
@@ -54,8 +54,7 @@ function DialogueBlock({ id, color, speaker, portrait, dialogue, allDialogues, s
 		speaker={speaker}
 		portrait={portrait}
 		dialogue={dialogue}
-		allDialogues={allDialogues}
-		setDialogues={setDialogues}
+		setBlocks={setBlocks}
 		isFirst={isFirst}
 		isLast={isLast}
 		editHandler={openEditor}
