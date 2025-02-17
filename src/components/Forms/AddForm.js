@@ -18,11 +18,11 @@ export default function AddForm() {
 		color: DEFAULT_CHOICE_BLANK.color,
 		options: [
 			{
-				tempID: `${(new Date()).getTime()}_1`,
+				id: `${(new Date()).getTime()}_1`,
 				...DEFAULT_CHOICE_OPTION_BLANK,
 			},
 			{
-				tempID: `${(new Date()).getTime()}_2`,
+				id: `${(new Date()).getTime()}_2`,
 				...DEFAULT_CHOICE_OPTION_BLANK,
 			},
 		],
@@ -64,11 +64,11 @@ export default function AddForm() {
 			color: !resetFull && keepColor ? ogColor : DEFAULT_CHOICE_BLANK.color,
 			options: [
 				{
-					tempID: `${(new Date()).getTime()}_1`,
+					id: `${(new Date()).getTime()}_1`,
 					...DEFAULT_CHOICE_OPTION_BLANK,
 				},
 				{
-					tempID: `${(new Date()).getTime()}_2`,
+					id: `${(new Date()).getTime()}_2`,
 					...DEFAULT_CHOICE_OPTION_BLANK,
 				},
 			],
@@ -86,12 +86,12 @@ export default function AddForm() {
 		}
 		else if (activeTab === "choice") {
 			// Only one choice sample; insert directly
-			// And include `tempID`s for the various options!
+			// And include temporary `id`s for the various options!
 			setChoiceOptions({
 				...CHOICE_SAMPLE,
 				options: CHOICE_SAMPLE.options.map((opt, index) => { return {
 					...opt,
-					tempID: `${(new Date()).getTime()}_${index}`,
+					id: `${(new Date()).getTime()}_${index}`,
 				} })
 			});
 		}

@@ -47,7 +47,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 		setData(choiceData => { return {
 			...choiceData,
 			options: choiceData.options.concat({
-				tempID: `${(new Date()).getTime()}_${choiceData.options.length}`,
+				id: `${(new Date()).getTime()}_${choiceData.options.length}`,
 				...DEFAULT_CHOICE_OPTION_BLANK,
 			}),
 		} });
@@ -58,7 +58,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 		let id = e.target.closest(".optiongroup").id;
 		setData(choiceData => { return {
 			...choiceData,
-			options: choiceData.options.filter(opt => opt.tempID !== id),
+			options: choiceData.options.filter(opt => opt.id !== id),
 		} });
 	}
 
@@ -80,7 +80,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 		</label>}
 
 		{data.options.map((obj, index) => <OptionInput
-			key={obj.tempID}
+			key={obj.id}
 			index={index}
 			optionData={obj}
 			setOptionText={setOptionText}
@@ -91,7 +91,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 }
 
 function OptionInput({ index, optionData, setOptionText }) {
-	return <div className="optiongroup" id={optionData.tempID}>
+	return <div className="optiongroup" id={optionData.id}>
 	<label className="labeloption">
 		<span className="labeltext">Option {index + 1}</span>
 		<input
