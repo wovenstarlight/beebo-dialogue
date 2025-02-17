@@ -2,17 +2,13 @@ import { useState } from "react";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import TextBox from "../TextBox";
 import validateDialogue from "../../utils/validateDialogue";
+import getNeighbours from "../../utils/getNeighbours";
 
 function DialogueBlock({
 	data, data: { id, color, speaker, portrait, dialogue },	// Keep both destructured and whole `data` arg for further substitutions
 	allBlocks, setBlocks,
 	isFirst, isLast,
 }) {
-	/** Finds the neighboring dialogue boxes. Helper for `moveUp`/`moveDown` and `edit`. */
-	function getNeighbors() {
-		let index = allBlocks.findIndex(el => el.id === id);
-		return [allBlocks.slice(0, index), allBlocks[index], allBlocks.slice(index + 1)];
-	}
 
 	// #region Edit this box
 	/** Temporary variables for editing this dialogue box with. */
