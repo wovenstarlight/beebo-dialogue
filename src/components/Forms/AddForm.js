@@ -18,11 +18,11 @@ export default function AddForm() {
 		color: DEFAULT_CHOICE_BLANK.color,
 		options: [
 			{
-				id: `${(new Date()).getTime()}_1`,
+				id: `${(new Date()).getTime()}_0`,
 				...DEFAULT_CHOICE_OPTION_BLANK,
 			},
 			{
-				id: `${(new Date()).getTime()}_2`,
+				id: `${(new Date()).getTime()}_1`,
 				...DEFAULT_CHOICE_OPTION_BLANK,
 			},
 		],
@@ -64,11 +64,11 @@ export default function AddForm() {
 			color: !resetFull && keepColor ? ogColor : DEFAULT_CHOICE_BLANK.color,
 			options: [
 				{
-					id: `${(new Date()).getTime()}_1`,
+					id: `${(new Date()).getTime()}_0`,
 					...DEFAULT_CHOICE_OPTION_BLANK,
 				},
 				{
-					id: `${(new Date()).getTime()}_2`,
+					id: `${(new Date()).getTime()}_1`,
 					...DEFAULT_CHOICE_OPTION_BLANK,
 				},
 			],
