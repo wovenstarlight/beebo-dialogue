@@ -1,10 +1,6 @@
 import "../../styles/Choice.css";
 
-export default function ChoiceBlock({
-	data: { id, color, options },
-	allBlocks, setBlocks,
-	isFirst, isLast,
-}) {
+export default function ChoiceBlock({ data: { id, color, options } }) {
 	return <article id={id} className={`mcq ${color ?? "purple"}`}>
 		{options.map((opt, index) => <p
 			key={`${id}_${index}`}

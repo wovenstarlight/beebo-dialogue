@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BlockContext } from "../../context/BlockContext";
 import TextBox from "./TextBox";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import validateDialogue from "../../utils/validateDialogue";
@@ -6,9 +7,8 @@ import getNeighbours from "../../utils/getNeighbours";
 
 export default function DialogueBlock({
 	data, data: { id, color, speaker, portrait, dialogue },	// Keep both destructured and whole `data` arg for further substitutions
-	allBlocks, setBlocks,
-	isFirst, isLast,
 }) {
+	const [allBlocks, setBlocks] = useContext(BlockContext);
 
 	// #region Edit this box
 	/** Temporary variables for editing this dialogue box with. */
@@ -26,7 +26,7 @@ export default function DialogueBlock({
 	/** Update this dialogue box with the edited information. */
 	function handleSubmit(e) {
 		e.preventDefault();
-		let [pre, , post] = getNeighbors();
+		let [pre, , post] = getNeighbours(allBlocks, id);
 		setBlocks(pre.concat([{
 			id: id,
 			...validateDialogue({
@@ -52,14 +52,7 @@ export default function DialogueBlock({
 	// #endregion
 
 	return <>
-	{!editing && <TextBox
-		data={data}
-		setBlocks={setBlocks}
-		isFirst={isFirst}
-		isLast={isLast}
-		editHandler={openEditor}
-		getNeighbors={getNeighbors}
-	/>}
+	{!editing && <TextBox data={data} editHandler={openEditor} getNeighbours={getNeighbours} />}
 	
 	{editing && <form id={`edit_${id}`} name={`edit_${id}`} onSubmit={handleSubmit} className={`menu dialogueform ${temp.color}`}>
 		<h2>Edit dialogue</h2>
@@ -74,5 +67,3 @@ export default function DialogueBlock({
 	</form>}
 	</>;
 }
-
-export default DialogueBlock;

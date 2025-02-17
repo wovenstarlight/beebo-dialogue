@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BlockContext } from "../../context/BlockContext";
 import DialogueInputs from "./Inputs/DialogueInputs";
 import sampleDialogues from "../../assets/data/sampleDialogue";
 import validateDialogue from "../../utils/validateDialogue";
 
-export default function AddForm({ setBlocks }) {
+export default function AddForm() {
+	const [, setBlocks] = useContext(BlockContext);
+
 	const [dialogueOptions, setDialogueOptions] = useState({
 		color: "purple",
 		speaker: "",

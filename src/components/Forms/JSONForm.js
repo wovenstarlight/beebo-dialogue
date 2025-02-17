@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import "../../styles/JSONForm.css";
 import validateDialogue from "../../utils/validateDialogue";
+import { BlockContext } from "../../context/BlockContext";
 
-export default function JSONForm({ blocks, setBlocks }) {
+export default function JSONForm() {
+	const [allBlocks, setBlocks] = useContext(BlockContext);
+
 	function getJSON() {
 		return JSON.stringify(
-			blocks.map(el => {
+			allBlocks.map(el => {
 				return {...el, id: undefined};
 			}),
 			null,

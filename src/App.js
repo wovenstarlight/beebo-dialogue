@@ -1,5 +1,6 @@
 import "./styles/App.css";
 import { useState } from "react";
+import { BlockContext } from "./context/BlockContext";
 import DialogueBlock from "./components/Blocks/Dialogue";
 import ChoiceBlock from "./components/Blocks/Choice";
 import AddForm from "./components/Forms/AddForm";
@@ -57,31 +58,24 @@ export default function App() {
 				<button id="clearall" onClick={clearAll}>Delete all</button>
 			</header>}
 
-			{blocks.length > 0 && <section id="dialogues">
-				{blocks.map((obj, index, array) => {
-					return "options" in obj
+			<BlockContext.Provider value={[blocks, setBlocks]}>
+				{blocks.length > 0 && <section id="dialogues">
+					{blocks.map(obj => "options" in obj
 						? <ChoiceBlock
 							key={obj.id}
 							data={obj}
-							allBlocks={blocks}
-							setBlocks={setBlocks}
-							isFirst={index === 0}
-							isLast={index === array.length - 1}
 						/>
 						: <DialogueBlock
 							key={obj.id}
 							data={obj}
-							allBlocks={blocks}
-							setBlocks={setBlocks}
-							isFirst={index === 0}
-							isLast={index === array.length - 1}
 						/>
-				})}
-			</section>}
+					)}
+				</section>}
 
-			<AddForm setBlocks={setBlocks} />
+				<AddForm />
 
-			<JSONForm blocks={blocks} setBlocks={setBlocks} />
+				<JSONForm />
+			</BlockContext.Provider>
 
 			<section id="downloadasimage" hidden>
 				{/* Placeholder URL to avoid a11ty warning */}
