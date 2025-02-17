@@ -1,5 +1,4 @@
 // Dialogue retrieved from "Dialogue res/JSON/en"
-
 const DIALOGUE_SAMPLES = [
 	{
 		color: "orange",
@@ -80,7 +79,7 @@ const DIALOGUE_SAMPLES = [
 		dialogue: "The best part of the time loop was when Beebo said \"IT'S BEEBIN' TIME\" and beebed all over that guy"
 	},
 ];
-
 Object.freeze(DIALOGUE_SAMPLES);
+DIALOGUE_SAMPLES.forEach(sample => Object.freeze(sample));
 
 export default DIALOGUE_SAMPLES;
