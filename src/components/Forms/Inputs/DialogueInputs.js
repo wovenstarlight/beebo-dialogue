@@ -29,7 +29,7 @@ export default function DialogueInputs({ data, setData }) {
 
 		<label id="labelportrait">
 			<span className="labeltext">Portrait</span>
-			<PortraitSelector portrait={data.portrait} setPortrait={(val) => setData({ ...data, portrait: val })} />
+			<PortraitSelector portrait={data.portrait} setPortrait={(e) => setData({ ...data, portrait: e.target.value })} />
 			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(data.portrait.length ? data.portrait : "misc/someone_shadow.png")} />
 		</label>
 
