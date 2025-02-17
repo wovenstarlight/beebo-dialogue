@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
 import "../../styles/ModMenu.css";
-import getNeighbours from "../../utils/getNeighbours";
+import splitAround from "../../utils/splitAround";
 import validate from "../../utils/validateData";
 import Dialogue from "./Dialogue";
 import Choice from "./Choice";
@@ -66,7 +66,7 @@ export default function BlockWrapper({ type, data }) {
 	function updateBlock(e) {
 		// Regardless of block type, will need to setBlocks to use new object
 		e.preventDefault();
-		let [pre, , post] = getNeighbours(allBlocks, data.id);
+		let [pre, , post] = splitAround(allBlocks, data.id);
 		setBlocks(pre.concat([{
 			id: data.id,
 			...validate({

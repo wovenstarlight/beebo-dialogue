@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BlockContext } from "../../context/BlockContext";
-import getNeighbours from "../../utils/getNeighbours";
+import splitAround from "../../utils/splitAround";
 import "../../styles/ModMenu.css";
 
 export default function ModMenu({ id, setEditing }) {
@@ -21,12 +21,12 @@ export default function ModMenu({ id, setEditing }) {
 
 	/** Swaps the current block with its predecessor. */
 	function moveBlockUp() {
-		let [pre, curr, post] = getNeighbours(allBlocks, id);
+		let [pre, curr, post] = splitAround(allBlocks, id);
 		setBlocks(pre.slice(0, -1).concat([curr, pre.at(-1)], post));
 	}
 	/** Swaps the current block with its successor. */
 	function moveBlockDown() {
-		let [pre, curr, post] = getNeighbours(allBlocks, id);
+		let [pre, curr, post] = splitAround(allBlocks, id);
 		setBlocks(pre.concat([post.at(0), curr], post.slice(1)));
 	}
 	//#endregion

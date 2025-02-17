@@ -5,7 +5,7 @@
  * @returns An array containing: an array of the chosen block's predecessors, the chosen block itself, and an array of the chosen block's successors.
  */
 
-export default function getNeighbors(allBlocks, id) {
+export default function splitAround(allBlocks, id) {
 	// Find the current block
 	let index = allBlocks.findIndex(el => el.id === id);
 
