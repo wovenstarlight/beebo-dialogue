@@ -31,18 +31,18 @@
 	select .labeltext { padding-block-start: 0.1em }
 	select { padding-block: 0.3em }
 
-	input, textarea, #inputcolor, #inputcolor option {
+	input, textarea, .inputcolor, .inputcolor option {
 		color: var(--text);
 		background-color: var(--bg);
 	}
 
-	#inputspeaker {
+	.inputspeaker {
 		font-family: "SqueezedPixels";
 		padding-block-start: 0.75em;
 		font-size: 1.1em;
 	}
 
-	#labelportrait {
+	.labelportrait {
 		grid-template-columns: var(--labelwidth) 1fr auto;
 		align-items: center;
 
@@ -51,7 +51,7 @@
 		.portrait { width: 6em }
 	}
 
-	#inputdialogue {
+	.inputdialogue {
 		font-size: 0.8em;
 		padding-block: 0.5em;
 	}

@@ -12,10 +12,10 @@ export default function DialogueInputs({ data, setData }) {
 	*/
 
 	return <>
-		<label id="labelcolor">
+		<label className="labelcolor">
 			<span className="labeltext">Palette</span>
 			<select
-				id="inputcolor"
+				className="inputcolor"
 				name="inputcolor"
 				required
 				value={data.color}
@@ -28,16 +28,16 @@ export default function DialogueInputs({ data, setData }) {
 			</select>
 		</label>
 
-		<label id="labelportrait">
+		<label className="labelportrait">
 			<span className="labeltext">Portrait</span>
 			<PortraitSelector portrait={data.portrait} setPortrait={(e) => setData({ ...data, portrait: e.target.value })} />
 			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(data.portrait.length ? data.portrait : "misc/someone_shadow.png")} />
 		</label>
 
-		<label id="labelspeaker">
+		<label className="labelspeaker">
 			<span className="labeltext">Speaker</span>
 			<input
-				id="inputspeaker"
+				className="inputspeaker"
 				name="inputspeaker"
 				type="text"
 				minLength={1}
@@ -48,7 +48,7 @@ export default function DialogueInputs({ data, setData }) {
 				onChange={(e) => setData({ ...data, speaker: e.target.value })}
 			/>
 		</label>
-		<datalist id="speakerslist">
+		<datalist className="speakerslist">
 			<option value="Oliver Beebo" />
 			<option value="Ángel" />
 			<option value="Vivi" />
@@ -62,10 +62,10 @@ export default function DialogueInputs({ data, setData }) {
 			<option value="Police Officer" />
 		</datalist>
 
-		<label id="labeldialogue">
+		<label className="labeldialogue">
 			<span className="labeltext">Dialogue</span>
 			<textarea
-				id="inputdialogue"
+				className="inputdialogue"
 				name="inputdialogue"
 				minLength={1}
 				maxLength={250}
