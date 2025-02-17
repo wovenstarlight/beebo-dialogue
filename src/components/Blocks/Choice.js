@@ -1,11 +1,7 @@
 import "../../styles/Choice.css";
 
-export default function ChoiceBlock({ data: { id, color, options } }) {
-	return (
-	<article
-		id={id}
-		className={`mcq ${color ?? "purple"}`}
-	>
+export default function Choice({ id, options }) {
+	return <>
 		{options.map((opt, index) => (
 			<p
 				key={`${id}_${index}`}
@@ -15,6 +11,5 @@ export default function ChoiceBlock({ data: { id, color, options } }) {
 				{opt.text}
 			</p>
 		))}
-	</article>
-	);
+	</>;
 }

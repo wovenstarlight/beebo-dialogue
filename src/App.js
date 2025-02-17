@@ -1,8 +1,8 @@
 import "./styles/App.css";
 import { useState } from "react";
 import { BlockContext } from "./context/BlockContext";
-import DialogueBlock from "./components/Blocks/Dialogue";
-import ChoiceBlock from "./components/Blocks/Choice";
+import getBlockType from "./utils/getBlockType";
+import BlockWrapper from "./components/Blocks/BlockWrapper";
 import AddForm from "./components/Forms/AddForm";
 import JSONForm from "./components/Forms/JSONForm";
 import domtoimage from 'dom-to-image';
@@ -60,16 +60,7 @@ export default function App() {
 
 			<BlockContext.Provider value={[blocks, setBlocks]}>
 				{blocks.length > 0 && <section id="dialogues">
-					{blocks.map(obj => "options" in obj
-						? <ChoiceBlock
-							key={obj.id}
-							data={obj}
-						/>
-						: <DialogueBlock
-							key={obj.id}
-							data={obj}
-						/>
-					)}
+					{blocks.map(obj => <BlockWrapper key={obj.id} type={getBlockType(obj)} data={obj} />)}
 				</section>}
 
 				<AddForm />
