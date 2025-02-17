@@ -1,27 +1,7 @@
 import "../../styles/TextBox.css";
+import ModMenu from "./ModMenu";
 
-export default function TextBox({
-	data: { id, color, speaker, portrait, dialogue },
-	getNeighbors, editHandler
-}) {
-	/** Deletes the current dialogue box. */
-	function deleteBox() {
-		setBlocks(dialogues => dialogues.filter(el => el.id !== id));
-	}
-
-	// #region Move this box
-	/** Swaps the current dialogue box with its predecessor. */
-	function moveUp() {
-		let [pre, curr, post] = getNeighbors();
-		setBlocks(pre.slice(0, -1).concat([curr, pre.at(-1)], post));
-	}
-	/** Swaps the current dialogue box with its successor. */
-	function moveDown() {
-		let [pre, curr, post] = getNeighbors();
-		setBlocks(pre.concat([post.at(0), curr], post.slice(1)));
-	}
-	//#endregion
-
+export default function TextBox({ id, color, speaker, portrait, dialogue, setEditing }) {
 	return (
 		<article id={id} className={`dialogue ${color ?? "purple"}`}>
 			<header className="speaker">
@@ -33,15 +13,7 @@ export default function TextBox({
 				<p className="text">{dialogue ?? "Lorem ipsum dolor sit amet."}</p>
 			</div>
 
-			<div className="buttons">
-				<button className="edit" onClick={editHandler}>Edit</button>
-				<button className="delete" onClick={deleteBox}>Delete</button>
-				{/* Don't render the move buttons at all if this is the only box i.e. both first and last */}
-				{!(isFirst && isLast) && <> 
-				<button className="move" onClick={moveUp} disabled={isFirst}>Move up</button>
-				<button className="move" onClick={moveDown} disabled={isLast}>Move down</button>
-				</>}
-			</div>
+			<ModMenu id={id} setEditing={setEditing} />
 		</article>
 	);
 }

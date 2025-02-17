@@ -52,7 +52,7 @@ export default function DialogueBlock({
 	// #endregion
 
 	return <>
-	{!editing && <TextBox data={data} editHandler={openEditor} getNeighbours={getNeighbours} />}
+	{!editing && <TextBox {...data} setEditing={setEditing} />}
 	
 	{editing && <form id={`edit_${id}`} name={`edit_${id}`} onSubmit={handleSubmit} className={`menu dialogueform ${temp.color}`}>
 		<h2>Edit dialogue</h2>

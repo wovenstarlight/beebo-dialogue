@@ -1,0 +1,59 @@
+.modmenu {
+	position: absolute;
+	bottom: 0.45em;
+	left: 100%;
+	margin-left: -0.3em;
+	padding-inline: 0.5em;
+	height: 100%;
+	display: grid;
+	grid-template-columns: auto auto;
+	align-items: center;
+	align-content: end;
+	gap: 0.2em;
+	text-wrap: nowrap;
+	
+	button {
+		color: white;
+		background-color: var(--bg);
+		font: inherit;
+		font-size: 1rem;
+		border: var(--border-width) solid var(--text);
+		padding: 0.5em 0.75em;
+		cursor: pointer;
+
+		&:not([disabled]):is(:hover, :focus) {
+			background-color: var(--text);
+			color: var(--bg);
+		}
+
+		&[disabled] {
+			--text: var(--text-nina);
+			--bg: var(--bg-nina);
+			color: #fff8;
+			cursor: not-allowed;
+		}
+	}
+	
+	.edit {
+		--text: var(--text-angel);
+		--bg: var(--bg-angel);
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.delete {
+		--text: var(--text-vivi);
+		--bg: var(--bg-vivi);
+		grid-column: 1;
+		grid-row: 2;
+	}
+	.move {
+		--text: var(--text-marigold);
+		--bg: var(--bg-marigold);
+		grid-column: 2;
+	}
+}
+
+:not(:hover, :focus-within) > .modmenu {
+	opacity: 0;
+	left: 0;
+}
