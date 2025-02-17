@@ -6,6 +6,7 @@ import validate from "../../utils/validateData";
 import Dialogue from "./Dialogue";
 import Choice from "./Choice";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
+import ChoiceInputs from "../Forms/Inputs/ChoiceInputs";
 import { getDefaults } from "../../constants/blockDefaults";
 
 export default function BlockWrapper({ type, data }) {
@@ -98,7 +99,13 @@ export default function BlockWrapper({ type, data }) {
 	switch (type) {
 		case "choice":
 			blockContent = <Choice {...data} />;
-			editMenuContent = <p>{/*TODO*/}</p>
+			editMenuContent = <>
+				<h2>Edit choices</h2>
+				<ChoiceInputs
+					data={temp}
+					setData={setTemp}
+				/>
+			</>;
 			break;
 
 		case "dialogue":
@@ -109,7 +116,6 @@ export default function BlockWrapper({ type, data }) {
 				<DialogueInputs
 					data={temp}
 					setData={setTemp}
-					submitForm={updateBlock}
 				/>
 			</>;
 			break;
@@ -125,8 +131,8 @@ export default function BlockWrapper({ type, data }) {
 		{editing && <form id={`edit_${data.id}`} name={`edit_${data.id}`} onSubmit={updateBlock} className={`menu blockform ${temp.color}`}>
 			{editMenuContent}
 	
-			<button className="submitbtn" type="submit">Update</button>
-			<button className="resetbtn" type="reset" onClick={cancelEdit}>Cancel</button>
+			<button className="barbtn submitbtn" type="submit">Update</button>
+			<button className="barbtn resetbtn" type="reset" onClick={cancelEdit}>Cancel</button>
 		</form>}
 	</>;
 }
