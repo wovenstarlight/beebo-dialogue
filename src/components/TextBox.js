@@ -25,7 +25,7 @@ function TextBox({
 	return (
 		<article id={id} className={`dialogue ${color ?? "purple"}`}>
 			<header className="speaker">
-				<span className="question">?</span>
+				<span className="question" aria-hidden={true}>?</span>
 				<span className="name">{speaker ?? "Y/N"}</span>
 			</header>
 			<div className="body">
