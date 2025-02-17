@@ -53,8 +53,9 @@ export function validateChoice({ color, options }) {
 			Object.prototype.toString.call(options) === "[object Array]"
 			&& options.every(opt => Object.prototype.toString.call(opt) === "[object Object]")
 		)
-			? options.map(opt => {
+			? options.map((opt, index) => {
 				return {
+					id: `option_${index}`,
 					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text : DEFAULT_CHOICE.text,
 					selected: typeof opt.selected === "boolean" ? opt.selected : DEFAULT_CHOICE.selected,
 				}

@@ -10,7 +10,11 @@ export default function JSONForm() {
 	function getJSON() {
 		return JSON.stringify(
 			allBlocks.map(el => {
-				return {...el, id: undefined};
+				let noID = {...el, id: undefined};
+				if ("options" in el) noID.options = el.options.map(opt => {
+					return { ...opt, id: undefined};
+				})
+				return noID;
 			}),
 			null,
 			"  "
