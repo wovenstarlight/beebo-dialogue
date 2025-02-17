@@ -1,9 +1,3 @@
-input.hidden {
-	position: fixed;
-	left: 100%;
-	top: 100%;
-}
-
 .blockform {
 	display: flex;
 	flex-direction: column;

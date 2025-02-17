@@ -74,7 +74,7 @@ export default function AddForm() {
 			<legend>Choose what you'd like to add:</legend>
 			<label>
 				<input
-					type="radio" name="currentTab" className="hidden"
+					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}
 					value="dialogue"
 					checked={activeTab === "dialogue"}
@@ -84,7 +84,7 @@ export default function AddForm() {
 			</label>
 			<label>
 				<input
-					type="radio" name="currentTab" className="hidden"
+					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}
 					value="choice"
 					checked={activeTab === "choice"}
@@ -109,7 +109,7 @@ export default function AddForm() {
 		</fieldset>
 
 		<label id="keepcolor">
-			<input type="checkbox" checked={dialogueOptions.keepColor} onChange={(e) => setDialogueOptions({ ...dialogueOptions, keepColor: e.target.checked })} className="hidden" />
+			<input type="checkbox" checked={dialogueOptions.keepColor} onChange={(e) => setDialogueOptions({ ...dialogueOptions, keepColor: e.target.checked })} className="visuallyhidden" />
 			<span className="icon" aria-hidden={true} />
 			<span className="labeltext">
 				Reuse same palette for future dialogue

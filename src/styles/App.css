@@ -166,6 +166,12 @@ body {
 }
 
 [hidden] { display: none !important }
+
+.visuallyhidden {
+	position: fixed;
+	top: 100%;
+	left: 100%;
+}
 /* #endregion */
 
 /* #region Top menu */
