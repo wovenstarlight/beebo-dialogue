@@ -20,6 +20,7 @@ export default function DialogueInputs({ data, setData }) {
 				required
 				value={data.color}
 				onChange={(e) => setData({ ...data, color: e.target.value })}
+				autoFocus={true}
 			>
 				{Object.entries(allColors).map(color => {
 					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
