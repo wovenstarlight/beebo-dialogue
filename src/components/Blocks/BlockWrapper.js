@@ -43,19 +43,20 @@ export default function BlockWrapper({ type, data }) {
 	/** Basic information for this block. @type {DataDialogue|DataChoice} */
 	let initial;
 	switch (type) {
+		case "choice":
+			initial = {
+				color: data.color,
+				options: data.options,
+			};
+			break;
+
 		case "dialogue":
+		default:
 			initial = {
 				color: data.color,
 				speaker: data.speaker,
 				portrait: data.portrait,
 				dialogue: data.dialogue,
-			};
-			break;
-		
-		case "choice":
-			initial = {
-				color: data.color,
-				options: data.options,
 			};
 			break;
 	}
