@@ -1,0 +1,60 @@
+[
+	{
+		"color": "purple",
+		"options": [
+			{
+				"text": "What's your connection with Vivi?"
+			},
+			{
+				"text": "Who is the Co-owner?"
+			},
+			{
+				"text": "Do you know anyone else here?"
+			},
+			{
+				"text": "Are you into men",
+				"selected": true
+			}
+		]
+	},
+	{
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/neutro.png",
+		"dialogue": "(No, I shouldn't ask that. Wait, did I think it or say it?)"
+	},
+	{
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/confused.png",
+		"dialogue": "(Oh no, I said it. The alcohol got me)"
+	},
+	{
+		"speaker": "Ángel",
+		"portrait": "angel/house/smiling.png",
+		"dialogue": "I am. Are you?"
+	},
+	{
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/red.png",
+		"dialogue": "Um, yes as well."
+	},
+	{
+		"speaker": "Ángel",
+		"portrait": "angel/house/smile.png",
+		"dialogue": "Isn't that interesting?"
+	},
+	{
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/neutro.png",
+		"dialogue": "(What's that supposed to mean. Is that a normal smile or a something else smile)"
+	},
+	{
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/annoy.png",
+		"dialogue": "(How do I answer in a normal adult way?)"
+	},
+	{
+		"speaker": "Oliver Beebo",
+		"portrait": "oliver/house/neutro.png",
+		"dialogue": "The concept of men has always intrigued me."
+	}
+]

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/beebo-dialogue/static/css/main.d5121022.css",
+    "main.js": "/beebo-dialogue/static/js/main.e397f3a8.js",
+    "static/js/453.4f52d309.chunk.js": "/beebo-dialogue/static/js/453.4f52d309.chunk.js",
+    "static/media/nokiafc22.ttf": "/beebo-dialogue/static/media/nokiafc22.04dc8b649b961470b957.ttf",
+    "static/media/SqueezedPixels.ttf": "/beebo-dialogue/static/media/SqueezedPixels.21b3ca49a8b1a310ea68.ttf",
+    "index.html": "/beebo-dialogue/index.html",
+    "main.d5121022.css.map": "/beebo-dialogue/static/css/main.d5121022.css.map",
+    "main.e397f3a8.js.map": "/beebo-dialogue/static/js/main.e397f3a8.js.map",
+    "453.4f52d309.chunk.js.map": "/beebo-dialogue/static/js/453.4f52d309.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5121022.css",
+    "static/js/main.e397f3a8.js"
+  ]
+}
