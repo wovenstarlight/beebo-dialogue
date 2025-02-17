@@ -56,7 +56,7 @@ export function validateChoice({ color, options }) {
 		)
 			? options.map(opt => {
 				return {
-					color: typeof opt.color === "string" && Object.values(allColors).includes(opt.color) ? opt.color : parentColor,
+					color: typeof opt.color === "string" && Object.values(allColors).includes(opt.color) ? opt.color : undefined,
 					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text : "Lorem ipsum dolor sit amet",
 					selected: typeof opt.selected === "boolean" ? opt.selected : false,
 				}
