@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
-import DIALOGUE_SAMPLES from "../../constants/sampleDialogue";
-import { DEFAULT_DIALOGUE } from "../../constants/blockDefaults";
+import ALL_COLORS from "../../constants/colors";
+import { CHOICE_SAMPLE, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
+import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK } from "../../constants/blockDefaults";
 import validate from "../../utils/validateData";
 import DialogueInputs from "./Inputs/DialogueInputs";
 import ChoiceInputs from "./Inputs/ChoiceInputs";
@@ -10,56 +11,90 @@ export default function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
 
 	const [activeTab, setActiveTab] = useState("dialogue");
-	const [dialogueOptions, setDialogueOptions] = useState({
-		color: DEFAULT_DIALOGUE.color,
-		speaker: "",
-		dialogue: "",
-		portrait: "",
-		keepColor: false,
+	const [keepColor, setKeepColor] = useState(true);
+
+	const [dialogueOptions, setDialogueOptions] = useState(DEFAULT_DIALOGUE_BLANK);
+	const [choiceOptions, setChoiceOptions] = useState({
+		color: DEFAULT_CHOICE_BLANK.color,
+		options: [
+			{
+				tempID: `${(new Date()).getTime()}_1`,
+				...DEFAULT_CHOICE_OPTION_BLANK,
+			},
+			{
+				tempID: `${(new Date()).getTime()}_2`,
+				...DEFAULT_CHOICE_OPTION_BLANK,
+			},
+		],
 	});
+
+	function getOptions() {
+		return activeTab === "dialogue"
+			? dialogueOptions
+			: choiceOptions;
+	}
+
+	/** Share color between the two forms. */
+	function setColor(e) {
+		setDialogueOptions((options) => { return { ...options, color: e.target.value } });
+		setChoiceOptions((options) => { return { ...options, color: e.target.value } });
+	}
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		const newDialogue = {
-			id: `${dialogueOptions.color.toLowerCase()}_${(new Date()).getTime()}`,
+		const newBlock = {
+			id: `${activeTab.toLowerCase()}_${(new Date()).getTime()}`,
 			...validate({
-				type: "dialogue",
-				data: {
-					color: dialogueOptions.color,
-					portrait: dialogueOptions.portrait,
-					speaker: dialogueOptions.speaker,
-					dialogue: dialogueOptions.dialogue,
-				},
+				type: activeTab,
+				data: getOptions(),
 			})
-		};
-		setBlocks(values => [...values, newDialogue]);
-		clearForm(e);
+		}
+		setBlocks(values => [...values, newBlock]);
+		clearForm(e, false);
 	}
 
-	function clearForm(e) {
-		const keepColor = dialogueOptions.keepColor,
-			ogColor = dialogueOptions.color;
+	function clearForm(e, resetFull = true) {
+		const ogColor = getOptions().color;
 		// Clear stored values
-		setDialogueOptions((options) => ({
-			...options,
-			color: keepColor ? ogColor : DEFAULT_DIALOGUE.color,
-			speaker: "",
-			dialogue: "",
-			portrait: "",
-		}));
+		setDialogueOptions({
+			...DEFAULT_DIALOGUE_BLANK,
+			color: !resetFull && keepColor ? ogColor : DEFAULT_DIALOGUE_BLANK.color,
+		});
+		setChoiceOptions({
+			color: !resetFull && keepColor ? ogColor : DEFAULT_CHOICE_BLANK.color,
+			options: [
+				{
+					tempID: `${(new Date()).getTime()}_1`,
+					...DEFAULT_CHOICE_OPTION_BLANK,
+				},
+				{
+					tempID: `${(new Date()).getTime()}_2`,
+					...DEFAULT_CHOICE_OPTION_BLANK,
+				},
+			],
+		});
 		// And remove the invalid markers
 		e.target.closest("form").reset();
 	}
 
 	function fillSample() {
-		let sample = DIALOGUE_SAMPLES[Math.floor(Math.random() * DIALOGUE_SAMPLES.length)];
-		// Clear stored values
-		setDialogueOptions({
-			color: sample.color,
-			speaker: sample.speaker,
-			dialogue: sample.dialogue,
-			portrait: sample.portrait,
-		});
+		if (activeTab === "dialogue") {
+			// Multiple dialogue samples, so pick one to insert
+			let sample = DIALOGUE_SAMPLES[Math.floor(Math.random() * DIALOGUE_SAMPLES.length)];
+			// Clear stored values
+			setDialogueOptions(sample);
+		}
+		else if (activeTab === "choice") {
+			// Only one choice sample; insert directly
+			// And include `tempID`s for the various options!
+			setChoiceOptions({
+				...CHOICE_SAMPLE,
+				options: CHOICE_SAMPLE.options.map((opt, index) => { return {
+					...opt,
+					tempID: `${(new Date()).getTime()}_${index}`,
+				} })
+			});
+		}
 	}
 
 	/* BREAKDOWN
@@ -95,6 +130,22 @@ export default function AddForm() {
 			</label>
 		</fieldset>
 
+		<label className="labelcolor">
+			<span className="labeltext">Palette</span>
+			<select
+				className="inputcolor"
+				name="inputcolor"
+				required
+				value={dialogueOptions.color}
+				onChange={setColor}
+				autoFocus={true}
+			>
+				{Object.entries(ALL_COLORS).map(color => {
+					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
+				})}
+			</select>
+		</label>
+
 		<fieldset id="adddialogue" className="inputsection" disabled={activeTab !== "dialogue"} hidden={activeTab !== "dialogue"}>
 			<DialogueInputs
 				data={dialogueOptions}
@@ -105,13 +156,14 @@ export default function AddForm() {
 
 		<fieldset id="addchoice" className="inputsection" disabled={activeTab !== "choice"} hidden={activeTab !== "choice"}>
 			<ChoiceInputs
-				data={dialogueOptions}
-				setData={setDialogueOptions}
+				data={choiceOptions}
+				setData={setChoiceOptions}
+				includePalette={false}
 			/>
 		</fieldset>
 
 		<label id="keepcolor">
-			<input type="checkbox" checked={dialogueOptions.keepColor} onChange={(e) => setDialogueOptions({ ...dialogueOptions, keepColor: e.target.checked })} className="visuallyhidden" />
+			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} className="visuallyhidden" />
 			<span className="icon" aria-hidden={true} />
 			<span className="labeltext">
 				Reuse same palette for future dialogue
@@ -121,7 +173,7 @@ export default function AddForm() {
 		</label>
 
 		<button className="submitbtn" type="submit">Add</button>
-		<button className="resetbtn" type="reset" onClick={clearForm}>Clear</button>
+		<button className="resetbtn" type="button" onClick={clearForm}>Clear</button>
 		<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
 	</form>;
 }
