@@ -6,7 +6,7 @@ import AddForm from "./components/Forms/AddForm";
 import JSONForm from "./components/Forms/JSONForm";
 import domtoimage from 'dom-to-image';
 
-function App() {
+export default function App() {
 	const [blocks, setBlocks] = useState([]);
 	
 	/** Deletes all dialogue boxes currently being displayed. */
@@ -96,5 +96,3 @@ function App() {
 		</footer>
 	</>);
 }
-
-export default App;

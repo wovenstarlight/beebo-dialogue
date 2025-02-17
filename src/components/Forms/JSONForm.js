@@ -1,7 +1,7 @@
 import "../../styles/JSONForm.css";
 import validateDialogue from "../../utils/validateDialogue";
 
-function JSONForm({ blocks, setBlocks }) {
+export default function JSONForm({ blocks, setBlocks }) {
 	function getJSON() {
 		return JSON.stringify(
 			blocks.map(el => {
@@ -116,5 +116,3 @@ function JSONForm({ blocks, setBlocks }) {
 		<a id="samplefile" href={`${process.env.PUBLIC_URL}/assets/sampleFile.json`} download>Need a reference?</a>
 	</form>;
 }
-
-export default JSONForm;

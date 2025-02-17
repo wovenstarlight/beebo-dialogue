@@ -4,7 +4,7 @@ import TextBox from "../TextBox";
 import validateDialogue from "../../utils/validateDialogue";
 import getNeighbours from "../../utils/getNeighbours";
 
-function DialogueBlock({
+export default function DialogueBlock({
 	data, data: { id, color, speaker, portrait, dialogue },	// Keep both destructured and whole `data` arg for further substitutions
 	allBlocks, setBlocks,
 	isFirst, isLast,

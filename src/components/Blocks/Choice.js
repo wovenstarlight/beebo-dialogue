@@ -1,6 +1,6 @@
 import "../../styles/Choice.css";
 
-function ChoiceBlock({
+export default function ChoiceBlock({
 	data: { id, color, options },
 	allBlocks, setBlocks,
 	isFirst, isLast,
@@ -13,5 +13,3 @@ function ChoiceBlock({
 		>{opt.text}</p>)}
 	</article>;
 }
-
-export default ChoiceBlock;

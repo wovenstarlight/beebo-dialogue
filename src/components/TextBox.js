@@ -1,6 +1,6 @@
 import "../styles/TextBox.css";
 
-function TextBox({
+export default function TextBox({
 	data: { id, color, speaker, portrait, dialogue },
 	getNeighbors, setBlocks, editHandler, isFirst, isLast
 }) {
@@ -45,5 +45,3 @@ function TextBox({
 		</article>
 	);
 }
-
-export default TextBox;

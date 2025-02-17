@@ -9,7 +9,7 @@ import allPortraits from "../assets/data/portraits";
  * @param {{color: string, portrait: string, speaker: string, dialogue: string}} props Raw data for a dialogue component.
  * @returns A dialogue object with validated data.
  */
-function validateDialogue({ color, ...args }) {
+export default function validateDialogue({ color, ...args }) {
 	let obj = {
 		color: typeof color === "string" && Object.values(allColors).includes(color) ? color : "purple",
 	};
@@ -40,5 +40,3 @@ function validateDialogue({ color, ...args }) {
 			dialogue: typeof args.dialogue === "string" ? args.dialogue.slice(0, 250) : "Lorem ipsum dolor sit amet.",
 		};
 }
-
-export default validateDialogue;

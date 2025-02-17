@@ -3,7 +3,7 @@ import DialogueInputs from "./Inputs/DialogueInputs";
 import sampleDialogues from "../../assets/data/sampleDialogue";
 import validateDialogue from "../../utils/validateDialogue";
 
-function AddForm({ setBlocks }) {
+export default function AddForm({ setBlocks }) {
 	const [dialogueOptions, setDialogueOptions] = useState({
 		color: "purple",
 		speaker: "",
@@ -82,5 +82,3 @@ function AddForm({ setBlocks }) {
 		<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
 	</form>;
 }
-
-export default AddForm;

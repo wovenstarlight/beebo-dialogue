@@ -2,7 +2,7 @@ import "../../../styles/Forms.css";
 import PortraitSelector from "./PortraitSelector";
 import allColors from "../../../assets/data/colors";
 
-function DialogForm({ data, setData }) {
+export default function DialogueInputs({ data, setData }) {
 	/* BREAKDOWN
 	Four inputs:
 		- one for the color palette used by the box.
@@ -75,5 +75,3 @@ function DialogForm({ data, setData }) {
 		</label>
 	</>;
 }
-
-export default DialogForm;
