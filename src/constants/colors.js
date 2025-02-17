@@ -13,4 +13,6 @@ const ALL_COLORS = {
 	"Sky blue (True ending)": "skyblue",
 };
 
+Object.freeze(ALL_COLORS);
+
 export default ALL_COLORS;

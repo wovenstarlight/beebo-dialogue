@@ -407,4 +407,6 @@ const ALL_PORTRAITS = {
 	// #endregion
 };
 
+Object.freeze(ALL_PORTRAITS);
+
 export default ALL_PORTRAITS;

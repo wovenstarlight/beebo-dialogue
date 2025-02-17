@@ -4,12 +4,14 @@ export const DEFAULT_DIALOGUE = {
 	speaker: "Y/N",
 	dialogue: "Lorem ipsum dolor sit amet.",
 };
+Object.freeze(DEFAULT_DIALOGUE);
 
 export const DEFAULT_CHOICE = {
 	color: "purple",
 	text: "Lorem ipsum dolor sit amet",
 	selected: false,
 };
+Object.freeze(DEFAULT_CHOICE);
 
 export function getDefaults(type) {
 	switch (type) {

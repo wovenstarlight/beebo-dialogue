@@ -81,4 +81,6 @@ const DIALOGUE_SAMPLES = [
 	},
 ];
 
+Object.freeze(DIALOGUE_SAMPLES);
+
 export default DIALOGUE_SAMPLES;
