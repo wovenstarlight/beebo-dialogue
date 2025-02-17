@@ -1,4 +1,10 @@
-.dialogueform {
+input.hidden {
+	position: fixed;
+	left: 100%;
+	top: 100%;
+}
+
+.blockform {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;
@@ -31,7 +37,7 @@
 	select .labeltext { padding-block-start: 0.1em }
 	select { padding-block: 0.3em }
 
-	input, textarea, .inputcolor, .inputcolor option {
+	.inputspeaker, .inputdialogue, .inputcolor, .inputcolor option {
 		color: var(--text);
 		background-color: var(--bg);
 	}
@@ -100,10 +106,6 @@
 	}
 
 	input {
-		position: fixed;
-		left: 100%;
-		top: 100%;
-
 		&:checked ~ .icon::before {
 			content: "x";
 			padding-inline-start: 0.1em;

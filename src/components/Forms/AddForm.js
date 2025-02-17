@@ -60,13 +60,13 @@ export default function AddForm() {
 	}
 
 	/* BREAKDOWN
-		- main DialogueForm with the standard inputs
+		- main form with the standard inputs
 		- checkbox to keep the color palette selected.
 		- buttons to create the corresponding box and to reset the form.
 		- button that autofills the form with sample dialogue.
 	*/
-	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu dialogueform ${dialogueOptions.color}`}>
-		<h2>Add new dialogue</h2>
+	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu blockform ${dialogueOptions.color}`}>
+		<h2>Add new element</h2>
 
 		<DialogueInputs
 			data={dialogueOptions}
@@ -74,8 +74,8 @@ export default function AddForm() {
 		/>
 
 		<label id="keepcolor">
-			<input type="checkbox" checked={dialogueOptions.keepColor} onChange={(e) => setDialogueOptions({ ...dialogueOptions, keepColor: e.target.checked })} />
-			<span className="icon" />
+			<input type="checkbox" checked={dialogueOptions.keepColor} onChange={(e) => setDialogueOptions({ ...dialogueOptions, keepColor: e.target.checked })} className="hidden" />
+			<span className="icon" aria-hidden={true} />
 			<span className="labeltext">
 				Reuse same palette for future dialogue
 				<br/>

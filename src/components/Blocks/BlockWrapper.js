@@ -121,7 +121,7 @@ export default function BlockWrapper({ type, data }) {
 			<ModMenu id={data.id} setEditing={setEditing} />
 		</article>}
 		
-		{editing && <form id={`edit_${data.id}`} name={`edit_${data.id}`} onSubmit={updateBlock} className={`menu ${type}form ${temp.color}`}>
+		{editing && <form id={`edit_${data.id}`} name={`edit_${data.id}`} onSubmit={updateBlock} className={`menu blockform ${temp.color}`}>
 			{editMenuContent}
 	
 			<button className="submitbtn" type="submit">Update</button>
