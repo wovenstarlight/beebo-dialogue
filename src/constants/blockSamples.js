@@ -82,23 +82,26 @@ export const DIALOGUE_SAMPLES = [
 Object.freeze(DIALOGUE_SAMPLES);
 DIALOGUE_SAMPLES.forEach(sample => Object.freeze(sample));
 
-export const CHOICE_SAMPLE = [
-	{
-		text: "What's your connection with Vivi?",
-		selected: false,
-	},
-	{
-		text: "Who is the Co-owner?",
-		selected: false,
-	},
-	{
-		text: "Do you know anyone else here?",
-		selected: false,
-	},
-	{
-		text: "Are you into men",
-		selected: true,
-	},
-];
+export const CHOICE_SAMPLE = {
+	color: "purple",
+	options: [
+		{
+			text: "What's your connection with Vivi?",
+			selected: false,
+		},
+		{
+			text: "Who is the Co-owner?",
+			selected: false,
+		},
+		{
+			text: "Do you know anyone else here?",
+			selected: false,
+		},
+		{
+			text: "Are you into men",
+			selected: true,
+		},
+	],
+};
 Object.freeze(CHOICE_SAMPLE);
-CHOICE_SAMPLE.forEach(choice => Object.freeze(choice));
+CHOICE_SAMPLE.options.forEach(choice => Object.freeze(choice));
