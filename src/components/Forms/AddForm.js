@@ -4,13 +4,14 @@ import DialogueInputs from "./Inputs/DialogueInputs";
 import sampleDialogues from "../../assets/data/sampleDialogue";
 import validate from "../../utils/validateData";
 import ChoiceInputs from "./Inputs/ChoiceInputs";
+import { DEFAULT_DIALOGUE } from "../../assets/data/blockDefaults";
 
 export default function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
 
 	const [activeTab, setActiveTab] = useState("dialogue");
 	const [dialogueOptions, setDialogueOptions] = useState({
-		color: "purple",
+		color: DEFAULT_DIALOGUE.color,
 		speaker: "",
 		dialogue: "",
 		portrait: "",
@@ -41,7 +42,7 @@ export default function AddForm() {
 		// Clear stored values
 		setDialogueOptions((options) => ({
 			...options,
-			color: keepColor ? ogColor : "purple",
+			color: keepColor ? ogColor : DEFAULT_DIALOGUE.color,
 			speaker: "",
 			dialogue: "",
 			portrait: "",

@@ -1,3 +1,4 @@
+import { DEFAULT_DIALOGUE, DEFAULT_CHOICE } from "../assets/data/blockDefaults";
 import allColors from "../assets/data/colors";
 import allPortraits from "../assets/data/portraits";
 
@@ -29,10 +30,10 @@ export default function validate({ type, data }) {
  */
 export function validateDialogue({ color, portrait, speaker, dialogue }) {
 	return {
-		color: typeof color === "string" && Object.values(allColors).includes(color) ? color : "purple",
-		portrait: typeof portrait === "string" && Object.values(allPortraits).some(el => Object.values(el).includes(portrait)) ? portrait : `misc/someone_shadow.png`,
-		speaker: typeof speaker === "string" && speaker.length > 0 ? speaker.slice(0, 100) : "Y/N",
-		dialogue: typeof dialogue === "string" && dialogue.length > 0 ? dialogue.slice(0, 250) : "Lorem ipsum dolor sit amet.",
+		color: typeof color === "string" && Object.values(allColors).includes(color) ? color : DEFAULT_DIALOGUE.color,
+		portrait: typeof portrait === "string" && Object.values(allPortraits).some(el => Object.values(el).includes(portrait)) ? portrait : DEFAULT_DIALOGUE.portrait,
+		speaker: typeof speaker === "string" && speaker.length > 0 ? speaker.slice(0, 100) : DEFAULT_DIALOGUE.speaker,
+		dialogue: typeof dialogue === "string" && dialogue.length > 0 ? dialogue.slice(0, 250) : DEFAULT_DIALOGUE.dialogue,
 	};
 }
 
@@ -46,19 +47,18 @@ export function validateDialogue({ color, portrait, speaker, dialogue }) {
  * @returns A validated data object.
  */
 export function validateChoice({ color, options }) {
-	let parentColor = typeof color === "string" && Object.values(allColors).includes(color) ? color : "purple";
 	return {
-		color: parentColor,
+		color: typeof color === "string" && Object.values(allColors).includes(color) ? color : DEFAULT_CHOICE.color,
 		options: (
 			Object.prototype.toString.call(options) === "[object Array]"
 			&& options.every(opt => Object.prototype.toString.call(opt) === "[object Object]")
 		)
 			? options.map(opt => {
 				return {
-					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text : "Lorem ipsum dolor sit amet",
-					selected: typeof opt.selected === "boolean" ? opt.selected : false,
+					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text : DEFAULT_CHOICE.text,
+					selected: typeof opt.selected === "boolean" ? opt.selected : DEFAULT_CHOICE.selected,
 				}
 			})
-			: [{ text: "Lorem ipsum dolor sit amet" }],
+			: [{ text: DEFAULT_CHOICE.text }],
 	};
 }
