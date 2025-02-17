@@ -1,3 +1,41 @@
+/* The tab menu for AddForm */
+#tabber {
+	border: none;
+	display: flex;
+	gap: 1em;
+	margin: 0 5vw 1em;
+	padding: 0.5em 0 0;
+
+	legend { margin-inline: auto }
+
+	label {
+		flex-grow: 1;
+		text-align: center;
+		display: block;
+		border: var(--border-width) solid var(--text);
+		padding: 0.5em 0.75em;
+		cursor: pointer;
+		--bg: var(--bg-nina);
+		--text: var(--text-nina);
+		background-color: var(--bg);
+		color: var(--text);
+
+		&:has(:checked) {
+			--bg: var(--bg-marigold);
+			--text: var(--text-marigold);
+			color: white;
+		}
+		&:is(:hover, :focus-within) {
+			background-color: var(--text);
+			color: var(--bg);
+		}
+	}
+}
+
+/* Use parent form spacing for each tab */
+fieldset.inputsection { display: contents }
+
+/* The form sections themselves */
 .blockform {
 	display: flex;
 	flex-direction: column;
@@ -29,9 +67,9 @@
 		}
 	}
 	select .labeltext { padding-block-start: 0.1em }
-	select { padding-block: 0.3em }
+	input:not(.inputspeaker), select { padding-block: 0.3em }
 
-	.inputspeaker, .inputdialogue, .inputcolor, .inputcolor option {
+	input[type="text"], .inputdialogue, .inputcolor, .inputcolor option {
 		color: var(--text);
 		background-color: var(--bg);
 	}
@@ -80,6 +118,7 @@
 	}
 }
 
+/* Keep color toggle at bottom of AddForm */
 #keepcolor {
 	grid-template-columns: auto 1fr;
 	width: fit-content;
