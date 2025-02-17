@@ -63,6 +63,10 @@ function App() {
 						? <ChoiceBlock
 							key={obj.id}
 							data={obj}
+							allBlocks={blocks}
+							setBlocks={setBlocks}
+							isFirst={index === 0}
+							isLast={index === array.length - 1}
 						/>
 						: <DialogueBlock
 							key={obj.id}
