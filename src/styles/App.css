@@ -237,4 +237,58 @@ textarea {
 		text-align: center;
 	}
 }
+
+/* Form buttons */
+.blockbtn, .barbtn, .barbtn:link, .barbtn:visited {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-family: inherit;
+	font-size: 1rem;
+	
+	&:not([disabled]) {
+		cursor: pointer;
+		&:is(:hover, :focus-within) {
+			background-color: var(--text);
+		}
+	}
+}
+.blockbtn {
+	padding: 0.5em 0.75em;
+	border: var(--border-width) solid var(--text, currentColor);
+	background-color: var(--bg);
+	
+	&:not([disabled]):is(:hover, :focus-within) { color: var(--bg) }
+
+	&[disabled] {
+		opacity: 0.5;
+		color: #fff8;
+		cursor: not-allowed;
+	}
+}
+.editbtn {
+	--text: var(--text-angel);
+	--bg: var(--bg-angel);
+}
+.movebtn {
+	--text: var(--text-oliver);
+	--bg: var(--bg-oliver);
+}
+.deletebtn {
+	--text: var(--text-vivi);
+	--bg: var(--bg-vivi);
+}
+
+.barbtn {
+	--text: var(--text-house, currentColor);
+	--bg: var(--bg-house);
+	background-color: var(--bg);
+	border-block: var(--border-width) solid var(--text);
+	border-inline: none;
+	margin-inline: -0.75rem;
+	padding-block: 0.25rem;
+
+	&.samplebtn { font-size: 0.9em }
+}
 /* #endregion */

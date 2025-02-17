@@ -32,22 +32,7 @@
 		margin-block: 0;
 	}
 
-	.jsonbtn {
-		font: inherit;
-		text-align: center;
-		background-color: var(--bg);
-		color: white;
-		border: var(--border-width) solid var(--text);
-		padding: 0.5em 0.75em;
-		display: inline-block;
-		cursor: pointer;
-
-		&:is(:hover, :focus-within) {
-			background-color: var(--text);
-			color: var(--bg);
-		}
-		&:not(:hover, :focus-within) + .explainer { display: none }
-	}
+	.blockbtn:not(:hover, :focus-within) + .explainer { display: none }
 }
 #copyjson {
 	--text: var(--text-nadia);
@@ -61,22 +46,6 @@
 	--text: var(--text-simon);
 	--bg: var(--bg-simon);
 }
-#uploadjson {
-	position: fixed;
-	left: 100%;
-	top: 100%;
-}
 /* #endregion */
 
-#samplefile {
-	display: block;
-	margin: 1em -0.75rem 0;
-	padding-block: 0.25rem;
-	font-size: 0.85em;
-	border-block: var(--border-width) solid var(--text-house);
-	text-align: center;
-	color: white;
-	text-decoration: none;
-
-	&:is(:hover, :focus) { background-color: var(--text-house) }
-}
+#jsonform .samplebtn { margin: 1em -0.75rem 0 }

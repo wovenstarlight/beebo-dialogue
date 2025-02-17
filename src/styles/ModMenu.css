@@ -12,42 +12,15 @@
 	gap: 0.2em;
 	text-wrap: nowrap;
 	
-	button {
-		color: white;
-		background-color: var(--bg);
-		font: inherit;
-		font-size: 1rem;
-		border: var(--border-width) solid var(--text);
-		padding: 0.5em 0.75em;
-		cursor: pointer;
-
-		&:not([disabled]):is(:hover, :focus) {
-			background-color: var(--text);
-			color: var(--bg);
-		}
-
-		&[disabled] {
-			opacity: 0.5;
-			color: #fff8;
-			cursor: not-allowed;
-		}
-	}
-	
-	.edit {
-		--text: var(--text-angel);
-		--bg: var(--bg-angel);
+	.editbtn {
 		grid-column: 1;
 		grid-row: 1;
 	}
-	.delete {
-		--text: var(--text-vivi);
-		--bg: var(--bg-vivi);
+	.deletebtn {
 		grid-column: 1;
 		grid-row: 2;
 	}
-	.move {
-		--text: var(--text-oliver);
-		--bg: var(--bg-oliver);
+	.movebtn {
 		grid-column: 2;
 	}
 }

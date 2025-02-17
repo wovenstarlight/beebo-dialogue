@@ -172,8 +172,8 @@ export default function AddForm() {
 			</span>
 		</label>
 
-		<button className="submitbtn" type="submit">Add element</button>
-		<button className="resetbtn" type="button" onClick={clearForm}>Reset form</button>
-		<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
+		<button className="barbtn submitbtn" type="submit">Add element</button>
+		<button className="barbtn resetbtn" type="button" onClick={clearForm}>Reset form</button>
+		<button className="barbtn samplebtn" type="button" onClick={fillSample}>Need a reference?</button>
 	</form>;
 }

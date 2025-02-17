@@ -105,19 +105,19 @@ export default function JSONForm() {
 		<textarea id="jsoninput" name="jsoninput" value={getJSON()} readOnly={true} />
 
 		<div className="buttons">
-			<button type="button" className="jsonbtn" id="copyjson" onClick={copyJSON} aria-describedby="copyexplainer">Copy</button>
+			<button type="button" className="blockbtn" id="copyjson" onClick={copyJSON} aria-describedby="copyexplainer">Copy</button>
 			<p className="explainer" id="copyexplainer">Copy the above JSON to your clipboard</p>
 
-			<button type="button" className="jsonbtn" id="downloadjson" onClick={downloadJSON} aria-describedby="downloadexplainer">Download</button>
+			<button type="button" className="blockbtn" id="downloadjson" onClick={downloadJSON} aria-describedby="downloadexplainer">Download</button>
 			<p className="explainer" id="downloadexplainer">Download as a JSON file to your device</p>
 
-			<label className="jsonbtn" id="uploadlabel" aria-describedby="uploadexplainer">
+			<label className="blockbtn" id="uploadlabel" aria-describedby="uploadexplainer">
 				<span className="btnlabel">Upload</span>
-				<input id="uploadjson" name="uploadjson" onChange={uploadJSON} type="file" accept=".json" />
+				<input className="visuallyhidden" name="uploadjson" onChange={uploadJSON} type="file" accept=".json" />
 			</label>
 			<p className="explainer" id="uploadexplainer">Upload a JSON file (this overwrites existing dialogue!)</p>
 		</div>
 		
-		<a id="samplefile" href={`${process.env.PUBLIC_URL}/assets/sampleFile.json`} download>Need a reference?</a>
+		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sampleFile.json`} download>Need a reference?</a>
 	</form>;
 }

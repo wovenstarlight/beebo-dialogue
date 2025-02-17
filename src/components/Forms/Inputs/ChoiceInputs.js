@@ -108,7 +108,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			deleteOption={data.options.length > 1 ? deleteOption : null}
 		/>)}
 
-		{data.options.length < 4 && <button type="button" className="addbtn" onClick={addOption}>Add an option</button>}
+		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>Add an option</button>}
 	</>;
 }
 
@@ -138,9 +138,9 @@ function OptionInput({
 				<span className="labeltext">Mark<span className="visuallyhidden"> option {index + 1}</span> as selected</span>
 			</label>
 			
-			{moveOptionUp && <button type="button" className="movebtn" onClick={moveOptionUp}>Move up</button>}
-			{moveOptionDown && <button type="button" className="movebtn" onClick={moveOptionDown}>Move down</button>}
-			{deleteOption && <button type="button" className="deletebtn" onClick={deleteOption}>Delete</button>}
+			{moveOptionUp && <button type="button" className="blockbtn movebtn" onClick={moveOptionUp}>Move up</button>}
+			{moveOptionDown && <button type="button" className="blockbtn movebtn" onClick={moveOptionDown}>Move down</button>}
+			{deleteOption && <button type="button" className="blockbtn deletebtn" onClick={deleteOption}>Delete</button>}
 		</div>
 	</div>;
 }

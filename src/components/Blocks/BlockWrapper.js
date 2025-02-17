@@ -160,12 +160,12 @@ function ModMenu({ id, setEditing }) {
 	//#endregion
 
 	return <div className="modmenu buttons">
-		<button className="edit" onClick={editBlock}>Edit</button>
-		<button className="delete" onClick={deleteBlock}>Delete</button>
+		<button className="blockbtn editbtn" onClick={editBlock}>Edit</button>
+		<button className="blockbtn deletebtn" onClick={deleteBlock}>Delete</button>
 		{/* Don't render the move buttons at all if this is the only block i.e. both first and last */}
 		{!(isFirst && isLast) && <> 
-		<button className="move" onClick={moveBlockUp} disabled={isFirst}>Move up</button>
-		<button className="move" onClick={moveBlockDown} disabled={isLast}>Move down</button>
+		<button className="blockbtn movebtn" onClick={moveBlockUp} disabled={isFirst}>Move up</button>
+		<button className="blockbtn movebtn" onClick={moveBlockDown} disabled={isLast}>Move down</button>
 		</>}
 	</div>;
 }
