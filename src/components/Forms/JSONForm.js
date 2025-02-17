@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "../../styles/JSONForm.css";
-import validateDialogue from "../../utils/validateDialogue";
+import validate from "../../utils/validateData";
 import { BlockContext } from "../../context/BlockContext";
 
 export default function JSONForm() {
@@ -82,9 +82,11 @@ export default function JSONForm() {
 
 			// Input validated! Now go through and make the dialogue
 			setBlocks(contents.map((obj, index) => {
+				// Current type waterfall: choice > dialogue
+				let type = "options" in obj ? "choice" : "dialogue";
 				return {
 					id: `upload_${(new Date()).getTime()}_${index}`,
-					...validateDialogue(obj),
+					...validate({ type: type, data: obj }),
 				}
 			}));
 

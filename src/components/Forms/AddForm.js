@@ -19,11 +19,14 @@ export default function AddForm() {
 		e.preventDefault();
 		const newDialogue = {
 			id: `${dialogueOptions.color.toLowerCase()}_${(new Date()).getTime()}`,
-			...validateDialogue({
-				color: dialogueOptions.color,
-				portrait: dialogueOptions.portrait,
-				speaker: dialogueOptions.speaker,
-				dialogue: dialogueOptions.dialogue,
+			...validate({
+				type: "dialogue",
+				data: {
+					color: dialogueOptions.color,
+					portrait: dialogueOptions.portrait,
+					speaker: dialogueOptions.speaker,
+					dialogue: dialogueOptions.dialogue,
+				},
 			})
 		};
 		setBlocks(values => [...values, newDialogue]);

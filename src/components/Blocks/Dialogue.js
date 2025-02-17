@@ -3,7 +3,7 @@ import { BlockContext } from "../../context/BlockContext";
 import "../../styles/TextBox.css";
 import ModMenu from "./ModMenu";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
-import validateDialogue from "../../utils/validateDialogue";
+import validate from "../../utils/validateData";
 import getNeighbours from "../../utils/getNeighbours";
 
 function TextBox({ id, color, speaker, portrait, dialogue, setEditing }) {
@@ -41,11 +41,14 @@ export default function DialogueBlock({ data }) {
 		let [pre, , post] = getNeighbours(allBlocks, data.id);
 		setBlocks(pre.concat([{
 			id: data.id,
-			...validateDialogue({
-				color: temp.color,
-				speaker: temp.speaker,
-				portrait: temp.portrait,
-				dialogue: temp.dialogue,
+			...validate({
+				type: "dialogue",
+				data: {
+					color: temp.color,
+					speaker: temp.speaker,
+					portrait: temp.portrait,
+					dialogue: temp.dialogue,
+				},
 			})
 		}], post));
 		setEditing(false);
