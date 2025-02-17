@@ -408,6 +408,6 @@ const ALL_PORTRAITS = {
 };
 
 Object.freeze(ALL_PORTRAITS);
-ALL_PORTRAITS.forEach(optgroup => Object.freeze(optgroup));
+Object.values(ALL_PORTRAITS).forEach(optgroup => Object.freeze(optgroup));
 
 export default ALL_PORTRAITS;
