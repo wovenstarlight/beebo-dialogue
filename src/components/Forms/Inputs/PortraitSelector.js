@@ -1,5 +1,5 @@
 import { memo } from "react";
-import allPortraits from "../../../assets/data/portraits";
+import ALL_PORTRAITS from "../../../constants/portraits";
 
 function PortraitSelector({ portrait, setPortrait }) {
 	return (
@@ -11,7 +11,7 @@ function PortraitSelector({ portrait, setPortrait }) {
 			onChange={setPortrait}
 		>
 			<option value="">-- No portrait chosen --</option>
-			{Object.entries(allPortraits).map(pair => {
+			{Object.entries(ALL_PORTRAITS).map(pair => {
 				return <optgroup label={pair[0]} key={pair[0]}>
 					{Object.entries(pair[1]).map(sprite => {
 						return <option value={sprite[1]} key={sprite[1]}>{sprite[0]}</option>

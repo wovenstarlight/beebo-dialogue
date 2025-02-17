@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
-import DialogueInputs from "./Inputs/DialogueInputs";
-import sampleDialogues from "../../assets/data/sampleDialogue";
+import DIALOGUE_SAMPLES from "../../constants/sampleDialogue";
+import { DEFAULT_DIALOGUE } from "../../constants/blockDefaults";
 import validate from "../../utils/validateData";
+import DialogueInputs from "./Inputs/DialogueInputs";
 import ChoiceInputs from "./Inputs/ChoiceInputs";
-import { DEFAULT_DIALOGUE } from "../../assets/data/blockDefaults";
 
 export default function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
@@ -52,7 +52,7 @@ export default function AddForm() {
 	}
 
 	function fillSample() {
-		let sample = sampleDialogues[Math.floor(Math.random() * sampleDialogues.length)];
+		let sample = DIALOGUE_SAMPLES[Math.floor(Math.random() * DIALOGUE_SAMPLES.length)];
 		// Clear stored values
 		setDialogueOptions({
 			color: sample.color,

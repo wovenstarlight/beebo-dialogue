@@ -1,6 +1,6 @@
 // Dialogue retrieved from "Dialogue res/JSON/en"
 
-const sampleDialogues = [
+const DIALOGUE_SAMPLES = [
 	{
 		color: "orange",
 		portrait: "oliver/color/annoy.png",
@@ -81,4 +81,4 @@ const sampleDialogues = [
 	},
 ];
 
-export default sampleDialogues;
+export default DIALOGUE_SAMPLES;

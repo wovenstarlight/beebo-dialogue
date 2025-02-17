@@ -1,4 +1,4 @@
-import { DEFAULT_DIALOGUE } from "../../assets/data/blockDefaults";
+import { DEFAULT_DIALOGUE } from "../../constants/blockDefaults";
 import "../../styles/TextBox.css";
 
 export default function Dialogue({ speaker, portrait, dialogue }) {

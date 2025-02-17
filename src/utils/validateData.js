@@ -1,6 +1,6 @@
-import { DEFAULT_DIALOGUE, DEFAULT_CHOICE } from "../assets/data/blockDefaults";
-import allColors from "../assets/data/colors";
-import allPortraits from "../assets/data/portraits";
+import { DEFAULT_DIALOGUE, DEFAULT_CHOICE } from "../constants/blockDefaults";
+import ALL_COLORS from "../constants/colors";
+import ALL_PORTRAITS from "../constants/portraits";
 
 /**
  * Cleans input for a component of the given type.
@@ -30,8 +30,8 @@ export default function validate({ type, data }) {
  */
 export function validateDialogue({ color, portrait, speaker, dialogue }) {
 	return {
-		color: typeof color === "string" && Object.values(allColors).includes(color) ? color : DEFAULT_DIALOGUE.color,
-		portrait: typeof portrait === "string" && Object.values(allPortraits).some(el => Object.values(el).includes(portrait)) ? portrait : DEFAULT_DIALOGUE.portrait,
+		color: typeof color === "string" && Object.values(ALL_COLORS).includes(color) ? color : DEFAULT_DIALOGUE.color,
+		portrait: typeof portrait === "string" && Object.values(ALL_PORTRAITS).some(el => Object.values(el).includes(portrait)) ? portrait : DEFAULT_DIALOGUE.portrait,
 		speaker: typeof speaker === "string" && speaker.length > 0 ? speaker.slice(0, 100) : DEFAULT_DIALOGUE.speaker,
 		dialogue: typeof dialogue === "string" && dialogue.length > 0 ? dialogue.slice(0, 250) : DEFAULT_DIALOGUE.dialogue,
 	};
@@ -48,7 +48,7 @@ export function validateDialogue({ color, portrait, speaker, dialogue }) {
  */
 export function validateChoice({ color, options }) {
 	return {
-		color: typeof color === "string" && Object.values(allColors).includes(color) ? color : DEFAULT_CHOICE.color,
+		color: typeof color === "string" && Object.values(ALL_COLORS).includes(color) ? color : DEFAULT_CHOICE.color,
 		options: (
 			Object.prototype.toString.call(options) === "[object Array]"
 			&& options.every(opt => Object.prototype.toString.call(opt) === "[object Object]")

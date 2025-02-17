@@ -1,6 +1,6 @@
 // Portraits retrieved from "Dialogue res/Cuadros"
 
-const allPortraits = {
+const ALL_PORTRAITS = {
 	// #region Oliver Valdivia
 	"Oliver Beebo (House of Vera/Purple)": {
 		"Beebo > Angry": "oliver/house/angy.png",
@@ -405,6 +405,6 @@ const allPortraits = {
 		"Blank square (Tutorial)": "misc/tutorial_blank.png",
 	},
 	// #endregion
-}
+};
 
-export default allPortraits;
+export default ALL_PORTRAITS;

@@ -6,7 +6,7 @@ import validate from "../../utils/validateData";
 import Dialogue from "./Dialogue";
 import Choice from "./Choice";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
-import { getDefaults } from "../../assets/data/blockDefaults";
+import { getDefaults } from "../../constants/blockDefaults";
 
 export default function BlockWrapper({ type, data }) {
 	const [allBlocks, setBlocks] = useContext(BlockContext);

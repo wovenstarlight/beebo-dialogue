@@ -1,4 +1,4 @@
-const allColors = {
+const ALL_COLORS = {
 	"Purple (House of Vera/Eugene Coli)": "purple",
 	"Orange (Oliver Beebo)": "orange",
 	"Gray (Ángel Valdivia)": "gray",
@@ -11,6 +11,6 @@ const allColors = {
 	"Yellow (Art gallery)": "yellow",
 	"Dark gray (City/Police)": "darkgray",
 	"Sky blue (True ending)": "skyblue",
-}
+};
 
-export default allColors;
+export default ALL_COLORS;

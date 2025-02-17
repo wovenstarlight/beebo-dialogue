@@ -1,6 +1,6 @@
 import "../../../styles/Forms.css";
 import PortraitSelector from "./PortraitSelector";
-import allColors from "../../../assets/data/colors";
+import ALL_COLORS from "../../../constants/colors";
 
 export default function DialogueInputs({ data, setData }) {
 	/* BREAKDOWN
@@ -22,7 +22,7 @@ export default function DialogueInputs({ data, setData }) {
 				onChange={(e) => setData({ ...data, color: e.target.value })}
 				autoFocus={true}
 			>
-				{Object.entries(allColors).map(color => {
+				{Object.entries(ALL_COLORS).map(color => {
 					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
 				})}
 			</select>
