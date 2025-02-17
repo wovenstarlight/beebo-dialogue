@@ -2,7 +2,7 @@ import "../../../styles/Forms.css";
 import PortraitSelector from "./PortraitSelector";
 import ALL_COLORS from "../../../constants/colors";
 
-export default function DialogueInputs({ data, setData }) {
+export default function DialogueInputs({ data, setData, includePalette = true }) {
 	/* BREAKDOWN
 	Four inputs:
 		- one for the color palette used by the box.
@@ -12,7 +12,7 @@ export default function DialogueInputs({ data, setData }) {
 	*/
 
 	return <>
-		<label className="labelcolor">
+		{includePalette && <label className="labelcolor">
 			<span className="labeltext">Palette</span>
 			<select
 				className="inputcolor"
@@ -26,7 +26,7 @@ export default function DialogueInputs({ data, setData }) {
 					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
 				})}
 			</select>
-		</label>
+		</label>}
 
 		<label className="labelportrait">
 			<span className="labeltext">Portrait</span>

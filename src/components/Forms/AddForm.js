@@ -99,6 +99,7 @@ export default function AddForm() {
 			<DialogueInputs
 				data={dialogueOptions}
 				setData={setDialogueOptions}
+				includePalette={false}
 			/>
 		</fieldset>
 
