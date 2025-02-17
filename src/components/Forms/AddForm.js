@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
 import DialogueInputs from "./Inputs/DialogueInputs";
 import sampleDialogues from "../../assets/data/sampleDialogue";
-import validateDialogue from "../../utils/validateDialogue";
+import validate from "../../utils/validateData";
 
 export default function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
