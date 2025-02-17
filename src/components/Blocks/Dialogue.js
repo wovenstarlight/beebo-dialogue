@@ -1,6 +1,6 @@
 import { useState } from "react";
+import TextBox from "./TextBox";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
-import TextBox from "../TextBox";
 import validateDialogue from "../../utils/validateDialogue";
 import getNeighbours from "../../utils/getNeighbours";
 

@@ -1,4 +1,4 @@
-import "../styles/TextBox.css";
+import "../../styles/TextBox.css";
 
 export default function TextBox({
 	data: { id, color, speaker, portrait, dialogue },
