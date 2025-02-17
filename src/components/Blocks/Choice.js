@@ -1,4 +1,4 @@
-import "../../styles/MultipleChoice.css";
+import "../../styles/Choice.css";
 
 function ChoiceBlock({
 	data: { id, color, options },
