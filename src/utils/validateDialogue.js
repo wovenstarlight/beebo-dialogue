@@ -23,11 +23,15 @@ function validateDialogue({ color, ...args }) {
 			)
 				? args.options.map(opt => {
 					return {
+						color: typeof opt.color === "string" && Object.values(allColors).includes(opt.color) ? opt.color : "purple",
 						text: typeof opt.text === "string" ? opt.text : "Lorem ipsum dolor sit amet",
 						selected: typeof opt.selected === "boolean" ? opt.selected : false,
 					}
 				})
-				: [{ text: "Lorem ipsum dolor sit amet" }],
+				: [{
+					color: "purple",
+					text: "Lorem ipsum dolor sit amet"
+				}],
 		}
 		: {
 			...obj,

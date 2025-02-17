@@ -9,7 +9,7 @@ function ChoiceBlock({
 		{options.map((opt, index) => <p
 			key={`${id}_${index}`}
 			id={`${id}_${index}`}
-			className={opt.selected && "selected"}
+			className={`${opt.color ?? "purple"}${opt.selected ? " selected" : ""}`}
 		>{opt.text}</p>)}
 	</article>;
 }
