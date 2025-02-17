@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
 import ALL_COLORS from "../../constants/colors";
-import { CHOICE_SAMPLE, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
+import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
 import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK } from "../../constants/blockDefaults";
 import validate from "../../utils/validateData";
 import DialogueInputs from "./Inputs/DialogueInputs";
@@ -79,17 +79,16 @@ export default function AddForm() {
 
 	function fillSample() {
 		if (activeTab === "dialogue") {
-			// Multiple dialogue samples, so pick one to insert
 			let sample = DIALOGUE_SAMPLES[Math.floor(Math.random() * DIALOGUE_SAMPLES.length)];
 			// Clear stored values
 			setDialogueOptions(sample);
 		}
 		else if (activeTab === "choice") {
-			// Only one choice sample; insert directly
-			// And include temporary `id`s for the various options!
+			let sample = CHOICE_SAMPLES[Math.floor(Math.random() * CHOICE_SAMPLES.length)];
+			// And include `id`s for the various options!
 			setChoiceOptions({
-				...CHOICE_SAMPLE,
-				options: CHOICE_SAMPLE.options.map((opt, index) => { return {
+				...sample,
+				options: sample.options.map((opt, index) => { return {
 					...opt,
 					id: `${(new Date()).getTime()}_${index}`,
 				} })
