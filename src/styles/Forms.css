@@ -114,7 +114,7 @@ fieldset.inputsection { display: contents }
 		#keepcolor + & { margin-block-start: 0.5rem }
 
 		&.submitbtn { font-size: 1.5em }
-		&.resetbtn { font-size: 1.2em }
+		&.resetbtn, &.addbtn { font-size: 1.2em }
 	}
 }
 
