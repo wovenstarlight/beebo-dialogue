@@ -68,13 +68,13 @@ export default function BlockWrapper({ type, data }) {
 		// Regardless of block type, will need to setBlocks to use new object
 		e.preventDefault();
 		let [pre, , post] = splitAround(allBlocks, data.id);
-		setBlocks(pre.concat([{
+		setBlocks(pre.concat({
 			id: data.id,
 			...validate({
 				type: type,
 				data: temp,
 			}),
-		}], post));
+		}, post));
 		setEditing(false);
 	}
 
@@ -150,12 +150,12 @@ function ModMenu({ id, setEditing }) {
 	/** Swaps the current block with its predecessor. */
 	function moveBlockUp() {
 		let [pre, curr, post] = splitAround(allBlocks, id);
-		setBlocks(pre.slice(0, -1).concat([curr, pre.at(-1)], post));
+		setBlocks(pre.slice(0, -1).concat(curr, pre.at(-1), post));
 	}
 	/** Swaps the current block with its successor. */
 	function moveBlockDown() {
 		let [pre, curr, post] = splitAround(allBlocks, id);
-		setBlocks(pre.concat([post.at(0), curr], post.slice(1)));
+		setBlocks(pre.concat(post.at(0), curr, post.slice(1)));
 	}
 	//#endregion
 
