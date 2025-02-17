@@ -144,6 +144,6 @@ fieldset.inputsection { display: contents }
 			content: "x";
 			padding-inline-start: 0.1em;
 		}
-		&:active ~ .icon { background-color: var(--text) }
+		&:active ~ .icon { background-color: var(--text-house) }
 	}
 }

@@ -27,8 +27,7 @@
 		}
 
 		&[disabled] {
-			--text: var(--text-nina);
-			--bg: var(--bg-nina);
+			opacity: 0.5;
 			color: #fff8;
 			cursor: not-allowed;
 		}
@@ -47,8 +46,8 @@
 		grid-row: 2;
 	}
 	.move {
-		--text: var(--text-marigold);
-		--bg: var(--bg-marigold);
+		--text: var(--text-oliver);
+		--bg: var(--bg-oliver);
 		grid-column: 2;
 	}
 }
