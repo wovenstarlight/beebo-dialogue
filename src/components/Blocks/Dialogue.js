@@ -3,7 +3,11 @@ import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import TextBox from "../TextBox";
 import validateDialogue from "../../utils/validateDialogue";
 
-function DialogueBlock({ id, color, speaker, portrait, dialogue, allBlocks, setBlocks, isFirst, isLast }) {
+function DialogueBlock({
+	data, data: { id, color, speaker, portrait, dialogue },	// Keep both destructured and whole `data` arg for further substitutions
+	allBlocks, setBlocks,
+	isFirst, isLast,
+}) {
 	/** Finds the neighboring dialogue boxes. Helper for `moveUp`/`moveDown` and `edit`. */
 	function getNeighbors() {
 		let index = allBlocks.findIndex(el => el.id === id);
@@ -12,10 +16,12 @@ function DialogueBlock({ id, color, speaker, portrait, dialogue, allBlocks, setB
 
 	// #region Edit this box
 	/** Temporary variables for editing this dialogue box with. */
-	const [tempColor, setTempColor] = useState(color);
-	const [tempSpeaker, setTempSpeaker] = useState(speaker);
-	const [tempPortrait, setTempPortrait] = useState(portrait);
-	const [tempDialogue, setTempDialogue] = useState(dialogue);
+	const [temp, setTemp] = useState({
+		color: color,
+		speaker: speaker,
+		portrait: portrait,
+		dialogue: dialogue,
+	})
 	const [editing, setEditing] = useState(false);
 	/** Open the editing menu for this dialogue box. */
 	function openEditor() {
@@ -28,20 +34,22 @@ function DialogueBlock({ id, color, speaker, portrait, dialogue, allBlocks, setB
 		setBlocks(pre.concat([{
 			id: id,
 			...validateDialogue({
-				color: tempColor,
-				speaker: tempSpeaker,
-				portrait: tempPortrait,
-				dialogue: tempDialogue,
+				color: temp.color,
+				speaker: temp.speaker,
+				portrait: temp.portrait,
+				dialogue: temp.dialogue,
 			})
 		}], post));
 		setEditing(false);
 	}
 	function cancelEdit(e) {
 		// Reset the temporary variables to their original values
-		setTempColor(color);
-		setTempSpeaker(speaker);
-		setTempPortrait(portrait);
-		setTempDialogue(dialogue);
+		setTemp({
+			color: color,
+			speaker: speaker,
+			portrait: portrait,
+			dialogue: dialogue,
+		})
 		// And hide this form
 		setEditing(false);
 	}
@@ -49,11 +57,7 @@ function DialogueBlock({ id, color, speaker, portrait, dialogue, allBlocks, setB
 
 	return <>
 	{!editing && <TextBox
-		id={id}
-		color={color}
-		speaker={speaker}
-		portrait={portrait}
-		dialogue={dialogue}
+		data={data}
 		setBlocks={setBlocks}
 		isFirst={isFirst}
 		isLast={isLast}
@@ -61,17 +65,11 @@ function DialogueBlock({ id, color, speaker, portrait, dialogue, allBlocks, setB
 		getNeighbors={getNeighbors}
 	/>}
 	
-	{editing && <form id={`edit_${id}`} name={`edit_${id}`} onSubmit={handleSubmit} className={`menu dialogueform ${tempColor}`}>
+	{editing && <form id={`edit_${id}`} name={`edit_${id}`} onSubmit={handleSubmit} className={`menu dialogueform ${temp.color}`}>
 		<h2>Edit dialogue</h2>
 		<DialogueInputs
-			color={tempColor}
-			setColor={setTempColor}
-			speaker={tempSpeaker}
-			setSpeaker={setTempSpeaker}
-			dialogue={tempDialogue}
-			setDialogue={setTempDialogue}
-			portrait={tempPortrait}
-			setPortrait={setTempPortrait}
+			data={temp}
+			setData={setTemp}
 			handleSubmit={handleSubmit}
 		/>
 

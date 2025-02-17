@@ -8,7 +8,7 @@ function PortraitSelector({ portrait, setPortrait }) {
 			name="inputportrait"
 			required
 			value={portrait}
-			onChange={(e) => setPortrait(e.target.value)}
+			onChange={setPortrait}
 		>
 			<option value="">-- No portrait chosen --</option>
 			{Object.entries(allPortraits).map(pair => {

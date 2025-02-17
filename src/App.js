@@ -62,11 +62,11 @@ function App() {
 					return "options" in obj
 						? <ChoiceBlock
 							key={obj.id}
-							{...obj}
+							data={obj}
 						/>
 						: <DialogueBlock
 							key={obj.id}
-							{...obj}
+							data={obj}
 							allBlocks={blocks}
 							setBlocks={setBlocks}
 							isFirst={index === 0}

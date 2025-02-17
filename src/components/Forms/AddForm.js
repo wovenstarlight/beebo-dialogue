@@ -4,21 +4,23 @@ import sampleDialogues from "../../assets/data/sampleDialogue";
 import validateDialogue from "../../utils/validateDialogue";
 
 function AddForm({ setBlocks }) {
-	const [color, setColor] = useState("purple");
-	const [speaker, setSpeaker] = useState("");
-	const [dialogue, setDialogue] = useState("");
-	const [portrait, setPortrait] = useState("");
-	const [keepColor, setKeepColor] = useState(false);
+	const [dialogueOptions, setDialogueOptions] = useState({
+		color: "purple",
+		speaker: "",
+		dialogue: "",
+		portrait: "",
+		keepColor: false,
+	});
 
 	function handleSubmit(e) {
 		e.preventDefault();
 		const newDialogue = {
-			id: `${color.toLowerCase()}_${(new Date()).getTime()}`,
+			id: `${dialogueOptions.color.toLowerCase()}_${(new Date()).getTime()}`,
 			...validateDialogue({
-				color: color,
-				portrait: portrait,
-				speaker: speaker,
-				dialogue: dialogue,
+				color: dialogueOptions.color,
+				portrait: dialogueOptions.portrait,
+				speaker: dialogueOptions.speaker,
+				dialogue: dialogueOptions.dialogue,
 			})
 		};
 		setBlocks(values => [...values, newDialogue]);
@@ -26,24 +28,29 @@ function AddForm({ setBlocks }) {
 	}
 
 	function clearForm(e) {
+		const keepColor = dialogueOptions.keepColor,
+			ogColor = dialogueOptions.color;
 		// Clear stored values
-		if (!keepColor) setColor("purple");
-		else var ogColor = color;
-		setSpeaker("");
-		setDialogue("");
-		setPortrait("");
+		setDialogueOptions((options) => ({
+			...options,
+			color: keepColor ? ogColor : "purple",
+			speaker: "",
+			dialogue: "",
+			portrait: "",
+		}));
 		// And remove the invalid markers
 		e.target.closest("form").reset();
-		if (keepColor) setColor(ogColor);
 	}
 
-	function fillSample(e) {
+	function fillSample() {
 		let sample = sampleDialogues[Math.floor(Math.random() * sampleDialogues.length)];
 		// Clear stored values
-		setColor(sample.color);
-		setSpeaker(sample.speaker);
-		setDialogue(sample.dialogue);
-		setPortrait(sample.portrait);
+		setDialogueOptions({
+			color: sample.color,
+			speaker: sample.speaker,
+			dialogue: sample.dialogue,
+			portrait: sample.portrait,
+		});
 	}
 
 	/* BREAKDOWN
@@ -52,22 +59,16 @@ function AddForm({ setBlocks }) {
 		- buttons to create the corresponding box and to reset the form.
 		- button that autofills the form with sample dialogue.
 	*/
-	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu dialogueform ${color}`}>
+	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu dialogueform ${dialogueOptions.color}`}>
 		<h2>Add new dialogue</h2>
 
 		<DialogueInputs
-			color={color}
-			setColor={setColor}
-			speaker={speaker}
-			setSpeaker={setSpeaker}
-			dialogue={dialogue}
-			setDialogue={setDialogue}
-			portrait={portrait}
-			setPortrait={setPortrait}
+			data={dialogueOptions}
+			setData={setDialogueOptions}
 		/>
 
 		<label id="keepcolor">
-			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} />
+			<input type="checkbox" checked={dialogueOptions.keepColor} onChange={(e) => setDialogueOptions({ ...dialogueOptions, keepColor: e.target.checked })} />
 			<span className="icon" />
 			<span className="labeltext">
 				Reuse same palette for future dialogue

@@ -1,6 +1,9 @@
 import "../styles/TextBox.css";
 
-function TextBox({ id, color, speaker, portrait, dialogue, getNeighbors, setBlocks, editHandler, isFirst, isLast }) {
+function TextBox({
+	data: { id, color, speaker, portrait, dialogue },
+	getNeighbors, setBlocks, editHandler, isFirst, isLast
+}) {
 	/** Deletes the current dialogue box. */
 	function deleteBox() {
 		setBlocks(dialogues => dialogues.filter(el => el.id !== id));

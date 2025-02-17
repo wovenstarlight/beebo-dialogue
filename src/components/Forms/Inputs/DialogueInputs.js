@@ -2,17 +2,12 @@ import "../../../styles/Forms.css";
 import PortraitSelector from "./PortraitSelector";
 import allColors from "../../../assets/data/colors";
 
-function DialogForm({
-	color, setColor,
-	speaker, setSpeaker,
-	dialogue, setDialogue,
-	portrait, setPortrait,
-}) {
+function DialogForm({ data, setData }) {
 	/* BREAKDOWN
 	Four inputs:
 		- one for the color palette used by the box.
 		- one for speaker. Has a datalist with suggestions from canon. (Pity that Ángel's accent means it doesn't automatically get suggested under "A"…)
-		- one for the portrait. Needs the full list of portraits so it's been banished to its own component.
+		- one for the portrait. Needs the full list of portraits so it's been memo'd in a separate component for minimal re-rendering.
 		- one for the actual text. Length limit set roughly at how much takes up the full box.
 	*/
 
@@ -23,8 +18,8 @@ function DialogForm({
 				id="inputcolor"
 				name="inputcolor"
 				required
-				value={color}
-				onChange={(e) => setColor(e.target.value)}
+				value={data.color}
+				onChange={(e) => setData({ ...data, color: e.target.value })}
 			>
 				{Object.entries(allColors).map(color => {
 					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
@@ -34,8 +29,8 @@ function DialogForm({
 
 		<label id="labelportrait">
 			<span className="labeltext">Portrait</span>
-			<PortraitSelector portrait={portrait} setPortrait={setPortrait} />
-			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(portrait.length ? portrait : "misc/someone_shadow.png")} />
+			<PortraitSelector portrait={data.portrait} setPortrait={(val) => setData({ ...data, portrait: val })} />
+			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(data.portrait.length ? data.portrait : "misc/someone_shadow.png")} />
 		</label>
 
 		<label id="labelspeaker">
@@ -48,8 +43,8 @@ function DialogForm({
 				maxLength={100}
 				required
 				list="speakerslist"
-				value={speaker}
-				onChange={(e) => setSpeaker(e.target.value)}
+				value={data.speaker}
+				onChange={(e) => setData({ ...data, speaker: e.target.value })}
 			/>
 		</label>
 		<datalist id="speakerslist">
@@ -74,8 +69,8 @@ function DialogForm({
 				minLength={1}
 				maxLength={250}
 				required
-				value={dialogue}
-				onChange={(e) => setDialogue(e.target.value)}
+				value={data.dialogue}
+				onChange={(e) => setData({ ...data, dialogue: e.target.value })}
 			/>
 		</label>
 	</>;
