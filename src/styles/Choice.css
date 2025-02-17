@@ -1,18 +1,20 @@
-.mcq {
+.choice {
 	display: flex;
 	flex-direction: column;
 	gap: 0.6em;
 	padding: 0.75em;
 	background-color: var(--bg);
-}
-.mcq p {
-	margin-block: 0;
-	padding-block: 0.05em;
-	border: var(--border-width) solid var(--text);
-	background-color: var(--bg);
-	color: white;
-	text-align: center;
-	font-size: 1.4em;
+	position: relative;
 
-	&.selected { background-color: var(--text) }
+	p {
+		margin-block: 0;
+		padding-block: 0.05em;
+		border: var(--border-width) solid var(--text);
+		background-color: var(--bg);
+		color: white;
+		text-align: center;
+		font-size: 1.4em;
+	
+		&.selected { background-color: var(--text) }
+	}
 }
