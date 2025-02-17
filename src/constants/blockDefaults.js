@@ -6,6 +6,14 @@ export const DEFAULT_DIALOGUE = {
 };
 Object.freeze(DEFAULT_DIALOGUE);
 
+export const DEFAULT_DIALOGUE_BLANK = {
+	color: DEFAULT_DIALOGUE.color,
+	portrait: "",
+	speaker: "",
+	dialogue: "",
+}
+Object.freeze(DEFAULT_DIALOGUE_BLANK);
+
 export const DEFAULT_CHOICE = {
 	color: "purple",
 	text: "Lorem ipsum dolor sit amet",
@@ -13,13 +21,20 @@ export const DEFAULT_CHOICE = {
 };
 Object.freeze(DEFAULT_CHOICE);
 
-export function getDefaults(type) {
+export const DEFAULT_CHOICE_BLANK = {
+	color: DEFAULT_CHOICE.color,
+	text: "",
+	selected: false,
+}
+Object.freeze(DEFAULT_CHOICE_BLANK);
+
+export function getDefaults({ type, blank = false }) {
 	switch (type) {
 		case "choice":
-			return DEFAULT_CHOICE;
+			return blank ? DEFAULT_CHOICE_BLANK : DEFAULT_CHOICE;
 
 		case "dialogue":
 		default:
-			return DEFAULT_DIALOGUE;
+			return blank ? DEFAULT_DIALOGUE_BLANK : DEFAULT_DIALOGUE;
 	}
 }

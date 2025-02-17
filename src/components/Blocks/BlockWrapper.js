@@ -116,7 +116,7 @@ export default function BlockWrapper({ type, data }) {
 	}
 
 	return <>
-		{!editing && <article id={data.id} className={`${type} ${data.color ?? getDefaults(type).color}`}>
+		{!editing && <article id={data.id} className={`${type} ${data.color ?? getDefaults({ type: type }).color}`}>
 			{blockContent}
 
 			<ModMenu id={data.id} setEditing={setEditing} />
