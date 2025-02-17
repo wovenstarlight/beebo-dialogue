@@ -20,9 +20,12 @@ export default function App() {
 	function screenshot() {
 		// Prepare the elements for the transfer
 		const canvas = document.getElementById("imgcanvas"),
-			downloadLink = document.getElementById("imgdownload");
+			downloadLink = document.getElementById("imgdownload"),
+			dialogues = document.getElementById("dialogues");
+		
+		dialogues.classList.toggle("screenshotting");
 
-		domtoimage.toSvg(document.getElementById("dialogues"))
+		domtoimage.toSvg(dialogues)
 			.then((dataUrl) => {
 				// SVG comes out the most crisp, so we use that instead of .toPNG()
 				// But we do want to save as a PNG, so we draw the SVG image onto a canvas…
@@ -35,6 +38,8 @@ export default function App() {
 					// …and then download the canvas as a data URL, which
 					downloadLink.href = canvas.toDataURL();
 					downloadLink.click();
+
+					dialogues.classList.toggle("screenshotting");
 				});
 				img.src = dataUrl;
 			})
