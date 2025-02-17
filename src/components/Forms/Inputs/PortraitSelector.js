@@ -1,5 +1,5 @@
 import { memo } from "react";
-import allPortraits from "../assets/data/portraits";
+import allPortraits from "../../../assets/data/portraits";
 
 function PortraitSelector({ portrait, setPortrait }) {
 	return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import DialogueForm from "./DialogueForm";
-import sampleDialogues from "../assets/data/sampleDialogue";
-import validateDialogue from "../utils/validateDialogue";
+import DialogueInputs from "./Inputs/DialogueInputs";
+import sampleDialogues from "../../assets/data/sampleDialogue";
+import validateDialogue from "../../utils/validateDialogue";
 
 function AddForm({ setDialogues }) {
 	const [color, setColor] = useState("purple");
@@ -55,7 +55,7 @@ function AddForm({ setDialogues }) {
 	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu dialogueform ${color}`}>
 		<h2>Add new dialogue</h2>
 
-		<DialogueForm
+		<DialogueInputs
 			color={color}
 			setColor={setColor}
 			speaker={speaker}

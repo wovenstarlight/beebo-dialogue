@@ -1,7 +1,7 @@
-import "../styles/JSONForm.css";
-import validateDialogue from "../utils/validateDialogue";
+import "../../styles/JSONForm.css";
+import validateDialogue from "../../utils/validateDialogue";
 
-function JSONInput({ dialogues, setDialogues }) {
+function JSONForm({ dialogues, setDialogues }) {
 	function getJSON() {
 		return JSON.stringify(
 			dialogues.map(el => {
@@ -117,4 +117,4 @@ function JSONInput({ dialogues, setDialogues }) {
 	</form>;
 }
 
-export default JSONInput;
+export default JSONForm;

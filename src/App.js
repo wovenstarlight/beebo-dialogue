@@ -1,10 +1,10 @@
 import "./styles/App.css";
 import { useState } from "react";
-import DialogueBlock from "./components/DialogueBlock";
-import AddForm from "./components/AddForm";
-import JSONInput from "./components/JSONInput";
+import DialogueBlock from "./components/Blocks/Dialogue";
+import ChoiceBlock from "./components/Blocks/Choice";
+import AddForm from "./components/Forms/AddForm";
+import JSONForm from "./components/Forms/JSONForm";
 import domtoimage from 'dom-to-image';
-import MultipleChoice from "./components/MultipleChoice";
 
 function App() {
 	const [blocks, setBlocks] = useState([]);
@@ -60,14 +60,14 @@ function App() {
 			{blocks.length > 0 && <section id="dialogues">
 				{blocks.map((obj, index, array) => {
 					return "options" in obj
-						? <MultipleChoice key={obj.id} {...obj} />
+						? <ChoiceBlock key={obj.id} {...obj} />
 						: <DialogueBlock key={obj.id} {...obj} allDialogues={blocks} setDialogues={setBlocks} isFirst={index === 0} isLast={index === array.length - 1} />
 				})}
 			</section>}
 
 			<AddForm setDialogues={setBlocks} />
 
-			<JSONInput dialogues={blocks} setDialogues={setBlocks} />
+			<JSONForm dialogues={blocks} setDialogues={setBlocks} />
 
 			<section id="downloadasimage" hidden>
 				{/* Placeholder URL to avoid a11ty warning */}

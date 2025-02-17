@@ -1,9 +1,9 @@
 import { useState } from "react";
-import DialogueForm from "./DialogueForm";
-import TextBox from "./TextBox";
-import validateDialogue from "../utils/validateDialogue";
+import DialogueInputs from "../Forms/Inputs/DialogueInputs";
+import TextBox from "../TextBox";
+import validateDialogue from "../../utils/validateDialogue";
 
-function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, setDialogues, isFirst, isLast }) {
+function DialogueBlock({ id, color, speaker, portrait, dialogue, allDialogues, setDialogues, isFirst, isLast }) {
 	/** Finds the neighboring dialogue boxes. Helper for `moveUp`/`moveDown` and `edit`. */
 	function getNeighbors() {
 		let index = allDialogues.findIndex(el => el.id === id);
@@ -64,7 +64,7 @@ function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, se
 	
 	{editing && <form id={`edit_${id}`} name={`edit_${id}`} onSubmit={handleSubmit} className={`menu dialogueform ${tempColor}`}>
 		<h2>Edit dialogue</h2>
-		<DialogueForm
+		<DialogueInputs
 			color={tempColor}
 			setColor={setTempColor}
 			speaker={tempSpeaker}
@@ -82,4 +82,4 @@ function DialogueUnit({ id, color, speaker, portrait, dialogue, allDialogues, se
 	</>;
 }
 
-export default DialogueUnit;
+export default DialogueBlock;
