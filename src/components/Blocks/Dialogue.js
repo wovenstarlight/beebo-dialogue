@@ -1,9 +1,27 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
-import TextBox from "./TextBox";
+import "../../styles/TextBox.css";
+import ModMenu from "./ModMenu";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import validateDialogue from "../../utils/validateDialogue";
 import getNeighbours from "../../utils/getNeighbours";
+
+function TextBox({ id, color, speaker, portrait, dialogue, setEditing }) {
+	return (
+		<article id={id} className={`dialogue ${color ?? "purple"}`}>
+			<header className="speaker">
+				<span className="question" aria-hidden={true}>?</span>
+				<span className="name">{speaker ?? "Y/N"}</span>
+			</header>
+			<div className="body">
+				<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(portrait ?? "misc/someone_shadow.png")} aria-hidden="true" />
+				<p className="text">{dialogue ?? "Lorem ipsum dolor sit amet."}</p>
+			</div>
+
+			<ModMenu id={id} setEditing={setEditing} />
+		</article>
+	);
+}
 
 export default function DialogueBlock({ data }) {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
