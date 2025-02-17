@@ -122,6 +122,6 @@ export default function JSONForm() {
 			<p className="explainer" id="uploadexplainer">Upload a JSON file (this overwrites existing dialogue!)</p>
 		</div>
 		
-		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sampleFile.json`} download>Need a reference?</a>
+		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue.json`} download>Need a reference?</a>
 	</form>;
 }
