@@ -103,9 +103,11 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			optionData={obj}
 			setOptionText={setOptionText}
 			setOptionSelected={setOptionSelected}
-			moveOptionUp={data.options.length > 1 && index !== 0 ? moveOptionUp : null}
-			moveOptionDown={data.options.length > 1 && index !== arr.length - 1 ? moveOptionDown : null}
+			moveOptionUp={data.options.length > 1 ? moveOptionUp : null}
+			moveOptionDown={data.options.length > 1 ? moveOptionDown : null}
 			deleteOption={data.options.length > 1 ? deleteOption : null}
+			isFirst={index === 0}
+			isLast={index === arr.length - 1}
 		/>)}
 
 		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>Add an option</button>}
@@ -116,6 +118,7 @@ function OptionInput({
 	index, optionData,
 	setOptionText, setOptionSelected,
 	moveOptionUp, moveOptionDown, deleteOption,
+	isFirst, isLast,
 }) {
 	return <div className="optiongroup" id={optionData.id}>
 		<label className="labeloption">
@@ -138,8 +141,8 @@ function OptionInput({
 				<span className="labeltext">Mark<span className="visuallyhidden"> option {index + 1}</span> as selected</span>
 			</label>
 			
-			{moveOptionUp && <button type="button" className="blockbtn movebtn" onClick={moveOptionUp}>Move up</button>}
-			{moveOptionDown && <button type="button" className="blockbtn movebtn" onClick={moveOptionDown}>Move down</button>}
+			{moveOptionUp && <button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={isFirst}>Move up</button>}
+			{moveOptionDown && <button type="button" className="blockbtn movebtn" onClick={moveOptionDown} disabled={isLast}>Move down</button>}
 			{deleteOption && <button type="button" className="blockbtn deletebtn" onClick={deleteOption}>Delete</button>}
 		</div>
 	</div>;
