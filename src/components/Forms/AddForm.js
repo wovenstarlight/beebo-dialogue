@@ -166,14 +166,14 @@ export default function AddForm() {
 			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} className="visuallyhidden" />
 			<span className="icon" aria-hidden={true} />
 			<span className="labeltext">
-				Reuse same palette for future dialogue
+				Reuse same palette for future elements
 				<br/>
 				<small>When off, palette will reset to purple after every submission</small>
 			</span>
 		</label>
 
-		<button className="submitbtn" type="submit">Add</button>
-		<button className="resetbtn" type="button" onClick={clearForm}>Clear</button>
+		<button className="submitbtn" type="submit">Add element</button>
+		<button className="resetbtn" type="button" onClick={clearForm}>Reset form</button>
 		<button className="autofillbtn" type="button" onClick={fillSample}>Need a reference?</button>
 	</form>;
 }
