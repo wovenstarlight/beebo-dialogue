@@ -70,4 +70,13 @@
 	 * A complete or partial key mapping to a translated string from the /i18n files.
 	 * @type {string}
 	 */
+
+	/**
+	 * @typedef CharaData
+	 * A mapping of a given character's names.
+	 * @property {string} LONG Full character name.
+	 * @property {string} SHORT Given name only or shortened title. If the character's name is already short, this is equivalent to `LONG`.
+	 * @property {?string} SPEAKER_LABEL How the character's name typically appears in dialogue within the game, if different from `LONG`. Often equivalent to `SHORT`.
+	 * @property {?string} UNKNOWN_LABEL The speaker label used for the character before their actual name was known, if any.
+	 */
 // #endregion
