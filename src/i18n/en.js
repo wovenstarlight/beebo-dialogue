@@ -75,7 +75,7 @@ const MESSAGES = {
 			SPEAKER: "Speaker",
 			DIALOGUE: "Dialogue",
 			OPTION_NUMBER: "Option {{index}}",
-			PALETTE_REUSE: "When off, palette will reset to purple after every submission",
+			EXPLAIN_REUSE_PALETTE: "When off, palette will reset to purple after every submission",
 		},
 	},
 	
@@ -96,7 +96,7 @@ const MESSAGES = {
 		AUTOFILL: "Need a reference?",
 		ADD_OPTION: "Add an option",
 		MARK_SELECTED: "<hidden>Mark option {{index}} as</hidden> Selected",
-		PALETTE_REUSE: "Reuse same palette for future elements",
+		REUSE_PALETTE: "Reuse same palette for future elements",
 	},
 
 	ALERTS: {

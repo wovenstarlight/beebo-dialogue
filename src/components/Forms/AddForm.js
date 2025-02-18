@@ -182,9 +182,9 @@ export default function AddForm() {
 			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} className="visuallyhidden" />
 			<span className="icon" aria-hidden={true} />
 			<span className="labeltext">
-				{t("ACTIONS.PALETTE_REUSE")}
+				{t("ACTIONS.REUSE_PALETTE")}
 				<br/>
-				<small>{t("FORMS.FIELDS.PALETTE_REUSE")}</small>
+				<small>{t("FORMS.FIELDS.EXPLAIN_REUSE_PALETTE")}</small>
 			</span>
 		</label>
 
