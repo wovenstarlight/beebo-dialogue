@@ -92,13 +92,12 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			key={obj.id}
 			index={index}
 			optionData={obj}
+			allOptions={arr}
 			setOptionText={setOptionText}
 			setOptionSelected={setOptionSelected}
 			moveOptionUp={data.options.length > 1 ? moveOptionUp : null}
 			moveOptionDown={data.options.length > 1 ? moveOptionDown : null}
 			deleteOption={data.options.length > 1 ? deleteOption : null}
-			isFirst={index === 0}
-			isLast={index === arr.length - 1}
 		/>)}
 
 		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>{t("ACTIONS.ADD_OPTION")}</button>}
@@ -106,12 +105,14 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 }
 
 function OptionInput({
-	index, optionData,
+	index, optionData, allOptions,
 	setOptionText, setOptionSelected,
 	moveOptionUp, moveOptionDown, deleteOption,
-	isFirst, isLast,
 }) {
 	const { t } = useTranslation();
+	
+	const isFirst = allOptions.at(0).id === optionData.id;
+	const isLast = allOptions.at(-1).id === optionData.id;
 
 	return <div className="optiongroup" id={optionData.id}>
 		<label className="labeloption">
