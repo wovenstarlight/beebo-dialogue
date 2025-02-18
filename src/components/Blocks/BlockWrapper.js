@@ -1,45 +1,26 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
-import "../../styles/ModMenu.css";
+import { getDefaults } from "../../constants/blockDefaults";
+import "../../constants/documentation";
+import Choice from "./Choice";
+import ChoiceInputs from "../Forms/Inputs/ChoiceInputs";
+import Dialogue from "./Dialogue";
+import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import splitAround from "../../utils/splitAround";
 import validate from "../../utils/validateData";
-import Dialogue from "./Dialogue";
-import Choice from "./Choice";
-import DialogueInputs from "../Forms/Inputs/DialogueInputs";
-import ChoiceInputs from "../Forms/Inputs/ChoiceInputs";
-import { getDefaults } from "../../constants/blockDefaults";
+import "../../styles/ModMenu.css";
 
+/**
+ * A wrapper element for a content block.
+ * @param {object} args
+ * @param {BlockType} args.type The type of block this is.
+ * @param {DataDialogue|DataChoice} args.data Data representing this block.
+ * @returns A content block with a modification menu/editing form.
+ */
 export default function BlockWrapper({ type, data }) {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
 	const { t } = useTranslation();
-
-	// #region Block types
-	/**
-	 * @typedef DataDialogue
-	 * Data representing a box of dialogue
-	 * @type {object}
-	 * @property {string} color The color palette for this block
-	 * @property {string} speaker The speaker of the dialogue
-	 * @property {string} portrait The shorthand URL to the portrait/sprite for the speaker
-	 * @property {string} dialogue The text being spoken
-	 */
-	/**
-	 * @typedef DataChoice
-	 * Data representing a multiple choice menu
-	 * @type {object}
-	 * @property {string} color The color palette for this block
-	 * @property {DataChoiceOption[]} options The individual options making up the menu
-	 */
-	/**
-	 * @typedef DataChoiceOption
-	 * Data representing a single option from a multiple choice menu
-	 * @type {object}
-	 * @property {?string} color The color palette for this option. Inherited from the parent menu if not provided
-	 * @property {string} text The text label displayed for this option
-	 * @property {?boolean} selected `true` if this option should be highlighted as though being clicked; `false`/`null` otherwise
-	 */
-	// #endregion
 
 	// #region Edit this box
 	/* Temporary variables for editing this block with. */
@@ -64,7 +45,9 @@ export default function BlockWrapper({ type, data }) {
 			break;
 	}
 	initial.id = data.id;
+	/** Temporary data for use in the edit menu. */
 	const [temp, setTemp] = useState(initial);
+	/** Tracker for whether the edit menu is open. */
 	const [editing, setEditing] = useState(false);
 
 	/** Update this block with the edited information. */
@@ -141,12 +124,24 @@ export default function BlockWrapper({ type, data }) {
 	</>;
 }
 
+/**
+ * A menu for modifying its associated block. Includes:
+ * - content edit button
+ * - block deletion button
+ * - reordering buttons
+ * @param {object} args
+ * @param {string} args.id The ID of the associated block, to confirm its list placement.
+ * @param {function} setEditing The setter for whether this block's content is being edited.
+ * @returns A modification menu.
+ */
 function ModMenu({ id, setEditing }) {
 	let [allBlocks, setBlocks] = useContext(BlockContext);
 	const { t } = useTranslation();
 
-	const isFirst = allBlocks.at(0)?.id === id,
-		isLast = allBlocks.at(-1)?.id === id;
+	/** Tracks whether block is at top of list. For disabling the "move up" button. */
+	const isFirst = allBlocks.at(0)?.id === id;
+	/** Tracks whether block is at bottom of list. For disabling the "move down" button. */
+	const isLast = allBlocks.at(-1)?.id === id;
 
 	// #region Handlers
 	/** Toggles the edit menu for the current block. */
@@ -155,19 +150,23 @@ function ModMenu({ id, setEditing }) {
 	}
 
 	/** Deletes the current block. */
-	function deleteBlock(e) {
-		setBlocks(dialogues => dialogues.filter(el => el.id !== id));
+	function deleteBlock() {
+		setBlocks(blocks => blocks.filter(el => el.id !== id));
 	}
 
 	/** Swaps the current block with its predecessor. */
 	function moveBlockUp() {
-		let [pre, curr, post] = splitAround(allBlocks, id);
-		setBlocks(pre.slice(0, -1).concat(curr, pre.at(-1), post));
+		setBlocks(blocks => {
+			let [pre, curr, post] = splitAround(blocks, id);
+			return pre.slice(0, -1).concat(curr, pre.at(-1), post);
+		});
 	}
 	/** Swaps the current block with its successor. */
 	function moveBlockDown() {
-		let [pre, curr, post] = splitAround(allBlocks, id);
-		setBlocks(pre.concat(post.at(0), curr, post.slice(1)));
+		setBlocks(blocks => {
+			let [pre, curr, post] = splitAround(blocks, id);
+			return pre.concat(post.at(0), curr, post.slice(1));
+		});
 	}
 	//#endregion
 
