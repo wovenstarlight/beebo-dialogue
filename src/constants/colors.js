@@ -1,3 +1,5 @@
+import deepFreeze from "../utils/deepFreeze";
+
 const ALL_COLORS = {
 	purple:		"PURPLE",
 	orange:		"ORANGE",
@@ -13,6 +15,6 @@ const ALL_COLORS = {
 	skyblue:	"SKY_BLUE",
 };
 
-Object.freeze(ALL_COLORS);
+deepFreeze(ALL_COLORS);
 
 export default ALL_COLORS;

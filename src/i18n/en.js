@@ -1,3 +1,5 @@
+import deepFreeze from "../utils/deepFreeze";
+
 const MESSAGES = {
 	SITE_HEADER: {
 		TITLE: "Detective Beebo dialogue builder",
@@ -42,6 +44,7 @@ const MESSAGES = {
 		},
 	},
 };
-Object.freeze(MESSAGES);
+
+deepFreeze(MESSAGES);
 
 export default MESSAGES;

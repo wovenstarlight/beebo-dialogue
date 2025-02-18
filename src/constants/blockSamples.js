@@ -1,3 +1,5 @@
+import deepFreeze from "../utils/deepFreeze";
+
 // Dialogue retrieved from "Dialogue res/JSON/en"
 export const DIALOGUE_SAMPLES = [
 	{
@@ -79,8 +81,6 @@ export const DIALOGUE_SAMPLES = [
 		dialogue: "The best part of the time loop was when Beebo said \"IT'S BEEBIN' TIME\" and beebed all over that guy"
 	},
 ];
-Object.freeze(DIALOGUE_SAMPLES);
-DIALOGUE_SAMPLES.forEach(sample => Object.freeze(sample));
 
 export const CHOICE_SAMPLES = [
 	{
@@ -128,7 +128,5 @@ export const CHOICE_SAMPLES = [
 		]
 	}
 ];
-CHOICE_SAMPLES.forEach(sample => {
-	Object.freeze(sample)
-	sample.options.forEach(choice => Object.freeze(choice));
-});
+
+deepFreeze(DIALOGUE_SAMPLES, CHOICE_SAMPLES);

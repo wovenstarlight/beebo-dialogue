@@ -1,3 +1,5 @@
+import deepFreeze from "../utils/deepFreeze";
+
 // Portraits retrieved from "Dialogue res/Cuadros"
 
 const ALL_PORTRAITS = [
@@ -482,7 +484,6 @@ const ALL_PORTRAITS = [
 	// #endregion
 ];
 
-Object.freeze(ALL_PORTRAITS);
-Object.values(ALL_PORTRAITS).forEach(optgroup => Object.freeze(optgroup));
+deepFreeze(ALL_PORTRAITS);
 
 export default ALL_PORTRAITS;

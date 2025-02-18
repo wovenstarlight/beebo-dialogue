@@ -1,3 +1,5 @@
+import deepFreeze from "../utils/deepFreeze";
+
 // #region Dialogue
 // Template
 export const DEFAULT_DIALOGUE = {
@@ -6,7 +8,6 @@ export const DEFAULT_DIALOGUE = {
 	speaker: "Y/N",
 	dialogue: "Lorem ipsum dolor sit amet.",
 };
-Object.freeze(DEFAULT_DIALOGUE);
 
 // Blank
 export const DEFAULT_DIALOGUE_BLANK = {
@@ -15,7 +16,6 @@ export const DEFAULT_DIALOGUE_BLANK = {
 	speaker: "",
 	dialogue: "",
 }
-Object.freeze(DEFAULT_DIALOGUE_BLANK);
 // #endregion
 
 // #region Multiple choice
@@ -26,7 +26,6 @@ export const DEFAULT_CHOICE = {
 	text: "Lorem ipsum dolor sit amet",
 	selected: false,
 };
-Object.freeze(DEFAULT_CHOICE);
 
 // Blank
 export const DEFAULT_CHOICE_BLANK = {
@@ -34,7 +33,6 @@ export const DEFAULT_CHOICE_BLANK = {
 	text: "",
 	selected: false,
 }
-Object.freeze(DEFAULT_CHOICE_BLANK);
 // #endregion
 
 // #region Single option
@@ -44,7 +42,6 @@ export const DEFAULT_CHOICE_OPTION =
 	text: DEFAULT_CHOICE.text,
 	selected: DEFAULT_CHOICE.selected,
 };
-Object.freeze(DEFAULT_CHOICE_OPTION);
 
 // Blank
 export const DEFAULT_CHOICE_OPTION_BLANK = 
@@ -52,9 +49,14 @@ export const DEFAULT_CHOICE_OPTION_BLANK =
 	text: DEFAULT_CHOICE_BLANK.text,
 	selected: DEFAULT_CHOICE_BLANK.selected,
 };
-Object.freeze(DEFAULT_CHOICE_OPTION_BLANK);
 // #endregion
 // #endregion
+
+deepFreeze(
+	DEFAULT_DIALOGUE, DEFAULT_DIALOGUE_BLANK,
+	DEFAULT_CHOICE, DEFAULT_CHOICE_BLANK,
+	DEFAULT_CHOICE_OPTION, DEFAULT_CHOICE_OPTION_BLANK
+);
 
 export function getDefaults({ type, blank = false }) {
 	switch (type) {
