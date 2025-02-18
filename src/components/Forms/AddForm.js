@@ -1,21 +1,30 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
-import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
 import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK } from "../../constants/blockDefaults";
-import validate from "../../utils/validateData";
+import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
+import "../../constants/documentation";
+import ChoiceInputs from "./Inputs/ChoiceInputs";
 import ColorSelector from "./Inputs/ColorSelector";
 import DialogueInputs from "./Inputs/DialogueInputs";
-import ChoiceInputs from "./Inputs/ChoiceInputs";
+import validate from "../../utils/validateData";
 
+/**
+ * A form with tabbed sections for adding Dialogue and Choice blocks.
+ * @returns A <form> element for creating a content block.
+ */
 export default function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
 	const { t } = useTranslation();
 
+	/** The currently-selected tab. Determines what data gets submitted. */
 	const [activeTab, setActiveTab] = useState("dialogue");
+	/** `true` the selected color palette should persist across submissions; `false` if it should be reset with each submission. */
 	const [keepColor, setKeepColor] = useState(true);
 
+	/** Options tracking the dialogue-related form fields. @type {DataDialogue} */
 	const [dialogueOptions, setDialogueOptions] = useState(DEFAULT_DIALOGUE_BLANK);
+	/** Options tracking the choice-related form fields. @type {DataChoice} */
 	const [choiceOptions, setChoiceOptions] = useState({
 		color: DEFAULT_CHOICE_BLANK.color,
 		options: [
@@ -30,19 +39,21 @@ export default function AddForm() {
 		],
 	});
 
+	/** Gets the form fields corresponding to the currently-selected tab. */
 	function getOptions() {
 		return activeTab === "dialogue"
 			? dialogueOptions
 			: choiceOptions;
 	}
 
-	/** Share color between the two forms. */
+	/** Updates color for both the dialogue and choice form tabs. */
 	function setColor(e) {
 		setDialogueOptions((options) => { return { ...options, color: e.target.value } });
 		setChoiceOptions((options) => { return { ...options, color: e.target.value } });
 	}
 
-	function handleSubmit(e) {
+	/** Creates a block from the data in the currently-selected form tab. */
+	function createBlock(e) {
 		e.preventDefault();
 		const newBlock = {
 			id: `${activeTab.toLowerCase()}_${(new Date()).getTime()}`,
@@ -56,6 +67,9 @@ export default function AddForm() {
 		clearForm(e, false);
 	}
 
+	/** Clears the form fields. To be used upon form submission or reset.
+	 * @param {boolean} [resetFull=true] `true` if all form fields including the color palette selector should be reset, regardless of whether persistence is enabled; `false` otherwise.
+	 */
 	function clearForm(e, resetFull = true) {
 		const ogColor = getOptions().color;
 		// Clear stored values
@@ -80,6 +94,9 @@ export default function AddForm() {
 		e.target.closest("form").reset();
 	}
 
+	/** Autofills sample data in the currently-selected form tab.
+	 * Samples are drawn from various parts of the game.
+	 */
 	function fillSample() {
 		if (activeTab === "dialogue") {
 			let sample = DIALOGUE_SAMPLES[Math.floor(Math.random() * DIALOGUE_SAMPLES.length)];
@@ -109,9 +126,10 @@ export default function AddForm() {
 		- main form with the standard inputs
 		- checkbox to keep the color palette selected.
 		- buttons to create the corresponding box and to reset the form.
-		- button that autofills the form with sample dialogue.
+		- button that autofills the form with sample content.
 	*/
-	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu blockform ${dialogueOptions.color}`}>
+
+	return <form id="addform" name="addform" onSubmit={createBlock} className={`menu blockform ${dialogueOptions.color}`}>
 		<h2>{t("FORMS.ADDER.TITLE")}</h2>
 
 		<fieldset id="tabber">

@@ -1,14 +1,22 @@
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
-import "../../styles/JSONForm.css";
-import validate from "../../utils/validateData";
 import { BlockContext } from "../../context/BlockContext";
+import { useTranslation } from "react-i18next";
 import getBlockType from "../../utils/getBlockType";
+import validate from "../../utils/validateData";
+import "../../styles/JSONForm.css";
 
+/**
+ * A form for mass-editing content blocks through JSON files.
+ * @returns A <form> element for reading/writing JSON.
+ */
 export default function JSONForm() {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
 	const { t } = useTranslation();
 
+	/**
+	 * Converts the list of content blocks into JSON format, removing any IDs used for rendering.
+	 * @returns A JSON string representing `allBlocks`.
+	 */
 	function getJSON() {
 		return JSON.stringify(
 			allBlocks.map(el => {
@@ -24,8 +32,13 @@ export default function JSONForm() {
 	}
 
 	// #region Handlers
-	/** Show a status message and unfocus from a clicked button. Helper for JSON form handlers. */
+	/**
+	 * Replaces the given button's text with a given message for a few seconds and unfocuses from the currently-selected button. Helper for JSON form handlers.
+	 * @param {HTMLButtonElement|HTMLSpanElement} btn The element containing the label to be replaced.
+	 * @param {string} message The message to be displayed on `btn`.
+	 */
 	function showMessage(btn, message) {
+		/** Original button text, to be switched back to after a few seconds. */
 		let original = btn.innerText;
 		
 		btn.innerText = message;
@@ -35,7 +48,7 @@ export default function JSONForm() {
 		document.activeElement.blur();
 	}
 
-	/** Copy JSON to the user's clipboard. */
+	/** Copies JSON to the user's clipboard. */
 	function copyJSON(e) {
 		let form = e.target.closest("form");
 		
@@ -46,9 +59,10 @@ export default function JSONForm() {
 		showMessage(e.target, t("ALERTS.CONFIRM_COPIED"));
 	}
 
-	/** Download JSON as a .json file. */
+	/** Downloads JSON as a .json file.
+	 * Taken from {@link https://www.geeksforgeeks.org/how-to-save-text-as-a-file-in-html-css-and-javascript/ GeeksforGeeks}.
+	 */
 	function downloadJSON(e) {
-		// From https://www.geeksforgeeks.org/how-to-save-text-as-a-file-in-html-css-and-javascript/
 		let input = e.target.closest("form").querySelector("#jsoninput").value.trim();
 
 		// Create and click download link
@@ -64,7 +78,7 @@ export default function JSONForm() {
 		showMessage(e.target, t("ALERTS.CONFIRM_DOWNLOADED"));
 	}
 
-	/** Upload a .json file to the editor. */
+	/** Uploads a .json file to the editor and renders its contents. */
 	async function uploadJSON(e) {
 		const file = e.target.files[0];
 
