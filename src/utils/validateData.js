@@ -44,7 +44,7 @@ export function validateDialogue({ data: { color, portrait, speaker, dialogue },
  * @param {object} data Raw data for a multiple choice menu.
  * @param {string} data.color The color palette for this block. Checked for type `string` and being a member of the corresponding enumerated list.
  * @param {object[]} data.options The individual options making up the menu. Checked for type `object`.
- * @param {string} data.options.text The text label displayed for this option. Checked for type `string` and non-emptiness.
+ * @param {string} data.options.text The text label displayed for this option. Checked for type `string` and non-emptiness, and excess characters are truncated.
  * @param {?boolean} data.options.selected Whether this option should be highlighted as though being clicked. Checked for type `boolean`.
  * @param {function} t A translator function to get the localized versions of text used in this block.
  * @returns A validated data object.
@@ -59,7 +59,7 @@ export function validateChoice({ data: { color, options }, t }) {
 			? options.map((opt, index) => {
 				return {
 					id: `option_${index}`,
-					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text : DEFAULT_CHOICE.text,
+					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text.slice(0, 160) : DEFAULT_CHOICE.text,
 					selected: typeof opt.selected === "boolean" ? opt.selected : DEFAULT_CHOICE.selected,
 				}
 			})
