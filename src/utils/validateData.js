@@ -31,7 +31,7 @@ export default function validate({ type, data }) {
 export function validateDialogue({ color, portrait, speaker, dialogue }) {
 	return {
 		color: validateColor(color, DEFAULT_DIALOGUE.color),
-		portrait: typeof portrait === "string" && Object.values(ALL_PORTRAITS).some(el => Object.values(el).includes(portrait)) ? portrait : DEFAULT_DIALOGUE.portrait,
+		portrait: typeof portrait === "string" && ALL_PORTRAITS.some(el => portrait in el.options) ? portrait : DEFAULT_DIALOGUE.portrait,
 		speaker: typeof speaker === "string" && speaker.length > 0 ? speaker.slice(0, 100) : DEFAULT_DIALOGUE.speaker,
 		dialogue: typeof dialogue === "string" && dialogue.length > 0 ? dialogue.slice(0, 250) : DEFAULT_DIALOGUE.dialogue,
 	};
