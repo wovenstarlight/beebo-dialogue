@@ -116,7 +116,7 @@ function OptionInput({
 
 	return <div className="optiongroup" id={optionData.id}>
 		<label className="labeloption">
-			<span className="labeltext"><Trans i18nKey="FORMS.FIELDS.OPTION_NUMBER" values={{ index: index + 1 }} /></span>
+			<span className="labeltext">{t("FORMS.FIELDS.OPTION_NUMBER", { index: index + 1 })}</span>
 			<input
 				className="inputoption"
 				name={`inputoption${index}`}
@@ -132,7 +132,11 @@ function OptionInput({
 			<label className="labelselected">
 				<input type="checkbox" name={`inputselect${index}`} checked={optionData.selected} onChange={setOptionSelected} className="visuallyhidden" />
 				<span className="icon" aria-hidden={true} />
-				<span className="labeltext"><Trans i18nKey="ACTIONS.MARK_SELECTED" values={{ index: index + 1 }} components={{ hidden: <span className="visuallyhidden" /> }} /></span>
+				<span className="labeltext"><Trans
+					i18nKey="ACTIONS.MARK_SELECTED"
+					values={{ index: index + 1 }}
+					components={{ hidden: <span className="visuallyhidden" /> }}
+				/></span>
 			</label>
 			
 			{moveOptionUp && <button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={isFirst}>{t("ACTIONS.MOVE_UP")}</button>}
