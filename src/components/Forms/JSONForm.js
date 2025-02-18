@@ -11,7 +11,7 @@ import "../../styles/JSONForm.css";
  */
 export default function JSONForm() {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 
 	/**
 	 * Converts the list of content blocks into JSON format, removing any IDs used for rendering.
@@ -141,6 +141,6 @@ export default function JSONForm() {
 			<p className="explainer" id="uploadexplainer">{t("FORMS.JSON.EXPLAIN_UPLOAD")}</p>
 		</div>
 		
-		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue.json`} download>{t("ACTIONS.AUTOFILL")}</a>
+		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue/${i18n.language}.json`} download={`${t("FORMS.JSON.SAMPLE")}.json`}>{t("ACTIONS.AUTOFILL")}</a>
 	</form>;
 }

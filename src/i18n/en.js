@@ -63,6 +63,7 @@ const MESSAGES = {
 			EXPLAIN_COPY: "Copy the above JSON to your clipboard",
 			EXPLAIN_DOWNLOAD: "Download as a JSON file to your device",
 			EXPLAIN_UPLOAD: "Upload a JSON file (this overwrites existing dialogue!)",
+			SAMPLE: "sample-dialogue",
 		},
 		EDITOR: {
 			TITLE_CHOICE: "Edit choices",
