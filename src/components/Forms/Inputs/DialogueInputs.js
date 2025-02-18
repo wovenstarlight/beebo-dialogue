@@ -1,8 +1,11 @@
 import "../../../styles/Forms.css";
+import { useTranslation } from "react-i18next";
 import PortraitSelector from "./PortraitSelector";
 import ColorSelector from "./ColorSelector";
+import ALL_CHARACTERS from "../../../constants/characters";
 
 export default function DialogueInputs({ data, setData, includePalette = true }) {
+	const { t } = useTranslation();
 	/* BREAKDOWN
 	Four inputs:
 		- one for the color palette used by the box.
@@ -13,18 +16,18 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 
 	return <>
 		{includePalette && <label className="labelcolor">
-			<span className="labeltext">Palette</span>
+			<span className="labeltext">{t("FORMS.FIELDS.PALETTE")}</span>
 			<ColorSelector color={data.color} setColor={(e) => setData({ ...data, color: e.target.value })} />
 		</label>}
 
 		<label className="labelportrait">
-			<span className="labeltext">Portrait</span>
+			<span className="labeltext">{t("FORMS.FIELDS.PORTRAIT")}</span>
 			<PortraitSelector portrait={data.portrait} setPortrait={(e) => setData({ ...data, portrait: e.target.value })} />
 			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(data.portrait.length ? data.portrait : "misc/someone_shadow.png")} />
 		</label>
 
 		<label className="labelspeaker">
-			<span className="labeltext">Speaker</span>
+			<span className="labeltext">{t("FORMS.FIELDS.SPEAKER")}</span>
 			<input
 				className="inputspeaker"
 				name="inputspeaker"
@@ -38,21 +41,20 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 			/>
 		</label>
 		<datalist id={`speakerslist${ data.id ? `_${data.id}` : "" }`}>
-			<option value="Oliver Beebo" />
-			<option value="Ángel" />
-			<option value="Vivi" />
-			<option value="Nina Coli" />
-			<option value="Marigold Margulis" />
-			<option value="Nadia" />
-			<option value="Simon" />
-			<option value="Owen" />
-			<option value="Eugene Coli" />
-			<option value="Police Chief" />
-			<option value="Police Officer" />
+			{ALL_CHARACTERS
+				.map(chara => {
+					const speakerLabel = t(`DEFAULTS.CHARACTERS.${chara}.SPEAKER_LABEL`);
+					return speakerLabel.startsWith("DEFAULTS.CHARACTERS")
+						? t(`DEFAULTS.CHARACTERS.${chara}.LONG`)
+						: speakerLabel;
+				})	// Get all labels
+				.filter((el, index, arr) => arr.indexOf(el) === index)	// Filter out duplicates
+				.map(opt => <option key={opt} value={opt} />)
+			}
 		</datalist>
 
 		<label className="labeldialogue">
-			<span className="labeltext">Dialogue</span>
+			<span className="labeltext">{t("FORMS.FIELDS.DIALOGUE")}</span>
 			<textarea
 				className="inputdialogue"
 				name="inputdialogue"

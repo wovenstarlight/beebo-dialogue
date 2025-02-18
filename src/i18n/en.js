@@ -33,6 +33,9 @@ const MESSAGES = {
 		},
 		FIELDS: {
 			PALETTE: "Palette",
+			PORTRAIT: "Potrait",
+			SPEAKER: "Speaker",
+			DIALOGUE: "Dialogue",
 			PALETTE_REUSE: "When off, palette will reset to purple after every submission",
 		},
 	},
@@ -80,6 +83,87 @@ const MESSAGES = {
 			YELLOW: "Yellow (Art gallery)",
 			DARK_GRAY: "Dark gray (City/Police)",
 			SKY_BLUE: "Sky blue (True ending)",
+		},
+		CHARACTERS: {
+			OLIVER: {
+				LONG: "Oliver Beebo",
+				SHORT: "Oliver",
+			},
+			ANGEL: {
+				SPEAKER_LABEL: "Ángel",
+				LONG: "Ángel Valdivia",
+				SHORT: "Ángel",
+			},
+			VIVI: {
+				SPEAKER_LABEL: "Vivi",
+				LONG: "Vivi Villalobos",
+				SHORT: "Vivi",
+			},
+			MARIGOLD: {
+				LONG: "Marigold Margulis",
+				SHORT: "Marigold",
+			},
+			NINA: {
+				LONG: "Nina Coli",
+				SHORT: "Nina",
+			},
+			NADIA: {
+				SPEAKER_LABEL: "Nadia",
+				LONG: "Nadia Margulis",
+				SHORT: "Nadia",
+			},
+			SIMON: {
+				SPEAKER_LABEL: "Simon",
+				LONG: "Simon Margulis",
+				SHORT: "Simon",
+			},
+			OWEN: {
+				LONG: "Owen",
+				SHORT: "Owen",
+			},
+			EUGENE: {
+				LONG: "Eugene Coli",
+				SHORT: "Eugene",
+			},
+			DOMINION: {
+				LONG: "Dominion",
+				SHORT: "Dominion",
+			},
+			POLICE_CHIEF: {
+				LONG: "Police Chief",
+				SHORT: "Chief",
+			},
+			POLICE_OFFICER_1: {
+				SPEAKER_LABEL: "Police Officer",
+				LONG: "Police Officer 1",
+				SHORT: "Officer",
+			},
+			POLICE_OFFICER_2: {
+				SPEAKER_LABEL: "Police Officer",
+				LONG: "Police Officer 2",
+				SHORT: "Officer",
+			},
+			POLICE_OFFICER_3: {
+				SPEAKER_LABEL: "Police Officer",
+				LONG: "Police Officer 3",
+				SHORT: "Officer",
+			},
+			BARTENDER: {
+				LONG: "Bartender",
+				SHORT: "Bartender",
+			},
+			SOMEONE: {
+				LONG: "Someone",
+				SHORT: "Someone",
+			},
+			WORKER: {
+				LONG: "Worker",
+				SHORT: "Worker",
+			},
+			TUTORIAL: {
+				LONG: "Tutorial",
+				SHORT: "Tutorial",
+			},
 		},
 	},
 };
