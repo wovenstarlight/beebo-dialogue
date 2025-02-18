@@ -7,7 +7,7 @@ import deepFreeze from "../utils/deepFreeze";
  * @type {DataDialogue}
  */
 export const DEFAULT_DIALOGUE = {
-	color: "purple",
+	color: Object.keys(ALL_COLORS)[0],
 	portrait: `misc/someone_shadow.png`,
 	speaker: "DEFAULTS.DIALOGUE.SPEAKER",
 	dialogue: "DEFAULTS.DIALOGUE.DIALOGUE",
@@ -30,7 +30,7 @@ export const DEFAULT_DIALOGUE_BLANK = {
  * @type {DataChoice}
  */
 export const DEFAULT_CHOICE = {
-	color: "purple",
+	color: Object.keys(ALL_COLORS)[0],
 };
 
 /** Blank data for a choice block. For initializing choice objects.

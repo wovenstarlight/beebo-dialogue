@@ -3,6 +3,8 @@ import deepFreeze from "../utils/deepFreeze";
 
 /**
  * A mapping of color palettes to their corresponding keys in the i18n files.
+ * 
+ * The first color in the list acts as the default value.
  * @type {object.<Palette, LanguageKey>}
  */
 const ALL_COLORS = {
