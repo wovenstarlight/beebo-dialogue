@@ -104,29 +104,36 @@ const MESSAGES = {
 			},
 			ANGEL: {
 				SPEAKER_LABEL: "Ángel",
+				UNKNOWN_LABEL: "Scarf man",
 				LONG: "Ángel Valdivia",
 				SHORT: "Ángel",
 			},
 			VIVI: {
 				SPEAKER_LABEL: "Vivi",
+				UNKNOWN_LABEL: "Lady in red",
 				LONG: "Vivi Villalobos",
 				SHORT: "Vivi",
 			},
 			MARIGOLD: {
+				UNKNOWN_LABEL: "Blue Hair Lady",
 				LONG: "Marigold Margulis",
 				SHORT: "Marigold",
 			},
 			NINA: {
+				SPEAKER_LABEL: "Nina",
+				UNKNOWN_LABEL: "Purple Hair Lady",
 				LONG: "Nina Coli",
 				SHORT: "Nina",
 			},
 			NADIA: {
 				SPEAKER_LABEL: "Nadia",
+				UNKNOWN_LABEL: "Poncho Teen",
 				LONG: "Nadia Margulis",
 				SHORT: "Nadia",
 			},
 			SIMON: {
 				SPEAKER_LABEL: "Simon",
+				UNKNOWN_LABEL: "Hoodie Teen",
 				LONG: "Simon Margulis",
 				SHORT: "Simon",
 			},
