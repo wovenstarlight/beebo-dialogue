@@ -6,7 +6,7 @@ export default function Choice({ id, options }) {
 			<p
 				key={`${id}_${index}`}
 				id={`${id}_${index}`}
-				className={opt.selected && "selected"}
+				className={opt.selected ? "selected" : undefined}
 			>
 				{opt.text}
 			</p>
