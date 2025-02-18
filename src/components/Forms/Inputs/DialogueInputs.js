@@ -1,6 +1,6 @@
 import "../../../styles/Forms.css";
 import PortraitSelector from "./PortraitSelector";
-import ALL_COLORS from "../../../constants/colors";
+import ColorSelector from "./ColorSelector";
 
 export default function DialogueInputs({ data, setData, includePalette = true }) {
 	/* BREAKDOWN
@@ -14,18 +14,7 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 	return <>
 		{includePalette && <label className="labelcolor">
 			<span className="labeltext">Palette</span>
-			<select
-				className="inputcolor"
-				name="inputcolor"
-				required
-				value={data.color}
-				onChange={(e) => setData({ ...data, color: e.target.value })}
-				autoFocus={true}
-			>
-				{Object.entries(ALL_COLORS).map(color => {
-					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
-				})}
-			</select>
+			<ColorSelector color={data.color} setColor={(e) => setData({ ...data, color: e.target.value })} />
 		</label>}
 
 		<label className="labelportrait">

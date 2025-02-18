@@ -1,7 +1,7 @@
 import "../../../styles/Forms.css";
-import allColors from "../../../constants/colors";
 import { DEFAULT_CHOICE_OPTION_BLANK } from "../../../constants/blockDefaults";
 import splitAround from "../../../utils/splitAround";
+import ColorSelector from "./ColorSelector";
 
 export default function ChoiceInputs({ data, setData, includePalette = true }) {
 	/* BREAKDOWN
@@ -83,18 +83,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 	return <>
 		{includePalette && <label className="labelcolor">
 			<span className="labeltext">Palette</span>
-			<select
-				className="inputcolor"
-				name="inputcolor"
-				required
-				value={data.color}
-				onChange={(e) => setData({ ...data, color: e.target.value })}
-				autoFocus={true}
-			>
-				{Object.entries(allColors).map(color => {
-					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
-				})}
-			</select>
+			<ColorSelector color={data.color} setColor={(e) => setData({ ...data, color: e.target.value })} />
 		</label>}
 
 		{data.options.map((obj, index, arr) => <OptionInput

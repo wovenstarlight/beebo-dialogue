@@ -4,6 +4,7 @@ import ALL_COLORS from "../../constants/colors";
 import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
 import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK } from "../../constants/blockDefaults";
 import validate from "../../utils/validateData";
+import ColorSelector from "./Inputs/ColorSelector";
 import DialogueInputs from "./Inputs/DialogueInputs";
 import ChoiceInputs from "./Inputs/ChoiceInputs";
 
@@ -131,18 +132,7 @@ export default function AddForm() {
 
 		<label className="labelcolor">
 			<span className="labeltext">Palette</span>
-			<select
-				className="inputcolor"
-				name="inputcolor"
-				required
-				value={dialogueOptions.color}
-				onChange={setColor}
-				autoFocus={true}
-			>
-				{Object.entries(ALL_COLORS).map(color => {
-					return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
-				})}
-			</select>
+			<ColorSelector color={dialogueOptions.color} setColor={setColor} />
 		</label>
 
 		<fieldset id="adddialogue" className="inputsection" disabled={activeTab !== "dialogue"} hidden={activeTab !== "dialogue"}>
