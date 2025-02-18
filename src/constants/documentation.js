@@ -13,6 +13,25 @@
 	 * @type {"purple"|"orange"|"gray"|"red"|"royalblue"|"violet"|"pink"|"green"|"cornflower"|"yellow"|"darkgray"|"skyblue"}
 	 */
 
+	// Portraits
+	/**
+	 * @typedef PortraitGroup
+	 * A group of related character sprites.
+	 * @type {object}
+	 * @property {object} label A label for this group.
+	 * @property {LanguageKey} label.identifier An identifier referencing the shared characteristic of this group, such as the name of a character depicted in all included sprites.
+	 * @property {LanguageKey} label.variant A unique characteristic differentiating this group from others with the same `identifier`, such as a color palette.
+	 * @property {object.<string, PortraitData>} options A mapping of sprite URLs to their descriptions.
+	 */
+	/**
+	 * @typedef PortraitData
+	 * Descriptive data for a single sprite. 
+	 * @type {object}
+	 * @property {LanguageKey} identifier An identifier for this sprite; typically the character depicted therein.
+	 * @property {?LanguageKey} emotion A description of the emotion the character in the sprite (if any) is feeling.
+	 * @property {?LanguageKey} variant A unique characteristic differentiating this sprite from others with the same `identifier` (and, if present, `emotion`).
+	 */
+
 	// #region Block data
 		/**
 		 * @typedef DataDialogue

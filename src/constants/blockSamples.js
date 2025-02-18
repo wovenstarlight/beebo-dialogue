@@ -1,6 +1,11 @@
+import "./documentation";
 import deepFreeze from "../utils/deepFreeze";
 
 // Dialogue retrieved from "Dialogue res/JSON/en"
+
+/** Sample dialogue blocks, retrieved from the game.
+ * @type {DataDialogue[]}
+ */
 export const DIALOGUE_SAMPLES = [
 	{
 		color: "orange",
@@ -82,6 +87,9 @@ export const DIALOGUE_SAMPLES = [
 	},
 ];
 
+/** Sample choice blocks, retrieved from the game.
+ * @type {DataChoice[]}
+ */
 export const CHOICE_SAMPLES = [
 	{
 		color: "purple",

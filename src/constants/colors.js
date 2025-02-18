@@ -1,5 +1,10 @@
+import "./documentation";
 import deepFreeze from "../utils/deepFreeze";
 
+/**
+ * A mapping of color palettes to their corresponding keys in the i18n files.
+ * @type {object.<Palette, LanguageKey>}
+ */
 const ALL_COLORS = {
 	purple:		"PURPLE",
 	orange:		"ORANGE",

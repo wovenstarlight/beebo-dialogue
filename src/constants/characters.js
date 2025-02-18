@@ -1,5 +1,10 @@
+import "./documentation";
 import deepFreeze from "../utils/deepFreeze";
 
+/**
+ * A list of all characters whose names are to be suggested in the speaker dropdown.
+ * @type {LanguageKey[]}
+ */
 const ALL_CHARACTERS = [
 	"OLIVER",
 	"ANGEL",

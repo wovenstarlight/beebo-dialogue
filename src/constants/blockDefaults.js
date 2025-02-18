@@ -1,7 +1,11 @@
+import "./documentation";
+import ALL_COLORS from "./colors";
 import deepFreeze from "../utils/deepFreeze";
 
 // #region Dialogue
-// Template
+/** Default data for a dialogue block. For filling in templates.
+ * @type {DataDialogue}
+ */
 export const DEFAULT_DIALOGUE = {
 	color: "purple",
 	portrait: `misc/someone_shadow.png`,
@@ -9,7 +13,9 @@ export const DEFAULT_DIALOGUE = {
 	dialogue: "DEFAULTS.DIALOGUE.DIALOGUE",
 };
 
-// Blank
+/** Blank data for a dialogue block. For initializing dialogue objects.
+ * @type {DataDialogue}
+ */
 export const DEFAULT_DIALOGUE_BLANK = {
 	color: DEFAULT_DIALOGUE.color,
 	portrait: "",
@@ -20,32 +26,38 @@ export const DEFAULT_DIALOGUE_BLANK = {
 
 // #region Multiple choice
 // #region Flat version
-// Template
+/** Default data for a choice block. For filling in templates.
+ * @type {DataChoice}
+ */
 export const DEFAULT_CHOICE = {
 	color: "purple",
 };
 
-// Blank
+/** Blank data for a choice block. For initializing choice objects.
+ * @type {DataChoice}
+ */
 export const DEFAULT_CHOICE_BLANK = {
 	color: DEFAULT_CHOICE.color,
-	text: "",
-	selected: false,
 }
 // #endregion
 
 // #region Single option
-// Template
+/** Default data for a single option in a choice block. For filling in templates.
+ * @type {DataChoiceOption}
+ */
 export const DEFAULT_CHOICE_OPTION = 
 {
 	text: "DEFAULTS.CHOICE.TEXT",
 	selected: false,
 };
 
-// Blank
+/** Blank data for a single option in a choice block. For initializing option objects.
+ * @type {DataChoiceOption}
+ */
 export const DEFAULT_CHOICE_OPTION_BLANK = 
 {
-	text: DEFAULT_CHOICE_BLANK.text,
-	selected: DEFAULT_CHOICE_BLANK.selected,
+	text: "",
+	selected: false,
 };
 // #endregion
 // #endregion
@@ -56,6 +68,13 @@ deepFreeze(
 	DEFAULT_CHOICE_OPTION, DEFAULT_CHOICE_OPTION_BLANK
 );
 
+/**
+ * Returns the default values for a given block type, whether empty or non-empty.
+ * @param {object} args
+ * @param {BlockType|"option"} args.type The type of block or block component to retrieve defaults for.
+ * @param {boolean} [args.blank=false] `true` to get the empty data object for the block `type`, `false` to get the non-empty defaults for the block `type`.
+ * @returns The requested block type's defaults.
+ */
 export function getDefaults({ type, blank = false }) {
 	switch (type) {
 		case "choice":
