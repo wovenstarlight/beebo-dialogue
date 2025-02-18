@@ -24,6 +24,13 @@ const MESSAGES = {
 			DIALOGUE: "Dialogue",
 			CHOICES: "Choices",
 		},
+		JSON: {
+			TITLE: "Mass-edit via JSON",
+			SUBTITLE: "Save/create multiple dialogue boxes at once!",
+			EXPLAIN_COPY: "Copy the above JSON to your clipboard",
+			EXPLAIN_DOWNLOAD: "Download as a JSON file to your device",
+			EXPLAIN_UPLOAD: "Upload a JSON file (this overwrites existing dialogue!)",
+		},
 		FIELDS: {
 			PALETTE: "Palette",
 			PALETTE_REUSE: "When off, palette will reset to purple after every submission",
@@ -35,13 +42,21 @@ const MESSAGES = {
 		RESET: "Reset form",
 		DELETE_ALL: "Delete all",
 		SAVE_IMAGE: "Save as PNG",
+		COPY: "Copy",
+		DOWNLOAD: "Download",
+		UPLOAD: "Upload",
 		AUTOFILL: "Need a reference?",
 		PALETTE_REUSE: "Reuse same palette for future elements",
 	},
 
 	ALERTS: {
 		CONFIRM_DELETE_ALL: "Really delete all currently-generated dialogue boxes?\n\nThis is irreversible!",
+		CONFIRM_COPIED: "Copied!",
+		CONFIRM_DOWNLOADED: "Downloaded!",
+		CONFIRM_UPLOADED: "Uploaded!",
 		ERROR_IMAGE_CONVERSION: "There was an error while trying to convert the image. Please let me know about the issue on Github!",
+		ERROR_JSON_FILETYPE: "Wrong file type!\n\nYou must upload a .json file.",
+		ERROR_JSON_FORMAT: "Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", \"dialogue\", and \"options\".",
 	},
 
 	DEFAULTS: {

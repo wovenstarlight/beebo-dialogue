@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import "../../styles/JSONForm.css";
 import validate from "../../utils/validateData";
 import { BlockContext } from "../../context/BlockContext";
@@ -42,7 +43,7 @@ export default function JSONForm() {
 		navigator.clipboard.writeText(form.querySelector("#jsoninput").value.trim());
 
 		// Let user know
-		showMessage(e.target, "Copied!");
+		showMessage(e.target, t("ALERTS.CONFIRM_COPIED"));
 	}
 
 	/** Download JSON as a .json file. */
@@ -60,7 +61,7 @@ export default function JSONForm() {
 		dlLink.click();
 
 		// Let user know
-		showMessage(e.target, "Downloading...");
+		showMessage(e.target, t("ALERTS.CONFIRM_DOWNLOADED"));
 	}
 
 	/** Upload a .json file to the editor. */
@@ -69,7 +70,7 @@ export default function JSONForm() {
 
 		// confirm it's a JSON file
 		if (file.type !== "application/json") {
-			window.alert("Wrong file type!\n\nYou must upload a .json file.");
+			window.alert(t("ALERTS.ERROR_JSON_FILETYPE"));
 			return;
 		}
 
@@ -82,7 +83,7 @@ export default function JSONForm() {
 					x => ["color", "portrait", "speaker", "dialogue", "options"].includes(x)
 				)
 			}))) {
-				window.alert("Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", and \"dialogue\".");
+				window.alert(t("ALERTS.ERROR_JSON_FORMAT"));
 				return;
 			}
 
@@ -99,7 +100,7 @@ export default function JSONForm() {
 			}));
 
 			// Let user know it was successful
-			showMessage(e.target.previousElementSibling, "Uploaded!");
+			showMessage(e.target.previousElementSibling, t("ALERTS.CONFIRM_UPLOADED"));
 		} catch (error) {
 			window.alert(error.message);
 		}
@@ -107,26 +108,25 @@ export default function JSONForm() {
 	// #endregion
 
 	return <form id="jsonform" name="jsonform" className="menu">
-		<p className="explainer">...or,</p>
-		<h2>Edit via JSON</h2>
-		<p className="explainer">Save/create multiple dialogue boxes at once!</p>
+		<h2>{t("FORMS.JSON.TITLE")}</h2>
+		<p className="explainer">{t("FORMS.JSON.SUBTITLE")}</p>
 
 		<textarea id="jsoninput" name="jsoninput" value={getJSON()} readOnly={true} />
 
 		<div className="buttons">
-			<button type="button" className="blockbtn" id="copyjson" onClick={copyJSON} aria-describedby="copyexplainer">Copy</button>
-			<p className="explainer" id="copyexplainer">Copy the above JSON to your clipboard</p>
+			<button type="button" className="blockbtn" id="copyjson" onClick={copyJSON} aria-describedby="copyexplainer">{t("ACTIONS.COPY")}</button>
+			<p className="explainer" id="copyexplainer">{t("FORMS.JSON.EXPLAIN_COPY")}</p>
 
-			<button type="button" className="blockbtn" id="downloadjson" onClick={downloadJSON} aria-describedby="downloadexplainer">Download</button>
-			<p className="explainer" id="downloadexplainer">Download as a JSON file to your device</p>
+			<button type="button" className="blockbtn" id="downloadjson" onClick={downloadJSON} aria-describedby="downloadexplainer">{t("ACTIONS.DOWNLOAD")}</button>
+			<p className="explainer" id="downloadexplainer">{t("FORMS.JSON.EXPLAIN_DOWNLOAD")}</p>
 
 			<label className="blockbtn" id="uploadlabel" aria-describedby="uploadexplainer">
-				<span className="btnlabel">Upload</span>
+				<span className="btnlabel">{t("ACTIONS.UPLOAD")}</span>
 				<input className="visuallyhidden" name="uploadjson" onChange={uploadJSON} type="file" accept=".json" />
 			</label>
-			<p className="explainer" id="uploadexplainer">Upload a JSON file (this overwrites existing dialogue!)</p>
+			<p className="explainer" id="uploadexplainer">{t("FORMS.JSON.EXPLAIN_UPLOAD")}</p>
 		</div>
 		
-		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue.json`} download>Need a reference?</a>
+		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue.json`} download>{t("ACTIONS.AUTOFILL")}</a>
 	</form>;
 }
