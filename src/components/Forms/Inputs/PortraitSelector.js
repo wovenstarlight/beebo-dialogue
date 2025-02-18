@@ -1,16 +1,10 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import ALL_PORTRAITS from "../../../constants/portraits";
+import { arrayEquals } from "../../../utils/arrayUtils";
 
 function PortraitSelector({ portrait, setPortrait }) {
 	const { t } = useTranslation();
-
-	/** Checks that two arrays contain the same elements.
-	 * To be used for confirming what keys a given option comes with.
-	 */
-	function arrayEquals(a1, a2) {
-		return a1.toSorted().toString() === a2.toSorted().toString();
-	}
 
 	return (
 		<select

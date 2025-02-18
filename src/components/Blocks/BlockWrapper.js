@@ -7,7 +7,7 @@ import Choice from "./Choice";
 import ChoiceInputs from "../Forms/Inputs/ChoiceInputs";
 import Dialogue from "./Dialogue";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
-import splitAround from "../../utils/splitAround";
+import { splitAround } from "../../utils/arrayUtils";
 import validate from "../../utils/validateData";
 import "../../styles/ModMenu.css";
 

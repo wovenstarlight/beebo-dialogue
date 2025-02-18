@@ -2,7 +2,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { DEFAULT_CHOICE_OPTION_BLANK } from "../../../constants/blockDefaults";
 import "../../../constants/documentation";
 import ColorSelector from "./ColorSelector";
-import splitAround from "../../../utils/splitAround";
+import { splitAround } from "../../../utils/arrayUtils";
 import "../../../styles/Forms.css";
 
 /**
