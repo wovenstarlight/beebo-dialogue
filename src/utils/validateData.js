@@ -30,7 +30,7 @@ export default function validate({ type, data }) {
  */
 export function validateDialogue({ color, portrait, speaker, dialogue }) {
 	return {
-		color: typeof color === "string" && Object.values(ALL_COLORS).includes(color) ? color : DEFAULT_DIALOGUE.color,
+		color: validateColor(color, DEFAULT_DIALOGUE.color),
 		portrait: typeof portrait === "string" && Object.values(ALL_PORTRAITS).some(el => Object.values(el).includes(portrait)) ? portrait : DEFAULT_DIALOGUE.portrait,
 		speaker: typeof speaker === "string" && speaker.length > 0 ? speaker.slice(0, 100) : DEFAULT_DIALOGUE.speaker,
 		dialogue: typeof dialogue === "string" && dialogue.length > 0 ? dialogue.slice(0, 250) : DEFAULT_DIALOGUE.dialogue,
@@ -48,7 +48,7 @@ export function validateDialogue({ color, portrait, speaker, dialogue }) {
  */
 export function validateChoice({ color, options }) {
 	return {
-		color: typeof color === "string" && Object.values(ALL_COLORS).includes(color) ? color : DEFAULT_CHOICE.color,
+		color: validateColor(color, DEFAULT_CHOICE.color),
 		options: (
 			Object.prototype.toString.call(options) === "[object Array]"
 			&& options.every(opt => Object.prototype.toString.call(opt) === "[object Object]")
@@ -62,4 +62,14 @@ export function validateChoice({ color, options }) {
 			})
 			: [{ text: DEFAULT_CHOICE.text }],
 	};
+}
+
+/**
+ * Validates a color palette.
+ * @param {string} color A color palette name.
+ * @param {string} defaultColor A valid color palette name to use as a fallback
+ * @returns `color` if a valid palette from the enumerated list, or `defaultColor` otherwise.
+ */
+function validateColor(color, defaultColor) {
+	return typeof color === "string" && color in ALL_COLORS ? color : defaultColor;
 }

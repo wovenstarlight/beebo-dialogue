@@ -1,16 +1,18 @@
+import MESSAGES from "./lang/en";
+
 const ALL_COLORS = {
-	"Purple (House of Vera/Eugene Coli)": "purple",
-	"Orange (Oliver Beebo)": "orange",
-	"Gray (Ángel Valdivia)": "gray",
-	"Red (Vivi Villalobos)": "red",
-	"Royal blue (Marigold Margulis)": "royalblue",
-	"Violet (Nina Coli)": "violet",
-	"Pink (Nadia Margulis)": "pink",
-	"Green (Simon Margulis)": "green",
-	"Cornflower blue (Owen)": "cornflower",
-	"Yellow (Art gallery)": "yellow",
-	"Dark gray (City/Police)": "darkgray",
-	"Sky blue (True ending)": "skyblue",
+	purple:		"Purple (House of Vera/Eugene Coli)",
+	orange:		"Orange (Oliver Beebo)",
+	gray:		"Gray (Ángel Valdivia)",
+	red:		"Red (Vivi Villalobos)",
+	royalblue:	"Royal blue (Marigold Margulis)",
+	violet:		"Violet (Nina Coli)",
+	pink:		"Pink (Nadia Margulis)",
+	green:		"Green (Simon Margulis)",
+	cornflower:	"Cornflower blue (Owen)",
+	yellow:		"Yellow (Art gallery)",
+	darkgray:	"Dark gray (City/Police)",
+	skyblue:	"Sky blue (True ending)",
 };
 
 Object.freeze(ALL_COLORS);

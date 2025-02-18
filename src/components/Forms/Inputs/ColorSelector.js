@@ -11,7 +11,7 @@ function ColorSelector({ color, setColor }) {
 		autoFocus={true}
 	>
 		{Object.entries(ALL_COLORS).map(color => {
-			return <option className={color[1]} value={color[1]} key={color[1]}>{color[0]}</option>
+			return <option className={color[0]} value={color[0]} key={color[0]}>{color[1]}</option>
 		})}
 	</select>;
 }
