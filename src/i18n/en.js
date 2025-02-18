@@ -24,6 +24,23 @@ const MESSAGES = {
 		CONFIRM_DELETE_ALL: "Really delete all currently-generated dialogue boxes?\n\nThis is irreversible!",
 		ERROR_IMAGE_CONVERSION: "There was an error while trying to convert the image. Please let me know about the issue on Github!",
 	},
+
+	DEFAULTS: {
+		COLORS: {
+			PURPLE: "Purple (House of Vera/Eugene Coli)",
+			ORANGE: "Orange (Oliver Beebo)",
+			GRAY: "Gray (Ángel Valdivia)",
+			RED: "Red (Vivi Villalobos)",
+			ROYAL_BLUE: "Royal blue (Marigold Margulis)",
+			VIOLET: "Violet (Nina Coli)",
+			PINK: "Pink (Nadia Margulis)",
+			GREEN: "Green (Simon Margulis)",
+			CORNFLOWER_BLUE: "Cornflower blue (Owen)",
+			YELLOW: "Yellow (Art gallery)",
+			DARK_GRAY: "Dark gray (City/Police)",
+			SKY_BLUE: "Sky blue (True ending)",
+		},
+	},
 };
 Object.freeze(MESSAGES);
 
