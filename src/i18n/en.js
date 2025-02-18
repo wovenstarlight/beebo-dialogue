@@ -31,6 +31,10 @@ const MESSAGES = {
 			EXPLAIN_DOWNLOAD: "Download as a JSON file to your device",
 			EXPLAIN_UPLOAD: "Upload a JSON file (this overwrites existing dialogue!)",
 		},
+		EDITOR: {
+			TITLE_CHOICE: "Edit choices",
+			TITLE_DIALOGUE: "Edit dialogue",
+		},
 		FIELDS: {
 			PALETTE: "Palette",
 			PORTRAIT: "Potrait",
@@ -43,7 +47,10 @@ const MESSAGES = {
 	
 	ACTIONS: {
 		ADD: "Add element",
+		UPDATE: "Update element",
 		RESET: "Reset form",
+		CANCEL: "Cancel",
+		EDIT: "Edit",
 		MOVE_UP: "Move up",
 		MOVE_DOWN: "Move down",
 		DELETE: "Delete",

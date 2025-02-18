@@ -84,7 +84,7 @@ export default function BlockWrapper({ type, data }) {
 	}
 
 	/** Close edit menu and reset temporary variables. */
-	function cancelEdit(e) {
+	function cancelEdit() {
 		// Reset the temporary variables to their original values
 		setTemp(value => {
 			let obj = {};
@@ -104,7 +104,7 @@ export default function BlockWrapper({ type, data }) {
 		case "choice":
 			blockContent = <Choice {...data} />;
 			editMenuContent = <>
-				<h2>Edit choices</h2>
+				<h2>{t("FORMS.EDITOR.TITLE_CHOICE")}</h2>
 				<ChoiceInputs
 					data={temp}
 					setData={setTemp}
@@ -116,7 +116,7 @@ export default function BlockWrapper({ type, data }) {
 		default:
 			blockContent = <Dialogue {...data} />;
 			editMenuContent = <>
-				<h2>Edit dialogue</h2>
+				<h2>{t("FORMS.EDITOR.TITLE_DIALOGUE")}</h2>
 				<DialogueInputs
 					data={temp}
 					setData={setTemp}
@@ -135,14 +135,16 @@ export default function BlockWrapper({ type, data }) {
 		{editing && <form id={`edit_${data.id}`} name={`edit_${data.id}`} onSubmit={updateBlock} className={`menu blockform ${temp.color}`}>
 			{editMenuContent}
 	
-			<button className="barbtn submitbtn" type="submit">Update</button>
-			<button className="barbtn resetbtn" type="reset" onClick={cancelEdit}>Cancel</button>
+			<button className="barbtn submitbtn" type="submit">{t("ACTIONS.UPDATE")}</button>
+			<button className="barbtn resetbtn" type="reset" onClick={cancelEdit}>{t("ACTIONS.CANCEL")}</button>
 		</form>}
 	</>;
 }
 
 function ModMenu({ id, setEditing }) {
 	let [allBlocks, setBlocks] = useContext(BlockContext);
+	const { t } = useTranslation();
+
 	const isFirst = allBlocks.at(0)?.id === id,
 		isLast = allBlocks.at(-1)?.id === id;
 
@@ -170,12 +172,12 @@ function ModMenu({ id, setEditing }) {
 	//#endregion
 
 	return <div className="modmenu buttons">
-		<button className="blockbtn editbtn" onClick={editBlock}>Edit</button>
-		<button className="blockbtn deletebtn" onClick={deleteBlock}>Delete</button>
+		<button className="blockbtn editbtn" onClick={editBlock}>{t("ACTIONS.EDIT")}</button>
+		<button className="blockbtn deletebtn" onClick={deleteBlock}>{t("ACTIONS.DELETE")}</button>
 		{/* Don't render the move buttons at all if this is the only block i.e. both first and last */}
 		{!(isFirst && isLast) && <> 
-		<button className="blockbtn movebtn" onClick={moveBlockUp} disabled={isFirst}>Move up</button>
-		<button className="blockbtn movebtn" onClick={moveBlockDown} disabled={isLast}>Move down</button>
+		<button className="blockbtn movebtn" onClick={moveBlockUp} disabled={isFirst}>{t("ACTIONS.MOVE_UP")}</button>
+		<button className="blockbtn movebtn" onClick={moveBlockDown} disabled={isLast}>{t("ACTIONS.MOVE_DOWN")}</button>
 		</>}
 	</div>;
 }
