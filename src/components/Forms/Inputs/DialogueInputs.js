@@ -32,12 +32,12 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 				minLength={1}
 				maxLength={100}
 				required
-				list="speakerslist"
+				list={`speakerslist${ data.id ? `_${data.id}` : "" }`}
 				value={data.speaker}
 				onChange={(e) => setData({ ...data, speaker: e.target.value })}
 			/>
 		</label>
-		<datalist className="speakerslist">
+		<datalist id={`speakerslist${ data.id ? `_${data.id}` : "" }`}>
 			<option value="Oliver Beebo" />
 			<option value="Ángel" />
 			<option value="Vivi" />

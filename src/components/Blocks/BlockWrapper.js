@@ -61,6 +61,7 @@ export default function BlockWrapper({ type, data }) {
 			};
 			break;
 	}
+	initial.id = data.id;
 	const [temp, setTemp] = useState(initial);
 	const [editing, setEditing] = useState(false);
 
