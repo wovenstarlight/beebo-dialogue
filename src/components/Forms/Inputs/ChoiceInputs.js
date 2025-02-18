@@ -1,9 +1,11 @@
 import "../../../styles/Forms.css";
+import { Trans, useTranslation } from "react-i18next";
 import { DEFAULT_CHOICE_OPTION_BLANK } from "../../../constants/blockDefaults";
 import splitAround from "../../../utils/splitAround";
 import ColorSelector from "./ColorSelector";
 
 export default function ChoiceInputs({ data, setData, includePalette = true }) {
+	const { t } = useTranslation();
 	/* BREAKDOWN
 	3 sets of inputs:
 		- one for the color palette
@@ -99,7 +101,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			isLast={index === arr.length - 1}
 		/>)}
 
-		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>Add an option</button>}
+		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>{t("ACTIONS.ADD_OPTION")}</button>}
 	</>;
 }
 
@@ -109,9 +111,11 @@ function OptionInput({
 	moveOptionUp, moveOptionDown, deleteOption,
 	isFirst, isLast,
 }) {
+	const { t } = useTranslation();
+
 	return <div className="optiongroup" id={optionData.id}>
 		<label className="labeloption">
-			<span className="labeltext">Option {index + 1}</span>
+			<span className="labeltext"><Trans i18nKey="FORMS.FIELDS.OPTION_NUMBER" values={{ index: index + 1 }} /></span>
 			<input
 				className="inputoption"
 				name={`inputoption${index}`}
@@ -127,12 +131,12 @@ function OptionInput({
 			<label className="labelselected">
 				<input type="checkbox" name={`inputselect${index}`} checked={optionData.selected} onChange={setOptionSelected} className="visuallyhidden" />
 				<span className="icon" aria-hidden={true} />
-				<span className="labeltext">Mark<span className="visuallyhidden"> option {index + 1}</span> as selected</span>
+				<span className="labeltext"><Trans i18nKey="ACTIONS.MARK_SELECTED" values={{ index: index + 1 }} components={{ hidden: <span className="visuallyhidden" /> }} /></span>
 			</label>
 			
-			{moveOptionUp && <button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={isFirst}>Move up</button>}
-			{moveOptionDown && <button type="button" className="blockbtn movebtn" onClick={moveOptionDown} disabled={isLast}>Move down</button>}
-			{deleteOption && <button type="button" className="blockbtn deletebtn" onClick={deleteOption}>Delete</button>}
+			{moveOptionUp && <button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={isFirst}>{t("ACTIONS.MOVE_UP")}</button>}
+			{moveOptionDown && <button type="button" className="blockbtn movebtn" onClick={moveOptionDown} disabled={isLast}>{t("ACTIONS.MOVE_DOWN")}</button>}
+			{deleteOption && <button type="button" className="blockbtn deletebtn" onClick={deleteOption}>{t("ACTIONS.DELETE")}</button>}
 		</div>
 	</div>;
 }
