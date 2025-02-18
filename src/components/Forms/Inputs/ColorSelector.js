@@ -2,6 +2,13 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import ALL_COLORS from "../../../constants/colors";
 
+/**
+ * A dropdown menu for selecting a color palette.
+ * @param {object} args
+ * @param {string} args.color The value of this form field; one of the available color palettes.
+ * @param {function} args.setColor The setter for the value of this form field.
+ * @returns A <select> element with options for palettes.
+ */
 function ColorSelector({ color, setColor }) {
 	const { t } = useTranslation();
 
@@ -13,10 +20,11 @@ function ColorSelector({ color, setColor }) {
 		onChange={setColor}
 		autoFocus={true}
 	>
-		{Object.entries(ALL_COLORS).map(color => {
-			return <option className={color[0]} value={color[0]} key={color[0]}>{t(`DEFAULTS.COLORS.${color[1]}`)}</option>
+		{Object.entries(ALL_COLORS).map(colorObj => {
+			return <option className={colorObj[0]} value={colorObj[0]} key={colorObj[0]}>{t(`DEFAULTS.COLORS.${colorObj[1]}`)}</option>
 		})}
 	</select>;
 }
 
+// Memo to reduce re-rendering of the multiple <option>s
 export default memo(ColorSelector);

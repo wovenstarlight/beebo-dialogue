@@ -3,6 +3,13 @@ import { useTranslation } from "react-i18next";
 import ALL_PORTRAITS from "../../../constants/portraits";
 import { arrayEquals } from "../../../utils/arrayUtils";
 
+/**
+ * A dropdown menu for selecting a character sprite.
+ * @param {object} args 
+ * @param {string} args.portrait The value of this form field; a partial URL to a character sprite.
+ * @param {function} args.setPortrait The setter for the value of this form field.
+ * @returns A <select> element with options for portraits.
+ */
 function PortraitSelector({ portrait, setPortrait }) {
 	const { t } = useTranslation();
 
@@ -71,4 +78,5 @@ function PortraitSelector({ portrait, setPortrait }) {
 	);
 }
 
+// Memo to reduce re-rendering of the multiple <option>s
 export default memo(PortraitSelector);

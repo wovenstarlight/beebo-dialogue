@@ -1,9 +1,18 @@
-import "../../../styles/Forms.css";
 import { useTranslation } from "react-i18next";
+import ALL_CHARACTERS from "../../../constants/characters";
+import "../../../constants/documentation";
 import PortraitSelector from "./PortraitSelector";
 import ColorSelector from "./ColorSelector";
-import ALL_CHARACTERS from "../../../constants/characters";
+import "../../../styles/Forms.css";
 
+/**
+ * Form fields for creating/editing a Dialogue block.
+ * @param {object} args
+ * @param {DataDialogue} args.data Data representing the values of this form's inputs.
+ * @param {function} args.setData The setter for this form's inputs.
+ * @param {boolean} [includePalette=true] `true` if the palette selector should be rendered; `false` if it should be omitted.
+ * @returns A set of form fields corresponding to a Dialogue block.
+ */
 export default function DialogueInputs({ data, setData, includePalette = true }) {
 	const { t } = useTranslation();
 	/* BREAKDOWN
