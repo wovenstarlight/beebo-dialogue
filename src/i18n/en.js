@@ -17,9 +17,26 @@ const MESSAGES = {
 		FONTS: "Font credits: <hyperlinkNokia>Nokia Cellphone FC</hyperlinkNokia> and SqueezedPixels by Bwobbers",
 	},
 
+	FORMS: {
+		ADDER: {
+			TITLE: "Add new element",
+			TABBER_TITLE: "Choose what you'd like to add:",
+			DIALOGUE: "Dialogue",
+			CHOICES: "Choices",
+		},
+		FIELDS: {
+			PALETTE: "Palette",
+			PALETTE_REUSE: "When off, palette will reset to purple after every submission",
+		},
+	},
+	
 	ACTIONS: {
+		ADD: "Add element",
+		RESET: "Reset form",
 		DELETE_ALL: "Delete all",
 		SAVE_IMAGE: "Save as PNG",
+		AUTOFILL: "Need a reference?",
+		PALETTE_REUSE: "Reuse same palette for future elements",
 	},
 
 	ALERTS: {

@@ -106,10 +106,10 @@ export default function AddForm() {
 		- button that autofills the form with sample dialogue.
 	*/
 	return <form id="addform" name="addform" onSubmit={handleSubmit} className={`menu blockform ${dialogueOptions.color}`}>
-		<h2>Add new element</h2>
+		<h2>{t("FORMS.ADDER.TITLE")}</h2>
 
 		<fieldset id="tabber">
-			<legend>Choose what you'd like to add:</legend>
+			<legend>{t("FORMS.ADDER.TABBER_TITLE")}</legend>
 			<label>
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
@@ -118,7 +118,7 @@ export default function AddForm() {
 					checked={activeTab === "dialogue"}
 				/>
 				<span className="icon" aria-hidden={true} />
-				<span className="labeltext">Dialogue</span>
+				<span className="labeltext">{t("FORMS.ADDER.DIALOGUE")}</span>
 			</label>
 			<label>
 				<input
@@ -128,12 +128,12 @@ export default function AddForm() {
 					checked={activeTab === "choice"}
 				/>
 				<span className="icon" aria-hidden={true} />
-				<span className="labeltext">Choices</span>
+				<span className="labeltext">{t("FORMS.ADDER.CHOICES")}</span>
 			</label>
 		</fieldset>
 
 		<label className="labelcolor">
-			<span className="labeltext">Palette</span>
+			<span className="labeltext">{t("FORMS.FIELDS.PALETTE")}</span>
 			<ColorSelector color={dialogueOptions.color} setColor={setColor} />
 		</label>
 
@@ -157,14 +157,14 @@ export default function AddForm() {
 			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} className="visuallyhidden" />
 			<span className="icon" aria-hidden={true} />
 			<span className="labeltext">
-				Reuse same palette for future elements
+				{t("ACTIONS.PALETTE_REUSE")}
 				<br/>
-				<small>When off, palette will reset to purple after every submission</small>
+				<small>{t("FORMS.FIELDS.PALETTE_REUSE")}</small>
 			</span>
 		</label>
 
-		<button className="barbtn submitbtn" type="submit">Add element</button>
-		<button className="barbtn resetbtn" type="button" onClick={clearForm}>Reset form</button>
-		<button className="barbtn samplebtn" type="button" onClick={fillSample}>Need a reference?</button>
+		<button className="barbtn submitbtn" type="submit">{t("ACTIONS.ADD")}</button>
+		<button className="barbtn resetbtn" type="button" onClick={clearForm}>{t("ACTIONS.RESET")}</button>
+		<button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("ACTIONS.AUTOFILL")}</button>
 	</form>;
 }
