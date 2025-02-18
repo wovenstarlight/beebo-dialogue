@@ -5,8 +5,8 @@ import deepFreeze from "../utils/deepFreeze";
 export const DEFAULT_DIALOGUE = {
 	color: "purple",
 	portrait: `misc/someone_shadow.png`,
-	speaker: "Y/N",
-	dialogue: "Lorem ipsum dolor sit amet.",
+	speaker: "DEFAULTS.DIALOGUE.SPEAKER",
+	dialogue: "DEFAULTS.DIALOGUE.DIALOGUE",
 };
 
 // Blank
@@ -23,7 +23,7 @@ export const DEFAULT_DIALOGUE_BLANK = {
 // Template
 export const DEFAULT_CHOICE = {
 	color: "purple",
-	text: "Lorem ipsum dolor sit amet",
+	text: "DEFAULTS.CHOICE.TEXT",
 	selected: false,
 };
 

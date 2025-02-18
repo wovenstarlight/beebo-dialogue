@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
+import { useTranslation } from "react-i18next";
 import "../../styles/ModMenu.css";
 import splitAround from "../../utils/splitAround";
 import validate from "../../utils/validateData";
@@ -11,6 +12,7 @@ import { getDefaults } from "../../constants/blockDefaults";
 
 export default function BlockWrapper({ type, data }) {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
+	const { t } = useTranslation();
 
 	// #region Block types
 	/**
@@ -75,6 +77,7 @@ export default function BlockWrapper({ type, data }) {
 			...validate({
 				type: type,
 				data: temp,
+				translator: t,
 			}),
 		}, post));
 		setEditing(false);

@@ -6,16 +6,17 @@ import ALL_PORTRAITS from "../constants/portraits";
  * Cleans input for a component of the given type.
  * @param {string} args.type The type of component to be created.
  * @param {object} args.data The raw data for the component.
+ * @param {function} translator A translator function to get the localized versions of text used in this block.
  * @returns A validated data object in the expected format for the given component.
  */
-export default function validate({ type, data }) {
+export default function validate({ type, data, translator }) {
 	switch (type) {
 		case "choice":
-			return validateChoice(data);
+			return validateChoice({ data: data, t: translator });
 		
 		case "dialogue":
 		default:
-			return validateDialogue(data);
+			return validateDialogue({ data: data, t: translator });
 	}
 }
 
@@ -26,14 +27,15 @@ export default function validate({ type, data }) {
  * @param {string} data.speaker The speaker of the dialogue. Checked for type `string` and being a member of the corresponding enumerated list.
  * @param {string} data.portrait The shorthand URL to the portrait/sprite for the speaker. Checked for type `string` and non-emptiness, and excess characters are truncated.
  * @param {string} data.dialogue The text being spoken. Checked for type `string` and non-emptiness, and excess characters are truncated.
+ * @param {function} t A translator function to get the localized versions of text used in this block.
  * @returns A validated data object.
  */
-export function validateDialogue({ color, portrait, speaker, dialogue }) {
+export function validateDialogue({ data: { color, portrait, speaker, dialogue }, t }) {
 	return {
 		color: validateColor(color, DEFAULT_DIALOGUE.color),
 		portrait: typeof portrait === "string" && ALL_PORTRAITS.some(el => portrait in el.options) ? portrait : DEFAULT_DIALOGUE.portrait,
-		speaker: typeof speaker === "string" && speaker.length > 0 ? speaker.slice(0, 100) : DEFAULT_DIALOGUE.speaker,
-		dialogue: typeof dialogue === "string" && dialogue.length > 0 ? dialogue.slice(0, 250) : DEFAULT_DIALOGUE.dialogue,
+		speaker: typeof speaker === "string" && speaker.length > 0 ? speaker.slice(0, 100) : t(DEFAULT_DIALOGUE.speaker),
+		dialogue: typeof dialogue === "string" && dialogue.length > 0 ? dialogue.slice(0, 250) : t(DEFAULT_DIALOGUE.dialogue),
 	};
 }
 
@@ -44,9 +46,10 @@ export function validateDialogue({ color, portrait, speaker, dialogue }) {
  * @param {object[]} data.options The individual options making up the menu. Checked for type `object`.
  * @param {string} data.options.text The text label displayed for this option. Checked for type `string` and non-emptiness.
  * @param {?boolean} data.options.selected Whether this option should be highlighted as though being clicked. Checked for type `boolean`.
+ * @param {function} t A translator function to get the localized versions of text used in this block.
  * @returns A validated data object.
  */
-export function validateChoice({ color, options }) {
+export function validateChoice({ data: { color, options }, t }) {
 	return {
 		color: validateColor(color, DEFAULT_CHOICE.color),
 		options: (

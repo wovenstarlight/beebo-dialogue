@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { BlockContext } from "../../context/BlockContext";
-import ALL_COLORS from "../../constants/colors";
+import { useTranslation } from "react-i18next";
 import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
 import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK } from "../../constants/blockDefaults";
 import validate from "../../utils/validateData";
@@ -10,6 +10,7 @@ import ChoiceInputs from "./Inputs/ChoiceInputs";
 
 export default function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
+	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState("dialogue");
 	const [keepColor, setKeepColor] = useState(true);
@@ -48,6 +49,7 @@ export default function AddForm() {
 			...validate({
 				type: activeTab,
 				data: getOptions(),
+				translator: t,
 			})
 		}
 		setBlocks(values => [...values, newBlock]);

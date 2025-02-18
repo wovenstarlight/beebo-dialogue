@@ -6,6 +6,7 @@ import getBlockType from "../../utils/getBlockType";
 
 export default function JSONForm() {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
+	const { t } = useTranslation();
 
 	function getJSON() {
 		return JSON.stringify(
@@ -89,7 +90,11 @@ export default function JSONForm() {
 			setBlocks(contents.map((obj, index) => {
 				return {
 					id: `upload_${(new Date()).getTime()}_${index}`,
-					...validate({ type: getBlockType(obj), data: obj }),
+					...validate({
+						type: getBlockType(obj),
+						data: obj,
+						translator: t,
+					}),
 				}
 			}));
 

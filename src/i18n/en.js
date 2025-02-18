@@ -28,6 +28,13 @@ const MESSAGES = {
 	},
 
 	DEFAULTS: {
+		DIALOGUE: {
+			SPEAKER: "Someone",
+			DIALOGUE: "Lorem ipsum dolor sit amet.",
+		},
+		CHOICE: {
+			TEXT: "Lorem ipsum dolor sit amet",
+		},
 		COLORS: {
 			PURPLE: "Purple (House of Vera/Eugene Coli)",
 			ORANGE: "Orange (Oliver Beebo)",
