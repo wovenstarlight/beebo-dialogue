@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BlockContext } from "../../context/BlockContext";
+import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import getBlockType from "../../utils/getBlockType";
 import validate from "../../utils/validateData";

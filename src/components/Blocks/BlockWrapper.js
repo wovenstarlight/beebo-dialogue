@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { BlockContext } from "../../context/BlockContext";
+import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import { getDefaults } from "../../constants/blockDefaults";
 import "../../constants/documentation";

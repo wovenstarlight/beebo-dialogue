@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import { useState } from "react";
-import { BlockContext } from "./context/BlockContext";
+import BlockContext from "./context/BlockContext";
 import getBlockType from "./utils/getBlockType";
 import BlockWrapper from "./components/Blocks/BlockWrapper";
 import AddForm from "./components/Forms/AddForm";

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { BlockContext } from "../../context/BlockContext";
+import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK } from "../../constants/blockDefaults";
 import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";

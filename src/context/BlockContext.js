@@ -1,3 +1,4 @@
 import { createContext } from "react";
 
-export const BlockContext = createContext([]);
+/** A list of all content blocks currently being rendered, and its setter. */
+export default createContext([]);
