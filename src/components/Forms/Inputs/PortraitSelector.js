@@ -1,8 +1,10 @@
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 import ALL_PORTRAITS from "../../../constants/portraits";
-import MESSAGES from "../../../constants/lang/en";
 
 function PortraitSelector({ portrait, setPortrait }) {
+	const { t } = useTranslation();
+
 	return (
 		<select
 			className="inputportrait"
@@ -11,7 +13,7 @@ function PortraitSelector({ portrait, setPortrait }) {
 			value={portrait}
 			onChange={setPortrait}
 		>
-			<option value="">{MESSAGES.FORMS.ADDER.UNSET_PORTRAIT}</option>
+			<option value="">{t("FORMS.ADDER.UNSET_PORTRAIT")}</option>
 			{ALL_PORTRAITS.map(pair => {
 				return <optgroup label={pair.label} key={pair.label}>
 					{Object.entries(pair.options).map(sprite => {

@@ -23,6 +23,7 @@ const MESSAGES = {
 			TABBER_TITLE: "Choose what you'd like to add:",
 			DIALOGUE: "Dialogue",
 			CHOICES: "Choices",
+			UNSET_PORTRAIT: "-- No portrait chosen --",
 		},
 		JSON: {
 			TITLE: "Mass-edit via JSON",
