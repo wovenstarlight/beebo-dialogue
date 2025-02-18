@@ -1,11 +1,21 @@
-import "../../../styles/Forms.css";
 import { Trans, useTranslation } from "react-i18next";
 import { DEFAULT_CHOICE_OPTION_BLANK } from "../../../constants/blockDefaults";
-import splitAround from "../../../utils/splitAround";
+import "../../../constants/documentation";
 import ColorSelector from "./ColorSelector";
+import splitAround from "../../../utils/splitAround";
+import "../../../styles/Forms.css";
 
+/**
+ * Form fields for creating/editing a Choice block.
+ * @param {object} args
+ * @param {DataChoice} args.data Data representing the values of this form's inputs.
+ * @param {function} args.setData The setter for this form's inputs.
+ * @param {boolean} [args.includePalette=true] `true` if the palette selector should be rendered; `false` if it should be omitted.
+ * @returns A set of form fields corresponding to a Choice block.
+ */
 export default function ChoiceInputs({ data, setData, includePalette = true }) {
 	const { t } = useTranslation();
+
 	/* BREAKDOWN
 	3 sets of inputs:
 		- one for the color palette
@@ -15,54 +25,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			- move/delete buttons
 	*/
 
-	/** Set a single option's text label. */
-	function setOptionText(e) {
-		let index = parseInt(e.target.getAttribute("name").slice("inputoption".length));
-		setData(choiceData => { return {
-			...choiceData,
-			options: choiceData.options.slice(0, index).concat(
-				{
-					...choiceData.options[index],
-					text: e.target.value,
-				},
-				choiceData.options.slice(index + 1),
-			),
-		} });
-	}
-
-	/** Set whether a single option displays like it's being clicked. */
-	function setOptionSelected(e) {
-		let index = parseInt(e.target.getAttribute("name").slice("inputoption".length));
-		setData(choiceData => { return {
-			...choiceData,
-			options: choiceData.options.slice(0, index).concat(
-				{
-					...choiceData.options[index],
-					selected: e.target.checked,
-				},
-				choiceData.options.slice(index + 1),
-			),
-		} });
-	}
-
-	function moveOptionUp(e) {
-		let id = e.target.closest(".optiongroup").id;
-		let [pre, curr, post] = splitAround(data.options, id);
-		setData(choiceData => { return {
-			...choiceData,
-			options: pre.slice(0, -1).concat(curr, pre.at(-1), post),
-		} });
-	}
-	function moveOptionDown(e) {
-		let id = e.target.closest(".optiongroup").id;
-		let [pre, curr, post] = splitAround(data.options, id);
-		setData(choiceData => { return {
-			...choiceData,
-			options: pre.concat(post.at(0), curr, post.slice(1)),
-		} });
-	}
-
-	/** Add a blank option field. */
+	/** Adds a blank option field. */
 	function addOption() {
 		setData(choiceData => { return {
 			...choiceData,
@@ -70,15 +33,6 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 				id: `${(new Date()).getTime()}_${choiceData.options.length}`,
 				...DEFAULT_CHOICE_OPTION_BLANK,
 			}),
-		} });
-	}
-
-	/** Remove a given option from the list. */
-	function deleteOption(e) {
-		let id = e.target.closest(".optiongroup").id;
-		setData(choiceData => { return {
-			...choiceData,
-			options: choiceData.options.filter(opt => opt.id !== id),
 		} });
 	}
 
@@ -93,26 +47,81 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			index={index}
 			optionData={obj}
 			allOptions={arr}
-			setOptionText={setOptionText}
-			setOptionSelected={setOptionSelected}
-			moveOptionUp={data.options.length > 1 ? moveOptionUp : null}
-			moveOptionDown={data.options.length > 1 ? moveOptionDown : null}
-			deleteOption={data.options.length > 1 ? deleteOption : null}
+			setData={setData}
 		/>)}
 
 		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>{t("ACTIONS.ADD_OPTION")}</button>}
 	</>;
 }
 
-function OptionInput({
-	index, optionData, allOptions,
-	setOptionText, setOptionSelected,
-	moveOptionUp, moveOptionDown, deleteOption,
-}) {
+/**
+ * Input fields for a single option in a Choice block. Includes:
+ * - Text input for the actual label
+ * - Checkbox for whether to mark this option as selected
+ * - Reordering buttons (only if more than 1 option is present)
+ * - Deletion button (only if more than 1 option is present)
+ * @param {object} args
+ * @param {int} args.index The 0-based index of this option in the list of options.
+ * @param {DataChoiceOption} args.optionData Data representing this option.
+ * @param {DataChoiceOption[]} args.allOptions The list of all options, in which the current option is included.
+ * @param {function} args.setData The setter for the overall menu's data.
+ * @returns An input group for a Choice menu's option.
+ */
+function OptionInput({ index, optionData, allOptions, setData }) {
 	const { t } = useTranslation();
-	
-	const isFirst = allOptions.at(0).id === optionData.id;
-	const isLast = allOptions.at(-1).id === optionData.id;
+
+	/** Sets the current option's text label. */
+	function setOptionText(e) {
+		setData(choiceData => { return {
+			...choiceData,
+			options: choiceData.options.slice(0, index).concat(
+				{
+					...choiceData.options[index],
+					text: e.target.value,
+				},
+				choiceData.options.slice(index + 1),
+			),
+		} });
+	}
+
+	/** Sets whether the current option is marked as selected (i.e. gets highlighted like it's being clicked). */
+	function setOptionSelected(e) {
+		setData(choiceData => { return {
+			...choiceData,
+			options: choiceData.options.slice(0, index).concat(
+				{
+					...choiceData.options[index],
+					selected: e.target.checked,
+				},
+				choiceData.options.slice(index + 1),
+			),
+		} });
+	}
+
+	/** Swaps the current option with its predecessor. */
+	function moveOptionUp() {
+		let [pre, curr, post] = splitAround(allOptions, optionData.id);
+		setData(choiceData => { return {
+			...choiceData,
+			options: pre.slice(0, -1).concat(curr, pre.at(-1), post),
+		} });
+	}
+	/** Swaps the current option with its successor. */
+	function moveOptionDown() {
+		let [pre, curr, post] = splitAround(allOptions, optionData.id);
+		setData(choiceData => { return {
+			...choiceData,
+			options: pre.concat(post.at(0), curr, post.slice(1)),
+		} });
+	}
+
+	/** Removes the current option from the list. */
+	function deleteOption() {
+		setData(choiceData => { return {
+			...choiceData,
+			options: choiceData.options.filter(opt => opt.id !== optionData.id),
+		} });
+	}
 
 	return <div className="optiongroup" id={optionData.id}>
 		<label className="labeloption">
@@ -139,9 +148,11 @@ function OptionInput({
 				/></span>
 			</label>
 			
-			{moveOptionUp && <button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={isFirst}>{t("ACTIONS.MOVE_UP")}</button>}
-			{moveOptionDown && <button type="button" className="blockbtn movebtn" onClick={moveOptionDown} disabled={isLast}>{t("ACTIONS.MOVE_DOWN")}</button>}
-			{deleteOption && <button type="button" className="blockbtn deletebtn" onClick={deleteOption}>{t("ACTIONS.DELETE")}</button>}
+			{allOptions.length > 1 && <>
+				<button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={allOptions.at(0).id === optionData.id}>{t("ACTIONS.MOVE_UP")}</button>
+				<button type="button" className="blockbtn movebtn" onClick={moveOptionDown} disabled={allOptions.at(-1).id === optionData.id}>{t("ACTIONS.MOVE_DOWN")}</button>
+				<button type="button" className="blockbtn deletebtn" onClick={deleteOption}>{t("ACTIONS.DELETE")}</button>
+			</>}
 		</div>
 	</div>;
 }
