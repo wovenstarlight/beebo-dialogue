@@ -12,8 +12,7 @@ const MESSAGES = {
 	},
 
 	FOOTER: {
-		CREATOR: "Made by wovenstarlight",
-		SOURCE_CODE: "Source code on Github",
+		CREATION: "<hyperlinkCreator>Made by wovenstarlight</hyperlinkCreator> | <hyperllinkRepo>Source code on Github</hyperllinkRepo>",
 		FONTS: "Font credits: <hyperlinkNokia>Nokia Cellphone FC</hyperlinkNokia> and SqueezedPixels by Bwobbers",
 	},
 

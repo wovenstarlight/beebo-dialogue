@@ -10,7 +10,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 export default function App() {
 	const [blocks, setBlocks] = useState([]);
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	
 	/** Deletes all dialogue boxes currently being displayed. */
 	function clearAll() {
@@ -54,8 +54,8 @@ export default function App() {
 	return (<>
 		<header id="sitehead">
 			<h1>{t("SITE_HEADER.TITLE")}</h1>
-			<p><Trans i18nKey="SITE_HEADER.SUBTITLE" components={{ hyperlink: <a href="https://bwobbers.itch.io/detective-beebo-night-at-the-mansion" /> }} /></p>
-			<p><Trans i18nKey="SITE_HEADER.GIF_MAKER" components={{ hyperlink: <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html" /> }} /></p>
+			<p><Trans i18nKey="SITE_HEADER.SUBTITLE" components={{ hyperlink: <a href="https://bwobbers.itch.io/detective-beebo-night-at-the-mansion">nonempty</a> }} /></p>
+			<p><Trans i18nKey="SITE_HEADER.GIF_MAKER" components={{ hyperlink: <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html">nonempty</a> }} /></p>
 		</header>
 
 		<main id="sitebody">
@@ -83,8 +83,19 @@ export default function App() {
 		</main>
 
 		<footer id="sitefoot">
-			<p><a href="https://github.com/wovenstarlight">{t("FOOTER.CREATOR")}</a> | <a href="https://github.com/wovenstarlight/beebo-dialogue">{t("FOOTER.SOURCE_CODE")}</a></p>
-			<p><Trans i18nKey="FOOTER.FONTS" components={{ hyperlinkNokia: <a href="https://www.dafont.com/nokia-cellphone.font" /> }} /></p>
+			<p><Trans
+				i18nKey="FOOTER.CREATION"
+				components={{
+					hyperlinkCreator: <a href="https://github.com/wovenstarlight">nonempty</a>,
+					hyperllinkRepo: <a href="https://github.com/wovenstarlight/beebo-dialogue">nonempty</a>,
+				}}
+			/></p>
+			<p><Trans
+				i18nKey="FOOTER.FONTS"
+				components={{
+					hyperlinkNokia: <a href="https://www.dafont.com/nokia-cellphone.font">nonempty</a>,
+				}}
+			/></p>
 		</footer>
 	</>);
 }
