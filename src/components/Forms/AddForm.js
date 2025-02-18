@@ -26,7 +26,7 @@ export default function AddForm() {
 	const [dialogueOptions, setDialogueOptions] = useState(DEFAULT_DIALOGUE_BLANK);
 	/** Options tracking the choice-related form fields. @type {DataChoice} */
 	const [choiceOptions, setChoiceOptions] = useState({
-		color: DEFAULT_CHOICE_BLANK.color,
+		...DEFAULT_CHOICE_BLANK,
 		options: [
 			{
 				id: `${(new Date()).getTime()}_0`,
@@ -78,6 +78,7 @@ export default function AddForm() {
 			color: !resetFull && keepColor ? ogColor : DEFAULT_DIALOGUE_BLANK.color,
 		});
 		setChoiceOptions({
+			...DEFAULT_CHOICE_BLANK,
 			color: !resetFull && keepColor ? ogColor : DEFAULT_CHOICE_BLANK.color,
 			options: [
 				{

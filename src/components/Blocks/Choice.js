@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { DEFAULT_CHOICE } from "../../constants/blockDefaults";
+import { DEFAULT_CHOICE_OPTION } from "../../constants/blockDefaults";
 import "../../constants/documentation";
 import "../../styles/Choice.css";
 
@@ -20,7 +20,7 @@ export default function Choice({ id, options }) {
 				id={`${id}_${index}`}
 				className={opt.selected ? "selected" : undefined}
 			>
-				{opt.text ?? t(DEFAULT_CHOICE.text)}
+				{opt.text ?? t(DEFAULT_CHOICE_OPTION.text)}
 			</p>
 		))}
 	</>;

@@ -1,4 +1,4 @@
-import { DEFAULT_DIALOGUE, DEFAULT_CHOICE } from "../constants/blockDefaults";
+import { DEFAULT_DIALOGUE, DEFAULT_CHOICE, DEFAULT_CHOICE_OPTION } from "../constants/blockDefaults";
 import ALL_COLORS from "../constants/colors";
 import ALL_PORTRAITS from "../constants/portraits";
 
@@ -59,11 +59,11 @@ export function validateChoice({ data: { color, options }, t }) {
 			? options.map((opt, index) => {
 				return {
 					id: `option_${index}`,
-					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text.slice(0, 160) : DEFAULT_CHOICE.text,
-					selected: typeof opt.selected === "boolean" ? opt.selected : DEFAULT_CHOICE.selected,
+					text: typeof opt.text === "string" && opt.text.length > 0 ? opt.text.slice(0, 160) : DEFAULT_CHOICE_OPTION.text,
+					selected: typeof opt.selected === "boolean" ? opt.selected : DEFAULT_CHOICE_OPTION.selected,
 				}
 			})
-			: [{ text: DEFAULT_CHOICE.text }],
+			: [{ text: DEFAULT_CHOICE_OPTION.text }],
 	};
 }
 

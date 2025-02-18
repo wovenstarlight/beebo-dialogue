@@ -23,8 +23,6 @@ export const DEFAULT_DIALOGUE_BLANK = {
 // Template
 export const DEFAULT_CHOICE = {
 	color: "purple",
-	text: "DEFAULTS.CHOICE.TEXT",
-	selected: false,
 };
 
 // Blank
@@ -39,8 +37,8 @@ export const DEFAULT_CHOICE_BLANK = {
 // Template
 export const DEFAULT_CHOICE_OPTION = 
 {
-	text: DEFAULT_CHOICE.text,
-	selected: DEFAULT_CHOICE.selected,
+	text: "DEFAULTS.CHOICE.TEXT",
+	selected: false,
 };
 
 // Blank
