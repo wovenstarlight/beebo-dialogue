@@ -94,7 +94,7 @@ fieldset.inputsection { display: contents }
 		padding-block: 0.5em;
 	}
 
-	.optionselected { width: 100% }
+	select { width: 100% }
 
 	button {
 		.blockform > & + & { margin-block-start: -0.2rem }
