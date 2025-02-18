@@ -26,13 +26,13 @@ function PortraitSelector({ portrait, setPortrait }) {
 				// Create group label from the provided label object
 				let label, keys = Object.keys(group.label);
 				if (arrayEquals(keys, ["identifier", "variant"])) {
-					label = t("DEFAULTS.PORTRAITS.GROUP_LABEL.IDENTIFIER_VARIANT", {
+					label = t("CONTENT.PORTRAITS.GROUP_LABEL.IDENTIFIER_VARIANT", {
 						identifier: t(group.label.identifier),
 						variant: t(group.label.variant),
 					});
 				}
 				else if (arrayEquals(keys, ["identifier"])) {
-					label = t("DEFAULTS.PORTRAITS.GROUP_LABEL.IDENTIFIER", {
+					label = t("CONTENT.PORTRAITS.GROUP_LABEL.IDENTIFIER", {
 						identifier: t(group.label.identifier),
 					});
 				}
@@ -44,26 +44,26 @@ function PortraitSelector({ portrait, setPortrait }) {
 						// Create option label from the provided label object
 						let label, spriteKeys = Object.keys(sprite[1]);
 						if (arrayEquals(spriteKeys, ["identifier", "emotion", "variant"])) {
-							label = t("DEFAULTS.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION_VARIANT", {
+							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION_VARIANT", {
 								identifier: t(sprite[1].identifier),
 								emotion: t(sprite[1].emotion),
 								variant: t(sprite[1].variant),
 							});
 						}
 						else if (arrayEquals(spriteKeys, ["identifier", "emotion"])) {
-							label = t("DEFAULTS.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION", {
+							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION", {
 								identifier: t(sprite[1].identifier),
 								emotion: t(sprite[1].emotion),
 							});
 						}
 						else if (arrayEquals(spriteKeys, ["identifier", "variant"])) {
-							label = t("DEFAULTS.PORTRAITS.OPTION_LABEL.IDENTIFIER_VARIANT", {
+							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_VARIANT", {
 								identifier: t(sprite[1].identifier),
 								variant: t(sprite[1].variant),
 							});
 						}
 						else if (arrayEquals(spriteKeys, ["identifier"])) {
-							label = t("DEFAULTS.PORTRAITS.OPTION_LABEL.IDENTIFIER", {
+							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER", {
 								identifier: t(sprite[1].identifier),
 							});
 						}

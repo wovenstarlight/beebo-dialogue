@@ -22,7 +22,7 @@ function ColorSelector({ color, setColor }) {
 		autoFocus={true}
 	>
 		{Object.entries(ALL_COLORS).map(colorObj => {
-			return <option className={colorObj[0]} value={colorObj[0]} key={colorObj[0]}>{t(`DEFAULTS.COLORS.${colorObj[1]}`)}</option>
+			return <option className={colorObj[0]} value={colorObj[0]} key={colorObj[0]}>{t(`CONTENT.COLORS.${colorObj[1]}`)}</option>
 		})}
 	</select>;
 }

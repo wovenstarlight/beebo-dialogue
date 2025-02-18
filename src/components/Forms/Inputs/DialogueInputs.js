@@ -53,13 +53,13 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 		<datalist id={`speakerslist${ data.id ? `_${data.id}` : "" }`}>
 			{ALL_CHARACTERS
 				.flatMap(chara => {
-					let retval = [t(`DEFAULTS.CHARACTERS.${chara}.LONG`)],
-						speakerLabel = t(`DEFAULTS.CHARACTERS.${chara}.SPEAKER_LABEL`),
-						unknownLabel = t(`DEFAULTS.CHARACTERS.${chara}.UNKNOWN_LABEL`);
+					let retval = [t(`CONTENT.CHARACTERS.${chara}.LONG`)],
+						speakerLabel = t(`CONTENT.CHARACTERS.${chara}.SPEAKER_LABEL`),
+						unknownLabel = t(`CONTENT.CHARACTERS.${chara}.UNKNOWN_LABEL`);
 					// Actual name
-					if (!speakerLabel.startsWith("DEFAULTS.CHARACTERS")) retval.push(speakerLabel);
+					if (!speakerLabel.startsWith("CONTENT.CHARACTERS")) retval.push(speakerLabel);
 					// Descriptor if any
-					if (!unknownLabel.startsWith("DEFAULTS.CHARACTERS")) retval.push(unknownLabel);
+					if (!unknownLabel.startsWith("CONTENT.CHARACTERS")) retval.push(unknownLabel);
 					return retval;
 				})	// Get all labels
 				.filter((el, index, arr) => arr.indexOf(el) === index)	// Filter out duplicates

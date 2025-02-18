@@ -196,6 +196,9 @@ const MESSAGES = {
 			/** Fallback label for empty options */
 			TEXT: "Lorem ipsum dolor sit amet",
 		},
+	},
+
+	CONTENT: {
 		/** Color palette names; displayed in palette dropdown */
 		COLORS: {
 			PURPLE: "Purple (House of Vera/Eugene Coli)",
