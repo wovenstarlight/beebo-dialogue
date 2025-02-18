@@ -8,17 +8,6 @@ import JSONForm from "./components/Forms/JSONForm";
 import getBlockType from "./utils/getBlockType";
 import "./styles/App.css";
 
-/* Keep imports in the following order: 
- * 	- React hooks (useState, useEffect, memo etc.)
- * 	- Other module imports (dom-to-image etc.)
- * 	- Contexts (BlockContext etc.)
- * 	- Translation (Trans, useTranslation etc.)
- * 	- Constants (sorted alphabetically)
- * 	- Components (sorted alphabetically)
- * 	- Utils (sorted alphabetically)
- * 	- Stylesheets
- */
-
 /**
  * The React application itself, containing all page content.
  * @returns The complete single-page application.
