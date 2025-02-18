@@ -23,6 +23,39 @@ const MESSAGES = {
 			DIALOGUE: "Dialogue",
 			CHOICES: "Choices",
 			UNSET_PORTRAIT: "-- No portrait chosen --",
+			SAMPLES: {
+				DIALOGUE: {
+					OLIVER_CAT: "The public deserves to see my cat!",
+					OLIVER_WRONG: "...Something feels... wrong.",
+					OLIVER_RIGHT: "...Something feels...Right.",
+					ANGEL_INTRO: "Ángel, for any of your needs.",
+					DOMINION_SILENT: "...",
+					VIVI_INVINCIBLE: "Nothing can hurt me even if it tries, I have a natural aura that repels evil.",
+					MARIGOLD_SUSPICION: "I don't think any of you were brought here for good reasons.",
+					NINA_IDYLLIC: "You deserve to live an idyllic life!",
+					NADIA_UPSET: "This is worse than being stabbed.",
+					SIMON_FATHERLESS: "...Fatherless behaviour.",
+					OWEN_FREED: "You hath freed me from my endless imprisonment, I shall reward you with the highest honor.",
+					EUGENE_CAUTIOUS: "It's always good to be cautious, you know.",
+					ANGEL_BEEBIN_TIME: "The best part of the time loop was when Beebo said \"IT'S BEEBIN' TIME\" and beebed all over that guy",
+				},
+				CHOICE: {
+					BAR: {
+						VIVI: "What's your connection with Vivi?",
+						COOWNER: "Who is the Co-owner?",
+						OTHERS: "Do you know anyone else here?",
+						MEN: "Are you into men",
+					},
+					SELF: {
+						FEARS: "About my fears",
+						CASES: "About my cases",
+						CAREER: "About my career",
+					},
+					FIGHT: {
+						FIGHT: "Fight",
+					},
+				}
+			}
 		},
 		JSON: {
 			TITLE: "Mass-edit via JSON",

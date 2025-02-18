@@ -84,7 +84,11 @@ export default function AddForm() {
 		if (activeTab === "dialogue") {
 			let sample = DIALOGUE_SAMPLES[Math.floor(Math.random() * DIALOGUE_SAMPLES.length)];
 			// Clear stored values
-			setDialogueOptions(sample);
+			setDialogueOptions({
+				...sample,
+				speaker: t(sample.speaker),
+				dialogue: t(sample.dialogue),
+			});
 		}
 		else if (activeTab === "choice") {
 			let sample = CHOICE_SAMPLES[Math.floor(Math.random() * CHOICE_SAMPLES.length)];
@@ -94,6 +98,7 @@ export default function AddForm() {
 				options: sample.options.map((opt, index) => { return {
 					...opt,
 					id: `${(new Date()).getTime()}_${index}`,
+					text: t(opt.text),
 				} })
 			});
 		}

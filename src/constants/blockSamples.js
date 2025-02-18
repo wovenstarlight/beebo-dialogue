@@ -5,80 +5,80 @@ export const DIALOGUE_SAMPLES = [
 	{
 		color: "orange",
 		portrait: "oliver/color/annoy.png",
-		speaker: "Oliver Beebo",
-		dialogue: "The public deserves to see my cat!",
+		speaker: "DEFAULTS.CHARACTERS.OLIVER.LONG",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OLIVER_CAT",
 	},
 	{
 		color: "purple",
 		portrait: "oliver/house/shadow.png",
-		speaker: "Oliver Beebo",
-		dialogue: "...Something feels... wrong.",
+		speaker: "DEFAULTS.CHARACTERS.OLIVER.LONG",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OLIVER_WRONG",
 	},
 	{
 		color: "orange",
 		portrait: "oliver/galleryout/shadow.png",
-		speaker: "Oliver Beebo",
-		dialogue: "...Something feels...Right.",
+		speaker: "DEFAULTS.CHARACTERS.OLIVER.LONG",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OLIVER_RIGHT",
 	},
 	{
 		color: "purple",
 		portrait: "angel/house/happy.png",
-		speaker: "Ángel",
-		dialogue: "Ángel, for any of your needs.",
+		speaker: "DEFAULTS.CHARACTERS.ANGEL.SPEAKER_LABEL",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.ANGEL_INTRO",
 	},
 	{
 		color: "darkgray",
 		portrait: "angel/color/dominion_neutro.png",
-		speaker: "Dominion",
-		dialogue: "...",
+		speaker: "DEFAULTS.CHARACTERS.DOMINION.LONG",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.DOMINION_SILENT",
 	},
 	{
 		color: "purple",
 		portrait: "vivi/house/happy.png",
-		speaker: "Vivi",
-		dialogue: "Nothing can hurt me even if it tries, I have a natural aura that repels evil.",
+		speaker: "DEFAULTS.CHARACTERS.VIVI.SPEAKER_LABEL",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.VIVI_INVINCIBLE",
 	},
 	{
 		color: "purple",
 		portrait: "marigold/house/neutro.png",
-		speaker: "Blue Hair Lady",
-		dialogue: "I don't think any of you were brought here for good reasons.",
+		speaker: "DEFAULTS.CHARACTERS.MARIGOLD.UNKNOWN_LABEL",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.MARIGOLD_SUSPICION",
 	},
 	{
 		color: "purple",
 		portrait: "nina/house/annoy.png",
-		speaker: "Nina Coli",
-		dialogue: "You deserve to live an idyllic life!",
+		speaker: "DEFAULTS.CHARACTERS.NINA.LONG",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.NINA_IDYLLIC",
 	},
 	{
 		color: "skyblue",
 		portrait: "nadia/color/annoy.png",
-		speaker: "Nadia",
-		dialogue: "This is worse than being stabbed.",
+		speaker: "DEFAULTS.CHARACTERS.NADIA.SPEAKER_LABEL",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.NADIA_UPSET",
 	},
 	{
 		color: "skyblue",
 		portrait: "simon/color/neutro.png",
-		speaker: "Simon",
-		dialogue: "...Fatherless behaviour.",
+		speaker: "DEFAULTS.CHARACTERS.SIMON.SPEAKER_LABEL",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.SIMON_FATHERLESS",
 	},
 	{
 		color: "purple",
 		portrait: "owen/house/excited.png",
-		speaker: "Owen",
-		dialogue: "You hath freed me from my endless imprisonment, I shall reward you with the highest honor.",
+		speaker: "DEFAULTS.CHARACTERS.OWEN.LONG",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OWEN_FREED",
 	},
 	{
 		color: "purple",
 		portrait: "eugene/smile.png",
-		speaker: "Eugene Coli",
-		dialogue: "It's always good to be cautious, you know.",
+		speaker: "DEFAULTS.CHARACTERS.EUGENE.LONG",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.EUGENE_CAUTIOUS",
 	},
 	{
 		color: "gray",
 		portrait: "angel/color/happy.png",
-		speaker: "Ángel",
-		dialogue: "The best part of the time loop was when Beebo said \"IT'S BEEBIN' TIME\" and beebed all over that guy"
+		speaker: "DEFAULTS.CHARACTERS.ANGEL.SPEAKER_LABEL",
+		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.ANGEL_BEEBIN_TIME",
 	},
 ];
 
@@ -87,19 +87,19 @@ export const CHOICE_SAMPLES = [
 		color: "purple",
 		options: [
 			{
-				text: "What's your connection with Vivi?",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.VIVI",
 				selected: false,
 			},
 			{
-				text: "Who is the Co-owner?",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.COOWNER",
 				selected: false,
 			},
 			{
-				text: "Do you know anyone else here?",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.OTHERS",
 				selected: false,
 			},
 			{
-				text: "Are you into men",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.MEN",
 				selected: true,
 			},
 		],
@@ -108,13 +108,13 @@ export const CHOICE_SAMPLES = [
 		color: "purple",
 		options: [
 			{
-				text: "About my fears",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.SELF.FEARS",
 			},
 			{
-				text: "About my cases",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.SELF.CASES",
 			},
 			{
-				text: "About my career",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.SELF.CAREER",
 			},
 		]
 	},
@@ -122,7 +122,7 @@ export const CHOICE_SAMPLES = [
 		color: "purple",
 		options: [
 			{
-				text: "Fight",
+				text: "FORMS.ADDER.SAMPLES.CHOICE.FIGHT.FIGHT",
 				selected: true,
 			},
 		]
