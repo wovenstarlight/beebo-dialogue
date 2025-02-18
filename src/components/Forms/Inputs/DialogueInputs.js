@@ -3,6 +3,7 @@ import ALL_CHARACTERS from "../../../constants/characters";
 import "../../../constants/documentation";
 import PortraitSelector from "./PortraitSelector";
 import ColorSelector from "./ColorSelector";
+import getPortraitURL from "../../../utils/getPortraitURL";
 import "../../../styles/Forms.css";
 
 /**
@@ -32,7 +33,7 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 		<label className="labelportrait">
 			<span className="labeltext">{t("FORMS.FIELDS.PORTRAIT")}</span>
 			<PortraitSelector portrait={data.portrait} setPortrait={(e) => setData({ ...data, portrait: e.target.value })} />
-			<img className="portrait" alt="" src={`${process.env.PUBLIC_URL}/assets/portraits/`.concat(data.portrait.length ? data.portrait : "misc/someone_shadow.png")} />
+			<img className="portrait" alt="" src={getPortraitURL(data.portrait)} />
 		</label>
 
 		<label className="labelspeaker">

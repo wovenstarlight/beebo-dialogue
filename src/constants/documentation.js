@@ -15,13 +15,18 @@
 
 	// Portraits
 	/**
+	 * @typedef PortraitURL
+	 * A partial link to a character sprite stored on the server. The complete URL can be retrieved by prefixing with `/beebo-dialogue/assets/portraits/`.
+	 * @type {string}
+	 */
+	/**
 	 * @typedef PortraitGroup
 	 * A group of related character sprites.
 	 * @type {object}
 	 * @property {object} label A label for this group.
 	 * @property {LanguageKey} label.identifier An identifier referencing the shared characteristic of this group, such as the name of a character depicted in all included sprites.
 	 * @property {LanguageKey} label.variant A unique characteristic differentiating this group from others with the same `identifier`, such as a color palette.
-	 * @property {object.<string, PortraitData>} options A mapping of sprite URLs to their descriptions.
+	 * @property {object.<PortraitURL, PortraitData>} options A mapping of sprite URLs to their descriptions.
 	 */
 	/**
 	 * @typedef PortraitData
@@ -38,7 +43,7 @@
 		 * Data representing a box of dialogue.
 		 * @type {object}
 		 * @property {Palette} color The color palette for this block.
-		 * @property {string} portrait A partial URL to the speaker's character sprite.
+		 * @property {PortraitURL} portrait A partial URL to the speaker's character sprite.
 		 * @property {string|LanguageKey} speaker The speaker of the dialogue.
 		 * @property {string|LanguageKey} dialogue The text being spoken.
 		 */
