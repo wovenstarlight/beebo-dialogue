@@ -1,35 +1,52 @@
-import "./styles/App.css";
 import { useState } from "react";
+import domtoimage from "dom-to-image";
 import BlockContext from "./context/BlockContext";
-import getBlockType from "./utils/getBlockType";
+import { Trans, useTranslation } from "react-i18next";
 import BlockWrapper from "./components/Blocks/BlockWrapper";
 import AddForm from "./components/Forms/AddForm";
 import JSONForm from "./components/Forms/JSONForm";
-import domtoimage from 'dom-to-image';
-import { Trans, useTranslation } from "react-i18next";
+import getBlockType from "./utils/getBlockType";
+import "./styles/App.css";
 
+/* Keep imports in the following order: 
+ * 	- React hooks (useState, useEffect, memo etc.)
+ * 	- Other module imports (dom-to-image etc.)
+ * 	- Contexts (BlockContext etc.)
+ * 	- Translation (Trans, useTranslation etc.)
+ * 	- Constants (sorted alphabetically)
+ * 	- Components (sorted alphabetically)
+ * 	- Utils (sorted alphabetically)
+ * 	- Stylesheets
+ */
+
+/**
+ * The React application itself, containing all page content.
+ * @returns The complete single-page application.
+ */
 export default function App() {
 	const [blocks, setBlocks] = useState([]);
 	const { t } = useTranslation();
 	
-	/** Deletes all dialogue boxes currently being displayed. */
+	/** Deletes all currently-rendered content blocks. */
 	function clearAll() {
 		if (window.confirm(t("ALERTS.CONFIRM_DELETE_ALL")))
 			setBlocks([]);
 	}
 
-	/** Saves all currently-displayed dialogue boxes as an image. */
+	/** Saves all currently-rendered content blocks as an image. */
 	function screenshot() {
 		// Prepare the elements for the transfer
 		const canvas = document.getElementById("imgcanvas"),
 			downloadLink = document.getElementById("imgdownload"),
 			dialogues = document.getElementById("dialogues");
-		
+
+		// Mark the page in preparation for capturing
+		// This disables all elements that shouldn't appear in the final image, like edit menus
 		dialogues.classList.toggle("screenshotting");
 
 		domtoimage.toSvg(dialogues)
 			.then((dataUrl) => {
-				// SVG comes out the most crisp, so we use that instead of .toPNG()
+				// SVG comes out the crispest, so we use that instead of .toPNG()
 				// But we do want to save as a PNG, so we draw the SVG image onto a canvas…
 				let img = new Image();
 				img.addEventListener("load", () => {
@@ -37,10 +54,11 @@ export default function App() {
 					canvas.height = img.height;
 					canvas.getContext("2d").drawImage(img, 0, 0);
 
-					// …and then download the canvas as a data URL, which
+					// …and then download the canvas as a data URL, which gets slapped into the prepared download link and triggered
 					downloadLink.href = canvas.toDataURL();
 					downloadLink.click();
 
+					// With that done, bring back the edit menus and all!
 					dialogues.classList.toggle("screenshotting");
 				});
 				img.src = dataUrl;
@@ -50,6 +68,9 @@ export default function App() {
 				console.error("Error occurred while saving image:", error);
 			});
 	}
+
+	// eslint gets upset if you supply links with no content to <Trans/>, so include placeholder text
+	// it gets overwritten by the actual content in the i18n file
 
 	return (<>
 		<header id="sitehead">
