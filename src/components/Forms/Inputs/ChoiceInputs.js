@@ -84,7 +84,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 
 	return <>
 		{includePalette && <label className="labelcolor">
-			<span className="labeltext">Palette</span>
+			<span className="labeltext">{t("FORMS.FIELDS.PALETTE")}</span>
 			<ColorSelector color={data.color} setColor={(e) => setData({ ...data, color: e.target.value })} />
 		</label>}
 
