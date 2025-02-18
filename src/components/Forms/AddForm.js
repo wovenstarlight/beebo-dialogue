@@ -101,6 +101,7 @@ export default function AddForm() {
 					text: t(opt.text),
 				} })
 			});
+			setDialogueOptions((options) => { return {...options, color: sample.color} });
 		}
 	}
 
