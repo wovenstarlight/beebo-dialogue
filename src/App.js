@@ -6,13 +6,15 @@ import BlockWrapper from "./components/Blocks/BlockWrapper";
 import AddForm from "./components/Forms/AddForm";
 import JSONForm from "./components/Forms/JSONForm";
 import domtoimage from 'dom-to-image';
+import { Trans, useTranslation } from "react-i18next";
 
 export default function App() {
 	const [blocks, setBlocks] = useState([]);
+	const { t, i18n } = useTranslation();
 	
 	/** Deletes all dialogue boxes currently being displayed. */
 	function clearAll() {
-		if (window.confirm("Really delete all currently-generated dialogue boxes?\n\nThis is irreversible!"))
+		if (window.confirm(t("ALERTS.CONFIRM_DELETE_ALL")))
 			setBlocks([]);
 	}
 
@@ -44,23 +46,23 @@ export default function App() {
 				img.src = dataUrl;
 			})
 			.catch((error) => {
-				window.alert("There was an error while trying to convert the image. Please let me know about the issue on Github!");
+				window.alert(t("ALERTS.ERROR_IMAGE_CONVERSION"));
 				console.error("Error occurred while saving image:", error);
 			});
 	}
 
 	return (<>
 		<header id="sitehead">
-			<h1>Detective Beebo dialogue builder</h1>
-			<p>Based on the game <a href="https://bwobbers.itch.io/detective-beebo-night-at-the-mansion">Detective Beebo: Night at the Mansion</a> by Bwobbers</p>
-			<p>A static image version of <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html">kongkrog's dialogue GIF maker</a></p>
+			<h1>{t("SITE_HEADER.TITLE")}</h1>
+			<p><Trans i18nKey="SITE_HEADER.SUBTITLE" components={{ hyperlink: <a href="https://bwobbers.itch.io/detective-beebo-night-at-the-mansion" /> }} /></p>
+			<p><Trans i18nKey="SITE_HEADER.GIF_MAKER" components={{ hyperlink: <a href="https://kongkrog.github.io/isat-profile-customizer/beebo/beebo.html" /> }} /></p>
 		</header>
 
 		<main id="sitebody">
-			{blocks.length === 0 && <p id="explainer">Use the form below to get started!</p>}
+			{blocks.length === 0 && <p id="explainer">{t("BODY.STARTUP")}</p>}
 			{blocks.length > 0 && <header id="topmenu">
-				<button id="saveimage" onClick={screenshot}>Save as PNG</button>
-				<button id="clearall" onClick={clearAll}>Delete all</button>
+				<button id="saveimage" onClick={screenshot}>{t("ACTIONS.SAVE_IMAGE")}</button>
+				<button id="clearall" onClick={clearAll}>{t("ACTIONS.DELETE_ALL")}</button>
 			</header>}
 
 			<BlockContext.Provider value={[blocks, setBlocks]}>
@@ -75,14 +77,14 @@ export default function App() {
 
 			<section id="downloadasimage" hidden>
 				{/* Placeholder URL to avoid a11ty warning */}
-				<a id="imgdownload" href="/misc/someone_shadow.png" download="beebo-dialogue.png">Download as image</a>
+				<a id="imgdownload" href="/misc/someone_shadow.png" download="beebo-dialogue.png">{t("ACTIONS.SAVE_IMAGE")}</a>
 				<canvas id="imgcanvas" />
 			</section>
 		</main>
 
 		<footer id="sitefoot">
-			<p><a href="https://github.com/wovenstarlight">Made by wovenstarlight</a> | <a href="https://github.com/wovenstarlight/beebo-dialogue">Source code on Github</a></p>
-			<p>Font credits: <a href="https://www.dafont.com/nokia-cellphone.font">Nokia Cellphone FC</a> and SqueezedPixels by Bwobbers</p>
+			<p><a href="https://github.com/wovenstarlight">{t("FOOTER.CREATOR")}</a> | <a href="https://github.com/wovenstarlight/beebo-dialogue">{t("FOOTER.SOURCE_CODE")}</a></p>
+			<p><Trans i18nKey="FOOTER.FONTS" components={{ hyperlinkNokia: <a href="https://www.dafont.com/nokia-cellphone.font" /> }} /></p>
 		</footer>
 	</>);
 }

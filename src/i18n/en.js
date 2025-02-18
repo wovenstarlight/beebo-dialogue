@@ -14,6 +14,16 @@ const MESSAGES = {
 		SOURCE_CODE: "Source code on Github",
 		FONTS: "Font credits: <hyperlinkNokia>Nokia Cellphone FC</hyperlinkNokia> and SqueezedPixels by Bwobbers",
 	},
+
+	ACTIONS: {
+		DELETE_ALL: "Delete all",
+		SAVE_IMAGE: "Save as PNG",
+	},
+
+	ALERTS: {
+		CONFIRM_DELETE_ALL: "Really delete all currently-generated dialogue boxes?\n\nThis is irreversible!",
+		ERROR_IMAGE_CONVERSION: "There was an error while trying to convert the image. Please let me know about the issue on Github!",
+	},
 };
 Object.freeze(MESSAGES);
 
