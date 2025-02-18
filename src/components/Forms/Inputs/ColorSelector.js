@@ -1,11 +1,12 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import ALL_COLORS from "../../../constants/colors";
+import "../../../constants/documentation";
 
 /**
  * A dropdown menu for selecting a color palette.
  * @param {object} args
- * @param {string} args.color The value of this form field; one of the available color palettes.
+ * @param {Palette} args.color The value of this form field; one of the available color palettes.
  * @param {function} args.setColor The setter for the value of this form field.
  * @returns A <select> element with options for palettes.
  */
