@@ -227,7 +227,8 @@ textarea {
 }
 
 .menu {
-	margin: 3em 5em 0;
+	max-width: 49.5em;
+	margin: 3em auto 0;
 	padding-block: 1em;
 	border: 1.25em solid transparent;
 	border-image: url("../assets/images/prettyBorder.png") 35% repeat;

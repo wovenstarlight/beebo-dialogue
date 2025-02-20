@@ -111,7 +111,7 @@ const MESSAGES = {
 			/** Label for color palette */
 			PALETTE: "Palette",
 			/** Label for character sprite in Dialogue blocks */
-			PORTRAIT: "Potrait",
+			PORTRAIT: "Portrait",
 			/** Label for speaker in Dialogue blocks */
 			SPEAKER: "Speaker",
 			/** Label for spoken text in Dialogue blocks */
@@ -122,6 +122,8 @@ const MESSAGES = {
 			OPTION_NUMBER: "Option {{index}}",
 			/** Explanatory message for the palette persistence toggle in AddForm */
 			EXPLAIN_REUSE_PALETTE: "When off, palette will reset to purple after every submission",
+			/** Portraits popup: Title */
+			ALL_PORTRAITS: "All portraits",
 		},
 	},
 	
@@ -135,6 +137,10 @@ const MESSAGES = {
 		RESET: "Reset form",
 		/** Block edit form: Close form and revert changes */
 		CANCEL: "Cancel",
+		/** Portraits popup: Open dialog */
+		OPEN_PORTRAITS: "See all portraits",
+		/** Portraits popup: Close dialog */
+		CLOSE: "Close",
 		/** Open edit menu for an existing block */
 		EDIT: "Edit",
 		/** Move up in the list of blocks or options */
@@ -344,6 +350,24 @@ const MESSAGES = {
 				 * "Oliver Beebo > Happy (no hat)"
 				 */
 				IDENTIFIER_EMOTION_VARIANT: "{{identifier}} > {{emotion}} ({{variant}})",
+				/** A specific emotion with no identifier
+				 * @example
+				 * // { emotion: "Happy" }
+				 * "Happy"
+				 */
+				EMOTION: "{{emotion}}",
+				/** A notable characteristic with no identifier
+				 * @example
+				 * // { variant: "no hat" }
+				 * "no hat"
+				 */
+				VARIANT: "{{variant}}",
+				/** A specific emotion and notable characteristic with no identifier
+				 * @example
+				 * // { emotion: "Happy", variant: "no hat" }
+				 * "Happy (no hat)"
+				 */
+				EMOTION_VARIANT: "{{emotion}} ({{variant}})",
 			},
 			/** Variant names for portrait groups. Some correspond to {@link MESSAGES.CONTENT.COLORS}. */
 			GROUP_VARIANTS: {

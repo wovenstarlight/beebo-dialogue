@@ -5,6 +5,7 @@ import { Trans, useTranslation } from "react-i18next";
 import BlockWrapper from "./components/Blocks/BlockWrapper";
 import AddForm from "./components/Forms/AddForm";
 import JSONForm from "./components/Forms/JSONForm";
+import PortraitViewer from "./components/Forms/PortraitViewer";
 import getBlockType from "./utils/getBlockType";
 import "./styles/App.css";
 
@@ -84,6 +85,8 @@ export default function App() {
 
 				<JSONForm />
 			</BlockContext.Provider>
+
+			<PortraitViewer />
 
 			<section id="downloadasimage" hidden>
 				{/* Placeholder URL to avoid a11ty warning */}

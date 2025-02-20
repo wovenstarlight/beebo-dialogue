@@ -13,7 +13,7 @@ import { isSubsetOf } from "../../../utils/arrayUtils";
 function PortraitSelector({ portrait, setPortrait }) {
 	const { t } = useTranslation();
 
-	return (
+	return <>
 		<select
 			className="inputportrait"
 			name="inputportrait"
@@ -75,7 +75,13 @@ function PortraitSelector({ portrait, setPortrait }) {
 				</optgroup>;
 			})}
 		</select>
-	);
+
+		<button
+			type="button"
+			className="seeallportraits blockbtn editbtn"
+			onClick={() => document.getElementById("allportraits").showModal()}
+		>{t("ACTIONS.OPEN_PORTRAITS")}</button>
+	</>;
 }
 
 // Memo to reduce re-rendering of the multiple <option>s

@@ -86,7 +86,17 @@ fieldset.inputsection { display: contents }
 
 		.labeltext { padding-block-start: 0 }
 
-		.portrait { width: 6em }
+		.portrait {
+			width: 6em;
+			grid-column: 3;
+			grid-row: 1 / span 2;
+		}
+	}
+	.seeallportraits {
+		font-size: 0.9em;
+		padding: 0.35em 0.75em;
+		grid-column: 2;
+		grid-row: 2;
 	}
 
 	.inputdialogue {
@@ -160,3 +170,55 @@ label:has(input[type="checkbox"]) {
 		&:active ~ .icon { background-color: var(--text-house) }
 	}
 }
+
+/* #region All portraits dialog */
+#allportraits {
+	width: 100%;
+	max-width: 45em;
+	margin-block: auto;
+	background-color: var(--bg-house);
+	color: var(--text-house);
+
+	&::backdrop {
+		background-color: rgba(from var(--text-house) r g b / 0.25);
+	}
+
+	#closeportraits {
+		position: fixed;
+		top: 1em;
+		right: 2em;
+	}
+
+	.portraitgroup { margin-block-start: 1.5em }
+
+	.portraitgroup summary {
+		font-size: 1.25em;
+		margin-block: 0.5em;
+		cursor: pointer;
+	}
+
+	.portraitlist {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		gap: 1em;
+	}
+
+	.portraitdata {
+		display: block;
+		width: 9em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5em 1em;
+		text-align: center;
+	}
+
+	.portrait { font-size: 1.5em }
+}
+
+/* Prevent scrolling outside dialog */
+body:has(dialog[open]) { overflow: hidden }
+/* #endregion */
