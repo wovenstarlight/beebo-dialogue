@@ -130,9 +130,9 @@ const MESSAGES = {
 	/** Action items (generally on buttons) */
 	ACTIONS: {
 		/** AddForm: Submit */
-		ADD: "Add element",
+		ADD: "Add",
 		/** Block edit form: Submit */
-		UPDATE: "Update element",
+		UPDATE: "Update",
 		/** AddForm: Clear fields */
 		RESET: "Reset form",
 		/** Block edit form: Close form and revert changes */
