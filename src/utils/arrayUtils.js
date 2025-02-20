@@ -12,11 +12,11 @@ export function splitAround(allBlocks, id) {
 	return [allBlocks.slice(0, index), allBlocks[index], allBlocks.slice(index + 1)];
 }
 
-/** Checks that two arrays contain the same elements.
- * @param {Array} a1 The first of two arrays to be compared.
- * @param {Array} a2 The second of two arrays to be compared.
- * @returns `true` if both arrays are equal; `false` otherwise.
+/** Checks that one array is a subset of a second, i.e. that all elements of the first array are contained in the second.
+ * @param {Array} a1 The potential subset.
+ * @param {Array} a2 The array of which `a1` might be a subset.
+ * @returns `true` if `a1` is a subset of `a2`; `false` otherwise.
  */
-export function arrayEquals(a1, a2) {
-	return a1.toSorted().toString() === a2.toSorted().toString();
+export function isSubsetOf(a1, a2) {
+	return a1.every(el => a2.includes(el));
 }

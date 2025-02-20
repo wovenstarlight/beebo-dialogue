@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import ALL_PORTRAITS from "../../../constants/portraits";
-import { arrayEquals } from "../../../utils/arrayUtils";
+import { isSubsetOf } from "../../../utils/arrayUtils";
 
 /**
  * A dropdown menu for selecting a character sprite.
@@ -25,13 +25,13 @@ function PortraitSelector({ portrait, setPortrait }) {
 			{ALL_PORTRAITS.map(group => {
 				// Create group label from the provided label object
 				let label, keys = Object.keys(group.label);
-				if (arrayEquals(keys, ["identifier", "variant"])) {
+				if (isSubsetOf(["identifier", "variant"], keys)) {
 					label = t("CONTENT.PORTRAITS.GROUP_LABEL.IDENTIFIER_VARIANT", {
 						identifier: t(group.label.identifier),
 						variant: t(group.label.variant),
 					});
 				}
-				else if (arrayEquals(keys, ["identifier"])) {
+				else if (isSubsetOf(["identifier"], keys)) {
 					label = t("CONTENT.PORTRAITS.GROUP_LABEL.IDENTIFIER", {
 						identifier: t(group.label.identifier),
 					});
@@ -43,28 +43,28 @@ function PortraitSelector({ portrait, setPortrait }) {
 					{Object.entries(group.options).map(sprite => {
 						// Create option label from the provided label object
 						let label, spriteKeys = Object.keys(sprite[1]);
-						if (arrayEquals(spriteKeys, ["identifier", "emotion", "variant"])) {
+						if (isSubsetOf(["emotion", "variant"], spriteKeys)) {
 							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION_VARIANT", {
-								identifier: t(sprite[1].identifier),
+								identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 								emotion: t(sprite[1].emotion),
 								variant: t(sprite[1].variant),
 							});
 						}
-						else if (arrayEquals(spriteKeys, ["identifier", "emotion"])) {
+						else if (isSubsetOf(["emotion"], spriteKeys)) {
 							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION", {
-								identifier: t(sprite[1].identifier),
+								identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 								emotion: t(sprite[1].emotion),
 							});
 						}
-						else if (arrayEquals(spriteKeys, ["identifier", "variant"])) {
+						else if (isSubsetOf(["variant"], spriteKeys)) {
 							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_VARIANT", {
-								identifier: t(sprite[1].identifier),
+								identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 								variant: t(sprite[1].variant),
 							});
 						}
-						else if (arrayEquals(spriteKeys, ["identifier"])) {
+						else {
 							label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER", {
-								identifier: t(sprite[1].identifier),
+								identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 							});
 						}
 
