@@ -118,6 +118,9 @@
 	box-sizing: border-box;
 	font-weight: normal;
 
+	scrollbar-width: thin;
+	scrollbar-color: var(--bg-house) var(--text-house);
+
 	/* Disable anti-aliasing to get that pixel look on all images
 	Retrieved from https://forum.squarespace.com/topic/240034-how-to-disable-anti-aliasing-site-wide-for-pixel-art/ */
 	image-rendering: optimizeSpeed;				/* STOP SMOOTHING, GIVE ME SPEED	*/
