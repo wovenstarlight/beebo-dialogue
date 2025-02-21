@@ -517,10 +517,10 @@ const ALL_PORTRAITS = [
 				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/side2.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
+				emotion: "content.portraits.emotions.side_2",
 			},
 			"angel/house/hatside2.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
+				emotion: "content.portraits.emotions.side_2",
 				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/neutro.png": {
@@ -655,7 +655,7 @@ const ALL_PORTRAITS = [
 				emotion: "content.portraits.emotions.side",
 			},
 			"angel/color/side2.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
+				emotion: "content.portraits.emotions.side_2",
 			},
 			"angel/color/neutro.png": {
 				emotion: "content.portraits.emotions.neutral",
@@ -1187,7 +1187,7 @@ const ALL_PORTRAITS = [
 				emotion: "content.portraits.emotions.side",
 			},
 			"eugene/side2.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
+				emotion: "content.portraits.emotions.side_2",
 			},
 			"eugene/neutro.png": {
 				emotion: "content.portraits.emotions.neutral",
@@ -1235,8 +1235,8 @@ const ALL_PORTRAITS = [
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_1.LONG",
-			short_identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_1.SHORT",
+			identifier: "content.characters.police_officer_1.long",
+			short_identifier: "content.characters.police_officer_1.short",
 			// gender unknown
 		},
 		options: {
@@ -1250,8 +1250,8 @@ const ALL_PORTRAITS = [
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_2.LONG",
-			short_identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_2.SHORT",
+			identifier: "content.characters.police_officer_2.long",
+			short_identifier: "content.characters.police_officer_2.short",
 			// gender unknown (female?)
 		},
 		options: {
@@ -1265,8 +1265,8 @@ const ALL_PORTRAITS = [
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_3.LONG",
-			short_identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_3.SHORT",
+			identifier: "content.characters.police_officer_3.long",
+			short_identifier: "content.characters.police_officer_3.short",
 			// gender unknown
 		},
 		options: {
