@@ -26,18 +26,18 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 
 	return <>
 		{includePalette && <label className="labelcolor">
-			<span className="labeltext">{t("FORMS.FIELDS.PALETTE")}</span>
+			<span className="labeltext">{t("forms.fields.palette")}</span>
 			<ColorSelector color={data.color} setColor={(e) => setData({ ...data, color: e.target.value })} />
 		</label>}
 
 		<label className="labelportrait">
-			<span className="labeltext">{t("FORMS.FIELDS.PORTRAIT")}</span>
+			<span className="labeltext">{t("forms.fields.portrait")}</span>
 			<PortraitSelector portrait={data.portrait} setPortrait={(e) => setData({ ...data, portrait: e.target.value })} />
 			<img className="portrait" alt="" src={getPortraitURL(data.portrait)} />
 		</label>
 
 		<label className="labelspeaker">
-			<span className="labeltext">{t("FORMS.FIELDS.SPEAKER")}</span>
+			<span className="labeltext">{t("forms.fields.speaker")}</span>
 			<input
 				className="inputspeaker"
 				name="inputspeaker"
@@ -53,13 +53,13 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 		<datalist id={`speakerslist${ data.id ? `_${data.id}` : "" }`}>
 			{ALL_CHARACTERS
 				.flatMap(chara => {
-					let retval = [t(`CONTENT.CHARACTERS.${chara}.LONG`)],
-						speakerLabel = t(`CONTENT.CHARACTERS.${chara}.SPEAKER_LABEL`),
-						unknownLabel = t(`CONTENT.CHARACTERS.${chara}.UNKNOWN_LABEL`);
+					let retval = [t(`content.characters.${chara}.long`)],
+						speakerLabel = t(`content.characters.${chara}.speaker_label`),
+						unknownLabel = t(`content.characters.${chara}.unknown_label`);
 					// Actual name
-					if (!speakerLabel.startsWith("CONTENT.CHARACTERS")) retval.push(speakerLabel);
+					if (!speakerLabel.startsWith("content.characters")) retval.push(speakerLabel);
 					// Descriptor if any
-					if (!unknownLabel.startsWith("CONTENT.CHARACTERS")) retval.push(unknownLabel);
+					if (!unknownLabel.startsWith("content.characters")) retval.push(unknownLabel);
 					return retval;
 				})	// Get all labels
 				.filter((el, index, arr) => arr.indexOf(el) === index)	// Filter out duplicates
@@ -68,7 +68,7 @@ export default function DialogueInputs({ data, setData, includePalette = true })
 		</datalist>
 
 		<label className="labeldialogue">
-			<span className="labeltext">{t("FORMS.FIELDS.DIALOGUE")}</span>
+			<span className="labeltext">{t("forms.fields.dialogue")}</span>
 			<textarea
 				className="inputdialogue"
 				name="inputdialogue"

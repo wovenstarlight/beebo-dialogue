@@ -11,427 +11,427 @@ const ALL_PORTRAITS = [
 	// #region Oliver Beebo
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
-			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.oliver.long",
+			short_identifier: "content.characters.oliver.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "male",
 		},
 		options: {
 			"oliver/house/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"oliver/house/hatangy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.angry",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"oliver/house/hatannoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.annoyed",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/hataw.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.AW",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.aw",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/bleed.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.BLEEDING",
+				emotion: "content.portraits.emotions.bleeding",
 			},
 			"oliver/house/hatbleed.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.BLEEDING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.bleeding",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/confused.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CONFUSED",
+				emotion: "content.portraits.emotions.confused",
 			},
 			"oliver/house/hatconfused.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CONFUSED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.confused",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/cry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CRYING",
+				emotion: "content.portraits.emotions.crying",
 			},
 			"oliver/house/hatcry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CRYING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.crying",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"oliver/house/hatdown.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.down",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/verg.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EMBARRASSED",
+				emotion: "content.portraits.emotions.embarrassed",
 			},
 			"oliver/house/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"oliver/house/hatexcited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.excited",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/glad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.GLAD",
+				emotion: "content.portraits.emotions.glad",
 			},
 			"oliver/house/hatglad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.GLAD",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.glad",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"oliver/house/hathappy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.happy",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/happybleed.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY_BLEEDING",
+				emotion: "content.portraits.emotions.happy_bleeding",
 			},
 			"oliver/house/hathappybleed.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY_BLEEDING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.happy_bleeding",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"oliver/house/hathehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.hehe",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/judgy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.JUDGY",
+				emotion: "content.portraits.emotions.judgy",
 			},
 			"oliver/house/hatjudgy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.JUDGY",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.judgy",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"oliver/house/hatside.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.side",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/sideodd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_ODD",
+				emotion: "content.portraits.emotions.side_odd",
 			},
 			"oliver/house/hatsideodd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_ODD",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.side_odd",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"oliver/house/hatneutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.neutral",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"oliver/house/hatodd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.odd",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/question.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.QUESTIONING",
+				emotion: "content.portraits.emotions.questioning",
 			},
 			"oliver/house/hatquestion.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.QUESTIONING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.questioning",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/red.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.RED",
+				emotion: "content.portraits.emotions.red",
 			},
 			"oliver/house/hatred.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.RED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.red",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/scared.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SCARED",
+				emotion: "content.portraits.emotions.scared",
 			},
 			"oliver/house/hatscared.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SCARED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.scared",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/shadow.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SHADOW",
+				emotion: "content.portraits.emotions.shadow",
 			},
 			"oliver/house/hatshadow.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SHADOW",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.shadow",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/sillyangy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SILLY_ANGRY",
+				emotion: "content.portraits.emotions.silly_angry",
 			},
 			"oliver/house/smug.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMUG",
+				emotion: "content.portraits.emotions.smug",
 			},
 			"oliver/house/hatsmug.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMUG",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.smug",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"oliver/house/hatspeak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.speaking",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/sorpr.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"oliver/house/hatsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.surprised",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"oliver/house/hatmidsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.mild_surprise",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/sweet.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SWEET",
+				emotion: "content.portraits.emotions.sweet",
 			},
 			"oliver/house/hatsweet.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SWEET",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.sweet",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/uneasy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.UNEASY",
+				emotion: "content.portraits.emotions.uneasy",
 			},
 			"oliver/house/hatuneasy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.UNEASY",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.uneasy",
+				variant: "content.portraits.variants.hatless",
 			},
 			"oliver/house/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 			"oliver/house/hatworry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HATLESS",
+				emotion: "content.portraits.emotions.worried",
+				variant: "content.portraits.variants.hatless",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
-			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.ORANGE",
+			identifier: "content.characters.oliver.long",
+			short_identifier: "content.characters.oliver.short",
+			variant: "content.portraits.group_variants.orange",
 			gender: "male",
 		},
 		options: {
 			"oliver/color/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"oliver/color/confused.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CONFUSED",
+				emotion: "content.portraits.emotions.confused",
 			},
 			"oliver/color/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"oliver/color/verg.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EMBARRASSED",
+				emotion: "content.portraits.emotions.embarrassed",
 			},
 			"oliver/color/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"oliver/color/glad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.GLAD",
+				emotion: "content.portraits.emotions.glad",
 			},
 			"oliver/color/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"oliver/color/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"oliver/color/judgy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.JUDGY",
+				emotion: "content.portraits.emotions.judgy",
 			},
 			"oliver/color/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"oliver/color/sideodd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_ODD",
+				emotion: "content.portraits.emotions.side_odd",
 			},
 			"oliver/color/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"oliver/color/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"oliver/color/question.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.QUESTIONING",
+				emotion: "content.portraits.emotions.questioning",
 			},
 			"oliver/color/red.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.RED",
+				emotion: "content.portraits.emotions.red",
 			},
 			"oliver/color/shadow.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SHADOW",
+				emotion: "content.portraits.emotions.shadow",
 			},
 			"oliver/color/sorpr.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"oliver/color/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"oliver/color/sweet.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SWEET",
+				emotion: "content.portraits.emotions.sweet",
 			},
 			"oliver/color/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
-			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GALLERY_YELLOW",
+			identifier: "content.characters.oliver.long",
+			short_identifier: "content.characters.oliver.short",
+			variant: "content.portraits.group_variants.gallery_yellow",
 			gender: "male",
 		},
 		options: {
 			"oliver/galleryin/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"oliver/galleryin/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"oliver/galleryin/verg.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CRYING",
+				emotion: "content.portraits.emotions.crying",
 			},
 			"oliver/galleryin/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"oliver/galleryin/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"oliver/galleryin/judgy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.JUDGY",
+				emotion: "content.portraits.emotions.judgy",
 			},
 			"oliver/galleryin/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"oliver/galleryin/sideodd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_ODD",
+				emotion: "content.portraits.emotions.side_odd",
 			},
 			"oliver/galleryin/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"oliver/galleryin/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"oliver/galleryin/question.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.QUESTIONING",
+				emotion: "content.portraits.emotions.questioning",
 			},
 			"oliver/galleryin/scared.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SCARED",
+				emotion: "content.portraits.emotions.scared",
 			},
 			"oliver/galleryin/shadow.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SHADOW",
+				emotion: "content.portraits.emotions.shadow",
 			},
 			"oliver/galleryin/sorpr.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"oliver/galleryin/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"oliver/galleryin/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"oliver/galleryin/uneasy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.UNEASY",
+				emotion: "content.portraits.emotions.uneasy",
 			},
 			"oliver/galleryin/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
-			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GALLERY_ORANGE",
+			identifier: "content.characters.oliver.long",
+			short_identifier: "content.characters.oliver.short",
+			variant: "content.portraits.group_variants.gallery_orange",
 			gender: "male",
 		},
 		options: {
 			"oliver/galleryout/verg.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CRYING",
+				emotion: "content.portraits.emotions.crying",
 			},
 			"oliver/galleryout/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"oliver/galleryout/scared.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SCARED",
+				emotion: "content.portraits.emotions.scared",
 			},
 			"oliver/galleryout/shadow.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SHADOW",
+				emotion: "content.portraits.emotions.shadow",
 			},
 			"oliver/galleryout/sorpr.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"oliver/galleryout/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"oliver/galleryout/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
-			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.YOUNG",
+			identifier: "content.characters.oliver.long",
+			short_identifier: "content.characters.oliver.short",
+			variant: "content.portraits.group_variants.young",
 			gender: "male",
 		},
 		options: {
 			"oliver/young/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"oliver/young/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"oliver/young/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"oliver/young/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"oliver/young/judge.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.JUDGY",
+				emotion: "content.portraits.emotions.judgy",
 			},
 			"oliver/young/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"oliver/young/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"oliver/young/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"oliver/young/question.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.QUESTIONING",
+				emotion: "content.portraits.emotions.questioning",
 			},
 			"oliver/young/surp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"oliver/young/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"oliver/young/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 			"oliver/young/tired.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.TIRED",
+				emotion: "content.portraits.emotions.tired",
 			},
 			"oliver/young/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 		},
 	},
@@ -440,253 +440,253 @@ const ALL_PORTRAITS = [
 	// #region Ángel Valdivia
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.ANGEL.LONG",
-			short_identifier: "CONTENT.CHARACTERS.ANGEL.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.angel.long",
+			short_identifier: "content.characters.angel.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "male",
 		},
 		options: {
 			"angel/house/bigangy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY_STRONG",
+				emotion: "content.portraits.emotions.angry_strong",
 			},
 			"angel/house/hatbigangy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY_STRONG",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.angry_strong",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/browraise.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.BROW_RAISED",
+				emotion: "content.portraits.emotions.brow_raised",
 			},
 			"angel/house/hatbrowraise.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.BROW_RAISED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.brow_raised",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/confused.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CONFUSED",
+				emotion: "content.portraits.emotions.confused",
 			},
 			"angel/house/hatconfused.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CONFUSED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.confused",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"angel/house/hatdown.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.down",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/glad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.GLAD",
+				emotion: "content.portraits.emotions.glad",
 			},
 			"angel/house/hatglad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.GLAD",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.glad",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/haha.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAHA",
+				emotion: "content.portraits.emotions.haha",
 			},
 			"angel/house/hathaha.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAHA",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.haha",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"angel/house/hathappy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.happy",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"angel/house/hathehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.hehe",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/hmph.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HMPH",
+				emotion: "content.portraits.emotions.hmph",
 			},
 			"angel/house/hathmph.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HMPH",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.hmph",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"angel/house/hatside.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.side",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/side2.png": {
 				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
 			},
 			"angel/house/hatside2.png": {
 				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"angel/house/hatneutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.neutral",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"angel/house/hatodd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.odd",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/red.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.RED",
+				emotion: "content.portraits.emotions.red",
 			},
 			"angel/house/hatred.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.RED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.red",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/sad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD",
+				emotion: "content.portraits.emotions.sad",
 			},
 			"angel/house/hatsad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.sad",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/sadsmile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD_SMILE",
+				emotion: "content.portraits.emotions.sad_smile",
 			},
 			"angel/house/hatsadsmile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD_SMILE",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.sad_smile",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/sadspeak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD_SPEAKING",
+				emotion: "content.portraits.emotions.sad_speaking",
 			},
 			"angel/house/hatsadspeak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD_SPEAKING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.sad_speaking",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/scarf.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SCARF",
+				emotion: "content.portraits.emotions.scarf",
 			},
 			"angel/house/kill.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SILHOUETTE",
+				emotion: "content.portraits.emotions.silhouette",
 			},
 			"angel/house/smile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING",
+				emotion: "content.portraits.emotions.smiling",
 			},
 			"angel/house/hatsmile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.smiling",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/smiling.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING_SPEAKING",
+				emotion: "content.portraits.emotions.smiling_speaking",
 			},
 			"angel/house/hatsmiling.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING_SPEAKING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.smiling_speaking",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"angel/house/hatspeak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.speaking",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/surprised.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"angel/house/hatsurprised.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.surprised",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 			"angel/house/hatthink.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.thinking",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/deepthink.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING_STRONG",
+				emotion: "content.portraits.emotions.thinking_strong",
 			},
 			"angel/house/hatdeepthink.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING_STRONG",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.thinking_strong",
+				variant: "content.portraits.variants.hat",
 			},
 			"angel/house/bigworry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED_STRONG",
+				emotion: "content.portraits.emotions.worried_strong",
 			},
 			"angel/house/hatbigworry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED_STRONG",
-				variant: "CONTENT.PORTRAITS.VARIANTS.HAT",
+				emotion: "content.portraits.emotions.worried_strong",
+				variant: "content.portraits.variants.hat",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.ANGEL.LONG",
-			short_identifier: "CONTENT.CHARACTERS.ANGEL.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GRAY",
+			identifier: "content.characters.angel.long",
+			short_identifier: "content.characters.angel.short",
+			variant: "content.portraits.group_variants.gray",
 			gender: "male",
 		},
 		options: {
 			"angel/color/browraise.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.BROW_RAISED",
+				emotion: "content.portraits.emotions.brow_raised",
 			},
 			"angel/color/confused.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CONFUSED",
+				emotion: "content.portraits.emotions.confused",
 			},
 			"angel/color/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"angel/color/glad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.GLAD",
+				emotion: "content.portraits.emotions.glad",
 			},
 			"angel/color/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"angel/color/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"angel/color/hmph.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HMPH",
+				emotion: "content.portraits.emotions.hmph",
 			},
 			"angel/color/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"angel/color/side2.png": {
 				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
 			},
 			"angel/color/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"angel/color/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"angel/color/sad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD",
+				emotion: "content.portraits.emotions.sad",
 			},
 			"angel/color/sadsmile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD_SMILE",
+				emotion: "content.portraits.emotions.sad_smile",
 			},
 			"angel/color/smile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING",
+				emotion: "content.portraits.emotions.smiling",
 			},
 			"angel/color/smiling.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING_SPEAKING",
+				emotion: "content.portraits.emotions.smiling_speaking",
 			},
 			"angel/color/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"angel/color/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 			"angel/color/bigworry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED_STRONG",
+				emotion: "content.portraits.emotions.worried_strong",
 			},
 			"angel/color/dominion_neutro.png": {
-				identifier: "CONTENT.CHARACTERS.DOMINION.SHORT",
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				identifier: "content.characters.dominion.short",
+				emotion: "content.portraits.emotions.neutral",
 			},
 		},
 	},
@@ -695,84 +695,84 @@ const ALL_PORTRAITS = [
 	// #region Vivi Villalobos
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.VIVI.LONG",
-			short_identifier: "CONTENT.CHARACTERS.VIVI.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.vivi.long",
+			short_identifier: "content.characters.vivi.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "female",
 		},
 		options: {
 			"vivi/house/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"vivi/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"vivi/house/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"vivi/house/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"vivi/house/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"vivi/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"vivi/house/mischief.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MISCHIEVOUS",
+				emotion: "content.portraits.emotions.mischievous",
 			},
 			"vivi/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"vivi/house/pout.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.POUTING",
+				emotion: "content.portraits.emotions.pouting",
 			},
 			"vivi/house/sad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD",
+				emotion: "content.portraits.emotions.sad",
 			},
 			"vivi/house/surprised.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"vivi/house/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.VIVI.LONG",
-			short_identifier: "CONTENT.CHARACTERS.VIVI.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.RED",
+			identifier: "content.characters.vivi.long",
+			short_identifier: "content.characters.vivi.short",
+			variant: "content.portraits.group_variants.red",
 			gender: "female",
 		},
 		options: {
 			"vivi/color/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"vivi/color/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"vivi/color/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"vivi/color/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"vivi/color/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"vivi/color/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"vivi/color/mischief.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MISCHIEVOUS",
+				emotion: "content.portraits.emotions.mischievous",
 			},
 			"vivi/color/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"vivi/color/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 		},
 	},
@@ -781,78 +781,78 @@ const ALL_PORTRAITS = [
 	// #region Marigold Margulis
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.MARIGOLD.LONG",
-			short_identifier: "CONTENT.CHARACTERS.MARIGOLD.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.marigold.long",
+			short_identifier: "content.characters.marigold.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "female",
 		},
 		options: {
 			"marigold/house/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"marigold/house/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"marigold/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"marigold/house/eager.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EAGER",
+				emotion: "content.portraits.emotions.eager",
 			},
 			"marigold/house/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"marigold/house/glad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.GLAD",
+				emotion: "content.portraits.emotions.glad",
 			},
 			"marigold/house/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"marigold/house/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"marigold/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"marigold/house/mischief.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MISCHIEVOUS",
+				emotion: "content.portraits.emotions.mischievous",
 			},
 			"marigold/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"marigold/house/nost.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NOSTALGIC",
+				emotion: "content.portraits.emotions.nostalgic",
 			},
 			"marigold/house/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"marigold/house/surp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.MARIGOLD.LONG",
-			short_identifier: "CONTENT.CHARACTERS.MARIGOLD.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.ROYAL_BLUE",
+			identifier: "content.characters.marigold.long",
+			short_identifier: "content.characters.marigold.short",
+			variant: "content.portraits.group_variants.royal_blue",
 			gender: "female",
 		},
 		options: {
 			"marigold/color/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"marigold/color/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"marigold/color/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"marigold/color/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"marigold/color/surp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 		},
 	},
@@ -861,66 +861,66 @@ const ALL_PORTRAITS = [
 	// #region Nina Coli
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.NINA.LONG",
-			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.nina.long",
+			short_identifier: "content.characters.nina.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "female",
 		},
 		options: {
 			"nina/house/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"nina/house/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"nina/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"nina/house/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"nina/house/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"nina/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"nina/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"nina/house/nost.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NOSTALGIC",
+				emotion: "content.portraits.emotions.nostalgic",
 			},
 			"nina/house/nosttalk.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NOSTALGIC_SPEAKING",
+				emotion: "content.portraits.emotions.nostalgic_speaking",
 			},
 			"nina/house/sad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD",
+				emotion: "content.portraits.emotions.sad",
 			},
 			"nina/house/surp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SURPRISED",
+				emotion: "content.portraits.emotions.surprised",
 			},
 			"nina/house/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"nina/house/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 			"nina/house/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.NINA.LONG",
-			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.VIOLET",
+			identifier: "content.characters.nina.long",
+			short_identifier: "content.characters.nina.short",
+			variant: "content.portraits.group_variants.violet",
 			gender: "female",
 		},
 		options: {
 			"nina/color/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 		},
 	},
@@ -929,75 +929,75 @@ const ALL_PORTRAITS = [
 	// #region Nadia Margulis
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.NADIA.LONG",
-			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.nadia.long",
+			short_identifier: "content.characters.nina.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "female",
 		},
 		options: {
 			"nadia/house/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"nadia/house/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"nadia/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"nadia/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"nadia/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"nadia/house/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"nadia/house/question.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.QUESTIONING",
+				emotion: "content.portraits.emotions.questioning",
 			},
 			"nadia/house/shadow.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SHADOW",
+				emotion: "content.portraits.emotions.shadow",
 			},
 			"nadia/house/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"nadia/house/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 			"nadia/house/bigworry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED_STRONG",
+				emotion: "content.portraits.emotions.worried_strong",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.NADIA.LONG",
-			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PINK",
+			identifier: "content.characters.nadia.long",
+			short_identifier: "content.characters.nina.short",
+			variant: "content.portraits.group_variants.pink",
 			gender: "female",
 		},
 		options: {
 			"nadia/color/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"nadia/color/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"nadia/color/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"nadia/color/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"nadia/color/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"nadia/color/question.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.QUESTIONING",
+				emotion: "content.portraits.emotions.questioning",
 			},
 			"nadia/color/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 		},
 	},
@@ -1006,69 +1006,69 @@ const ALL_PORTRAITS = [
 	// #region Simon Margulis
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.SIMON.LONG",
-			short_identifier: "CONTENT.CHARACTERS.SIMON.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.simon.long",
+			short_identifier: "content.characters.simon.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "male",
 		},
 		options: {
 			"simon/house/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"simon/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"simon/house/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"simon/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"simon/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"simon/house/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"simon/house/sad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD",
+				emotion: "content.portraits.emotions.sad",
 			},
 			"simon/house/sadside.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD_SIDE",
+				emotion: "content.portraits.emotions.sad_side",
 			},
 			"simon/house/smile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING",
+				emotion: "content.portraits.emotions.smiling",
 			},
 			"simon/house/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"simon/house/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 			"simon/house/worry.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.WORRIED",
+				emotion: "content.portraits.emotions.worried",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.SIMON.LONG",
-			short_identifier: "CONTENT.CHARACTERS.SIMON.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GREEN",
+			identifier: "content.characters.simon.long",
+			short_identifier: "content.characters.simon.short",
+			variant: "content.portraits.group_variants.green",
 			gender: "male",
 		},
 		options: {
 			"simon/color/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"simon/color/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"simon/color/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"simon/color/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 		},
 	},
@@ -1077,78 +1077,78 @@ const ALL_PORTRAITS = [
 	// #region Owen
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.OWEN.LONG",
-			short_identifier: "CONTENT.CHARACTERS.OWEN.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			identifier: "content.characters.owen.long",
+			short_identifier: "content.characters.owen.short",
+			variant: "content.portraits.group_variants.purple",
 			gender: "male",
 		},
 		options: {
 			"owen/house/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"owen/house/annoy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANNOYED",
+				emotion: "content.portraits.emotions.annoyed",
 			},
 			"owen/house/cringe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.CRINGE",
+				emotion: "content.portraits.emotions.cringe",
 			},
 			"owen/house/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"owen/house/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"owen/house/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"owen/house/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"owen/house/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"owen/house/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"owen/house/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 			"owen/house/red.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.RED",
+				emotion: "content.portraits.emotions.red",
 			},
 			"owen/house/sad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SAD",
+				emotion: "content.portraits.emotions.sad",
 			},
 			"owen/house/smile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING",
+				emotion: "content.portraits.emotions.smiling",
 			},
 			"owen/house/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"owen/house/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"owen/house/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 		},
 	},
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.OWEN.LONG",
-			short_identifier: "CONTENT.CHARACTERS.OWEN.SHORT",
-			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.CORNFLOWER_BLUE",
+			identifier: "content.characters.owen.long",
+			short_identifier: "content.characters.owen.short",
+			variant: "content.portraits.group_variants.cornflower_blue",
 			gender: "male",
 		},
 		options: {
 			"owen/color/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"owen/color/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"owen/color/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 		},
 	},
@@ -1157,58 +1157,58 @@ const ALL_PORTRAITS = [
 	// #region Eugene Coli
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.EUGENE.LONG",
-			short_identifier: "CONTENT.CHARACTERS.EUGENE.SHORT",
+			identifier: "content.characters.eugene.long",
+			short_identifier: "content.characters.eugene.short",
 			gender: "male",
 		},
 		options: {
 			"eugene/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"eugene/bigangy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY_STRONG",
+				emotion: "content.portraits.emotions.angry_strong",
 			},
 			"eugene/aw.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.AW",
+				emotion: "content.portraits.emotions.aw",
 			},
 			"eugene/down.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.DOWN",
+				emotion: "content.portraits.emotions.down",
 			},
 			"eugene/excited.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.EXCITED",
+				emotion: "content.portraits.emotions.excited",
 			},
 			"eugene/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 			"eugene/hehe.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HEHE",
+				emotion: "content.portraits.emotions.hehe",
 			},
 			"eugene/side.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE",
+				emotion: "content.portraits.emotions.side",
 			},
 			"eugene/side2.png": {
 				emotion: "CONTENT.PORTRAITS.EMOTIONS.SIDE_2",
 			},
 			"eugene/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"eugene/nost.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NOSTALGIC",
+				emotion: "content.portraits.emotions.nostalgic",
 			},
 			"eugene/bad.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SILHOUETTE",
+				emotion: "content.portraits.emotions.silhouette",
 			},
 			"eugene/smile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING",
+				emotion: "content.portraits.emotions.smiling",
 			},
 			"eugene/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"eugene/midsurp.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.MILD_SURPRISE",
+				emotion: "content.portraits.emotions.mild_surprise",
 			},
 			"eugene/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 		},
 	},
@@ -1217,19 +1217,19 @@ const ALL_PORTRAITS = [
 	// #region Police
 	{
 		label: {
-			identifier: "CONTENT.CHARACTERS.POLICE_CHIEF.LONG",
-			short_identifier: "CONTENT.CHARACTERS.POLICE_CHIEF.SHORT",
+			identifier: "content.characters.police_chief.long",
+			short_identifier: "content.characters.police_chief.short",
 			// gender unknown (male?)
 		},
 		options: {
 			"police/chief/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"police/chief/speak.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SPEAKING",
+				emotion: "content.portraits.emotions.speaking",
 			},
 			"police/chief/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 		},
 	},
@@ -1241,10 +1241,10 @@ const ALL_PORTRAITS = [
 		},
 		options: {
 			"police/officer1/angy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ANGRY",
+				emotion: "content.portraits.emotions.angry",
 			},
 			"police/officer1/happy.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.HAPPY",
+				emotion: "content.portraits.emotions.happy",
 			},
 		},
 	},
@@ -1256,10 +1256,10 @@ const ALL_PORTRAITS = [
 		},
 		options: {
 			"police/officer2/neutro.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				emotion: "content.portraits.emotions.neutral",
 			},
 			"police/officer2/odd.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.ODD",
+				emotion: "content.portraits.emotions.odd",
 			},
 		},
 	},
@@ -1271,10 +1271,10 @@ const ALL_PORTRAITS = [
 		},
 		options: {
 			"police/officer3/smile.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SMILING",
+				emotion: "content.portraits.emotions.smiling",
 			},
 			"police/officer3/think.png": {
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.THINKING",
+				emotion: "content.portraits.emotions.thinking",
 			},
 		},
 	},
@@ -1283,27 +1283,27 @@ const ALL_PORTRAITS = [
 	// #region Miscellaneous
 	{
 		label: {
-			identifier: "CONTENT.PORTRAITS.GROUP_VARIANTS.OTHER",
+			identifier: "content.portraits.group_variants.other",
 		},
 		options: {
 			"misc/bartender_neutro.png": {
-				identifier: "CONTENT.CHARACTERS.BARTENDER.SHORT",
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				identifier: "content.characters.bartender.short",
+				emotion: "content.portraits.emotions.neutral",
 				// gender unknown (female?)
 			},
 			"misc/someone_shadow.png": {
-				identifier: "CONTENT.CHARACTERS.SOMEONE.SHORT",
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SILHOUETTE",
-				variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+				identifier: "content.characters.someone.short",
+				emotion: "content.portraits.emotions.silhouette",
+				variant: "content.portraits.group_variants.purple",
 			},
 			"misc/worker_shadow.png": {
-				identifier: "CONTENT.CHARACTERS.WORKER.SHORT",
-				emotion: "CONTENT.PORTRAITS.EMOTIONS.SILHOUETTE",
-				variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.CITY_GRAY",
+				identifier: "content.characters.worker.short",
+				emotion: "content.portraits.emotions.silhouette",
+				variant: "content.portraits.group_variants.city_gray",
 			},
 			"misc/tutorial_blank.png": {
-				identifier: "CONTENT.CHARACTERS.TUTORIAL.SHORT",
-				variant: "CONTENT.PORTRAITS.VARIANTS.BLANK_SQUARE",
+				identifier: "content.characters.tutorial.short",
+				variant: "content.portraits.variants.blank_square",
 			},
 		},
 	},

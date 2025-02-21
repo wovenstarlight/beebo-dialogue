@@ -15,7 +15,7 @@ export default function Body() {
 
 	/** Deletes all currently-rendered content blocks. */
 	function clearAll() {
-		if (window.confirm(t("ALERTS.CONFIRM_DELETE_ALL")))
+		if (window.confirm(t("alerts.confirm_delete_all")))
 			setBlocks([]);
 	}
 
@@ -50,16 +50,16 @@ export default function Body() {
 				img.src = dataUrl;
 			})
 			.catch((error) => {
-				window.alert(t("ALERTS.ERROR_IMAGE_CONVERSION"));
+				window.alert(t("alerts.error_image_conversion"));
 				console.error("Error occurred while saving image:", error);
 			});
 	}
 
 	return <main id="sitebody">
-		{blocks.length === 0 && <p id="explainer">{t("BODY.STARTUP")}</p>}
+		{blocks.length === 0 && <p id="explainer">{t("body.startup")}</p>}
 		{blocks.length > 0 && <header id="topmenu">
-			<button id="saveimage" onClick={screenshot}>{t("ACTIONS.SAVE_IMAGE")}</button>
-			<button id="clearall" onClick={clearAll}>{t("ACTIONS.DELETE_ALL")}</button>
+			<button id="saveimage" onClick={screenshot}>{t("actions.save_image")}</button>
+			<button id="clearall" onClick={clearAll}>{t("actions.delete_all")}</button>
 		</header>}
 
 		<BlockContext.Provider value={[blocks, setBlocks]}>
@@ -76,7 +76,7 @@ export default function Body() {
 
 		<section id="downloadasimage" hidden>
 			{/* Placeholder URL to avoid a11ty warning */}
-			<a id="imgdownload" href="/misc/someone_shadow.png" download="beebo-dialogue.png">{t("ACTIONS.SAVE_IMAGE")}</a>
+			<a id="imgdownload" href="/misc/someone_shadow.png" download="beebo-dialogue.png">{t("actions.save_image")}</a>
 			<canvas id="imgcanvas" />
 		</section>
 	</main>

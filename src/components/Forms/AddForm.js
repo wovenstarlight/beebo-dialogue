@@ -131,10 +131,10 @@ export default function AddForm() {
 	*/
 
 	return <form id="addform" name="addform" onSubmit={createBlock} className={`menu blockform ${dialogueOptions.color}`}>
-		<h2>{t("FORMS.ADDER.TITLE")}</h2>
+		<h2>{t("forms.adder.title")}</h2>
 
 		<fieldset id="tabber">
-			<legend>{t("FORMS.ADDER.TABBER_TITLE")}</legend>
+			<legend>{t("forms.adder.tabber_title")}</legend>
 			<label>
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
@@ -143,7 +143,7 @@ export default function AddForm() {
 					checked={activeTab === "dialogue"}
 				/>
 				<span className="icon" aria-hidden={true} />
-				<span className="labeltext">{t("FORMS.ADDER.DIALOGUE")}</span>
+				<span className="labeltext">{t("forms.adder.dialogue")}</span>
 			</label>
 			<label>
 				<input
@@ -153,12 +153,12 @@ export default function AddForm() {
 					checked={activeTab === "choice"}
 				/>
 				<span className="icon" aria-hidden={true} />
-				<span className="labeltext">{t("FORMS.ADDER.CHOICES")}</span>
+				<span className="labeltext">{t("forms.adder.choices")}</span>
 			</label>
 		</fieldset>
 
 		<label className="labelcolor">
-			<span className="labeltext">{t("FORMS.FIELDS.PALETTE")}</span>
+			<span className="labeltext">{t("forms.fields.palette")}</span>
 			<ColorSelector color={dialogueOptions.color} setColor={setColor} />
 		</label>
 
@@ -182,14 +182,14 @@ export default function AddForm() {
 			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} className="visuallyhidden" />
 			<span className="icon" aria-hidden={true} />
 			<span className="labeltext">
-				{t("ACTIONS.REUSE_PALETTE")}
+				{t("actions.reuse_palette")}
 				<br/>
-				<small>{t("FORMS.FIELDS.EXPLAIN_REUSE_PALETTE")}</small>
+				<small>{t("forms.fields.explain_reuse_palette")}</small>
 			</span>
 		</label>
 
-		<button className="barbtn submitbtn" type="submit">{t("ACTIONS.ADD")}</button>
-		<button className="barbtn resetbtn" type="button" onClick={clearForm}>{t("ACTIONS.RESET")}</button>
-		<button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("ACTIONS.AUTOFILL")}</button>
+		<button className="barbtn submitbtn" type="submit">{t("actions.add")}</button>
+		<button className="barbtn resetbtn" type="button" onClick={clearForm}>{t("actions.reset")}</button>
+		<button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("actions.autofill")}</button>
 	</form>;
 }

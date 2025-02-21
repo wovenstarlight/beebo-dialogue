@@ -10,80 +10,80 @@ export const DIALOGUE_SAMPLES = [
 	{
 		color: "orange",
 		portrait: "oliver/color/annoy.png",
-		speaker: "CONTENT.CHARACTERS.OLIVER.LONG",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OLIVER_CAT",
+		speaker: "content.characters.oliver.long",
+		dialogue: "forms.adder.samples.dialogue.oliver_cat",
 	},
 	{
 		color: "purple",
 		portrait: "oliver/house/shadow.png",
-		speaker: "CONTENT.CHARACTERS.OLIVER.LONG",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OLIVER_WRONG",
+		speaker: "content.characters.oliver.long",
+		dialogue: "forms.adder.samples.dialogue.oliver_wrong",
 	},
 	{
 		color: "orange",
 		portrait: "oliver/galleryout/shadow.png",
-		speaker: "CONTENT.CHARACTERS.OLIVER.LONG",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OLIVER_RIGHT",
+		speaker: "content.characters.oliver.long",
+		dialogue: "forms.adder.samples.dialogue.oliver_right",
 	},
 	{
 		color: "purple",
 		portrait: "angel/house/happy.png",
-		speaker: "CONTENT.CHARACTERS.ANGEL.SPEAKER_LABEL",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.ANGEL_INTRO",
+		speaker: "content.characters.angel.speaker_label",
+		dialogue: "forms.adder.samples.dialogue.angel_intro",
 	},
 	{
 		color: "darkgray",
 		portrait: "angel/color/dominion_neutro.png",
-		speaker: "CONTENT.CHARACTERS.DOMINION.LONG",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.DOMINION_SILENT",
+		speaker: "content.characters.dominion.long",
+		dialogue: "forms.adder.samples.dialogue.dominion_silent",
 	},
 	{
 		color: "purple",
 		portrait: "vivi/house/happy.png",
-		speaker: "CONTENT.CHARACTERS.VIVI.SPEAKER_LABEL",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.VIVI_INVINCIBLE",
+		speaker: "content.characters.vivi.speaker_label",
+		dialogue: "forms.adder.samples.dialogue.vivi_invincible",
 	},
 	{
 		color: "purple",
 		portrait: "marigold/house/neutro.png",
-		speaker: "CONTENT.CHARACTERS.MARIGOLD.UNKNOWN_LABEL",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.MARIGOLD_SUSPICION",
+		speaker: "content.characters.marigold.unknown_label",
+		dialogue: "forms.adder.samples.dialogue.marigold_suspicion",
 	},
 	{
 		color: "purple",
 		portrait: "nina/house/annoy.png",
-		speaker: "CONTENT.CHARACTERS.NINA.LONG",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.NINA_IDYLLIC",
+		speaker: "content.characters.nina.long",
+		dialogue: "forms.adder.samples.dialogue.nina_idyllic",
 	},
 	{
 		color: "skyblue",
 		portrait: "nadia/color/annoy.png",
-		speaker: "CONTENT.CHARACTERS.NADIA.SPEAKER_LABEL",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.NADIA_UPSET",
+		speaker: "content.characters.nadia.speaker_label",
+		dialogue: "forms.adder.samples.dialogue.nadia_upset",
 	},
 	{
 		color: "skyblue",
 		portrait: "simon/color/neutro.png",
-		speaker: "CONTENT.CHARACTERS.SIMON.SPEAKER_LABEL",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.SIMON_FATHERLESS",
+		speaker: "content.characters.simon.speaker_label",
+		dialogue: "forms.adder.samples.dialogue.simon_fatherless",
 	},
 	{
 		color: "purple",
 		portrait: "owen/house/excited.png",
-		speaker: "CONTENT.CHARACTERS.OWEN.LONG",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.OWEN_FREED",
+		speaker: "content.characters.owen.long",
+		dialogue: "forms.adder.samples.dialogue.owen_freed",
 	},
 	{
 		color: "purple",
 		portrait: "eugene/smile.png",
-		speaker: "CONTENT.CHARACTERS.EUGENE.LONG",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.EUGENE_CAUTIOUS",
+		speaker: "content.characters.eugene.long",
+		dialogue: "forms.adder.samples.dialogue.eugene_cautious",
 	},
 	{
 		color: "gray",
 		portrait: "angel/color/happy.png",
-		speaker: "CONTENT.CHARACTERS.ANGEL.SPEAKER_LABEL",
-		dialogue: "FORMS.ADDER.SAMPLES.DIALOGUE.ANGEL_BEEBIN_TIME",
+		speaker: "content.characters.angel.speaker_label",
+		dialogue: "forms.adder.samples.dialogue.angel_beebin_time",
 	},
 ];
 
@@ -95,19 +95,19 @@ export const CHOICE_SAMPLES = [
 		color: "purple",
 		options: [
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.VIVI",
+				text: "forms.adder.samples.choice.bar.vivi",
 				selected: false,
 			},
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.COOWNER",
+				text: "forms.adder.samples.choice.bar.coowner",
 				selected: false,
 			},
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.OTHERS",
+				text: "forms.adder.samples.choice.bar.others",
 				selected: false,
 			},
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.BAR.MEN",
+				text: "forms.adder.samples.choice.bar.men",
 				selected: true,
 			},
 		],
@@ -116,13 +116,13 @@ export const CHOICE_SAMPLES = [
 		color: "purple",
 		options: [
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.SELF.FEARS",
+				text: "forms.adder.samples.choice.self.fears",
 			},
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.SELF.CASES",
+				text: "forms.adder.samples.choice.self.cases",
 			},
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.SELF.CAREER",
+				text: "forms.adder.samples.choice.self.career",
 			},
 		]
 	},
@@ -130,7 +130,7 @@ export const CHOICE_SAMPLES = [
 		color: "purple",
 		options: [
 			{
-				text: "FORMS.ADDER.SAMPLES.CHOICE.FIGHT.FIGHT",
+				text: "forms.adder.samples.choice.fight.fight",
 				selected: true,
 			},
 		]

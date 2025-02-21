@@ -9,8 +9,8 @@ import deepFreeze from "../utils/deepFreeze";
 export const DEFAULT_DIALOGUE = {
 	color: Object.keys(ALL_COLORS)[0],
 	portrait: `misc/someone_shadow.png`,
-	speaker: "DEFAULTS.DIALOGUE.SPEAKER",
-	dialogue: "DEFAULTS.DIALOGUE.DIALOGUE",
+	speaker: "defaults.dialogue.speaker",
+	dialogue: "defaults.dialogue.dialogue",
 };
 
 /** Blank data for a dialogue block. For initializing dialogue objects.
@@ -47,7 +47,7 @@ export const DEFAULT_CHOICE_BLANK = {
  */
 export const DEFAULT_CHOICE_OPTION = 
 {
-	text: "DEFAULTS.CHOICE.TEXT",
+	text: "defaults.choice.text",
 	selected: false,
 };
 

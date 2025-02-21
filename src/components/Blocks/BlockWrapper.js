@@ -87,7 +87,7 @@ export default function BlockWrapper({ type, data }) {
 		case "choice":
 			blockContent = <Choice {...data} />;
 			editMenuContent = <>
-				<h2>{t("FORMS.EDITOR.TITLE_CHOICE")}</h2>
+				<h2>{t("forms.editor.title_choice")}</h2>
 				<ChoiceInputs
 					data={temp}
 					setData={setTemp}
@@ -99,7 +99,7 @@ export default function BlockWrapper({ type, data }) {
 		default:
 			blockContent = <Dialogue {...data} />;
 			editMenuContent = <>
-				<h2>{t("FORMS.EDITOR.TITLE_DIALOGUE")}</h2>
+				<h2>{t("forms.editor.title_dialogue")}</h2>
 				<DialogueInputs
 					data={temp}
 					setData={setTemp}
@@ -118,8 +118,8 @@ export default function BlockWrapper({ type, data }) {
 		{editing && <form id={`edit_${data.id}`} name={`edit_${data.id}`} onSubmit={updateBlock} className={`menu blockform ${temp.color}`}>
 			{editMenuContent}
 	
-			<button className="barbtn submitbtn" type="submit">{t("ACTIONS.UPDATE")}</button>
-			<button className="barbtn resetbtn" type="reset" onClick={cancelEdit}>{t("ACTIONS.CANCEL")}</button>
+			<button className="barbtn submitbtn" type="submit">{t("actions.update")}</button>
+			<button className="barbtn resetbtn" type="reset" onClick={cancelEdit}>{t("actions.cancel")}</button>
 		</form>}
 	</>;
 }
@@ -171,12 +171,12 @@ function ModMenu({ id, setEditing }) {
 	//#endregion
 
 	return <div className="modmenu buttons">
-		<button className="blockbtn editbtn" onClick={editBlock}>{t("ACTIONS.EDIT")}</button>
-		<button className="blockbtn deletebtn" onClick={deleteBlock}>{t("ACTIONS.DELETE")}</button>
+		<button className="blockbtn editbtn" onClick={editBlock}>{t("actions.edit")}</button>
+		<button className="blockbtn deletebtn" onClick={deleteBlock}>{t("actions.delete")}</button>
 		{/* Don't render the move buttons at all if this is the only block i.e. both first and last */}
 		{!(isFirst && isLast) && <> 
-		<button className="blockbtn movebtn" onClick={moveBlockUp} disabled={isFirst}>{t("ACTIONS.MOVE_UP")}</button>
-		<button className="blockbtn movebtn" onClick={moveBlockDown} disabled={isLast}>{t("ACTIONS.MOVE_DOWN")}</button>
+		<button className="blockbtn movebtn" onClick={moveBlockUp} disabled={isFirst}>{t("actions.move_up")}</button>
+		<button className="blockbtn movebtn" onClick={moveBlockDown} disabled={isLast}>{t("actions.move_down")}</button>
 		</>}
 	</div>;
 }

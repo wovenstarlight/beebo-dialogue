@@ -15,21 +15,21 @@ export default function PortraitViewer() {
 			id="closeportraits"
 			className="blockbtn deletebtn"
 			onClick={() => document.getElementById("allportraits").close()}
-		>{t("ACTIONS.CLOSE")}</button>
+		>{t("actions.close")}</button>
 
-		<h2>{t("FORMS.FIELDS.ALL_PORTRAITS")}</h2>
+		<h2>{t("forms.fields.all_portraits")}</h2>
 
 		{ALL_PORTRAITS.map(group => {
 			// Create group label from the provided label object
 			let label, keys = Object.keys(group.label);
 			if (isSubsetOf(["identifier", "variant"], keys)) {
-				label = t("CONTENT.PORTRAITS.GROUP_LABEL.IDENTIFIER_VARIANT", {
+				label = t("content.portraits.group_label.identifier_variant", {
 					identifier: t(group.label.identifier),
 					variant: t(group.label.variant),
 				});
 			}
 			else if (isSubsetOf(["identifier"], keys)) {
-				label = t("CONTENT.PORTRAITS.GROUP_LABEL.IDENTIFIER", {
+				label = t("content.portraits.group_label.identifier", {
 					identifier: t(group.label.identifier),
 				});
 			}
@@ -43,43 +43,43 @@ export default function PortraitViewer() {
 					// Create option label from the provided label object
 					let label, spriteKeys = Object.keys(sprite[1]);
 					if (isSubsetOf(["identifier", "emotion", "variant"], spriteKeys)) {
-						label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION_VARIANT", {
+						label = t("content.portraits.option_label.identifier_emotion_variant", {
 							identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 							variant: t(sprite[1].variant),
 						});
 					}
 					else if (isSubsetOf(["identifier", "emotion"], spriteKeys)) {
-						label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION", {
+						label = t("content.portraits.option_label.identifier_emotion", {
 							identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 						});
 					}
 					else if (isSubsetOf(["identifier", "variant"], spriteKeys)) {
-						label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_VARIANT", {
+						label = t("content.portraits.option_label.identifier_variant", {
 							identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 							variant: t(sprite[1].variant),
 						});
 					}
 					else if (isSubsetOf(["identifier"], spriteKeys)) {
-						label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER", {
+						label = t("content.portraits.option_label.identifier", {
 							identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
 						});
 					}
 					// Or, if no identifier
 					else if (isSubsetOf(["emotion", "variant"], spriteKeys)) {
-						label = t("CONTENT.PORTRAITS.OPTION_LABEL.EMOTION_VARIANT", {
+						label = t("content.portraits.option_label.emotion_variant", {
 							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 							variant: t(sprite[1].variant),
 						});
 					}
 					else if (isSubsetOf(["emotion"], spriteKeys)) {
-						label = t("CONTENT.PORTRAITS.OPTION_LABEL.EMOTION", {
+						label = t("content.portraits.option_label.emotion", {
 							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 						});
 					}
 					else if (isSubsetOf(["variant"], spriteKeys)) {
-						label = t("CONTENT.PORTRAITS.OPTION_LABEL.VARIANT", {
+						label = t("content.portraits.option_label.variant", {
 							variant: t(sprite[1].variant),
 						});
 					}

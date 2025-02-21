@@ -56,7 +56,7 @@ export default function JSONForm() {
 		navigator.clipboard.writeText(form.querySelector("#jsoninput").value.trim());
 
 		// Let user know
-		showMessage(e.target, t("ALERTS.CONFIRM_COPIED"));
+		showMessage(e.target, t("alerts.confirm_copied"));
 	}
 
 	/** Downloads JSON as a .json file.
@@ -75,7 +75,7 @@ export default function JSONForm() {
 		dlLink.click();
 
 		// Let user know
-		showMessage(e.target, t("ALERTS.CONFIRM_DOWNLOADED"));
+		showMessage(e.target, t("alerts.confirm_downloaded"));
 	}
 
 	/** Uploads a .json file to the editor and renders its contents. */
@@ -84,7 +84,7 @@ export default function JSONForm() {
 
 		// confirm it's a JSON file
 		if (file.type !== "application/json") {
-			window.alert(t("ALERTS.ERROR_JSON_FILETYPE"));
+			window.alert(t("alerts.error_json_filetype"));
 			return;
 		}
 
@@ -97,7 +97,7 @@ export default function JSONForm() {
 					x => ["color", "portrait", "speaker", "dialogue", "options"].includes(x)
 				)
 			}))) {
-				window.alert(t("ALERTS.ERROR_JSON_FORMAT"));
+				window.alert(t("alerts.error_json_format"));
 				return;
 			}
 
@@ -114,7 +114,7 @@ export default function JSONForm() {
 			}));
 
 			// Let user know it was successful
-			showMessage(e.target.previousElementSibling, t("ALERTS.CONFIRM_UPLOADED"));
+			showMessage(e.target.previousElementSibling, t("alerts.confirm_uploaded"));
 		} catch (error) {
 			window.alert(error.message);
 		}
@@ -122,25 +122,25 @@ export default function JSONForm() {
 	// #endregion
 
 	return <form id="jsonform" name="jsonform" className="menu">
-		<h2>{t("FORMS.JSON.TITLE")}</h2>
-		<p className="explainer">{t("FORMS.JSON.SUBTITLE")}</p>
+		<h2>{t("forms.json.title")}</h2>
+		<p className="explainer">{t("forms.json.subtitle")}</p>
 
 		<textarea id="jsoninput" name="jsoninput" value={getJSON()} readOnly={true} />
 
 		<div className="buttons">
-			<button type="button" className="blockbtn" id="copyjson" onClick={copyJSON} aria-describedby="copyexplainer">{t("ACTIONS.COPY")}</button>
-			<p className="explainer" id="copyexplainer">{t("FORMS.JSON.EXPLAIN_COPY")}</p>
+			<button type="button" className="blockbtn" id="copyjson" onClick={copyJSON} aria-describedby="copyexplainer">{t("actions.copy")}</button>
+			<p className="explainer" id="copyexplainer">{t("forms.json.explain_copy")}</p>
 
-			<button type="button" className="blockbtn" id="downloadjson" onClick={downloadJSON} aria-describedby="downloadexplainer">{t("ACTIONS.DOWNLOAD")}</button>
-			<p className="explainer" id="downloadexplainer">{t("FORMS.JSON.EXPLAIN_DOWNLOAD")}</p>
+			<button type="button" className="blockbtn" id="downloadjson" onClick={downloadJSON} aria-describedby="downloadexplainer">{t("actions.download")}</button>
+			<p className="explainer" id="downloadexplainer">{t("forms.json.explain_download")}</p>
 
 			<label className="blockbtn" id="uploadlabel" aria-describedby="uploadexplainer">
-				<span className="btnlabel">{t("ACTIONS.UPLOAD")}</span>
+				<span className="btnlabel">{t("actions.upload")}</span>
 				<input className="visuallyhidden" name="uploadjson" onChange={uploadJSON} type="file" accept=".json" />
 			</label>
-			<p className="explainer" id="uploadexplainer">{t("FORMS.JSON.EXPLAIN_UPLOAD")}</p>
+			<p className="explainer" id="uploadexplainer">{t("forms.json.explain_upload")}</p>
 		</div>
 		
-		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue/${i18n.language}.json`} download={`${t("FORMS.JSON.SAMPLE")}.json`}>{t("ACTIONS.AUTOFILL")}</a>
+		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue/${i18n.language}.json`} download={`${t("forms.json.sample")}.json`}>{t("actions.autofill")}</a>
 	</form>;
 }

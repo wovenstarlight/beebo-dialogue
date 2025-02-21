@@ -38,7 +38,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 
 	return <>
 		{includePalette && <label className="labelcolor">
-			<span className="labeltext">{t("FORMS.FIELDS.PALETTE")}</span>
+			<span className="labeltext">{t("forms.fields.palette")}</span>
 			<ColorSelector color={data.color} setColor={(e) => setData({ ...data, color: e.target.value })} />
 		</label>}
 
@@ -50,7 +50,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 			setData={setData}
 		/>)}
 
-		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>{t("ACTIONS.ADD_OPTION")}</button>}
+		{data.options.length < 4 && <button type="button" className="barbtn addbtn" onClick={addOption}>{t("actions.add_option")}</button>}
 	</>;
 }
 
@@ -125,7 +125,7 @@ function OptionInput({ index, optionData, allOptions, setData }) {
 
 	return <div className="optiongroup" id={optionData.id}>
 		<label className="labeloption">
-			<span className="labeltext">{t("FORMS.FIELDS.OPTION_NUMBER", { index: index + 1 })}</span>
+			<span className="labeltext">{t("forms.fields.option_number", { index: index + 1 })}</span>
 			<input
 				className="inputoption"
 				name={`inputoption${index}`}
@@ -142,16 +142,16 @@ function OptionInput({ index, optionData, allOptions, setData }) {
 				<input type="checkbox" name={`inputselect${index}`} checked={optionData.selected} onChange={setOptionSelected} className="visuallyhidden" />
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext"><Trans
-					i18nKey="ACTIONS.MARK_SELECTED"
+					i18nKey="actions.mark_selected"
 					values={{ index: index + 1 }}
 					components={{ hidden: <span className="visuallyhidden" /> }}
 				/></span>
 			</label>
 			
 			{allOptions.length > 1 && <>
-				<button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={allOptions.at(0).id === optionData.id}>{t("ACTIONS.MOVE_UP")}</button>
-				<button type="button" className="blockbtn movebtn" onClick={moveOptionDown} disabled={allOptions.at(-1).id === optionData.id}>{t("ACTIONS.MOVE_DOWN")}</button>
-				<button type="button" className="blockbtn deletebtn" onClick={deleteOption}>{t("ACTIONS.DELETE")}</button>
+				<button type="button" className="blockbtn movebtn" onClick={moveOptionUp} disabled={allOptions.at(0).id === optionData.id}>{t("actions.move_up")}</button>
+				<button type="button" className="blockbtn movebtn" onClick={moveOptionDown} disabled={allOptions.at(-1).id === optionData.id}>{t("actions.move_down")}</button>
+				<button type="button" className="blockbtn deletebtn" onClick={deleteOption}>{t("actions.delete")}</button>
 			</>}
 		</div>
 	</div>;
