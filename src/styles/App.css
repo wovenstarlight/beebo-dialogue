@@ -156,11 +156,13 @@ body {
 	text-align: center;
 }
 
+/* Header */
 #sitehead h1 {
 	color: white;
 	margin-block-start: 0;
 }
 
+/* Body */
 #sitebody {
 	border-block: 2em solid transparent;
 	border-image: url("../assets/images/curlyBorder.png") 35 0 space;
@@ -169,15 +171,8 @@ body {
 	margin-inline: auto;
 }
 
+/* Footer */
 #sitefoot > :last-child { margin-block-end: 0 }
-
-[hidden] { display: none !important }
-
-.visuallyhidden {
-	position: fixed;
-	top: 100%;
-	left: 100%;
-}
 /* #endregion */
 
 /* #region Top menu */
@@ -223,6 +218,14 @@ body {
 /* #endregion */
 
 /* #region Reusable components */
+[hidden] { display: none !important }
+
+.visuallyhidden {
+	position: fixed;
+	top: 100%;
+	left: 100%;
+}
+
 textarea {
 	resize: vertical;
 	color: inherit;
@@ -242,7 +245,7 @@ textarea {
 	}
 }
 
-/* Form buttons */
+/* #region Form buttons */
 .blockbtn, .barbtn, .barbtn:link, .barbtn:visited {
 	display: block;
 	text-align: center;
@@ -295,4 +298,5 @@ textarea {
 
 	&.samplebtn { font-size: 0.9em }
 }
+/* #endregion */
 /* #endregion */
