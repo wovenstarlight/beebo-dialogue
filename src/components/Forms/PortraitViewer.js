@@ -45,14 +45,14 @@ export default function PortraitViewer() {
 					if (isSubsetOf(["identifier", "emotion", "variant"], spriteKeys)) {
 						label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION_VARIANT", {
 							identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
-							emotion: t(sprite[1].emotion),
+							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 							variant: t(sprite[1].variant),
 						});
 					}
 					else if (isSubsetOf(["identifier", "emotion"], spriteKeys)) {
 						label = t("CONTENT.PORTRAITS.OPTION_LABEL.IDENTIFIER_EMOTION", {
 							identifier: t(sprite[1].identifier ?? group.label.short_identifier ?? group.label.identifier),
-							emotion: t(sprite[1].emotion),
+							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 						});
 					}
 					else if (isSubsetOf(["identifier", "variant"], spriteKeys)) {
@@ -69,13 +69,13 @@ export default function PortraitViewer() {
 					// Or, if no identifier
 					else if (isSubsetOf(["emotion", "variant"], spriteKeys)) {
 						label = t("CONTENT.PORTRAITS.OPTION_LABEL.EMOTION_VARIANT", {
-							emotion: t(sprite[1].emotion),
+							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 							variant: t(sprite[1].variant),
 						});
 					}
 					else if (isSubsetOf(["emotion"], spriteKeys)) {
 						label = t("CONTENT.PORTRAITS.OPTION_LABEL.EMOTION", {
-							emotion: t(sprite[1].emotion),
+							emotion: t(sprite[1].emotion, { context: sprite[1].gender ?? group.label.gender }),
 						});
 					}
 					else if (isSubsetOf(["variant"], spriteKeys)) {

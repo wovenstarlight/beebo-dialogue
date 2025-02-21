@@ -14,6 +14,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
 			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "male",
 		},
 		options: {
 			"oliver/house/angy.png": {
@@ -222,6 +223,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
 			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.ORANGE",
+			gender: "male",
 		},
 		options: {
 			"oliver/color/annoy.png": {
@@ -291,6 +293,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
 			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GALLERY_YELLOW",
+			gender: "male",
 		},
 		options: {
 			"oliver/galleryin/angy.png": {
@@ -354,6 +357,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
 			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GALLERY_ORANGE",
+			gender: "male",
 		},
 		options: {
 			"oliver/galleryout/verg.png": {
@@ -384,6 +388,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.OLIVER.LONG",
 			short_identifier: "CONTENT.CHARACTERS.OLIVER.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.YOUNG",
+			gender: "male",
 		},
 		options: {
 			"oliver/young/angy.png": {
@@ -438,6 +443,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.ANGEL.LONG",
 			short_identifier: "CONTENT.CHARACTERS.ANGEL.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "male",
 		},
 		options: {
 			"angel/house/bigangy.png": {
@@ -621,6 +627,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.ANGEL.LONG",
 			short_identifier: "CONTENT.CHARACTERS.ANGEL.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GRAY",
+			gender: "male",
 		},
 		options: {
 			"angel/color/browraise.png": {
@@ -691,6 +698,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.VIVI.LONG",
 			short_identifier: "CONTENT.CHARACTERS.VIVI.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "female",
 		},
 		options: {
 			"vivi/house/angy.png": {
@@ -736,6 +744,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.VIVI.LONG",
 			short_identifier: "CONTENT.CHARACTERS.VIVI.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.RED",
+			gender: "female",
 		},
 		options: {
 			"vivi/color/angy.png": {
@@ -775,6 +784,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.MARIGOLD.LONG",
 			short_identifier: "CONTENT.CHARACTERS.MARIGOLD.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "female",
 		},
 		options: {
 			"marigold/house/angy.png": {
@@ -826,6 +836,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.MARIGOLD.LONG",
 			short_identifier: "CONTENT.CHARACTERS.MARIGOLD.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.ROYAL_BLUE",
+			gender: "female",
 		},
 		options: {
 			"marigold/color/down.png": {
@@ -853,6 +864,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.NINA.LONG",
 			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "female",
 		},
 		options: {
 			"nina/house/angy.png": {
@@ -904,6 +916,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.NINA.LONG",
 			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.VIOLET",
+			gender: "female",
 		},
 		options: {
 			"nina/color/excited.png": {
@@ -919,6 +932,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.NADIA.LONG",
 			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "female",
 		},
 		options: {
 			"nadia/house/angy.png": {
@@ -961,6 +975,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.NADIA.LONG",
 			short_identifier: "CONTENT.CHARACTERS.NINA.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PINK",
+			gender: "female",
 		},
 		options: {
 			"nadia/color/angy.png": {
@@ -994,6 +1009,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.SIMON.LONG",
 			short_identifier: "CONTENT.CHARACTERS.SIMON.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "male",
 		},
 		options: {
 			"simon/house/annoy.png": {
@@ -1039,6 +1055,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.SIMON.LONG",
 			short_identifier: "CONTENT.CHARACTERS.SIMON.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.GREEN",
+			gender: "male",
 		},
 		options: {
 			"simon/color/down.png": {
@@ -1063,6 +1080,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.OWEN.LONG",
 			short_identifier: "CONTENT.CHARACTERS.OWEN.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.PURPLE",
+			gender: "male",
 		},
 		options: {
 			"owen/house/angy.png": {
@@ -1120,6 +1138,7 @@ const ALL_PORTRAITS = [
 			identifier: "CONTENT.CHARACTERS.OWEN.LONG",
 			short_identifier: "CONTENT.CHARACTERS.OWEN.SHORT",
 			variant: "CONTENT.PORTRAITS.GROUP_VARIANTS.CORNFLOWER_BLUE",
+			gender: "male",
 		},
 		options: {
 			"owen/color/happy.png": {
@@ -1140,6 +1159,7 @@ const ALL_PORTRAITS = [
 		label: {
 			identifier: "CONTENT.CHARACTERS.EUGENE.LONG",
 			short_identifier: "CONTENT.CHARACTERS.EUGENE.SHORT",
+			gender: "male",
 		},
 		options: {
 			"eugene/angy.png": {
@@ -1199,6 +1219,7 @@ const ALL_PORTRAITS = [
 		label: {
 			identifier: "CONTENT.CHARACTERS.POLICE_CHIEF.LONG",
 			short_identifier: "CONTENT.CHARACTERS.POLICE_CHIEF.SHORT",
+			// gender unknown (male?)
 		},
 		options: {
 			"police/chief/neutro.png": {
@@ -1216,6 +1237,7 @@ const ALL_PORTRAITS = [
 		label: {
 			identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_1.LONG",
 			short_identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_1.SHORT",
+			// gender unknown
 		},
 		options: {
 			"police/officer1/angy.png": {
@@ -1230,6 +1252,7 @@ const ALL_PORTRAITS = [
 		label: {
 			identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_2.LONG",
 			short_identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_2.SHORT",
+			// gender unknown (female?)
 		},
 		options: {
 			"police/officer2/neutro.png": {
@@ -1244,6 +1267,7 @@ const ALL_PORTRAITS = [
 		label: {
 			identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_3.LONG",
 			short_identifier: "CONTENT.CHARACTERS.POLICE_OFFICER_3.SHORT",
+			// gender unknown
 		},
 		options: {
 			"police/officer3/smile.png": {
@@ -1265,6 +1289,7 @@ const ALL_PORTRAITS = [
 			"misc/bartender_neutro.png": {
 				identifier: "CONTENT.CHARACTERS.BARTENDER.SHORT",
 				emotion: "CONTENT.PORTRAITS.EMOTIONS.NEUTRAL",
+				// gender unknown (female?)
 			},
 			"misc/someone_shadow.png": {
 				identifier: "CONTENT.CHARACTERS.SOMEONE.SHORT",
