@@ -2,8 +2,8 @@
 	position: absolute;
 	top: 0;
 	left: 100%;
-	margin-left: -0.3em;
-	padding-inline: 0.5em;
+	margin-left: -0.3rem;
+	padding-inline: 0.5rem;
 	height: 100%;
 	display: grid;
 	grid-template-columns: auto auto;
