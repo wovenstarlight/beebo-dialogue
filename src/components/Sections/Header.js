@@ -2,7 +2,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 /** The app header, including title and inspiration credits. */
 export default function Header() {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	// eslint gets upset if you supply links with no content to <Trans/>, so include placeholder text; it gets overwritten by the actual content in the i18n file
 	return <header id="sitehead">
