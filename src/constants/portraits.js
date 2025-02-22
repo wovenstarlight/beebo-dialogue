@@ -509,17 +509,17 @@ const ALL_PORTRAITS = [
 				emotion: "content.portraits.emotions.hmph",
 				variant: "content.portraits.variants.hat",
 			},
-			"angel/house/side.png": {
+			"angel/house/side2.png": {
 				emotion: "content.portraits.emotions.side",
 			},
-			"angel/house/hatside.png": {
+			"angel/house/hatside2.png": {
 				emotion: "content.portraits.emotions.side",
 				variant: "content.portraits.variants.hat",
 			},
-			"angel/house/side2.png": {
+			"angel/house/side.png": {
 				emotion: "content.portraits.emotions.side_2",
 			},
-			"angel/house/hatside2.png": {
+			"angel/house/hatside.png": {
 				emotion: "content.portraits.emotions.side_2",
 				variant: "content.portraits.variants.hat",
 			},
@@ -652,10 +652,10 @@ const ALL_PORTRAITS = [
 				emotion: "content.portraits.emotions.hmph",
 			},
 			"angel/color/side.png": {
-				emotion: "content.portraits.emotions.side",
+				emotion: "content.portraits.emotions.side_2",
 			},
 			"angel/color/side2.png": {
-				emotion: "content.portraits.emotions.side_2",
+				emotion: "content.portraits.emotions.side",
 			},
 			"angel/color/neutro.png": {
 				emotion: "content.portraits.emotions.neutral",
@@ -1184,10 +1184,10 @@ const ALL_PORTRAITS = [
 				emotion: "content.portraits.emotions.hehe",
 			},
 			"eugene/side.png": {
-				emotion: "content.portraits.emotions.side",
+				emotion: "content.portraits.emotions.side_2",
 			},
 			"eugene/side2.png": {
-				emotion: "content.portraits.emotions.side_2",
+				emotion: "content.portraits.emotions.side",
 			},
 			"eugene/neutro.png": {
 				emotion: "content.portraits.emotions.neutral",
@@ -1293,12 +1293,12 @@ const ALL_PORTRAITS = [
 			},
 			"misc/someone_shadow.png": {
 				identifier: "content.characters.someone.short",
-				emotion: "content.portraits.emotions.silhouette",
+				emotion: "content.portraits.emotions.shadow",
 				variant: "content.portraits.group_variants.purple",
 			},
 			"misc/worker_shadow.png": {
 				identifier: "content.characters.worker.short",
-				emotion: "content.portraits.emotions.silhouette",
+				emotion: "content.portraits.emotions.shadow",
 				variant: "content.portraits.group_variants.city_gray",
 			},
 			"misc/tutorial_blank.png": {
