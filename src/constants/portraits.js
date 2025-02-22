@@ -651,11 +651,11 @@ const ALL_PORTRAITS = [
 			"angel/color/hmph.png": {
 				emotion: "content.portraits.emotions.hmph",
 			},
-			"angel/color/side.png": {
-				emotion: "content.portraits.emotions.side_2",
-			},
 			"angel/color/side2.png": {
 				emotion: "content.portraits.emotions.side",
+			},
+			"angel/color/side.png": {
+				emotion: "content.portraits.emotions.side_2",
 			},
 			"angel/color/neutro.png": {
 				emotion: "content.portraits.emotions.neutral",
@@ -1183,11 +1183,11 @@ const ALL_PORTRAITS = [
 			"eugene/hehe.png": {
 				emotion: "content.portraits.emotions.hehe",
 			},
-			"eugene/side.png": {
-				emotion: "content.portraits.emotions.side_2",
-			},
 			"eugene/side2.png": {
 				emotion: "content.portraits.emotions.side",
+			},
+			"eugene/side.png": {
+				emotion: "content.portraits.emotions.side_2",
 			},
 			"eugene/neutro.png": {
 				emotion: "content.portraits.emotions.neutral",
