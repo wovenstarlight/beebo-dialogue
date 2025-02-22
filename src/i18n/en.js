@@ -432,7 +432,7 @@ const TRANSLATIONS = {
 				silhouette: "Silhouette",
 				silly_angry: "Silly-angry",
 				smiling: "Smiling",
-				smiling_speaking: "Smiling, talking",
+				smiling_speaking: "Smiling & speaking",
 				smug: "Smug",
 				speaking: "Speaking",
 				surprised: "Surprised",
