@@ -1,0 +1,43 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Serve site locally",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"start",
+			],
+			"group":{
+				"kind": "test",
+				"isDefault": true,
+			},
+		},
+		{
+			"label": "Build site",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"deploy",
+				"--",
+				"-m",
+				"\"${input:commitMessage}\"",
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true,
+			},
+		},
+	],
+	"inputs": [
+		{
+			"type": "promptString",
+			"id": "commitMessage",
+			"description": "Commit message (do NOT use double quotes)",
+			"default": "Updates",
+		},
+	]
+}
