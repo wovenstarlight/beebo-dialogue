@@ -265,6 +265,7 @@ const TRANSLATIONS = {
 				short: "Simon",
 			},
 			owen: {
+				unknown_label: "Hat Teen",
 				long: "Owen",
 				short: "Owen",
 			},
