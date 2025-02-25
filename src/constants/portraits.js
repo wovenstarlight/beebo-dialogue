@@ -930,7 +930,7 @@ const ALL_PORTRAITS = [
 	{
 		label: {
 			identifier: "content.characters.nadia.long",
-			short_identifier: "content.characters.nina.short",
+			short_identifier: "content.characters.nadia.short",
 			variant: "content.portraits.group_variants.purple",
 			gender: "female",
 		},
@@ -973,7 +973,7 @@ const ALL_PORTRAITS = [
 	{
 		label: {
 			identifier: "content.characters.nadia.long",
-			short_identifier: "content.characters.nina.short",
+			short_identifier: "content.characters.nadia.short",
 			variant: "content.portraits.group_variants.pink",
 			gender: "female",
 		},
