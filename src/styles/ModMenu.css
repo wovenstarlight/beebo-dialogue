@@ -1,3 +1,7 @@
+/* Set blocks as anchor for ModMenus */
+.block { position: relative }
+
+/* The ModMenu itself */
 .modmenu {
 	position: absolute;
 	top: 0;

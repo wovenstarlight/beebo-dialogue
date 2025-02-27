@@ -3,7 +3,6 @@
 	font-size: 1.5em;
 	color: var(--text);
 	background-color: var(--bg);
-	position: relative;
 }
 
 /* Header: name of speaker */
