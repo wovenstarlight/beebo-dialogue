@@ -6,6 +6,7 @@ import "../../constants/documentation";
 import Choice from "./Choice";
 import ChoiceInputs from "../Forms/Inputs/ChoiceInputs";
 import Dialogue from "./Dialogue";
+import Image from "./Image";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import { splitAround } from "../../utils/arrayUtils";
 import validate from "../../utils/validateData";
@@ -23,30 +24,8 @@ export default function BlockWrapper({ type, data }) {
 	const { t } = useTranslation();
 
 	// #region Edit this box
-	/* Temporary variables for editing this block with. */
-	/** Basic information for this block. @type {DataDialogue|DataChoice} */
-	let initial;
-	switch (type) {
-		case "choice":
-			initial = {
-				color: data.color,
-				options: data.options,
-			};
-			break;
-
-		case "dialogue":
-		default:
-			initial = {
-				color: data.color,
-				speaker: data.speaker,
-				portrait: data.portrait,
-				dialogue: data.dialogue,
-			};
-			break;
-	}
-	initial.id = data.id;
 	/** Temporary data for use in the edit menu. */
-	const [temp, setTemp] = useState(initial);
+	const [temp, setTemp] = useState({ ...data });
 	/** Tracker for whether the edit menu is open. */
 	const [editing, setEditing] = useState(false);
 
@@ -84,6 +63,11 @@ export default function BlockWrapper({ type, data }) {
 	/** The edit menu title/inputs/labels for this block. */
 	let editMenuContent;
 	switch (type) {
+		case "image":
+			blockContent = <Image {...data} />;
+			editMenuContent = {/* TODO */};
+			break;
+
 		case "choice":
 			blockContent = <Choice {...data} />;
 			editMenuContent = <>
