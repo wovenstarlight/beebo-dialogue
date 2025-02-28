@@ -4,6 +4,61 @@ import ColorSelector from "./ColorSelector";
 import { splitAround } from "../../../utils/arrayUtils";
 
 /**
+ * Form fields for editing an Image block.
+ * @param {object} args
+ * @param {DataImage} args.data Data representing the values of this form's inputs.
+ * @param {function} args.setData The setter for this form's inputs.
+ * @param {boolean} [args.includePalette=true] `true` if the palette selector should be rendered; `false` if it should be omitted.
+ * @returns A set of form fields corresponding to an Image block.
+ */
+export function SingleImageInputs({ data, setData, includePalette = true }) {
+	const { t } = useTranslation();
+
+	/** Sets the file to what's currently uploaded. */
+	function uploadFile(e) {
+		const reader = new FileReader();
+		reader.addEventListener("load", () => {
+			setData(obj => {
+				return {
+					...obj,
+					image: reader.result,
+				}
+			});
+		}, false);
+		reader.readAsDataURL(e.target.files[0]);
+	}
+
+	/* BREAKDOWN:
+		- palette selector for border color
+		- file input for the actual image
+	*/
+
+	return <>
+		{includePalette && <label className="labelcolor">
+			<span className="labeltext">{t("forms.fields.palette")}</span>
+			<ColorSelector color={data.color} setColor={(e) => setData({ ...data, color: e.target.value })} />
+			<span className="explainer">{t("forms.fields.explain_image_palette")}</span>
+		</label>}
+
+		<label className="blockbtn labelimageupload">
+			<span className="labeltext">{t("forms.fields.upload_image_single")}</span>
+			<input type="file" accept="image/*" onChange={uploadFile} />
+		</label>
+
+		<label className="labelstretch">
+				<input type="checkbox" checked={data.stretch} onChange={e => setData({ ...data, stretch: e.target.checked })} className="visuallyhidden" />
+				<span className="icon" aria-hidden={true} />
+				<span className="labeltext">{t("actions.stretch_image_single")}</span>
+			</label>
+
+		<div className="imagedata">
+			<span className="imagelabel">{t("forms.editor.image_preview")}</span>
+			<img src={data.image} className={data.stretch ? "stretch" : undefined} />
+		</div>
+	</>;
+}
+
+/**
  * Form fields for creating Image blocks. Allows multiple images.
  * @param {object} args
  * @param {DataImageMultiple} args.data Data representing the values of this form's inputs.
@@ -137,7 +192,7 @@ function MultipleImagesSingleInput({ index, imageData, allImages, setData }) {
 				<input type="checkbox" name={`inputstretch${index}`} checked={imageData.stretch} onChange={setImageStretch} className="visuallyhidden" />
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext"><Trans
-					i18nKey="actions.stretch_image"
+					i18nKey="actions.stretch_image_multiple"
 					values={{ index: index + 1 }}
 					components={{ hidden: <span className="visuallyhidden" /> }}
 				/></span>

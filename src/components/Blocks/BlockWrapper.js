@@ -7,6 +7,7 @@ import Choice from "./Choice";
 import ChoiceInputs from "../Forms/Inputs/ChoiceInputs";
 import Dialogue from "./Dialogue";
 import Image from "./Image";
+import { SingleImageInputs } from "../Forms/Inputs/ImageInputs";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import { splitAround } from "../../utils/arrayUtils";
 import validate from "../../utils/validateData";
@@ -65,7 +66,13 @@ export default function BlockWrapper({ type, data }) {
 	switch (type) {
 		case "image":
 			blockContent = <Image {...data} />;
-			editMenuContent = {/* TODO */};
+			editMenuContent = <>
+				<h2>{t("forms.editor.title_image")}</h2>
+				<SingleImageInputs
+					data={temp}
+					setData={setTemp}
+				/>
+			</>;
 			break;
 
 		case "choice":

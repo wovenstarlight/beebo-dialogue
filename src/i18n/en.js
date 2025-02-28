@@ -107,6 +107,10 @@ const TRANSLATIONS = {
 			title_dialogue: "Edit dialogue",
 			/** Title when editing a Choice block */
 			title_choice: "Edit choices",
+			/** Title when editing an Image block */
+			title_image: "Edit image",
+			/** Label for image preview */
+			image_preview: "Image preview:"
 		},
 		/** Labels for form fields */
 		fields: {
@@ -122,6 +126,8 @@ const TRANSLATIONS = {
 			 * @param {int} index The 1-based index of this option in the list
 			 */
 			option_number: "Option {{index}}",
+			/** Edit form: Image upload button */
+			upload_image_single: "Upload replacement image",
 			/** AddForm: Image upload button */
 			upload_image_multiple: "Upload images",
 			/** Explanatory message for the palette persistence toggle in AddForm */
@@ -173,10 +179,12 @@ const TRANSLATIONS = {
 		 * @param {int} index The 1-based index of this option in the list
 		 */
 		mark_selected: "<hidden>Mark option {{index}} as</hidden> Selected",
-		/** AddForm/Image block edit form: stretch image
+		/** Image block edit form: stretch image */
+		stretch_image_single: "Stretch image",
+		/** AddForm: stretch image
 		 * @param {int} index The 1-based index of this option in the list
 		 */
-		stretch_image: "Stretch <hidden>image {{index}}</hidden>",
+		stretch_image_multiple: "Stretch <hidden>image {{index}}</hidden>",
 		/** AddForm: keep selected palette even after form submission */
 		reuse_palette: "Reuse same palette for future elements",
 	},
