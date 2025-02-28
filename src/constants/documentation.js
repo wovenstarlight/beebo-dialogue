@@ -62,6 +62,21 @@
 		 * @property {string|LanguageKey} text The text label displayed for this option.
 		 * @property {?boolean} selected `true` if this option should be highlighted as though being clicked; `false`/`null` otherwise.
 		 */
+		/**
+		 * @typedef DataImage
+		 * Data representing an image.
+		 * @type {object}
+		 * @property {Palette} color The color palette for this block. Determines the border color for the image.
+		 * @property {string} image A data URL representing this image.
+		 * @property {boolean} stretch `true` if this image should be stretched to fill available space; `false` if it should be displayed at its original size.
+		 */
+		/**
+		 * @typedef DataImageMultiple
+		 * Data representing a group of images.
+		 * @type {object}
+		 * @property {Palette} color The color palette for all contained images. Determines the border color for the images.
+		 * @property {DataImage[]} images A group of data image objects.
+		 */
 	// #endregion
 // #endregion
 

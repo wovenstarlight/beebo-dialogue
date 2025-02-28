@@ -1,11 +1,12 @@
 import { Trans, useTranslation } from "react-i18next";
+import "../../../constants/documentation";
 import ColorSelector from "./ColorSelector";
 import { splitAround } from "../../../utils/arrayUtils";
 
 /**
  * Form fields for creating Image blocks. Allows multiple images.
  * @param {object} args
- * @param {DataChoice} args.data Data representing the values of this form's inputs. Instead of a single `image` field, should have an `images` field which is an array of `image` objects.
+ * @param {DataImageMultiple} args.data Data representing the values of this form's inputs.
  * @param {function} args.setData The setter for this form's inputs.
  * @param {boolean} [args.includePalette=true] `true` if the palette selector should be rendered; `false` if it should be omitted.
  * @returns A set of form fields corresponding to an Image block.
