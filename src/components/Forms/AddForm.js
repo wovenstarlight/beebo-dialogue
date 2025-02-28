@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
-import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK } from "../../constants/blockDefaults";
+import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK, DEFAULT_IMAGE_BLANK } from "../../constants/blockDefaults";
 import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
 import "../../constants/documentation";
 import ChoiceInputs from "./Inputs/ChoiceInputs";
 import ColorSelector from "./Inputs/ColorSelector";
 import DialogueInputs from "./Inputs/DialogueInputs";
+import { MultipleImageInputs } from "./Inputs/ImageInputs";
 import validate from "../../utils/validateData";
 
 /**
@@ -38,32 +39,58 @@ export default function AddForm() {
 			},
 		],
 	});
+	/** Options tracking the image-related form fields. @type {DataImage} */
+	const [imageOptions, setImageOptions] = useState({
+		...DEFAULT_IMAGE_BLANK,
+		images: [],
+	});
 
 	/** Gets the form fields corresponding to the currently-selected tab. */
 	function getOptions() {
-		return activeTab === "dialogue"
-			? dialogueOptions
-			: choiceOptions;
+		return activeTab === "image" ? imageOptions
+			: activeTab === "choice" ? choiceOptions
+			: dialogueOptions;
 	}
 
 	/** Updates color for both the dialogue and choice form tabs. */
 	function setColor(e) {
 		setDialogueOptions((options) => { return { ...options, color: e.target.value } });
 		setChoiceOptions((options) => { return { ...options, color: e.target.value } });
+		setImageOptions((options) => { return { ...options, color: e.target.value } });
 	}
 
 	/** Creates a block from the data in the currently-selected form tab. */
 	function createBlock(e) {
 		e.preventDefault();
-		const newBlock = {
-			id: `${activeTab.toLowerCase()}_${(new Date()).getTime()}`,
-			...validate({
-				type: activeTab,
-				data: getOptions(),
-				translator: t,
-			})
+		if (activeTab !== "image") {
+			// Single block; directly create and add new block
+			const newBlock = {
+				id: `${activeTab.toLowerCase()}_${(new Date()).getTime()}`,
+				...validate({
+					type: activeTab,
+					data: getOptions(),
+					translator: t,
+				})
+			}
+			setBlocks(values => [...values, newBlock]);
 		}
-		setBlocks(values => [...values, newBlock]);
+		else /* activeTab === "image" */ {
+			// Multiple blocks; create for each one
+			let idBase = `${activeTab.toLowerCase()}_${(new Date()).getTime()}`;
+			setBlocks(values => [
+				...values,
+				...imageOptions.images.map((imageData, index) => {return {
+					id: `${idBase}_${index}`,
+					...validate({
+						type: activeTab,
+						data: {
+							color: imageOptions.color,
+							...imageData,
+						},
+					})
+				}})
+			])
+		}
 		clearForm(e, false);
 	}
 
@@ -90,6 +117,11 @@ export default function AddForm() {
 					...DEFAULT_CHOICE_OPTION_BLANK,
 				},
 			],
+		});
+		setImageOptions({
+			...DEFAULT_IMAGE_BLANK,
+			color: !resetFull && keepColor ? ogColor : DEFAULT_DIALOGUE_BLANK.color,
+			images: [],
 		});
 		// And remove the invalid markers
 		e.target.closest("form").reset();
@@ -155,11 +187,22 @@ export default function AddForm() {
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext">{t("forms.adder.choices")}</span>
 			</label>
+			<label>
+				<input
+					type="radio" name="currentTab" className="visuallyhidden"
+					onChange={(e) => setActiveTab(e.target.value)}
+					value="image"
+					checked={activeTab === "image"}
+				/>
+				<span className="icon" aria-hidden={true} />
+				<span className="labeltext">{t("forms.adder.image")}</span>
+			</label>
 		</fieldset>
 
 		<label className="labelcolor">
 			<span className="labeltext">{t("forms.fields.palette")}</span>
 			<ColorSelector color={dialogueOptions.color} setColor={setColor} />
+			{activeTab === "image" && <span className="explainer">{t("forms.fields.explain_image_palette")}</span>}
 		</label>
 
 		<fieldset id="adddialogue" className="inputsection" disabled={activeTab !== "dialogue"} hidden={activeTab !== "dialogue"}>
@@ -178,6 +221,14 @@ export default function AddForm() {
 			/>
 		</fieldset>
 
+		<fieldset id="addimages" className="inputsection" disabled={activeTab !== "image"} hidden={activeTab !== "image"}>
+			<MultipleImageInputs
+				data={imageOptions}
+				setData={setImageOptions}
+				includePalette={false}
+			/>
+		</fieldset>
+
 		<label id="keepcolor">
 			<input type="checkbox" checked={keepColor} onChange={(e) => setKeepColor(e.target.checked)} className="visuallyhidden" />
 			<span className="icon" aria-hidden={true} />
@@ -190,6 +241,6 @@ export default function AddForm() {
 
 		<button className="barbtn submitbtn" type="submit">{t("actions.add")}</button>
 		<button className="barbtn resetbtn" type="button" onClick={clearForm}>{t("actions.reset")}</button>
-		<button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("actions.autofill")}</button>
+		{["choice", "dialogue"].includes(activeTab) && <button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("actions.autofill")}</button>}
 	</form>;
 }

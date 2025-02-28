@@ -37,6 +37,8 @@ const TRANSLATIONS = {
 			dialogue: "Dialogue",
 			/** Button text for Choices tab */
 			choices: "Choices",
+			/** Button text for Images tab */
+			image: "Images",
 			/** Empty option label in portrait dropdown */
 			unset_portrait: "-- No portrait chosen --",
 			/** Sample block text retrieved by the autofill buttons */
@@ -120,8 +122,12 @@ const TRANSLATIONS = {
 			 * @param {int} index The 1-based index of this option in the list
 			 */
 			option_number: "Option {{index}}",
+			/** AddForm: Image upload button */
+			upload_image_multiple: "Upload images",
 			/** Explanatory message for the palette persistence toggle in AddForm */
 			explain_reuse_palette: "When off, palette will reset to purple after every submission",
+			/** Explanatory message for the palette in Image blocks */
+			explain_image_palette: "Determines the color of the image border",
 			/** Portraits popup: Title */
 			all_portraits: "All portraits",
 		},
@@ -167,6 +173,10 @@ const TRANSLATIONS = {
 		 * @param {int} index The 1-based index of this option in the list
 		 */
 		mark_selected: "<hidden>Mark option {{index}} as</hidden> Selected",
+		/** AddForm/Image block edit form: stretch image
+		 * @param {int} index The 1-based index of this option in the list
+		 */
+		stretch_image: "Stretch <hidden>image {{index}}</hidden>",
 		/** AddForm: keep selected palette even after form submission */
 		reuse_palette: "Reuse same palette for future elements",
 	},
