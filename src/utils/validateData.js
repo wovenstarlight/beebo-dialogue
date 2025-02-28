@@ -1,4 +1,5 @@
 import { DEFAULT_DIALOGUE, DEFAULT_CHOICE, DEFAULT_CHOICE_OPTION, DEFAULT_IMAGE } from "../constants/blockDefaults";
+import { CHOICE, DIALOGUE, IMAGE } from "../constants/blockNames";
 import ALL_COLORS from "../constants/colors";
 import ALL_PORTRAITS from "../constants/portraits";
 
@@ -11,13 +12,13 @@ import ALL_PORTRAITS from "../constants/portraits";
  */
 export default function validate({ type, data, translator }) {
 	switch (type) {
-		case "image":
+		case IMAGE:
 			return validateImage({ data: data, t: translator });
 
-		case "choice":
+		case CHOICE:
 			return validateChoice({ data: data, t: translator });
 		
-		case "dialogue":
+		case DIALOGUE:
 		default:
 			return validateDialogue({ data: data, t: translator });
 	}

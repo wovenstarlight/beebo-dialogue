@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import { getDefaults } from "../../constants/blockDefaults";
+import { CHOICE, DIALOGUE, IMAGE } from "../../constants/blockNames";
 import "../../constants/documentation";
 import Choice from "./Choice";
 import ChoiceInputs from "../Forms/Inputs/ChoiceInputs";
@@ -64,7 +65,7 @@ export default function BlockWrapper({ type, data }) {
 	/** The edit menu title/inputs/labels for this block. */
 	let editMenuContent;
 	switch (type) {
-		case "image":
+		case IMAGE:
 			blockContent = <Image {...data} />;
 			editMenuContent = <>
 				<h2>{t("forms.editor.title_image")}</h2>
@@ -75,7 +76,7 @@ export default function BlockWrapper({ type, data }) {
 			</>;
 			break;
 
-		case "choice":
+		case CHOICE:
 			blockContent = <Choice {...data} />;
 			editMenuContent = <>
 				<h2>{t("forms.editor.title_choice")}</h2>
@@ -86,7 +87,7 @@ export default function BlockWrapper({ type, data }) {
 			</>;
 			break;
 
-		case "dialogue":
+		case DIALOGUE:
 		default:
 			blockContent = <Dialogue {...data} />;
 			editMenuContent = <>

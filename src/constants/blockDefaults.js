@@ -1,5 +1,6 @@
-import "./documentation";
+import { CHOICE, DIALOGUE, IMAGE, OPTION } from "./blockNames";
 import ALL_COLORS from "./colors";
+import "./documentation";
 import deepFreeze from "../utils/deepFreeze";
 
 // #region Dialogue
@@ -99,16 +100,16 @@ deepFreeze(
  */
 export function getDefaults({ type, blank = false }) {
 	switch (type) {
-		case "image":
+		case IMAGE:
 			return blank ? DEFAULT_IMAGE_BLANK : DEFAULT_IMAGE;
 		
-		case "choice":
+		case CHOICE:
 			return blank ? DEFAULT_CHOICE_BLANK : DEFAULT_CHOICE;
 		
-		case "option":
+		case OPTION:
 			return blank ? DEFAULT_CHOICE_OPTION_BLANK : DEFAULT_CHOICE_OPTION;
 
-		case "dialogue":
+		case DIALOGUE:
 		default:
 			return blank ? DEFAULT_DIALOGUE_BLANK : DEFAULT_DIALOGUE;
 	}

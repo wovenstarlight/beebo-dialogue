@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK, DEFAULT_IMAGE_BLANK } from "../../constants/blockDefaults";
+import { CHOICE, DIALOGUE, IMAGE } from "../../constants/blockNames";
 import { CHOICE_SAMPLES, DIALOGUE_SAMPLES } from "../../constants/blockSamples";
 import "../../constants/documentation";
 import ChoiceInputs from "./Inputs/ChoiceInputs";
@@ -19,7 +20,7 @@ export default function AddForm() {
 	const { t } = useTranslation();
 
 	/** The currently-selected tab. Determines what data gets submitted. */
-	const [activeTab, setActiveTab] = useState("dialogue");
+	const [activeTab, setActiveTab] = useState(DIALOGUE);
 	/** `true` the selected color palette should persist across submissions; `false` if it should be reset with each submission. */
 	const [keepColor, setKeepColor] = useState(true);
 
@@ -47,8 +48,8 @@ export default function AddForm() {
 
 	/** Gets the form fields corresponding to the currently-selected tab. */
 	function getOptions() {
-		return activeTab === "image" ? imageOptions
-			: activeTab === "choice" ? choiceOptions
+		return activeTab === IMAGE ? imageOptions
+			: activeTab === CHOICE ? choiceOptions
 			: dialogueOptions;
 	}
 
@@ -62,7 +63,7 @@ export default function AddForm() {
 	/** Creates a block from the data in the currently-selected form tab. */
 	function createBlock(e) {
 		e.preventDefault();
-		if (activeTab !== "image") {
+		if (activeTab !== IMAGE) {
 			// Single block; directly create and add new block
 			const newBlock = {
 				id: `${activeTab.toLowerCase()}_${(new Date()).getTime()}`,
@@ -74,7 +75,7 @@ export default function AddForm() {
 			}
 			setBlocks(values => [...values, newBlock]);
 		}
-		else /* activeTab === "image" */ {
+		else /* activeTab === IMAGE */ {
 			// Multiple blocks; create for each one
 			let idBase = `${activeTab.toLowerCase()}_${(new Date()).getTime()}`;
 			setBlocks(values => [
@@ -132,7 +133,7 @@ export default function AddForm() {
 	 * Samples are drawn from various parts of the game.
 	 */
 	function fillSample() {
-		if (activeTab === "dialogue") {
+		if (activeTab === DIALOGUE) {
 			let sample = DIALOGUE_SAMPLES[Math.floor(Math.random() * DIALOGUE_SAMPLES.length)];
 			// Clear stored values
 			setDialogueOptions({
@@ -141,7 +142,7 @@ export default function AddForm() {
 				dialogue: t(sample.dialogue),
 			});
 		}
-		else if (activeTab === "choice") {
+		else if (activeTab === CHOICE) {
 			let sample = CHOICE_SAMPLES[Math.floor(Math.random() * CHOICE_SAMPLES.length)];
 			// And include `id`s for the various options!
 			setChoiceOptions({
@@ -172,8 +173,8 @@ export default function AddForm() {
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}
-					value="dialogue"
-					checked={activeTab === "dialogue"}
+					value={DIALOGUE}
+					checked={activeTab === DIALOGUE}
 				/>
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext">{t("forms.adder.dialogue")}</span>
@@ -182,8 +183,8 @@ export default function AddForm() {
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}
-					value="choice"
-					checked={activeTab === "choice"}
+					value={CHOICE}
+					checked={activeTab === CHOICE}
 				/>
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext">{t("forms.adder.choices")}</span>
@@ -192,8 +193,8 @@ export default function AddForm() {
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}
-					value="image"
-					checked={activeTab === "image"}
+					value={IMAGE}
+					checked={activeTab === IMAGE}
 				/>
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext">{t("forms.adder.image")}</span>
@@ -203,10 +204,10 @@ export default function AddForm() {
 		<label className="labelcolor">
 			<span className="labeltext">{t("forms.fields.palette")}</span>
 			<ColorSelector color={dialogueOptions.color} setColor={setColor} />
-			{activeTab === "image" && <span className="explainer">{t("forms.fields.explain_image_palette")}</span>}
+			{activeTab === IMAGE && <span className="explainer">{t("forms.fields.explain_image_palette")}</span>}
 		</label>
 
-		<fieldset id="adddialogue" className="inputsection" disabled={activeTab !== "dialogue"} hidden={activeTab !== "dialogue"}>
+		<fieldset id="adddialogue" className="inputsection" disabled={activeTab !== DIALOGUE} hidden={activeTab !== DIALOGUE}>
 			<DialogueInputs
 				data={dialogueOptions}
 				setData={setDialogueOptions}
@@ -214,7 +215,7 @@ export default function AddForm() {
 			/>
 		</fieldset>
 
-		<fieldset id="addchoice" className="inputsection" disabled={activeTab !== "choice"} hidden={activeTab !== "choice"}>
+		<fieldset id="addchoice" className="inputsection" disabled={activeTab !== CHOICE} hidden={activeTab !== CHOICE}>
 			<ChoiceInputs
 				data={choiceOptions}
 				setData={setChoiceOptions}
@@ -222,7 +223,7 @@ export default function AddForm() {
 			/>
 		</fieldset>
 
-		<fieldset id="addimages" className="inputsection" disabled={activeTab !== "image"} hidden={activeTab !== "image"}>
+		<fieldset id="addimages" className="inputsection" disabled={activeTab !== IMAGE} hidden={activeTab !== IMAGE}>
 			<MultipleImageInputs
 				data={imageOptions}
 				setData={setImageOptions}
@@ -242,6 +243,6 @@ export default function AddForm() {
 
 		<button className="barbtn submitbtn" type="submit">{t("actions.add")}</button>
 		<button className="barbtn resetbtn" type="button" onClick={clearForm}>{t("actions.reset")}</button>
-		{["choice", "dialogue"].includes(activeTab) && <button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("actions.autofill")}</button>}
+		{[CHOICE, DIALOGUE].includes(activeTab) && <button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("actions.autofill")}</button>}
 	</form>;
 }

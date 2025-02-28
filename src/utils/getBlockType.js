@@ -1,3 +1,5 @@
+import { CHOICE, DIALOGUE, IMAGE } from "../constants/blockNames";
+
 /**
  * Detects the intended component type of a given data object.
  * 
@@ -10,8 +12,8 @@
  */
 export default function getBlockType(block) {
 	return (
-		"image" in block ? "image"
-		: "options" in block ? "choice"
-		: "dialogue"
+		"image" in block ? IMAGE
+		: "options" in block ? CHOICE
+		: DIALOGUE
 	);
 }
