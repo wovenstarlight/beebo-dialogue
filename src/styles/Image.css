@@ -1,0 +1,15 @@
+.image {
+	display: flex;
+	flex-direction: column;
+	margin: 2em auto;
+	padding-inline: 10%;
+
+	img {
+		display: block;
+		border: var(--border-width) solid var(--text, var(--text-house));
+		max-height: 40em;
+		object-fit: contain;
+		/* Shrink to real size if not stretched to fill */
+		&:not(.stretch) { align-self: center }
+	}
+}
