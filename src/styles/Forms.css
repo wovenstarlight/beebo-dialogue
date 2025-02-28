@@ -105,6 +105,31 @@ fieldset.inputsection { display: contents }
 	}
 
 	select { width: 100% }
+	.labelcolor .explainer {
+		grid-column: 2;
+		text-align: start;
+		font-size: 0.8em;
+		margin-block-end: 1em;
+	}
+
+	.labelimageupload {
+		display: block;
+		text-align: center;
+		margin-inline: 1em;
+		--text: var(--text-simon);
+		--bg: var(--bg-simon);
+		position: relative;
+		
+		input {
+			cursor: pointer;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+	}
 
 	button {
 		.blockform > & + & { margin-block-start: -0.2rem }
@@ -115,6 +140,36 @@ fieldset.inputsection { display: contents }
 		&.resetbtn, &.addbtn { font-size: 1.2em }
 	}
 
+	.imagepreviews {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+
+		.blockitemmods {
+			margin: 0;
+			padding-inline: 10%;
+			justify-content: center;
+		}
+	}
+	.imagedata {
+		display: grid;
+		text-align: center;
+		grid-template-rows: auto 20em auto;
+		padding: 1em;
+		gap: 1em;
+		border: var(--border-width) solid var(--text);
+		img {
+			place-self: center;
+			object-fit: contain;
+			max-width: 100%;
+			max-height: 100%;
+			&.stretch {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
 	.blockitemmods {
 		display: flex;
 		gap: 0.5em;
@@ -122,7 +177,7 @@ fieldset.inputsection { display: contents }
 		margin-inline-start: var(--labelwidth);
 		padding-inline: 1.5em 1em;
 
-		.labelselected {
+		.labelselected, .labelstretch {
 			grid-template-columns: auto 1fr;
 			align-items: center;
 			min-height: 2.8em;
