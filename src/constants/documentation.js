@@ -3,7 +3,7 @@
 	/**
 	 * @typedef BlockType
 	 * A string representing a given content block's type.
-	 * @type {"dialogue"|"choice"}
+	 * @type {"dialogue"|"choice"|"image"}
 	 */
 
 	// Palettes
