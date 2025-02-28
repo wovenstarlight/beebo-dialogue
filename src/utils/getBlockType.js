@@ -2,6 +2,7 @@
  * Detects the intended component type of a given data object.
  * 
  * Types are determined in the following priority order:
+ * - `image`
  * - `choice`
  * - `dialogue`
  * @param {object} block The data object whose type to detect
@@ -9,8 +10,8 @@
  */
 export default function getBlockType(block) {
 	return (
-		"options" in block
-		? "choice"
+		"image" in block ? "image"
+		: "options" in block ? "choice"
 		: "dialogue"
 	);
 }

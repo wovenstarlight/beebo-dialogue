@@ -1,4 +1,4 @@
-import { DEFAULT_DIALOGUE, DEFAULT_CHOICE, DEFAULT_CHOICE_OPTION } from "../constants/blockDefaults";
+import { DEFAULT_DIALOGUE, DEFAULT_CHOICE, DEFAULT_CHOICE_OPTION, DEFAULT_IMAGE } from "../constants/blockDefaults";
 import ALL_COLORS from "../constants/colors";
 import ALL_PORTRAITS from "../constants/portraits";
 
@@ -11,6 +11,9 @@ import ALL_PORTRAITS from "../constants/portraits";
  */
 export default function validate({ type, data, translator }) {
 	switch (type) {
+		case "image":
+			return validateImage({ data: data });
+
 		case "choice":
 			return validateChoice({ data: data, t: translator });
 		
@@ -64,6 +67,21 @@ export function validateChoice({ data: { color, options }, t }) {
 				}
 			})
 			: [{ text: DEFAULT_CHOICE_OPTION.text }],
+	};
+}
+
+/** Cleans input for an Image component.
+ * @param {object} data Raw data for an image.
+ * @param {string} data.color The color palette for this block's border. Checked for type `string` and being a member of the corresponding enumerated list.
+ * @param {string} data.image The data URL for this image. Checked for type `string` and being a valid image data URL (starting with `data:image/*;base64;*`).
+ * @param {boolean} data.stretch Whether this image should be stretched to fill available space. `false` if it should be displayed at its original size.
+ * @returns A validated image object.
+ */
+export function validateImage({ data: { color, image, stretch } }) {
+	return {
+		color: validateColor(color, DEFAULT_IMAGE.color),
+		image: typeof image === "string" && image.match(/^data:image\/\w+;base64,.+/g) ? image : DEFAULT_IMAGE.image,
+		stretch: typeof stretch === "boolean" ? stretch : DEFAULT_IMAGE.stretch,
 	};
 }
 
