@@ -109,8 +109,6 @@ const TRANSLATIONS = {
 			title_choice: "Edit choices",
 			/** Title when editing an Image block */
 			title_image: "Edit image",
-			/** Label for image preview */
-			image_preview: "Image preview:"
 		},
 		/** Labels for form fields */
 		fields: {
@@ -130,6 +128,10 @@ const TRANSLATIONS = {
 			upload_image_single: "Upload replacement image",
 			/** AddForm: Image upload button */
 			upload_image_multiple: "Upload images",
+			/** Label/alternative text for image preview */
+			image_preview: "Image preview",
+			/** Fallback alternative text for images */
+			image: "Image",
 			/** Explanatory message for the palette persistence toggle in AddForm */
 			explain_reuse_palette: "When off, palette will reset to purple after every submission",
 			/** Explanatory message for the palette in Image blocks */

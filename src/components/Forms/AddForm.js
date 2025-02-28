@@ -87,8 +87,9 @@ export default function AddForm() {
 							color: imageOptions.color,
 							...imageData,
 						},
-					})
-				}})
+						translator: t,
+					}),
+				}}),
 			])
 		}
 		clearForm(e, false);

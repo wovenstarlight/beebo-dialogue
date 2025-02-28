@@ -12,7 +12,7 @@ import ALL_PORTRAITS from "../constants/portraits";
 export default function validate({ type, data, translator }) {
 	switch (type) {
 		case "image":
-			return validateImage({ data: data });
+			return validateImage({ data: data, t: translator });
 
 		case "choice":
 			return validateChoice({ data: data, t: translator });
@@ -75,13 +75,16 @@ export function validateChoice({ data: { color, options }, t }) {
  * @param {string} data.color The color palette for this block's border. Checked for type `string` and being a member of the corresponding enumerated list.
  * @param {string} data.image The data URL for this image. Checked for type `string` and being a valid image data URL (starting with `data:image/*;base64;*`).
  * @param {boolean} data.stretch Whether this image should be stretched to fill available space. `false` if it should be displayed at its original size.
+ * @param {string} data.altText Alternative text for this image; by default, is the original filename. Checked for type `string` and non-emptiness.
+ * @param {function} t A translator function to get the localized versions of text used in this block.
  * @returns A validated image object.
  */
-export function validateImage({ data: { color, image, stretch } }) {
+export function validateImage({ data: { color, image, stretch, altText }, t }) {
 	return {
 		color: validateColor(color, DEFAULT_IMAGE.color),
 		image: typeof image === "string" && image.match(/^data:image\/\w+;base64,.+/g) ? image : DEFAULT_IMAGE.image,
 		stretch: typeof stretch === "boolean" ? stretch : DEFAULT_IMAGE.stretch,
+		altText: typeof altText === "string" && altText.length > 0 ? altText : t("forms.fields.image"),
 	};
 }
 

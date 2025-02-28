@@ -56,8 +56,12 @@ export function SingleImageInputs({ data, setData, includePalette = true }) {
 			</label>
 
 		<div className="imagedata">
-			<span className="imagelabel">{t("forms.editor.image_preview")}</span>
-			<img src={data.image} className={data.stretch ? "stretch" : undefined} />
+			<span className="imagelabel">{t("forms.fields.image_preview")}</span>
+			<img
+				src={data.image}
+				alt={data.altText}
+				className={data.stretch ? "stretch" : undefined}
+			/>
 		</div>
 	</>;
 }
@@ -87,7 +91,7 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 					return;
 				}
 				images.push({
-					name: file.name,
+					altText: file.name,
 					image: reader.result,
 				});
 				// Trigger data update once all files have been converted to data URLs
@@ -193,8 +197,12 @@ function MultipleImagesSingleInput({ index, imageData, allImages, setData }) {
 	}
 
 	return <div className="imagedata">
-		<span className="imagelabel">{imageData.name}</span>
-		<img src={imageData.image} className={imageData.stretch ? "stretch" : undefined} />
+		<span className="imagelabel">{imageData.altText}</span>
+		<img
+			src={imageData.image}
+			alt={t("forms.fields.image_preview")}
+			className={imageData.stretch ? "stretch" : undefined}
+		/>
 		
 		<div className="blockitemmods">
 			<label className="labelstretch">

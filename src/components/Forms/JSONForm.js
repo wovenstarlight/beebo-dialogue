@@ -24,6 +24,7 @@ export default function JSONForm() {
 				if ("options" in el) noID.options = el.options.map(opt => {
 					return { ...opt, id: undefined};
 				})
+				if ("altText" in el) noID.altText = undefined;
 				return noID;
 			}),
 			null,
