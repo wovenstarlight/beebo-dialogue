@@ -16,6 +16,10 @@ export function SingleImageInputs({ data, setData, includePalette = true }) {
 
 	/** Sets the file to what's currently uploaded. */
 	function uploadFile(e) {
+		if (!e.target.files[0].type.startsWith("image/")) {
+			window.alert(t("alerts.error_image_filetype"));
+			return;
+		}
 		const reader = new FileReader();
 		reader.addEventListener("load", () => {
 			setData(obj => {
@@ -77,6 +81,11 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 			const file = e.target.files[i];
 			const reader = new FileReader();
 			reader.addEventListener("load", () => {
+				if (!file.type.startsWith("image/")) {
+					window.alert(t("alerts.error_image_filetype"));
+					images.splice(0, images.length);
+					return;
+				}
 				images.push({
 					name: file.name,
 					image: reader.result,

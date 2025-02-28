@@ -201,10 +201,12 @@ const TRANSLATIONS = {
 		confirm_uploaded: "Uploaded!",
 		/** Notify user of error while generating screenshot */
 		error_image_conversion: "There was an error while trying to convert the image. Please let me know about the issue on Github!",
+		/** AddForm/Edit form, images: Notify user of error when uploading a non-image file */
+		error_image_filetype: "Wrong file type!\n\nYou must upload only image files.",
 		/** JSONForm: Notify user of error when uploading a file of the wrong type */
 		error_json_filetype: "Wrong file type!\n\nYou must upload a .json file.",
 		/** JSONForm: Notify user of error in block formatting */
-		error_json_format: "Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", \"dialogue\", and \"options\".\n\nMake sure you didn't leave any blank objects in the list!",
+		error_json_format: "Wrong format!\n\nThe dialogue file should contain an array of objects, each of which only has a subset of the keys \"color\", \"portrait\", \"speaker\", \"dialogue\", \"options\" \"image\", and \"stretch\".\n\nMake sure you didn't leave any blank objects in the list!",
 	},
 	// #endregion
 
