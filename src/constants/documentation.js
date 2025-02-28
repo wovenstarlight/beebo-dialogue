@@ -69,6 +69,7 @@
 		 * @property {Palette} color The color palette for this block. Determines the border color for the image.
 		 * @property {string} image A data URL representing this image.
 		 * @property {boolean} stretch `true` if this image should be stretched to fill available space; `false` if it should be displayed at its original size.
+		 * @property {string} altText Alternative text for this image. The original filename, where available, or defaults to "Image".
 		 */
 		/**
 		 * @typedef DataImageMultiple
