@@ -131,7 +131,7 @@ function MultipleImagesSingleInput({ index, imageData, allImages, setData }) {
 		<span className="imagelabel">{imageData.name}</span>
 		<img src={imageData.image} className={imageData.stretch ? "stretch" : undefined} />
 		
-		<div className="optionmods">
+		<div className="blockitemmods">
 			<label className="labelstretch">
 				<input type="checkbox" name={`inputstretch${index}`} checked={imageData.stretch} onChange={setImageStretch} className="visuallyhidden" />
 				<span className="icon" aria-hidden={true} />

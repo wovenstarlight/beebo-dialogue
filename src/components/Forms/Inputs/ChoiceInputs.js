@@ -137,7 +137,7 @@ function OptionInput({ index, optionData, allOptions, setData }) {
 				onChange={setOptionText}
 			/>
 		</label>
-		<div className="optionmods">
+		<div className="blockitemmods">
 			<label className="labelselected">
 				<input type="checkbox" name={`inputselect${index}`} checked={optionData.selected} onChange={setOptionSelected} className="visuallyhidden" />
 				<span className="icon" aria-hidden={true} />
