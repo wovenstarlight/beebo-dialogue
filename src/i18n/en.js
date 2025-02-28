@@ -133,7 +133,7 @@ const TRANSLATIONS = {
 			/** Fallback alternative text for images */
 			image: "Image",
 			/** Explanatory message for the palette persistence toggle in AddForm */
-			explain_reuse_palette: "When off, palette will reset to purple after every submission",
+			explain_reuse_palette: "When unchecked, palette will reset to purple after every submission",
 			/** Explanatory message for the palette in Image blocks */
 			explain_image_palette: "Determines the color of the image border",
 			/** Portraits popup: Title */
