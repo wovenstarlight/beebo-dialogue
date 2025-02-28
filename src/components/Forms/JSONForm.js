@@ -95,7 +95,7 @@ export default function JSONForm() {
 			if (!(contents.every(obj => {	// confirm that every array item…
 				return Object.prototype.toString.call(obj) === "[object Object]"	// is an object
 				&& Object.keys(obj).some(	// has at least one of the dialogue/MCQ keys
-					x => ["color", "portrait", "speaker", "dialogue", "options", "image", "altText"].includes(x)
+					x => ["color", "portrait", "speaker", "dialogue", "options", "image", "stretch", "altText"].includes(x)
 				)
 			}))) {
 				window.alert(t("alerts.error_json_format"));
