@@ -164,12 +164,28 @@ body {
 
 /* Body */
 #sitebody {
+	/* Unless they add border-image-repeat: no-repeat, the border is just going to disappear on small screens. Don't want that, so switch to using pseudo-elements
 	border-block: 2em solid transparent;
 	border-image: url("../assets/images/curlyBorder.png") 35 0 space;
 	padding-block: 3em;
+	*/
 	width: 100%;
 	max-width: 59.5em;
 	margin-inline: auto;
+	&::before, &::after {
+		content: "";
+		display: block;
+		height: min(2em, 5vmin);
+		background: url("../assets/images/curlyBorder.png") center no-repeat;
+		background-size: contain;
+	}
+	&::before {
+		margin-block-end: 3em;
+	}
+	&::after {
+		transform: scaleY(-1);
+		margin-block-start: 3em;
+	}
 }
 
 /* Footer */
