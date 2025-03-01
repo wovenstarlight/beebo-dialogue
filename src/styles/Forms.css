@@ -57,8 +57,6 @@ fieldset.inputsection { display: contents }
 	input, textarea, select {
 		background-color: var(--bg-house);
 		color: var(--text-house);
-		font-family: "Nokia", monospace;
-		font-size: inherit;
 		border: var(--border-width) solid currentColor;
 		padding-inline: 0.5em;
 		
