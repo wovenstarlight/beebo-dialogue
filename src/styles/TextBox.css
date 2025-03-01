@@ -26,7 +26,7 @@
 		padding-inline: 3px;
 		margin-inline: 3px;
 		user-select: none;
-		
+
 		&::before {
 			content: "";
 			display: block;
@@ -58,7 +58,7 @@
 		height: 100%;
 		border: var(--border-width) solid var(--text);
 	}
-	
+
 	.text {
 		line-height: 1.2;
 		border: var(--border-width) solid var(--text);

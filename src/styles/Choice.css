@@ -13,7 +13,7 @@
 		color: white;
 		text-align: center;
 		font-size: 1.4em;
-	
+
 		&.selected { background-color: var(--text) }
 	}
 }

@@ -148,7 +148,7 @@ body {
 	font-family: "Nokia";
 	color: var(--text-house);
 	background-color: var(--bg-house);
-	
+
 	a:link { color: hsl(from var(--text-house) h calc(s + 5) calc(l + 20)) }
 	a:visited { color: hsl(from var(--text-house) h calc(s + 10) calc(l + 5)) }
 }
@@ -217,7 +217,7 @@ body {
 		background-color: var(--bg);
 		border: var(--border-width) solid var(--text);
 		cursor: pointer;
-	
+
 		&:is(:hover, :focus) {
 			background-color: var(--text);
 			color: var(--bg);
@@ -284,7 +284,7 @@ textarea {
 	color: white;
 	font-family: inherit;
 	font-size: 1rem;
-	
+
 	&:not([disabled]) {
 		cursor: pointer;
 		&:is(:hover, :focus-within) {
@@ -296,7 +296,7 @@ textarea {
 	padding: 0.5em 0.75em;
 	border: var(--border-width) solid var(--text, currentColor);
 	background-color: var(--bg);
-	
+
 	&:not([disabled]):is(:hover, :focus-within) { color: var(--bg) }
 
 	&[disabled] {
