@@ -1,21 +1,45 @@
-/* Set blocks as anchor for ModMenus */
-.block { position: relative }
+/* A single content block: dialogue, choice, image etc. */
+.block {
+	container: content-block / inline-size;
+	/* Set as anchor for ModMenus */
+	position: relative;
+}
 
 /* The ModMenu itself */
 .modmenu {
 	position: absolute;
-	top: 0;
-	left: 100%;
-	margin-left: -0.3rem;
-	padding-inline: 0.5rem;
-	height: 100%;
 	display: grid;
 	grid-template-columns: auto auto;
 	align-items: center;
 	align-content: center;
 	gap: 0.2em;
 	text-wrap: nowrap;
-	
+
+	/* Place to right on wide screens */
+	@media (min-width: 95em) {
+		top: 0;
+		left: 100%;
+		margin-left: -0.3rem;
+		padding-inline: 0.5rem;
+		height: 100%;
+	}
+
+	/* Place to bottom on narrow screens */
+	@media (max-width: 95em) {
+		top: 100%;
+		right: 2vmin;
+		margin-block-start: -1em;
+		z-index: 1;
+
+		@container content-block (min-width: 40rem) {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: end;
+
+			button { width: 9em }
+		}
+	}
+
 	.editbtn {
 		grid-column: 1;
 		grid-row: 1;
