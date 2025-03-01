@@ -13,6 +13,7 @@
 	--portrait-size: 4.25em; /* Width of a standard talksprite */
 	--border-width: 3.5px; /* Width of 1 in-game pixel */
 	--form-gap: min(1em, 1vmax); /* Gap between buttons */
+	--image-height: 30em; /* Maximum height for images (blocks and previews) */
 
 	--text-oliver: #a97844;
 	--bg-oliver: #311a05;
