@@ -10,8 +10,9 @@
 }
 
 :root {
-	--portrait-size: 4.25em;
-	--border-width: 3.5px;
+	--portrait-size: 4.25em; /* Width of a standard talksprite */
+	--border-width: 3.5px; /* Width of 1 in-game pixel */
+	--form-gap: min(1em, 1vmax); /* Gap between buttons */
 
 	--text-oliver: #a97844;
 	--bg-oliver: #311a05;
