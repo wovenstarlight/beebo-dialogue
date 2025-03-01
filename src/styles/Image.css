@@ -1,7 +1,7 @@
 .image {
 	display: flex;
 	flex-direction: column;
-	margin: 2em auto;
+	margin: var(--block-spacing) auto;
 	padding-inline: 10%;
 
 	img {

@@ -3,8 +3,7 @@
 	flex-direction: column;
 	gap: 0.6em;
 	padding-inline: 0.75em;
-	background-color: var(--bg);
-	margin-block: 2em;
+	margin-block: var(--block-spacing);
 
 	p {
 		margin-block: 0;

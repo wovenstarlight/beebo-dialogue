@@ -11,6 +11,7 @@
 
 :root {
 	--dialogue-width: 59.5em; /* Width of a standard dialogue box */
+	--block-spacing: 2em; /* Margins around non-dialogue blocks */
 	--portrait-size: 4.25em; /* Width of a standard talksprite */
 	--border-width: 3.5px; /* Width of 1 in-game pixel */
 	--form-gap: min(1em, 1vmax); /* Gap between buttons */

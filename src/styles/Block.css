@@ -1,5 +1,10 @@
-/* Set as anchor for ModMenus */
-.block { position: relative }
+.block {
+	/* Set as anchor for ModMenus */
+	position: relative;
+
+	#dialogues.screenshotting &:is(.choice, .image):first-child	{ padding-block-start: var(--block-spacing) }
+	#dialogues.screenshotting &:is(.choice, .image):last-child	{ padding-block-end: var(--block-spacing) }
+}
 
 /* The ModMenu itself */
 .modmenu {
