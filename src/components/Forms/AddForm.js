@@ -169,7 +169,7 @@ export default function AddForm() {
 
 		<fieldset id="tabber">
 			<legend>{t("forms.adder.tabber_title")}</legend>
-			<label>
+			<label className="blockbtn">
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}
@@ -179,7 +179,7 @@ export default function AddForm() {
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext">{t("forms.adder.dialogue")}</span>
 			</label>
-			<label>
+			<label className="blockbtn">
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}
@@ -189,7 +189,7 @@ export default function AddForm() {
 				<span className="icon" aria-hidden={true} />
 				<span className="labeltext">{t("forms.adder.choices")}</span>
 			</label>
-			<label>
+			<label className="blockbtn">
 				<input
 					type="radio" name="currentTab" className="visuallyhidden"
 					onChange={(e) => setActiveTab(e.target.value)}

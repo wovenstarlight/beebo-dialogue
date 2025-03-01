@@ -2,6 +2,7 @@
 #tabber {
 	border: none;
 	display: flex;
+	flex-flow: row wrap;
 	gap: 1em;
 	margin: 0 max(5vw, 3em) 1em;
 	padding: 0.5em 0 0;
@@ -12,12 +13,8 @@
 		flex-grow: 1;
 		text-align: center;
 		display: block;
-		border: var(--border-width) solid var(--text);
-		padding: 0.5em 0.75em;
-		cursor: pointer;
 		--bg: var(--bg-nina);
 		--text: var(--text-nina);
-		background-color: var(--bg);
 		color: var(--text);
 
 		&:has(:checked) {
@@ -25,10 +22,7 @@
 			--text: var(--text-marigold);
 			color: white;
 		}
-		&:is(:hover, :focus-within) {
-			background-color: var(--text);
-			color: var(--bg);
-		}
+		&:is(:hover, :focus-within) { color: var(--bg) }
 	}
 }
 
