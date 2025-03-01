@@ -228,6 +228,8 @@ body {
 
 /* #region Dialogues section */
 #dialogues {
+	container: blocks / inline-size;
+
 	& .blockform { margin-block: 0.75em }
 	& > :first-child { margin-block-start: 0 }
 	& > :last-child { margin-block-end: 0 }

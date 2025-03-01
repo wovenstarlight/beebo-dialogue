@@ -1,9 +1,5 @@
-/* A single content block: dialogue, choice, image etc. */
-.block {
-	container: content-block / inline-size;
-	/* Set as anchor for ModMenus */
-	position: relative;
-}
+/* Set as anchor for ModMenus */
+.block { position: relative }
 
 /* The ModMenu itself */
 .modmenu {
@@ -31,7 +27,7 @@
 		margin-block-start: -1em;
 		z-index: 1;
 
-		@container content-block (min-width: 40rem) {
+		@container blocks (min-width: 40rem) {
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: end;
