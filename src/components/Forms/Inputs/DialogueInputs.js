@@ -4,7 +4,6 @@ import "../../../constants/documentation";
 import PortraitSelector from "./PortraitSelector";
 import ColorSelector from "./ColorSelector";
 import getPortraitURL from "../../../utils/getPortraitURL";
-import "../../../styles/Forms.css";
 
 /**
  * Form fields for creating/editing a Dialogue block.

@@ -3,7 +3,6 @@ import { DEFAULT_CHOICE_OPTION_BLANK } from "../../../constants/blockDefaults";
 import "../../../constants/documentation";
 import ColorSelector from "./ColorSelector";
 import { splitAround } from "../../../utils/arrayUtils";
-import "../../../styles/Forms.css";
 
 /**
  * Form fields for creating/editing a Choice block.

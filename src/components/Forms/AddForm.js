@@ -10,6 +10,7 @@ import ColorSelector from "./Inputs/ColorSelector";
 import DialogueInputs from "./Inputs/DialogueInputs";
 import { MultipleImageInputs } from "./Inputs/ImageInputs";
 import validate from "../../utils/validateData";
+import "../../styles/AddEditForms.css";
 
 /**
  * A form with tabbed sections for adding Dialogue and Choice blocks.
