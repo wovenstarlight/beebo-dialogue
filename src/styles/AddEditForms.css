@@ -183,6 +183,8 @@ fieldset.inputsection { display: contents }
 		padding: min(1em, 2vmin);
 		gap: 1em;
 		border: var(--border-width) solid;
+		word-break: break-word;
+
 		img {
 			place-self: center;
 			object-fit: contain;
