@@ -138,7 +138,7 @@ body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-	border: 5em solid transparent;
+	border: min(5em, 10vmin) solid transparent;
 	border-image: url("../assets/images/pauseBorder.png") 19% repeat;
 	font-family: "Nokia";
 	color: var(--text-house);
