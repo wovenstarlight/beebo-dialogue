@@ -207,6 +207,9 @@ body {
 	width: fit-content;
 	gap: 1em;
 	margin-inline: auto;
+	position: sticky;
+	top: 1em;
+	z-index: 2;
 
 	button {
 		display: block;
