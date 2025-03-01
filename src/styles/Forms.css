@@ -15,7 +15,7 @@
 		display: block;
 		--bg: var(--bg-nina);
 		--text: var(--text-nina);
-		
+
 		&:not(:has(:checked)) { color: var(--text) }
 
 		&:has(:checked) {
@@ -35,6 +35,7 @@ fieldset.inputsection { display: contents }
 	flex-direction: column;
 	gap: 0.5em;
 	--label-width: 7.5em;
+	container: blockform / inline-size;
 
 	label {
 		display: grid;
@@ -43,17 +44,23 @@ fieldset.inputsection { display: contents }
 		text-align: end;
 		gap: 0.5em;
 		padding-inline: 1em;
+
+		@container blockform (max-width: 40rem) {
+			&:not(#keepcolor, .labelportrait, :has([type="radio"]), .labelselected, .labelimageupload, .labelstretch) {
+				display: flex;
+				flex-direction: column;
+			}
+		}
 	}
-	.labeltext {
-		padding-block-start: 0.5em;
-	}
+	.labeltext { padding-block-start: 0.5em }
 
 	input, textarea, select {
 		background-color: var(--bg-house);
 		color: var(--text-house);
 		border: var(--border-width) solid currentColor;
 		padding-inline: 0.5em;
-		
+		width: 100%;
+
 		&:user-invalid {
 			box-shadow: 0 0 0.1em 0.1em var(--text-vivi);
 		}
@@ -73,22 +80,48 @@ fieldset.inputsection { display: contents }
 	}
 
 	.labelportrait {
-		grid-template-columns: var(--label-width) 1fr auto;
-		align-items: center;
+		@container blockform (min-width: 40rem) {
+			grid-template-columns: var(--label-width) 1fr auto;
+			align-items: center;
 
-		.labeltext { padding-block-start: 0 }
+			.labeltext { padding-block-start: 0 }
 
-		.portrait {
-			width: 6em;
-			grid-column: 3;
-			grid-row: 1 / span 2;
+			.portrait {
+				grid-column: 3;
+				grid-row: 1 / span 2;
+			}
+
+			.seeallportraits {
+				grid-column: 2;
+				grid-row: 2;
+			}
 		}
-	}
-	.seeallportraits {
-		font-size: 0.9em;
-		padding: 0.35em 0.75em;
-		grid-column: 2;
-		grid-row: 2;
+		@container blockform (min-width: 25rem) and (max-width: 40rem) {
+			display: grid;
+			grid-template-columns: 1fr auto;
+
+			.labeltext { justify-self: start }
+
+			.portrait {
+				grid-column: 2;
+				grid-row: 1 / span 3;
+				place-self: end;
+			}
+
+			.seeallportraits { margin-block-start: 0.2em }
+		}
+		@container blockform (max-width: 25rem) {
+			display: flex;
+			flex-direction: column;
+
+			.seeallportraits { width: 100% }
+
+			.portrait { align-self: center }
+		}
+
+		.portrait { width: 6em }
+
+		.seeallportraits { font-size: 0.9em }
 	}
 
 	.inputdialogue {
@@ -96,7 +129,6 @@ fieldset.inputsection { display: contents }
 		padding-block: 0.5em;
 	}
 
-	select { width: 100% }
 	.labelcolor .explainer {
 		grid-column: 2;
 		text-align: start;
@@ -111,7 +143,7 @@ fieldset.inputsection { display: contents }
 		--text: var(--text-simon);
 		--bg: var(--bg-simon);
 		position: relative;
-		
+
 		input {
 			cursor: pointer;
 			opacity: 0;
@@ -147,8 +179,8 @@ fieldset.inputsection { display: contents }
 	.imagedata {
 		display: grid;
 		text-align: center;
-		grid-template-rows: auto var(--image-height) auto;
-		padding: 1em;
+		grid-template-rows: auto min(var(--image-height), 50vmax) auto;
+		padding: min(1em, 2vmin);
 		gap: 1em;
 		border: var(--border-width) solid;
 		img {
@@ -171,8 +203,16 @@ fieldset.inputsection { display: contents }
 		display: flex;
 		gap: 0.5em;
 		margin-block: 0.3em 0.1em;
-		margin-inline-start: var(--label-width);
 		padding-inline: 1.5em 1em;
+
+		/* Place side by side under the text label */
+		@container blockform (min-width: 40rem) {
+			margin-inline-start: var(--label-width);
+		}
+		@container blockform (max-width: 40rem) {
+			flex-flow: row wrap;
+			white-space: pre;
+		}
 
 		.labelselected, .labelstretch {
 			grid-template-columns: auto 1fr;
