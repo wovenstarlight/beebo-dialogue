@@ -10,6 +10,7 @@
 }
 
 :root {
+	--dialogue-width: 59.5em; /* Width of a standard dialogue box */
 	--portrait-size: 4.25em; /* Width of a standard talksprite */
 	--border-width: 3.5px; /* Width of 1 in-game pixel */
 	--form-gap: min(1em, 1vmax); /* Gap between buttons */
@@ -173,7 +174,7 @@ body {
 	padding-block: 3em;
 	*/
 	width: 100%;
-	max-width: 59.5em;
+	max-width: var(--dialogue-width);
 	margin-inline: auto;
 	&::before, &::after {
 		content: "";
@@ -259,7 +260,7 @@ textarea {
 }
 
 .menu {
-	max-width: 49.5em;
+	max-width: calc(var(--dialogue-width) - 10em);
 	margin: 3em auto 0;
 	padding-block: 1em;
 	border: 1.25em solid transparent;
