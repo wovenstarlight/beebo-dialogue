@@ -12,7 +12,7 @@ import { SingleImageInputs } from "../Forms/Inputs/ImageInputs";
 import DialogueInputs from "../Forms/Inputs/DialogueInputs";
 import { splitAround } from "../../utils/arrayUtils";
 import validate from "../../utils/validateData";
-import "../../styles/ModMenu.css";
+import "../../styles/Block.css";
 
 /**
  * A wrapper element for a content block.
