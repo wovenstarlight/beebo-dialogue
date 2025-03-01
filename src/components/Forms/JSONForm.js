@@ -130,17 +130,20 @@ export default function JSONForm() {
 
 		<div className="buttons">
 			<button type="button" className="blockbtn" id="copyjson" onClick={copyJSON} aria-describedby="copyexplainer">{t("actions.copy")}</button>
-			<p className="explainer" id="copyexplainer">{t("forms.json.explain_copy")}</p>
 
 			<button type="button" className="blockbtn" id="downloadjson" onClick={downloadJSON} aria-describedby="downloadexplainer">{t("actions.download")}</button>
-			<p className="explainer" id="downloadexplainer">{t("forms.json.explain_download")}</p>
 
 			<label className="blockbtn" id="uploadlabel" aria-describedby="uploadexplainer">
 				<span className="btnlabel">{t("actions.upload")}</span>
 				<input className="visuallyhidden" name="uploadjson" onChange={uploadJSON} type="file" accept=".json" />
 			</label>
-			<p className="explainer" id="uploadexplainer">{t("forms.json.explain_upload")}</p>
 		</div>
+
+		<p class="explainer">
+			<span id="copyexplainer">{t("forms.json.explain_copy")}</span>
+			<span id="downloadexplainer">{t("forms.json.explain_download")}</span>
+			<span id="uploadexplainer">{t("forms.json.explain_upload")}</span>
+		</p>
 		
 		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue/${i18n.language}.json`} download={`${t("forms.json.sample")}.json`}>{t("actions.autofill")}</a>
 	</form>;

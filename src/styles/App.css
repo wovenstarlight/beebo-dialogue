@@ -117,6 +117,7 @@
 * {
 	box-sizing: border-box;
 	font-weight: normal;
+	line-height: 1.2;
 
 	scrollbar-width: thin;
 	scrollbar-color: var(--bg-house) var(--text-house);
