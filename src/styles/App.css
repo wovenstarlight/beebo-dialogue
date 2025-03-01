@@ -190,6 +190,9 @@ body {
 		transform: scaleY(-1);
 		margin-block-start: 3em;
 	}
+
+	/* Expand to regular width when saving as PNG */
+	&:has(#dialogues.screenshotting) { width: var(--dialogue-width) }
 }
 
 /* Footer */
