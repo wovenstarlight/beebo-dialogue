@@ -167,7 +167,8 @@ body {
 	border-block: 2em solid transparent;
 	border-image: url("../assets/images/curlyBorder.png") 35 0 space;
 	padding-block: 3em;
-	width: 59.5em;
+	width: 100%;
+	max-width: 59.5em;
 	margin-inline: auto;
 }
 
