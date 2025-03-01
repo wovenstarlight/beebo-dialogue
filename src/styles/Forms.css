@@ -15,12 +15,12 @@
 		display: block;
 		--bg: var(--bg-nina);
 		--text: var(--text-nina);
-		color: var(--text);
+		
+		&:not(:has(:checked)) { color: var(--text) }
 
 		&:has(:checked) {
 			--bg: var(--bg-marigold);
 			--text: var(--text-marigold);
-			color: white;
 		}
 		&:is(:hover, :focus-within) { color: var(--bg) }
 	}
