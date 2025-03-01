@@ -144,8 +144,8 @@ body {
 	color: var(--text-house);
 	background-color: var(--bg-house);
 	
-	a:link { color: #bc90bf }
-	a:visited { color: #a85cad }
+	a:link { color: hsl(from var(--text-house) h calc(s + 5) calc(l + 20)) }
+	a:visited { color: hsl(from var(--text-house) h calc(s + 10) calc(l + 5)) }
 }
 
 #root {
