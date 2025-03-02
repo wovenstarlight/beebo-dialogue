@@ -255,8 +255,8 @@ body {
 
 /* #region Dialogues section */
 #dialogues {
-	/* Shrink font size when previewing on narrow screens */
-	&:not(.screenshotting) {
+	/* Shrink font size on narrow screens */
+	&:not(.screenshotting, .previewing) {
 		@media (max-width: 40rem) {
 			font-size: 80%;
 		}
