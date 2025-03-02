@@ -126,10 +126,6 @@ const TRANSLATIONS = {
 			 * @param {int} index The 1-based index of this option in the list
 			 */
 			option_number: "Option {{index}}",
-			/** Edit form: Image upload button */
-			upload_image_single: "Upload replacement image",
-			/** AddForm: Image upload button */
-			upload_image_multiple: "Upload images",
 			/** Label/alternative text for image preview */
 			image_preview: "Image preview",
 			/** Fallback alternative text for images */
@@ -187,6 +183,12 @@ const TRANSLATIONS = {
 		 * @param {int} index The 1-based index of this option in the list
 		 */
 		mark_selected: "<hidden>Mark option {{index}} as</hidden> Selected",
+		/** Image block edit form: Image upload drag/drop message */
+		drag_drop_image_single: "Drag and drop a replacement image here, or...",
+		/** AddForm: Image upload drag/drop message */
+		drag_drop_image_multiple: "Drag and drop image files here, or...",
+		/** Add/Image block edit form: Image upload browse button */
+		browse_files: "Browse files",
 		/** Image block edit form: stretch image */
 		stretch_image_single: "Stretch image",
 		/** AddForm: stretch image

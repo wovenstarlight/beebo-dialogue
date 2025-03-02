@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import "../../../constants/documentation";
 import ColorSelector from "./ColorSelector";
@@ -15,8 +16,8 @@ export function SingleImageInputs({ data, setData, includePalette = true }) {
 	const { t } = useTranslation();
 
 	/** Sets the file to what's currently uploaded. */
-	function uploadFile(e) {
-		if (!e.target.files[0].type.startsWith("image/")) {
+	function uploadFile(file) {
+		if (!file.type.startsWith("image/")) {
 			window.alert(t("alerts.error_image_filetype"));
 			return;
 		}
@@ -29,7 +30,7 @@ export function SingleImageInputs({ data, setData, includePalette = true }) {
 				}
 			});
 		}, false);
-		reader.readAsDataURL(e.target.files[0]);
+		reader.readAsDataURL(file);
 	}
 
 	/* BREAKDOWN:
@@ -44,10 +45,7 @@ export function SingleImageInputs({ data, setData, includePalette = true }) {
 			<span className="explainer">{t("forms.fields.explain_image_palette")}</span>
 		</label>}
 
-		<label className="blockbtn labelimageupload">
-			<span className="labeltext">{t("forms.fields.upload_image_single")}</span>
-			<input type="file" accept="image/*" onChange={uploadFile} />
-		</label>
+		<FileUploadInput uploadHandler={uploadFile} />
 
 		<label className="labelstretch">
 				<input type="checkbox" checked={data.stretch} onChange={e => setData({ ...data, stretch: e.target.checked })} className="visuallyhidden" />
@@ -78,11 +76,11 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 	const { t } = useTranslation();
 
 	/** Sets the list of files to what's currently uploaded. */
-	function uploadFiles(e) {
+	function uploadFiles(files) {
 		let images = [];
 
-		for (let i = 0; i < e.target.files.length; i++) {
-			const file = e.target.files[i];
+		for (let i = 0; i < files.length; i++) {
+			const file = files[i];
 			const reader = new FileReader();
 			reader.addEventListener("load", () => {
 				if (!file.type.startsWith("image/")) {
@@ -95,7 +93,7 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 					image: reader.result,
 				});
 				// Trigger data update once all files have been converted to data URLs
-				if (images.length === e.target.files.length)
+				if (images.length === files.length)
 					setData(values => {
 						return {
 							...values,
@@ -125,10 +123,11 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 			<span className="explainer">{t("forms.fields.explain_image_palette")}</span>
 		</label>}
 
-		<label className="blockbtn labelimageupload">
-			<span className="labeltext">{t("forms.fields.upload_image_multiple")}</span>
-			<input type="file" accept="image/*" required multiple onChange={uploadFiles} />
-		</label>
+		<FileUploadInput
+			uploadHandler={uploadFiles}
+			allowMultiple={true}
+			isRequired={true}
+		/>
 
 		{data.images.length > 0 && <section className="imagepreviews">
 			{data.images.map((obj, index) => <MultipleImagesSingleInput
@@ -222,4 +221,83 @@ function MultipleImagesSingleInput({ index, imageData, allImages, setData }) {
 			</>}
 		</div>
 	</div>;
+}
+
+/** File input for uploading images, with both a drag-and-drop area and a clickable button.
+ * @param {object} args
+ * @param {function} args.uploadHandler Takes a `File` or `FileList` (depending on `allowMultiple`) and uploads them.
+ * @param {boolean} [args.allowMultiple=false] `true` if this input should allow the user to select more than one file; `false` otherwise.
+ * @param {boolean} [args.isRequired=false] `true` if this input must be filled in to submit the form; `false` otherwise.
+ */
+function FileUploadInput({ uploadHandler, allowMultiple = false, isRequired = false }) {
+	const { t } = useTranslation();
+	/** Reference to the file input, for keeping it updated with dragged & dropped files */
+	const fileInput = useRef();
+	/** Reference to the outlined drag/drop box, for highlighting when hovered. */
+	const dropContainer = useRef();
+	/** Tracks whether {@link dropContainer} is being hovered over; `>= 1` when it is being hovered. */
+	const dragCounter = useRef(0);
+
+	/** Resets any hover styling on {@link dropContainer} and calls the {@link uploadHandler file upload handler}. */
+	function handleDrop(e) {
+		e.preventDefault();
+		// Fetch files
+		const files = e.dataTransfer.files;
+
+		// Let the input know about the files to satisfy `required` if present
+		fileInput.current.files = files; 
+
+		// Disable hover styling
+		dragCounter.current = 0;
+		dropContainer.current.classList.remove("dragover");
+
+		// And handle the uploads
+		if (files.length > 0) {
+			uploadHandler(allowMultiple ? files : files[0]);
+		}
+	};
+
+	/** Enables hover styling on {@link dropContainer}. */
+	function handleDragEnter(e) {
+		e.preventDefault();
+		dragCounter.current ++;
+		dropContainer.current.classList.add("dragover");
+	}
+
+	/** Disables hover styling on {@link dropContainer}. */
+	function handleDragLeave(e) {
+		e.preventDefault();
+		dragCounter.current --;
+		if (dragCounter.current === 0) dropContainer.current.classList.remove("dragover");
+	}
+
+	return (
+	<label
+		className="labelimageupload"
+		onDragEnter={handleDragEnter}
+		onDragLeave={handleDragLeave}
+	>
+		<div
+			id="dragdrop"
+			ref={dropContainer}
+			onDrop={handleDrop}
+			onDragOver={(e) => e.preventDefault()}
+		>
+			<p className="toplabel">{t("actions.drag_drop_image", {
+				context: allowMultiple ? "multiple" : "single",
+			})}</p>
+			<p className="blockbtn labeltext">{t("actions.browse_files", {
+				context: allowMultiple ? "multiple" : "single",
+			})}</p>
+		</div>
+		<input
+			type="file"
+			accept="image/*"
+			ref={fileInput}
+			required={isRequired}
+			multiple={allowMultiple}
+			onChange={(e) => uploadHandler(e.target.files)}
+		/>
+	</label>
+	);
 }

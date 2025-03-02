@@ -144,9 +144,22 @@ fieldset.inputsection { display: contents }
 		--bg: var(--bg-simon);
 		position: relative;
 
+		#dragdrop {
+			border: var(--border-width) dashed;
+			color: var(--text-owen);
+			background-color: var(--bg-owen);
+			padding: min(4em, 15vh) min(2em, 5vw);
+
+			&.dragover {
+				--highlight: rgb(from var(--text-owen) r g b / 0.2);
+				background-image: linear-gradient(var(--highlight), var(--highlight));
+			}
+		}
+
 		input {
 			cursor: pointer;
 			opacity: 0;
+			pointer-events: none;
 			position: absolute;
 			top: 0;
 			left: 0;
