@@ -2,7 +2,15 @@
 	display: flex;
 	flex-direction: column;
 	margin: var(--block-spacing) auto;
-	padding-inline: 10%;
+
+	/* Increase padding on wide screens */
+	@container blocks (min-width: 40rem) {
+		padding-inline: 10%;
+	}
+	/* Reduce padding on narrow screens */
+	@container blocks (max-width: 40rem) {
+		padding-inline: 2vw;
+	}
 
 	img {
 		display: block;
