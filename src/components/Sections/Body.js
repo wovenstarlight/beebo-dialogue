@@ -28,7 +28,7 @@ export default function Body() {
 
 		// Mark the page in preparation for capturing
 		// This disables all elements that shouldn't appear in the final image, like edit menus
-		dialogues.classList.toggle("screenshotting");
+		dialogues.classList.add("screenshotting");
 
 		domtoimage.toSvg(dialogues)
 			.then((dataUrl) => {
@@ -45,7 +45,7 @@ export default function Body() {
 					downloadLink.click();
 
 					// With that done, bring back the edit menus and all!
-					dialogues.classList.toggle("screenshotting");
+					dialogues.classList.remove("screenshotting");
 				});
 				img.src = dataUrl;
 			})
