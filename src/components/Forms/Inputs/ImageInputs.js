@@ -93,7 +93,8 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 					image: reader.result,
 				});
 				// Trigger data update once all files have been converted to data URLs
-				if (images.length === files.length)
+				if (images.length === files.length) {
+					images.sort((a, b) => a.altText.localeCompare(b.altText));
 					setData(values => {
 						return {
 							...values,
@@ -106,6 +107,7 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 							}),
 						}
 					});
+				}
 			}, false);
 			reader.readAsDataURL(file);
 		}
