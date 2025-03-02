@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import { getDefaults } from "../../constants/blockDefaults";
@@ -21,7 +21,7 @@ import "../../styles/Block.css";
  * @param {DataDialogue|DataChoice} args.data Data representing this block.
  * @returns A content block with a modification menu/editing form.
  */
-export default function BlockWrapper({ type, data }) {
+export default memo(function BlockWrapper({ type, data }) {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
 	const { t } = useTranslation();
 
@@ -114,7 +114,7 @@ export default function BlockWrapper({ type, data }) {
 			<button className="barbtn resetbtn" type="reset" onClick={cancelEdit}>{t("actions.cancel")}</button>
 		</form>}
 	</>;
-}
+});
 
 /**
  * A menu for modifying its associated block. Includes:

@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 /** The app header, including title and inspiration credits. */
-export default function Header() {
+export default memo(function Header() {
 	const { t } = useTranslation();
 
 	// eslint gets upset if you supply links with no content to <Trans/>, so include placeholder text; it gets overwritten by the actual content in the i18n file
@@ -20,4 +21,4 @@ export default function Header() {
 			}}
 		/></p>
 	</header>;
-}
+})

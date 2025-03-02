@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import ALL_PORTRAITS from "../../constants/portraits";
 import { isSubsetOf } from "../../utils/arrayUtils";
@@ -7,7 +8,7 @@ import getPortraitURL from "../../utils/getPortraitURL";
  * A dialog showing all available portraits.
  * @returns A <dialog> element listing every portrait in `constants/portraits.js`.
  */
-export default function PortraitViewer() {
+export default memo(function PortraitViewer() {
 	const { t } = useTranslation();
 
 	return <dialog id="allportraits" className="menu">
@@ -94,4 +95,4 @@ export default function PortraitViewer() {
 			</details>;
 		})}
 	</dialog>;
-}
+});

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import getBlockType from "../../utils/getBlockType";
@@ -9,7 +9,7 @@ import "../../styles/JSONForm.css";
  * A form for mass-editing content blocks through JSON files.
  * @returns A <form> element for reading/writing JSON.
  */
-export default function JSONForm() {
+export default memo(function JSONForm() {
 	const [allBlocks, setBlocks] = useContext(BlockContext);
 	const { t, i18n } = useTranslation();
 
@@ -147,4 +147,4 @@ export default function JSONForm() {
 		
 		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue/${i18n.language}.json`} download={`${t("forms.json.sample")}.json`}>{t("actions.autofill")}</a>
 	</form>;
-}
+})

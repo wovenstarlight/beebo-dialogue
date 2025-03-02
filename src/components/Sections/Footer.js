@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { Trans } from "react-i18next";
 
 /** The app footer, including app credits. */
-export default function Footer() {
+export default memo(function Footer() {
 	// eslint gets upset if you supply links with no content to <Trans/>, so include placeholder text; it gets overwritten by the actual content in the i18n file
 	return <footer id="sitefoot">
 		<p><Trans
@@ -18,4 +19,4 @@ export default function Footer() {
 			}}
 		/></p>
 	</footer>;
-}
+})

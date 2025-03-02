@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import BlockContext from "../../context/BlockContext";
 import { useTranslation } from "react-i18next";
 import { DEFAULT_CHOICE_BLANK, DEFAULT_CHOICE_OPTION_BLANK, DEFAULT_DIALOGUE_BLANK, DEFAULT_IMAGE_BLANK } from "../../constants/blockDefaults";
@@ -16,7 +16,7 @@ import "../../styles/AddEditForms.css";
  * A form with tabbed sections for adding Dialogue and Choice blocks.
  * @returns A <form> element for creating a content block.
  */
-export default function AddForm() {
+export default memo(function AddForm() {
 	const [, setBlocks] = useContext(BlockContext);
 	const { t } = useTranslation();
 
@@ -246,4 +246,4 @@ export default function AddForm() {
 		<button className="barbtn resetbtn" type="button" onClick={clearForm}>{t("actions.reset")}</button>
 		{[CHOICE, DIALOGUE].includes(activeTab) && <button className="barbtn samplebtn" type="button" onClick={fillSample}>{t("actions.autofill")}</button>}
 	</form>;
-}
+})
