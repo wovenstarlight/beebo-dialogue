@@ -1,43 +1,72 @@
 .dialogue {
-	padding: 0 0.5em 0.5em;
 	font-size: 1.5em;
 	color: var(--text);
 	background-color: var(--bg);
+	
+	@container blocks (min-width: 52rem) {
+		padding: 0 0.5em 0.5em;
+	}
+
+	@container blocks (max-width: 52rem) {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		margin-block: 0.25em;
+	}
 }
 
 /* Header: name of speaker */
 .dialogue .speaker {
 	font-family: "SqueezedPixels";
-	padding-top: 0.5em;
-	overflow: hidden;
-	white-space: pre;
-	text-overflow: ellipsis;
 
-	span {
-		position: relative;
-		top: 0.25em;
-		line-height: 1;
+	/* Position above text on wide screens */
+	@container blocks (min-width: 52rem) {
+		padding-top: 0.5em;
+		overflow: hidden;
+		white-space: pre;
+		text-overflow: ellipsis;
+
+		span {
+			position: relative;
+			top: 0.25em;
+			line-height: 1;
+		}
+
+		.question {
+			color: var(--bg);
+			position: relative;
+			z-index: 0;
+			padding-inline: 3px;
+			margin-inline: 3px;
+			user-select: none;
+			
+			&::before {
+				content: "";
+				display: block;
+				width: 75%;
+				height: 75%;
+				background-color: var(--text);
+				position: absolute;
+				top: -5.5px;
+				left: 1px;
+				z-index: -1;
+			}
+		}
 	}
 
-	.question {
-		color: var(--bg);
-		position: relative;
-		z-index: 0;
-		padding-inline: 3px;
-		margin-inline: 3px;
-		user-select: none;
+	/* Position beside portrait on narrow screens */
+	@container blocks (max-width: 52rem) {
+		display: inline-block;
+		grid-column: 2;
+		border: var(--border-width) solid var(--text);
+		border-inline-start-width: 0;
+		/* Push text down (to accommodate font) and right (away from portrait) */
+		padding-block-start: 0.75em;
+		padding-inline: min(0.5em, 2vw);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
-		&::before {
-			content: "";
-			display: block;
-			width: 75%;
-			height: 75%;
-			background-color: var(--text);
-			position: absolute;
-			top: -5.5px;
-			left: 1px;
-			z-index: -1;
-		}
+		.question { display: none }
 	}
 }
 
@@ -46,6 +75,7 @@
 	display: grid;
 	grid-template-columns: auto 1fr;
 	position: relative;
+	--portrait-height: calc((31 / 34) * var(--portrait-size));
 
 	/* Overwrite portrait borders */
 	&::before {
@@ -55,20 +85,44 @@
 		top: 0;
 		left: 0;
 		width: var(--portrait-size);
-		height: 100%;
 		border: var(--border-width) solid var(--text);
 	}
 
 	.text {
 		line-height: 1.2;
 		border: var(--border-width) solid var(--text);
-		border-inline-start-width: 0;
 		margin: 0;
-		max-height: calc((31 / 34) * var(--portrait-size));
 		padding: 0.3em;
 		overflow: hidden;
 		word-break: break-word;
 		white-space: pre-wrap;
+	}
+
+	/* Position above text on wide screens */
+	@container blocks (min-width: 52rem) {
+		&::before {
+			height: 100%;
+		}
+
+		.text {
+			border-inline-start-width: 0;
+			max-height: var(--portrait-height);
+		}
+	}
+
+	/* Position beside portrait on narrow screens */
+	@container blocks (max-width: 52rem) {
+		display: contents;
+
+		&::before {
+			width: var(--portrait-size);
+			height: var(--portrait-height);
+		}
+
+		.text {
+			grid-column: 1 / span 2;
+			border-block-start-width: 0;
+		}
 	}
 }
 
@@ -76,5 +130,13 @@
 	width: var(--portrait-size);
 	height: auto;
 	display: block;
+
+	/* Position beside speaker on narrow screens */
+	@container blocks (max-width: 52rem) {
+		.dialogue.block & {
+			grid-row: 1;
+			grid-column: 1;
+		}
+	}
 }
 /* #endregion */
