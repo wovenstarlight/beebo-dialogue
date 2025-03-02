@@ -203,6 +203,7 @@ fieldset.inputsection { display: contents }
 
 	.blockitemmods {
 		display: flex;
+		flex-flow: row wrap;
 		gap: 0.5em;
 		margin-block: 0.3em 0.1em;
 		padding-inline: 1.5em 1em;
@@ -210,10 +211,6 @@ fieldset.inputsection { display: contents }
 		/* Place side by side under the text label */
 		@container blockform (min-width: 40rem) {
 			margin-inline-start: var(--label-width);
-		}
-		@container blockform (max-width: 40rem) {
-			flex-flow: row wrap;
-			white-space: pre;
 		}
 
 		.labelselected, .labelstretch {
