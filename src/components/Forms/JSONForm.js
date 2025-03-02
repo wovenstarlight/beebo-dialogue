@@ -139,7 +139,7 @@ export default memo(function JSONForm() {
 			</label>
 		</div>
 
-		<p class="explainer">
+		<p className="explainer">
 			<span id="copyexplainer">{t("forms.json.explain_copy")}</span>
 			<span id="downloadexplainer">{t("forms.json.explain_download")}</span>
 			<span id="uploadexplainer">{t("forms.json.explain_upload")}</span>
