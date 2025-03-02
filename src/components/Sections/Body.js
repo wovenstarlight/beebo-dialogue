@@ -58,8 +58,8 @@ export default function Body() {
 	return <main id="sitebody">
 		{blocks.length === 0 && <p id="explainer">{t("body.startup")}</p>}
 		{blocks.length > 0 && <header id="topmenu">
-			<button id="saveimage" onClick={screenshot}>{t("actions.save_image")}</button>
-			<button id="clearall" onClick={clearAll}>{t("actions.delete_all")}</button>
+			<button className="blockbtn" id="saveimage" onClick={screenshot}>{t("actions.save_image")}</button>
+			<button className="blockbtn" id="clearall" onClick={clearAll}>{t("actions.delete_all")}</button>
 		</header>}
 
 		<BlockContext.Provider value={[blocks, setBlocks]}>

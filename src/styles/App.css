@@ -211,21 +211,7 @@ body {
 	top: 1em;
 	z-index: 2;
 
-	button {
-		display: block;
-		font: inherit;
-		padding: 0.5em 1em;
-		margin-inline: auto;
-		color: white;
-		background-color: var(--bg);
-		border: var(--border-width) solid var(--text);
-		cursor: pointer;
-
-		&:is(:hover, :focus) {
-			background-color: var(--text);
-			color: var(--bg);
-		}
-	}
+	button { padding: 0.5em 1em }
 }
 #saveimage {
 	--text: var(--text-trueending);
