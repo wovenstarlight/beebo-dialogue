@@ -15,6 +15,8 @@ const TRANSLATIONS = {
 	body: {
 		/** Displays when no content blocks (dialogues, choices etc.) have been generated, e.g. on initial page load */
 		startup: "Use the form below to get started!",
+		/** Imager saver warning. Displays above the "Save as PNG" button */
+		image_sizing: "Layout has been altered to fit your screen while you edit.<break />To preview the final image, view at full width!",
 	},
 
 	footer: {
@@ -167,6 +169,10 @@ const TRANSLATIONS = {
 		delete_all: "Delete all",
 		/** Overall block menu: Save all currently-generated blocks as an image */
 		save_image: "Save as PNG",
+		/** Overall block menu: Enable preview mode */
+		enable_full_size: "View at full width",
+		/** Overall block menu: Disable preview mode */
+		disable_full_size: "Fit to screen",
 		/** JSONForm: Copy JSON to clipboard */
 		copy: "Copy",
 		/** JSONForm: Download JSON as file */

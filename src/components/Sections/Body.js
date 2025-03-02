@@ -1,7 +1,7 @@
 import { useState } from "react";
 import domtoimage from "dom-to-image";
 import BlockContext from "../../context/BlockContext";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import BlockWrapper from "../Blocks/BlockWrapper";
 import AddForm from "../Forms/AddForm";
 import JSONForm from "../Forms/JSONForm";
@@ -11,12 +11,18 @@ import getBlockType from "../../utils/getBlockType";
 /** The app body, consisting of the actual editor. */
 export default function Body() {
 	const [blocks, setBlocks] = useState([]);
+	const [previewing, setPreviewing] = useState(false);
 	const { t } = useTranslation();
 
 	/** Deletes all currently-rendered content blocks. */
 	function clearAll() {
 		if (window.confirm(t("alerts.confirm_delete_all")))
 			setBlocks([]);
+	}
+
+	/** Toggles full sizing for the content to preview what the resulting image will look like. */
+	function previewFinalLayout() {
+		setPreviewing(val => !val);
 	}
 
 	/** Saves all currently-rendered content blocks as an image. */
@@ -57,13 +63,22 @@ export default function Body() {
 
 	return <main id="sitebody">
 		{blocks.length === 0 && <p id="explainer">{t("body.startup")}</p>}
-		{blocks.length > 0 && <header id="topmenu">
-			<button className="blockbtn" id="saveimage" onClick={screenshot}>{t("actions.save_image")}</button>
-			<button className="blockbtn" id="clearall" onClick={clearAll}>{t("actions.delete_all")}</button>
-		</header>}
+		{blocks.length > 0 && <>
+			<p id="imagesizing"><Trans
+				i18nKey="body.image_sizing"
+				components={{
+					break: <br />,
+				}}
+			/></p>
+			<header id="topmenu">
+				<button className="blockbtn" id="previewimage" onClick={previewFinalLayout}>{previewing ? t("actions.disable_full_size") : t("actions.enable_full_size")}</button>
+				<button className="blockbtn" id="saveimage" onClick={screenshot}>{t("actions.save_image")}</button>
+				<button className="blockbtn" id="clearall" onClick={clearAll}>{t("actions.delete_all")}</button>
+		</header>
+		</>}
 
 		<BlockContext.Provider value={[blocks, setBlocks]}>
-			{blocks.length > 0 && <section id="dialogues">
+			{blocks.length > 0 && <section id="dialogues" className={previewing ? "previewing" : undefined}>
 				{blocks.map(obj => <BlockWrapper key={obj.id} type={getBlockType(obj)} data={obj} />)}
 			</section>}
 

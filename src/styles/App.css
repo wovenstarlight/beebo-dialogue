@@ -169,6 +169,7 @@ body {
 
 /* Body */
 #sitebody {
+	container: blocks / inline-size;
 	/* Unless they add border-image-repeat: no-repeat, the border is just going to disappear on small screens. Don't want that, so switch to using pseudo-elements
 	border-block: 2em solid transparent;
 	border-image: url("../assets/images/curlyBorder.png") 35 0 space;
@@ -193,7 +194,7 @@ body {
 	}
 
 	/* Expand to regular width when saving as PNG */
-	&:has(#dialogues.screenshotting) { width: var(--dialogue-width) }
+	&:has(#dialogues:is(.screenshotting, .previewing)) { width: var(--dialogue-width) }
 }
 
 /* Footer */
@@ -201,17 +202,46 @@ body {
 /* #endregion */
 
 /* #region Top menu */
+#imagesizing {
+	font-size: 0.9em;
+	text-align: center;
+	@container blocks (min-width: 59.5em) {
+		display: none;
+	}
+}
 #topmenu {
-	margin-block-end: 2em;
+	margin: 0 auto 2em;
 	display: flex;
+	flex-flow: row wrap;
 	width: fit-content;
-	gap: 1em;
-	margin-inline: auto;
+	max-width: 100vw;
+	justify-content: center;
+	gap: var(--form-gap);
 	position: sticky;
 	top: 1em;
 	z-index: 2;
 
+	/* Keep in viewport when side-scrolling */
+	&:has(~ #dialogues.previewing) {
+		position: fixed;
+		left: 0;
+		width: 100vw;
+		padding-inline: 0.5em;
+	}
+
 	button { padding: 0.5em 1em }
+}
+#previewimage {
+	--text: var(--text-angel);
+	--bg: var(--bg-angel);
+
+	/* Hide entirely if already at full size (var(--dialogue-width)) */
+	@container blocks (min-width: 59.5rem) {
+		/* …But not when previewing, obviously, or you won't be able to turn preview mode off */
+		#topmenu:has(~ #dialogues:not(.previewing)) & {
+			display: none;
+		}
+	}
 }
 #saveimage {
 	--text: var(--text-trueending);
@@ -225,8 +255,6 @@ body {
 
 /* #region Dialogues section */
 #dialogues {
-	container: blocks / inline-size;
-
 	/* Shrink font size when previewing on narrow screens */
 	&:not(.screenshotting) {
 		@media (max-width: 40rem) {
