@@ -20,8 +20,7 @@
 	@media (min-width: 95em) {
 		top: 0;
 		left: 100%;
-		margin-left: -0.3rem;
-		padding-inline: 0.5rem;
+		padding-inline: 0.75rem;
 		height: 100%;
 	}
 
