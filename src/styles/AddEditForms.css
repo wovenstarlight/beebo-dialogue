@@ -169,6 +169,7 @@ fieldset.inputsection { display: contents }
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
+		margin-block-start: 1em;
 
 		.blockitemmods {
 			margin: 0;

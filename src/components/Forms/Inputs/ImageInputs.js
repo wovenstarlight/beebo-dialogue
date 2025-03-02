@@ -130,7 +130,7 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 			<input type="file" accept="image/*" required multiple onChange={uploadFiles} />
 		</label>
 
-		<section className="imagepreviews">
+		{data.images.length > 0 && <section className="imagepreviews">
 			{data.images.map((obj, index) => <MultipleImagesSingleInput
 				key={obj.id}
 				index={index}
@@ -138,7 +138,7 @@ export function MultipleImageInputs({ data, setData, includePalette = true }) {
 				allImages={data.images}
 				setData={setData}
 			/>)}
-		</section>
+		</section>}
 	</>;
 }
 
