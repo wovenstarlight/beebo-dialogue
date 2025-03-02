@@ -270,6 +270,7 @@ label:has(input[type="checkbox"]) {
 	width: 100%;
 	max-width: 45em;
 	margin-block: auto;
+	padding-inline: min(1em, 1vw);
 	background-color: var(--bg-house);
 	color: var(--text-house);
 
