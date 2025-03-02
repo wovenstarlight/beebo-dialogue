@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import domtoimage from "dom-to-image";
 import BlockContext from "../../context/BlockContext";
 import { Trans, useTranslation } from "react-i18next";
@@ -14,6 +14,13 @@ export default function Body() {
 	const [previewing, setPreviewing] = useState(false);
 	const { t } = useTranslation();
 
+	/** Canvas for drawing out the PNG. */
+	const canvas = useRef();
+	/** Download link for saving the PNG. */
+	const downloadLink = useRef();
+	/** Element containing all content blocks, to be targeting for saving. */
+	const dialogues = useRef();
+
 	/** Deletes all currently-rendered content blocks. */
 	function clearAll() {
 		if (window.confirm(t("alerts.confirm_delete_all")))
@@ -27,31 +34,27 @@ export default function Body() {
 
 	/** Saves all currently-rendered content blocks as an image. */
 	function screenshot() {
-		// Prepare the elements for the transfer
-		const canvas = document.getElementById("imgcanvas"),
-			downloadLink = document.getElementById("imgdownload"),
-			dialogues = document.getElementById("dialogues");
-
 		// Mark the page in preparation for capturing
 		// This disables all elements that shouldn't appear in the final image, like edit menus
-		dialogues.classList.add("screenshotting");
+		dialogues.current.classList.add("screenshotting");
 
-		domtoimage.toSvg(dialogues)
+		domtoimage.toSvg(dialogues.current)
 			.then((dataUrl) => {
 				// SVG comes out the crispest, so we use that instead of .toPNG()
 				// But we do want to save as a PNG, so we draw the SVG image onto a canvas…
 				let img = new Image();
 				img.addEventListener("load", () => {
-					canvas.width = img.width;
-					canvas.height = img.height;
-					canvas.getContext("2d").drawImage(img, 0, 0);
+					canvas.current.clearRect(0, 0, canvas.current.width, canvas.current.height)
+					canvas.current.width = img.width;
+					canvas.current.height = img.height;
+					canvas.current.getContext("2d").drawImage(img, 0, 0);
 
 					// …and then download the canvas as a data URL, which gets slapped into the prepared download link and triggered
-					downloadLink.href = canvas.toDataURL();
-					downloadLink.click();
+					downloadLink.current.href = canvas.current.toDataURL();
+					downloadLink.current.click();
 
 					// With that done, bring back the edit menus and all!
-					dialogues.classList.remove("screenshotting");
+					dialogues.current.classList.remove("screenshotting");
 				});
 				img.src = dataUrl;
 			})
@@ -78,7 +81,7 @@ export default function Body() {
 		</>}
 
 		<BlockContext.Provider value={[blocks, setBlocks]}>
-			{blocks.length > 0 && <section id="dialogues" className={previewing ? "previewing" : undefined}>
+			{blocks.length > 0 && <section id="dialogues" ref={dialogues} className={previewing ? "previewing" : undefined}>
 				{blocks.map(obj => <BlockWrapper key={obj.id} type={getBlockType(obj)} data={obj} />)}
 			</section>}
 
@@ -91,8 +94,8 @@ export default function Body() {
 
 		<section id="downloadasimage" hidden>
 			{/* Placeholder URL to avoid a11ty warning */}
-			<a id="imgdownload" href="/misc/someone_shadow.png" download="beebo-dialogue.png">{t("actions.save_image")}</a>
-			<canvas id="imgcanvas" />
+			<a id="imgdownload" ref={downloadLink} href="/misc/someone_shadow.png" download="beebo-dialogue.png">{t("actions.save_image")}</a>
+			<canvas id="imgcanvas" ref={canvas} />
 		</section>
 	</main>
 };
