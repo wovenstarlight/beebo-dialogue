@@ -7,6 +7,7 @@
 	img {
 		display: block;
 		border: var(--border-width) solid var(--text, var(--text-house));
+		max-width: 100%;
 		max-height: var(--image-height);
 		object-fit: contain;
 		/* Shrink to real size if not stretched to fill */
