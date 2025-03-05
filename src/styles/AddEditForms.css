@@ -44,13 +44,6 @@ fieldset.inputsection { display: contents }
 		text-align: end;
 		gap: 0.5em;
 		padding-inline: 1em;
-
-		@container blockform (max-width: 40rem) {
-			&:not(#keepcolor, .labelportrait, :has([type="radio"]), .labelselected, .labelimageupload, .labelstretch) {
-				display: flex;
-				flex-direction: column;
-			}
-		}
 	}
 	.labeltext { padding-block-start: 0.5em }
 
@@ -80,45 +73,6 @@ fieldset.inputsection { display: contents }
 	}
 
 	.labelportrait {
-		@container blockform (min-width: 40rem) {
-			grid-template-columns: var(--label-width) 1fr auto;
-			align-items: center;
-
-			.labeltext { padding-block-start: 0 }
-
-			.portrait {
-				grid-column: 3;
-				grid-row: 1 / span 2;
-			}
-
-			.seeallportraits {
-				grid-column: 2;
-				grid-row: 2;
-			}
-		}
-		@container blockform (min-width: 25rem) and (max-width: 40rem) {
-			display: grid;
-			grid-template-columns: 1fr auto;
-
-			.labeltext { justify-self: start }
-
-			.portrait {
-				grid-column: 2;
-				grid-row: 1 / span 3;
-				place-self: end;
-			}
-
-			.seeallportraits { margin-block-start: 0.2em }
-		}
-		@container blockform (max-width: 25rem) {
-			display: flex;
-			flex-direction: column;
-
-			.seeallportraits { width: 100% }
-
-			.portrait { align-self: center }
-		}
-
 		.portrait { width: 6em }
 
 		.seeallportraits { font-size: 0.9em }
@@ -168,15 +122,12 @@ fieldset.inputsection { display: contents }
 		}
 	}
 
-	button {
-		.blockform > & + & { margin-block-start: -0.2rem }
-
-		&.submitbtn {
-			font-size: 1.5em;
-			margin-block-start: 0.5rem;
-		}
-		&.resetbtn, &.addbtn { font-size: 1.2em }
+	.submitbtn {
+		font-size: 1.5em;
+		margin-block-start: 0.5rem;
 	}
+	.resetbtn, .addbtn { font-size: 1.2em }
+	button + button { margin-block-start: -0.2rem }
 
 	.imagepreviews {
 		display: flex;
@@ -221,11 +172,6 @@ fieldset.inputsection { display: contents }
 		gap: 0.5em;
 		margin-block: 0.3em 0.1em;
 		padding-inline: 1.5em 1em;
-
-		/* Place side by side under the text label */
-		@container blockform (min-width: 40rem) {
-			margin-inline-start: var(--label-width);
-		}
 
 		.labelselected, .labelstretch {
 			grid-template-columns: auto 1fr;
@@ -275,6 +221,8 @@ label:has(input[type="checkbox"]) {
 		&:active ~ .icon { background-color: var(--text-house) }
 	}
 }
+
+
 
 /* #region All portraits dialog */
 #allportraits {
@@ -327,4 +275,71 @@ label:has(input[type="checkbox"]) {
 
 /* Prevent scrolling outside dialog */
 body:has(dialog[open]) { overflow: hidden }
+/* #endregion */
+
+
+
+/* #region Screen sizing adjustments */
+/* #region Wide screens */
+@container blockform (min-width: 40rem) {
+	/* Stack selector + "all portraits" button, and lay out label/stack/preview image side-by-side */
+	.labelportrait {
+		grid-template-columns: var(--label-width) 1fr auto;
+		align-items: center;
+
+		.labeltext { padding-block-start: 0 }
+
+		.portrait {
+			grid-column: 3;
+			grid-row: 1 / span 2;
+		}
+
+		.seeallportraits {
+			grid-column: 2;
+			grid-row: 2;
+		}
+	}
+
+	/* Lay out an editable item's ModMenu side-by-side under the text label */
+	.blockitemmods { margin-inline-start: var(--label-width) }
+}
+/* #endregion */
+/* #region Narrow screens */
+@container blockform (max-width: 40rem) {
+	/* Stack simple labels instead of side-by-side layout
+	Ignore checkboxes, the tabber, and select/file inputs */
+	label:not(#keepcolor, .labelportrait, :has([type="radio"]), .labelselected, .labelimageupload, .labelstretch) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+@container blockform (min-width: 25rem) and (max-width: 40rem) {
+	/* Stack only label and keep remaining portrait layout the same on less narrow screens */
+	.labelportrait {
+		display: grid;
+		grid-template-columns: 1fr auto;
+
+		.labeltext { justify-self: start }
+
+		.portrait {
+			grid-column: 2;
+			grid-row: 1 / span 3;
+			place-self: end;
+		}
+
+		.seeallportraits { margin-block-start: 0.2em }
+	}
+}
+@container blockform (max-width: 25rem) {
+	/* Stack the whole portrait layout on more narrow screens */
+	.labelportrait {
+		display: flex;
+		flex-direction: column;
+
+		.seeallportraits { width: 100% }
+
+		.portrait { align-self: center }
+	}
+}
+/* #endregion */
 /* #endregion */
