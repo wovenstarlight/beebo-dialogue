@@ -145,6 +145,6 @@ export default memo(function JSONForm() {
 			<span id="uploadexplainer">{t("forms.json.explain_upload")}</span>
 		</p>
 		
-		<a className="samplebtn barbtn" href={`${process.env.PUBLIC_URL}/assets/sample-dialogue/${i18n.language}.json`} download={`${t("forms.json.sample")}.json`}>{t("actions.autofill")}</a>
+		<a className="samplebtn barbtn" href={`${import.meta.env.BASE_URL}/assets/sample-dialogue/${i18n.language}.json`} download={`${t("forms.json.sample")}.json`}>{t("actions.autofill")}</a>
 	</form>;
 })
