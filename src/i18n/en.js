@@ -277,7 +277,7 @@ const TRANSLATIONS = {
 		characters: {
 			oliver: {
 				long: "Oliver Beebo",
-				short: "Oliver",
+				short: "Beebo",
 			},
 			angel: {
 				long: "Ángel Valdivia",
@@ -504,7 +504,7 @@ const TRANSLATIONS = {
 			},
 			/** Unique characteristics of individual sprites. */
 			variants: {
-				/** For Oliver Beebo */
+				/** For Beebo */
 				hatless: "no hat",
 				/** For Ángel */
 				hat: "with hat",
