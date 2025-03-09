@@ -19,6 +19,7 @@ const ALL_COLORS = {
 	yellow:		"yellow",
 	darkgray:	"dark_gray",
 	skyblue:	"sky_blue",
+	redyellow:	"red_yellow",
 };
 
 deepFreeze(ALL_COLORS);

@@ -271,6 +271,7 @@ const TRANSLATIONS = {
 			yellow: "$t(content.descriptors.yellow) ($t(content.descriptors.art_gallery))",
 			dark_gray: "$t(content.descriptors.dark_gray) ($t(content.descriptors.city_police))",
 			sky_blue: "$t(content.descriptors.sky_blue) (True ending)",
+			red_yellow: "Red/yellow (Overnight train",
 		},
 		/** Character names; appear in the portrait dropdown and as suggestions for the speaker field.
 		 * See {@link CharaData} for more information on the various keys.
