@@ -1,8 +1,7 @@
 import { DEFAULT_DIALOGUE } from "../constants/blockDefaults";
 import "../constants/documentation";
 
-/**
- * Returns the relative URL to a given portrait, completed with directory prefixes.
+/** Returns the relative URL to a given portrait, completed with directory prefixes.
  * 
  * If the portrait happens to be an empty string, defaults to the portrait defined in the Dialogue block defaults.
  * @param {PortraitURL} portrait A partial URL to a portrait.

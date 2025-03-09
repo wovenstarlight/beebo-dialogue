@@ -3,8 +3,7 @@ import deepFreeze from "../utils/deepFreeze";
 
 // Portraits retrieved from "Dialogue res/Cuadros"
 
-/**
- * A list of all character sprites available in the game.
+/** A list of all character sprites available in the game.
  * @type {PortraitGroup[]}
  */
 const ALL_PORTRAITS = [

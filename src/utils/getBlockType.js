@@ -1,7 +1,6 @@
 import { CHOICE, DIALOGUE, IMAGE } from "../constants/blockNames";
 
-/**
- * Detects the intended component type of a given data object.
+/** Detects the intended component type of a given data object.
  * 
  * Types are determined in the following priority order:
  * - `image`

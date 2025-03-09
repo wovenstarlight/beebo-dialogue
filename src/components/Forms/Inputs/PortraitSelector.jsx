@@ -3,8 +3,7 @@ import { useTranslation } from "react-i18next";
 import ALL_PORTRAITS from "../../../constants/portraits";
 import { isSubsetOf } from "../../../utils/arrayUtils";
 
-/**
- * A dropdown menu for selecting a character sprite.
+/** A dropdown menu for selecting a character sprite.
  * @param {object} args 
  * @param {string} args.portrait The value of this form field; a partial URL to a character sprite.
  * @param {function} args.setPortrait The setter for the value of this form field.

@@ -5,8 +5,7 @@ import PortraitSelector from "./PortraitSelector";
 import ColorSelector from "./ColorSelector";
 import getPortraitURL from "../../../utils/getPortraitURL";
 
-/**
- * Form fields for creating/editing a Dialogue block.
+/** Form fields for creating/editing a Dialogue block.
  * @param {object} args
  * @param {DataDialogue} args.data Data representing the values of this form's inputs.
  * @param {function} args.setData The setter for this form's inputs.

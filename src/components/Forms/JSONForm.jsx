@@ -5,8 +5,7 @@ import getBlockType from "../../utils/getBlockType";
 import validate from "../../utils/validateData";
 import "../../styles/JSONForm.css";
 
-/**
- * A form for mass-editing content blocks through JSON files.
+/** A form for mass-editing content blocks through JSON files.
  * @returns A <form> element for reading/writing JSON.
  */
 export default memo(function JSONForm() {

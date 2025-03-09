@@ -4,8 +4,7 @@ import ALL_PORTRAITS from "../../constants/portraits";
 import { isSubsetOf } from "../../utils/arrayUtils";
 import getPortraitURL from "../../utils/getPortraitURL";
 
-/**
- * A dialog showing all available portraits.
+/** A dialog showing all available portraits.
  * @returns A <dialog> element listing every portrait in `constants/portraits.js`.
  */
 export default memo(function PortraitViewer() {

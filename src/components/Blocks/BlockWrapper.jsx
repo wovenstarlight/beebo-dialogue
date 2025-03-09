@@ -14,8 +14,7 @@ import { splitAround } from "../../utils/arrayUtils";
 import validate from "../../utils/validateData";
 import "../../styles/Block.css";
 
-/**
- * A wrapper element for a content block.
+/** A wrapper element for a content block.
  * @param {object} args
  * @param {BlockType} args.type The type of block this is.
  * @param {DataDialogue|DataChoice} args.data Data representing this block.
@@ -116,8 +115,7 @@ export default memo(function BlockWrapper({ type, data }) {
 	</>;
 });
 
-/**
- * A menu for modifying its associated block. Includes:
+/** A menu for modifying its associated block. Includes:
  * - content edit button
  * - block deletion button
  * - reordering buttons

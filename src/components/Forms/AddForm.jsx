@@ -12,8 +12,7 @@ import { MultipleImageInputs } from "./Inputs/ImageInputs";
 import validate from "../../utils/validateData";
 import "../../styles/AddEditForms.css";
 
-/**
- * A form with tabbed sections for adding Dialogue and Choice blocks.
+/** A form with tabbed sections for adding Dialogue and Choice blocks.
  * @returns A <form> element for creating a content block.
  */
 export default memo(function AddForm() {

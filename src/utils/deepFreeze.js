@@ -1,5 +1,4 @@
-/**
- * Deep-freezes the given objects.
+/** Deep-freezes the given objects.
  * @param  {...object} objs Indefinitely nested objects.
  */
 export default function deepFreeze(...objs) {

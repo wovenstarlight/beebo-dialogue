@@ -3,8 +3,7 @@ import Footer from "./components/Sections/Footer";
 import Header from "./components/Sections/Header";
 import "./styles/App.css";
 
-/**
- * The React application itself, containing all page content.
+/** The React application itself, containing all page content.
  * @returns The complete single-page application.
  */
 export default function App() {

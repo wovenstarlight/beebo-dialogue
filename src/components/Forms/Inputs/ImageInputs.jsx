@@ -4,8 +4,7 @@ import "../../../constants/documentation";
 import ColorSelector from "./ColorSelector";
 import { splitAround } from "../../../utils/arrayUtils";
 
-/**
- * Form fields for editing an Image block.
+/** Form fields for editing an Image block.
  * @param {object} args
  * @param {DataImage} args.data Data representing the values of this form's inputs.
  * @param {function} args.setData The setter for this form's inputs.
@@ -65,8 +64,7 @@ export function SingleImageInputs({ data, setData, includePalette = true }) {
 	</>;
 }
 
-/**
- * Form fields for creating Image blocks. Allows multiple images.
+/** Form fields for creating Image blocks. Allows multiple images.
  * @param {object} args
  * @param {DataImageMultiple} args.data Data representing the values of this form's inputs.
  * @param {function} args.setData The setter for this form's inputs.

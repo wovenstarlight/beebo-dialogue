@@ -3,8 +3,7 @@ import { CHOICE, DIALOGUE, IMAGE } from "../constants/blockNames";
 import ALL_COLORS from "../constants/colors";
 import ALL_PORTRAITS from "../constants/portraits";
 
-/**
- * Cleans input for a component of the given type.
+/** Cleans input for a component of the given type.
  * @param {string} args.type The type of component to be created.
  * @param {object} args.data The raw data for the component.
  * @param {function} translator A translator function to get the localized versions of text used in this block.
@@ -24,8 +23,7 @@ export default function validate({ type, data, translator }) {
 	}
 }
 
-/**
- * Cleans input for a Dialogue component.
+/** Cleans input for a Dialogue component.
  * @param {object} data Raw data for a box of dialogue.
  * @param {string} data.color The color palette for this block. Checked for type `string` and being a member of the corresponding enumerated list.
  * @param {string} data.speaker The speaker of the dialogue. Checked for type `string` and being a member of the corresponding enumerated list.
@@ -43,8 +41,7 @@ export function validateDialogue({ data: { color, portrait, speaker, dialogue },
 	};
 }
 
-/**
- * Cleans input for a Choice component.
+/** Cleans input for a Choice component.
  * @param {object} data Raw data for a multiple choice menu.
  * @param {string} data.color The color palette for this block. Checked for type `string` and being a member of the corresponding enumerated list.
  * @param {object[]} data.options The individual options making up the menu. Checked for type `object`.
@@ -89,8 +86,7 @@ export function validateImage({ data: { color, image, stretch, altText }, t }) {
 	};
 }
 
-/**
- * Validates a color palette.
+/** Validates a color palette.
  * @param {string} color A color palette name.
  * @param {string} defaultColor A valid color palette name to use as a fallback
  * @returns `color` if a valid palette from the enumerated list, or `defaultColor` otherwise.

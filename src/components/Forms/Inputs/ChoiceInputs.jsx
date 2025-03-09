@@ -4,8 +4,7 @@ import "../../../constants/documentation";
 import ColorSelector from "./ColorSelector";
 import { splitAround } from "../../../utils/arrayUtils";
 
-/**
- * Form fields for creating/editing a Choice block.
+/** Form fields for creating/editing a Choice block.
  * @param {object} args
  * @param {DataChoice} args.data Data representing the values of this form's inputs.
  * @param {function} args.setData The setter for this form's inputs.
@@ -53,8 +52,7 @@ export default function ChoiceInputs({ data, setData, includePalette = true }) {
 	</>;
 }
 
-/**
- * Input fields for a single option in a Choice block. Includes:
+/** Input fields for a single option in a Choice block. Includes:
  * - Text input for the actual label
  * - Checkbox for whether to mark this option as selected
  * - Reordering buttons (only if more than 1 option is present)

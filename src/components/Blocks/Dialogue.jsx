@@ -4,8 +4,7 @@ import "../../constants/documentation";
 import getPortraitURL from "../../utils/getPortraitURL";
 import "../../styles/TextBox.css";
 
-/**
- * The contents of a dialogue box.
+/** The contents of a dialogue box.
  * @param {DataDialogue} args Data representing this dialogue box.
  * @returns Rendered dialogue with its speaker.
  */

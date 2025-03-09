@@ -2,8 +2,7 @@ import { DEFAULT_IMAGE } from "../../constants/blockDefaults";
 import "../../constants/documentation";
 import "../../styles/Image.css";
 
-/**
- * An image block.
+/** An image block.
  * @param {object} args
  * @param {string} args.image The data URL representing this image.
  * @param {string} args.altText Alternatiive text describing this image.

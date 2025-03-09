@@ -91,8 +91,7 @@ deepFreeze(
 	DEFAULT_IMAGE, DEFAULT_IMAGE_BLANK,
 );
 
-/**
- * Returns the default values for a given block type, whether empty or non-empty.
+/** Returns the default values for a given block type, whether empty or non-empty.
  * @param {object} args
  * @param {BlockType|"option"} args.type The type of block or block component to retrieve defaults for.
  * @param {boolean} [args.blank=false] `true` to get the empty data object for the block `type`, `false` to get the non-empty defaults for the block `type`.
