@@ -209,6 +209,7 @@ export default memo(function AddForm() {
 		</label>
 
 		<fieldset id="adddialogue" className="inputsection" disabled={activeTab !== DIALOGUE} hidden={activeTab !== DIALOGUE}>
+			<legend className="visuallyhidden">{t("forms.adder.dialogue")}</legend>
 			<DialogueInputs
 				data={dialogueOptions}
 				setData={setDialogueOptions}
@@ -217,6 +218,7 @@ export default memo(function AddForm() {
 		</fieldset>
 
 		<fieldset id="addchoice" className="inputsection" disabled={activeTab !== CHOICE} hidden={activeTab !== CHOICE}>
+			<legend className="visuallyhidden">{t("forms.adder.choices")}</legend>
 			<ChoiceInputs
 				data={choiceOptions}
 				setData={setChoiceOptions}
@@ -225,6 +227,7 @@ export default memo(function AddForm() {
 		</fieldset>
 
 		<fieldset id="addimages" className="inputsection" disabled={activeTab !== IMAGE} hidden={activeTab !== IMAGE}>
+			<legend className="visuallyhidden">{t("forms.adder.image")}</legend>
 			<MultipleImageInputs
 				data={imageOptions}
 				setData={setImageOptions}

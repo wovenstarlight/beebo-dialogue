@@ -126,6 +126,7 @@ export default memo(function JSONForm() {
 		<h2>{t("forms.json.title")}</h2>
 		<p className="explainer">{t("forms.json.subtitle")}</p>
 
+		<label className="visuallyhidden" htmlFor="jsoninput">{t("forms.json.label")}</label>
 		<textarea id="jsoninput" name="jsoninput" value={getJSON()} readOnly={true} />
 
 		<div className="buttons">

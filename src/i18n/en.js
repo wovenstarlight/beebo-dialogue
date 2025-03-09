@@ -94,6 +94,8 @@ const TRANSLATIONS = {
 			title: "Mass-edit via JSON",
 			/** Form explainer */
 			subtitle: "Save/create multiple dialogue boxes at once!",
+			/** Text area label */
+			label: "JSON representation",
 			/** Explanation for the Copy button; appears when hovering over the button */
 			explain_copy: "Copy the above JSON to your clipboard",
 			/** Explanation for the Download button; appears when hovering over the button */
