@@ -27,6 +27,7 @@ export function SingleImageInputs({ data, setData, includePalette = true }) {
 				return {
 					...obj,
 					image: reader.result,
+					altText: file.name,
 				}
 			});
 		}, false);
@@ -255,7 +256,7 @@ function FileUploadInput({ uploadHandler, allowMultiple = false, isRequired = fa
 
 		// And handle the uploads
 		if (files.length > 0) {
-			uploadHandler(allowMultiple ? files : files[0]);
+			uploadHandler(getFiles(files));
 		}
 	};
 
@@ -271,6 +272,14 @@ function FileUploadInput({ uploadHandler, allowMultiple = false, isRequired = fa
 		e.preventDefault();
 		dragCounter.current --;
 		if (dragCounter.current === 0) dropContainer.current.classList.remove("dragover");
+	}
+
+	/** Utility helper to extract the correct number of files for this input, depending on how many files are allowed.
+	 * @param {FileList} files A list containing one or more files.
+	 * @returns One or multiple files depending on if `allowMultiple` is enabled.
+	 */
+	function getFiles(files) {
+		return allowMultiple ? files : files[0];
 	}
 
 	return (
@@ -298,7 +307,7 @@ function FileUploadInput({ uploadHandler, allowMultiple = false, isRequired = fa
 			ref={fileInput}
 			required={isRequired}
 			multiple={allowMultiple}
-			onChange={(e) => uploadHandler(e.target.files)}
+			onChange={(e) => uploadHandler(getFiles(e.target.files))}
 		/>
 	</label>
 	);
