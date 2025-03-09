@@ -18,7 +18,15 @@ export default function Dialogue({ speaker, portrait, dialogue }) {
 			<span className="name">{speaker ?? t(DEFAULT_DIALOGUE.speaker)}</span>
 		</header>
 		<div className="body">
-			<img className="portrait" alt="" src={getPortraitURL(portrait)} aria-hidden="true" />
+			<img
+				className="portrait"
+				// All sprites have same dimensions
+				width={34}
+				height={31}
+				alt=""	// Decorative
+				src={getPortraitURL(portrait)}
+				aria-hidden="true"
+			/>
 			<p className="text">{dialogue ?? t(DEFAULT_DIALOGUE.dialogue)}</p>
 		</div>
 	</>;
