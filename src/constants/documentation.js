@@ -26,7 +26,7 @@
 	 * @property {object} label A label for this group.
 	 * @property {LanguageKey} label.identifier An identifier referencing the shared characteristic of this group, such as the name of a character depicted in all included sprites.
 	 * @property {?LanguageKey} label.short_identifier A shorter version of the identifier to label `<option>` elements. Should fall back to `identifier` if not provided.
-	 * @property {LanguageKey} label.variant A unique characteristic differentiating this group from others with the same `identifier`, such as a color palette.
+	 * @property {?LanguageKey} label.variant A unique characteristic differentiating this group from others with the same `identifier`, such as a color palette.
 	 * @property {object.<PortraitURL, PortraitData>} options A mapping of sprite URLs to their descriptions.
 	 */
 	/**
@@ -91,9 +91,9 @@
 	/**
 	 * @typedef CharaData
 	 * A mapping of a given character's names.
-	 * @property {string} LONG Full character name.
-	 * @property {string} SHORT Given name only or shortened title. If the character's name is already short, this is equivalent to `LONG`.
-	 * @property {?string} SPEAKER_LABEL How the character's name typically appears in dialogue within the game, if different from `LONG`. Often equivalent to `SHORT`.
-	 * @property {?string} UNKNOWN_LABEL The speaker label used for the character before their actual name was known, if any.
+	 * @property {string} long Full character name.
+	 * @property {string} short Given name only or shortened title. If the character's name is already short, this is equivalent to `LONG`.
+	 * @property {?string} speaker_label How the character's name typically appears in dialogue within the game, if different from `LONG`. Often equivalent to `SHORT`.
+	 * @property {?string} unknown_label The speaker label used for the character before their actual name was known, if any.
 	 */
 // #endregion
