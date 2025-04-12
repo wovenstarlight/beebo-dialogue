@@ -292,6 +292,8 @@ label:has(input[type="checkbox"]) {
 		right: 2em;
 	}
 
+	.explainer { text-align: center }
+
 	.portraitgroup { margin-block-start: 1.5em }
 
 	.portraitgroup summary {

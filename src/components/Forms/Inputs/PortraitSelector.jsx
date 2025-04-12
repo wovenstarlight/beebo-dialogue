@@ -78,7 +78,7 @@ function PortraitSelector({ portrait, setPortrait }) {
 		<button
 			type="button"
 			className="seeallportraits blockbtn editbtn"
-			onClick={() => document.getElementById("allportraits").showModal()}
+			onClick={() => document.getElementById("allportraits")._show(setPortrait)}
 		>{t("actions.open_portraits")}</button>
 	</>;
 }

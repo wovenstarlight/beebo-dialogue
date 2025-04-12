@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ALL_PORTRAITS from "../../constants/portraits";
 import { isSubsetOf } from "../../utils/arrayUtils";
@@ -10,6 +10,14 @@ import getPortraitURL from "../../utils/getPortraitURL";
 export default memo(function PortraitViewer() {
 	const { t } = useTranslation();
 
+	useEffect(() => {
+		const dialog = document.getElementById("allportraits");
+		dialog._show = (setPortrait) => {
+			dialog._setter = setPortrait;
+			dialog.showModal();
+		}
+	})
+
 	return <dialog id="allportraits" className="menu">
 		<button
 			id="closeportraits"
@@ -18,6 +26,8 @@ export default memo(function PortraitViewer() {
 		>{t("actions.close")}</button>
 
 		<h2>{t("forms.fields.all_portraits")}</h2>
+
+		<p className="explainer">{t("forms.fields.explain_all_portraits")}</p>
 
 		{ALL_PORTRAITS.map(group => {
 			// Create group label from the provided label object
@@ -34,7 +44,7 @@ export default memo(function PortraitViewer() {
 				});
 			}
 
-			// And drop that into an optgroup
+			// And drop that into a portrait group
 			return <details className="portraitgroup" key={label} open>
 				<summary>{label}</summary>
 
@@ -84,11 +94,25 @@ export default memo(function PortraitViewer() {
 						});
 					}
 
-					// And drop that into an option
-					return <li key={sprite[0]} className="portraitdata" data-id={sprite[0]}>
-						<img src={getPortraitURL(sprite[0])} alt={label} className="portrait" />
+					// And drop that into an portrait
+					return (
+					<li
+						key={sprite[0]}
+						className="portraitdata"
+						onClick={(e) => {
+							const dialog = e.currentTarget.closest("#allportraits");
+							dialog._setter({ target: { value: sprite[0] } });
+							dialog.close();
+						}}
+					>
+						<img
+							src={getPortraitURL(sprite[0])}
+							alt={label}
+							className="portrait"
+						/>
 						<span className="portraitname">{label}</span>
 					</li>
+					)
 				})}
 				</ul>
 			</details>;

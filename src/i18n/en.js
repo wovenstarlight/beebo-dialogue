@@ -138,6 +138,8 @@ const TRANSLATIONS = {
 			explain_image_palette: "Determines the color of the image border",
 			/** Portraits popup: Title */
 			all_portraits: "All portraits",
+			/** Portraits popup: "Click to select" explanatory message */
+			explain_all_portraits: "Click a portrait to select it!",
 		},
 	},
 	
