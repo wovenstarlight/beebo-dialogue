@@ -8,5 +8,5 @@ import "../constants/documentation";
  * @returns The relative URL to the desired portrait.
  */
 export default function getPortraitURL(portrait) {
-	return `${import.meta.env.BASE_URL}/assets/portraits/`.concat(portrait.length ? portrait : DEFAULT_DIALOGUE.portrait);
+	return `${import.meta.env.BASE_URL}assets/portraits/`.concat(portrait.length ? portrait : DEFAULT_DIALOGUE.portrait);
 }
