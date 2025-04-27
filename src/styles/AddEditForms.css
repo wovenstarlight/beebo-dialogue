@@ -7,7 +7,10 @@
 	margin: 0 max(5vw, 3em) 1em;
 	padding: 0.5em 0 0;
 
-	legend { margin-inline: auto }
+	legend {
+		margin-inline: auto;
+		text-align: center;
+	}
 
 	label {
 		flex-grow: 1;

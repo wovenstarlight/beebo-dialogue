@@ -53,5 +53,12 @@
 	}
 }
 
-:not(:hover, :focus-within) > .modmenu { opacity: 0 }
+:not(:hover, :focus-within) > .modmenu {
+	opacity: 0;
+
+	/* Prevent people from clicking while the button's still not yet displayed on mobile */
+	@media (max-width: 40rem) {
+		pointer-events: none;
+	}
+}
 #dialogues.screenshotting .modmenu { display: none }
