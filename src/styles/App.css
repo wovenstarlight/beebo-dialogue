@@ -1,12 +1,12 @@
 /* #region Fonts and colors */
 @font-face {
 	font-family: "Nokia";
-	src: url("../assets/fonts/nokiafc22.ttf");
+	src: url("/assets/fonts/nokiafc22.ttf");
 }
 
 @font-face {
 	font-family: "SqueezedPixels";
-	src: url("../assets/fonts/SqueezedPixels.ttf");
+	src: url("/assets/fonts/SqueezedPixels.ttf");
 }
 
 :root {
@@ -186,11 +186,6 @@ body {
 /* Body */
 #sitebody {
 	container: blocks / inline-size;
-	/* Unless they add border-image-repeat: no-repeat, the border is just going to disappear on small screens. Don't want that, so switch to using pseudo-elements
-	border-block: 2em solid transparent;
-	border-image: url("../assets/images/curlyBorder.png") 35 0 space;
-	padding-block: 3em;
-	*/
 	width: 100%;
 	max-width: var(--dialogue-width);
 	margin-inline: auto;
