@@ -53,8 +53,11 @@
 	--text-trueending: #a6bec9;
 	--bg-trueending: #2f4b55;
 
-	--text-train: #fac15a;
-	--bg-train: #7d122c;	/* Darker red from inside train */
+	--text-train: #8b444b;
+	--bg-train: #33020d;
+
+	--text-trainunofficial: #fac15a;
+	--bg-trainunofficial: #7d122c;	/* Darker red from inside train */
 }
 
 .oliver,
@@ -119,9 +122,14 @@
 	--bg: var(--bg-trueending);
 }
 .train,
-.redyellow {
+.redtrain {
 	--text: var(--text-train);
 	--bg: var(--bg-train);
+}
+.trainunofficial,
+.redyellow {
+	--text: var(--text-trainunofficial);
+	--bg: var(--bg-trainunofficial);
 }
 /* #endregion */
 

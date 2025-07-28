@@ -19,6 +19,7 @@ const ALL_COLORS = {
 	yellow:		"yellow",
 	darkgray:	"dark_gray",
 	skyblue:	"sky_blue",
+	redtrain:	"red_train",
 	redyellow:	"red_yellow",
 };
 
