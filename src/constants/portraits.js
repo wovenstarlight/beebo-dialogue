@@ -1073,7 +1073,7 @@ const ALL_PORTRAITS = [
 	},
 	// #endregion
 
-	// #region Owen
+	// #region Owen Ferreira
 	{
 		label: {
 			identifier: "content.characters.owen.long",
@@ -1285,10 +1285,10 @@ const ALL_PORTRAITS = [
 			identifier: "content.portraits.group_variants.other",
 		},
 		options: {
-			"misc/bartender_neutro.png": {
+			"misc/bartender_neutro.png": { // Dante
 				identifier: "content.characters.bartender.short",
 				emotion: "content.portraits.emotions.neutral",
-				// gender unknown (female?)
+				gender: "male",
 			},
 			"misc/someone_shadow.png": {
 				identifier: "content.characters.someone.short",

@@ -321,9 +321,10 @@ const TRANSLATIONS = {
 				speaker_label: "$t(content.characters.simon.short)",
 			},
 			owen: {
-				long: "Owen",
-				short: "$t(content.characters.owen.long)",
+				long: "Owen Ferreira",
+				short: "Owen",
 				unknown_label: "Hat Teen",
+				speaker_label: "$t(content.characters.owen.short)",
 			},
 			eugene: {
 				long: "Eugene Coli",
